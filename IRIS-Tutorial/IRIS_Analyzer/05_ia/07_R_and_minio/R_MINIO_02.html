@@ -1,0 +1,372 @@
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>R 과 MINIO - (2) : R Object 를 MINIO 에 저장 / 다운로드 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="description" content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다.">
+  <meta name="keywords" content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석">
+	<!-- Bizible Script -->
+	<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+        <!-- Google Analytics -->
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-161444564-3');
+      </script>
+        <!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Manual/index.html">Manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+    <li>R 과 MINIO - (2) : R Object 를  MINIO 에 저장 / 다운로드</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_02.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Tutorial/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_02</p>
+
+            
+            <p>list1[0] = IRIS-Tutorial</p>
+            <p>list1[1] = IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_02</p>
+            <p>list1[2] = </p>
+            IRIS-Tutorial
+            IRIS-Tutorial/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_02
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Tutorial/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_02</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_02.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Tutorial/blob/master/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_02.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r-minio-2-r-object-minio">
+<h1>R 과 MINIO - (2) : R Object 를  MINIO 에 저장 / 다운로드<a class="headerlink" href="#r-minio-2-r-object-minio" title="Permalink to this headline">¶</a></h1>
+<p>RStudio 에서 생성된  in-memory R Object 를 <strong>.Rdata 파일</strong> 로 MINIO 에 저장하거나</p>
+<p>MINIO 에 .Rdata 파일로 저장된 R object 를 RStudio 의 memory 로 load 하는 예제 입니다.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="r-object-minio-s3save">
+<h2>R object 를 MINIO 로 저장하기  : s3save<a class="headerlink" href="#r-object-minio-s3save" title="Permalink to this headline">¶</a></h2>
+<p>먼저 minio.s3 패키지의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_01.html#id1">설치</a> 와 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Analyzer/05_ia/07_R_and_minio/R_MINIO_01.html#aws">AWS 환경변수 설정하기</a> 를 확인합니다.</p>
+<p>R 에서 프로그래밍 중에 생성되는 1개 또는 여러 개의 in-memory R-object 는
+.Rdata 파일 포맷으로 MINIO 에 저장합니다.</p>
+<p>아래 예제는 R 에 내장되어 있는 데이터셋 중 하나인 npk 를 object 로 저장하는 예시입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&gt; str(npk)
+ &#39;data.frame&#39;:        24 obs. of  5 variables:
+ $ block: Factor w/ 6 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 2 2 2 2 3 3 ...
+ $ N    : Factor w/ 2 levels &quot;0&quot;,&quot;1&quot;: 1 2 1 2 2 2 1 1 1 2 ...
+ $ P    : Factor w/ 2 levels &quot;0&quot;,&quot;1&quot;: 2 2 1 1 1 2 1 2 2 2 ...
+ $ K    : Factor w/ 2 levels &quot;0&quot;,&quot;1&quot;: 2 1 1 2 1 2 2 1 1 2 ...
+ $ yield: num  49.5 62.8 46.8 57 59.8 58.5 55.5 56 62.8 55.8 ...
+
+&gt; npk$N &lt;- as.character(npk$N)
+&gt; npk$P &lt;- as.character(npk$P)
+&gt; npk$K &lt;- as.character(npk$K)
+&gt; str(npk)
+&#39;data.frame&#39;: 24 obs. of  5 variables:
+ $ block: Factor w/ 6 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 2 2 2 2 3 3 ...
+ $ N    : chr  &quot;0&quot; &quot;1&quot; &quot;0&quot; &quot;1&quot; ...
+ $ P    : chr  &quot;1&quot; &quot;1&quot; &quot;0&quot; &quot;0&quot; ...
+ $ K    : chr  &quot;1&quot; &quot;0&quot; &quot;0&quot; &quot;1&quot; ...
+ $ yield: num  49.5 62.8 46.8 57 59.8 58.5 55.5 56 62.8 55.8 ...
+
+
+&gt; npk_desc &lt;- summary(npk)
+&gt; npk_desc
+ block      N                  P                  K                 yield
+ 1:4   Length:24          Length:24          Length:24          Min.   :44.20
+ 2:4   Class :character   Class :character   Class :character   1st Qu.:49.73
+ 3:4   Mode  :character   Mode  :character   Mode  :character   Median :55.65
+ 4:4                                                            Mean   :54.88
+ 5:4                                                            3rd Qu.:58.62
+ 6:4                                                            Max.   :69.50
+
+ # 4분위수 구하기
+&gt; npk_q &lt;- quantile(npk$yield, c(0, 0.25, 0.5, 0.75, 1), type=1)
+&gt; npk_q
+  0%  25%  50%  75% 100%
+44.2 49.5 55.5 58.5 69.5
+</pre></div>
+</div>
+<p>in-memory object 인 npk, npk_desc, npk_q 를 .Rdata 파일로 MINIO 에 저장합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s3save</span> <span class="p">(</span> <span class="n">npk</span> <span class="p">,</span> <span class="n">npk_desc</span><span class="p">,</span> <span class="n">npk_q</span><span class="p">,</span> <span class="n">bucket</span>  <span class="o">=</span>  <span class="s2">&quot;demo&quot;</span> <span class="p">,</span> <span class="nb">object</span>  <span class="o">=</span>  <span class="s2">&quot;npk.Rdata&quot;</span> <span class="p">,</span> <span class="n">use_https</span>  <span class="o">=</span>  <span class="n">F</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="minio-r-object-load-s3load">
+<h2>MINIO 에 저장된 R object load 하기 : s3load<a class="headerlink" href="#minio-r-object-load-s3load" title="Permalink to this headline">¶</a></h2>
+<p>MINIO 에 저장된 npk.Rdata 파일을 확인합니다.</p>
+<a class="reference internal image-reference" href="../../../../_images/minio_file_01.png"><img alt="minio file 01" src="../../../../_images/minio_file_01.png" style="width: 1152.0px; height: 321.6px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>대화형 분석 RStudio 에서 load 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># R 의 object 에서 npk_q, npk_desc 가 없음을 확인합니다.
+&gt; npk_q
+Error: object &#39;npk_q&#39; not found
+&gt; npk_desc
+Error: object &#39;npk_desc&#39; not found
+
+# s3load 로 npk.Rdata 파일에서 object load
+&gt; s3load(&quot;npk.Rdata&quot;, bucket = &quot;demo&quot;, use_https = F)
+&gt; npk_q
+  0%  25%  50%  75% 100%
+44.2 49.5 55.5 58.5 69.5
+&gt; npk_desc
+ block      N                  P                  K                 yield
+ 1:4   Length:24          Length:24          Length:24          Min.   :44.20
+ 2:4   Class :character   Class :character   Class :character   1st Qu.:49.73
+ 3:4   Mode  :character   Mode  :character   Mode  :character   Median :55.65
+ 4:4                                                            Mean   :54.88
+ 5:4                                                            3rd Qu.:58.62
+ 6:4                                                            Max.   :69.50
+
+ # npk 역시 N, P, K 의 타입이 factor 에서 character 로 변경된 dataframe 으로 load 된 것을 확인합니다.
+&gt; str(npk)
+&#39;data.frame&#39;: 24 obs. of  5 variables:
+ $ block: Factor w/ 6 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 2 2 2 2 3 3 ...
+ $ N    : chr  &quot;0&quot; &quot;1&quot; &quot;0&quot; &quot;1&quot; ...
+ $ P    : chr  &quot;1&quot; &quot;1&quot; &quot;0&quot; &quot;0&quot; ...
+ $ K    : chr  &quot;1&quot; &quot;0&quot; &quot;0&quot; &quot;1&quot; ...
+ $ yield: num  49.5 62.8 46.8 57 59.8 58.5 55.5 56 62.8 55.8 ...
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+	<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+	<script type="text/javascript">
+		/* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+        if(DOCUMENTATION_OPTIONS) {
+			DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = '.txt'
+        }
+    </script>
+
+
+</body>
+</html>

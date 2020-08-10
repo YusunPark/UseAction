@@ -1,2 +1,0 @@
-class DocInfoError(Exception):
-    pass

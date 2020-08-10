@@ -6,7 +6,9 @@ Tutorial
     :hidden:
 
     Getting-Started/index.rst
-  
+    IRIS_Analyzer/index.rst
+    IRIS_Studio/index.rst
+
 
 
 IRIS 빅데이터 솔루션의 세계로 오신 여러분을 환영합니다.

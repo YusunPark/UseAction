@@ -1,0 +1,348 @@
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Jupyter Notebook을 활용한 분석과 분석결과를 HDFS에 저장하기 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="description" content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다.">
+  <meta name="keywords" content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석">
+	<!-- Bizible Script -->
+	<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+        <!-- Google Analytics -->
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-161444564-3');
+      </script>
+        <!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Manual/index.html">Manual</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+    <li>Jupyter Notebook을 활용한 분석과 분석결과를 HDFS에 저장하기</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Analyzer/05_ia/05_store_jupyter_to_hdfs/store_jupyter_to_hdfs.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Tutorial/IRIS_Analyzer/05_ia/05_store_jupyter_to_hdfs/store_jupyter_to_hdfs</p>
+
+            
+            <p>list1[0] = IRIS-Tutorial</p>
+            <p>list1[1] = IRIS_Analyzer/05_ia/05_store_jupyter_to_hdfs/store_jupyter_to_hdfs</p>
+            <p>list1[2] = </p>
+            IRIS-Tutorial
+            IRIS-Tutorial/IRIS_Analyzer/05_ia/05_store_jupyter_to_hdfs/store_jupyter_to_hdfs
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Tutorial/IRIS_Analyzer/05_ia/05_store_jupyter_to_hdfs/store_jupyter_to_hdfs</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Analyzer/05_ia/05_store_jupyter_to_hdfs/store_jupyter_to_hdfs.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Tutorial/blob/master/IRIS_Analyzer/05_ia/05_store_jupyter_to_hdfs/store_jupyter_to_hdfs.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="jupyter-notebook-hdfs">
+<h1>Jupyter Notebook을 활용한 분석과 분석결과를 HDFS에 저장하기<a class="headerlink" href="#jupyter-notebook-hdfs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>본 문서는 Jupyter Notbook으로 수행된 분석 결과 데이터와 모델 객체를 HDFS에 저장하는 방법을 기술하고 있습니다.</p>
+</div>
+<div class="section" id="hdfs">
+<h2>파이썬 hdfs 패키지 설치 및 실행<a class="headerlink" href="#hdfs" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서 제공하는 Jupyter Notebook에서 분석한 결과 생성된 data frame은 파이썬의 hdfs 패키지를 이용하여 HDFS서버에 적재할 수 있습니다.</p>
+<p>hdfs 패키지는 파이썬과 Hadoop 분산 파일 시스템을 연결하여 파일 시스템 관리 기능, 개별 파일을 읽고 쓰는 등의 기능을 제공합니다.</p>
+<p>기존에 hdfs 패키지가 설치되지 않은 경우 해당 패키지 설치가 필요합니다.</p>
+<p>Jupyer Noteobok에서 <strong>! + “command”</strong> 실행 시 리눅스 쉘 커맨드를 실행할 수 있습니다.</p>
+<img alt="hdfs패키지설치" src="../../../../_images/001.install_hdfs.png" />
+</div>
+<div class="section" id="import">
+<h2>파이썬 패키지 import<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h2>
+<p>파이썬에서 data frame, 이미지 생성 및 HDFS에 연결하기 위한 필수 패키지 내역은 다음과 같습니다.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 20%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>패키지명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>pandas</p></td>
+<td><p>데이터를 data frame 형태로 조작/연산 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>matplotlib</p></td>
+<td><p>데이터를 차트나 플롯 형태로 그릴 수 있습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>hdfs</p></td>
+<td><p>Hadoop 파일 시스템 클라이언트를 이용하여 파이썬과 HDFS의 연결 및 파일 시스템 관리/전송 기능을 제공합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>io</p></td>
+<td><p>파이썬에서 I/O 파일 객체를 처리하기 위한 기능을 제공합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>해당 패키지를 import 합니다.</p>
+<img alt="패키지로딩" src="../../../../_images/002.pkg_loading.png" />
+</div>
+<div class="section" id="data-frame-hdfs">
+<h2>data frame 생성 및 HDFS 저장<a class="headerlink" href="#data-frame-hdfs" title="Permalink to this headline">¶</a></h2>
+<p>분석 결과를 data frame 형태로 생성, Client 모듈을 호출하여 IRIS HDFS에 연결합니다.</p>
+<a class="reference internal image-reference" href="../../../../_images/003.call_client.png"><img alt="hdfs연결" src="../../../../_images/003.call_client.png" style="width: 592.8px; height: 235.2px;" /></a>
+<p>해당 코드 내에 <strong>&lt;IRIS HDFS 디렉토리/파일명&gt;</strong> 을 입력합니다.</p>
+<dl class="simple">
+<dt><strong>with client_hdfs.write(“IRIS의 HDFS위치+저장 파일명.csv”) as writer:</strong></dt><dd><p><strong>데이터프레임 변수명.to_csv(writer)</strong></p>
+</dd>
+</dl>
+<img alt="데이터프레임hdfs저장" src="../../../../_images/004.df_in_hdfs.png" />
+</div>
+<div class="section" id="plot-hdfs">
+<h2>Plot 이미지 생성 및 HDFS 저장<a class="headerlink" href="#plot-hdfs" title="Permalink to this headline">¶</a></h2>
+<p>파이썬 matplotlib 패키지를 이용하여 data frame으로부터 plot을 생성합니다.</p>
+<p>파이썬 io 모듈을 이용하여 이미지 형식의 파일을 byte 형식으로 변환, HDFS에 저장할 수 있습니다.</p>
+<img alt="플롯hdfs저장" src="../../../../_images/005.plt_in_hdfs.png" />
+</div>
+<div class="section" id="id2">
+<h2>[HDFS 브라우저] 에서 확인<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>[HDFS 조회] &gt; [HDFS 브라우저]에서 해당 파일이 적재된 것을 확인할 수 있습니다.</p>
+<img alt="hdfs브라우저확인" src="../../../../_images/006.chk_in_hdfs.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+	<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+	<script type="text/javascript">
+		/* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+        if(DOCUMENTATION_OPTIONS) {
+			DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = '.txt'
+        }
+    </script>
+
+
+</body>
+</html>

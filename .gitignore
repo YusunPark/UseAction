@@ -1,9 +1,0 @@
-out
-t_build
-t_source
-tmp
-run.sh
-*.pyc
-venv
-.DS_Store
-*.log
