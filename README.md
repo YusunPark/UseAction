@@ -22,7 +22,7 @@
 
 1. doc 디렉토리에 빌드하기를 원하는 문서를 저장
 
-   `docs` 디렉토리에 빌드하기를 원하는 문서를 저장
+   `build_source/docs` 디렉토리에 빌드하기를 원하는 문서를 저장
 
     ```
     IRIS-Data-Discovery-Service_Doc
