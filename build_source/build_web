@@ -160,6 +160,26 @@ if __name__ == '__main__':
     files = os.listdir(source)
     for file_name in files:
         full_file_name = os.path.join(source, file_name)
-        # shutil.copy(full_file_name, dest1)
+        dest_file_name = os.path.join(dest1, file_name)
+
+
+
+        # 파일이 이미 존재하는 경우 삭제
+
+        if os.path.isfile(dest1+file_name):
+            os.remove(dest_file_name)
         if os.path.isfile(full_file_name):
             shutil.copy(full_file_name, dest1)
+
+ 
+    folder = ['_images', '_sources', '_static', 'IRIS-Manual', 'IRIS-Tutorial']
+    for folder_name in folder:
+        full_folder_name = os.path.join(source, folder_name)
+        dest_folder_name = os.path.join(dest1, folder_name)
+       
+        # 폴더 존재할 경우 삭제
+        if os.path.isdir(dest_folder_name):
+            shutil.rmtree(dest_folder_name)
+
+        shutil.copytree(full_folder_name, dest_folder_name)
+
