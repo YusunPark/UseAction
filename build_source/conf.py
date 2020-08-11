@@ -72,7 +72,7 @@ master_doc = 'index'
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-html_static_path = ['myscript.js', 'theme.css']
+html_static_path = ['myscript.js', 'theme_custom.css']
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.

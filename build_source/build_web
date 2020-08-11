@@ -66,7 +66,7 @@ def setup_info(guide_path_list):
     info_path = os.path.join('templates', 'covers', 'title.conf')
     doc_info = DocInfoParser(info_path)
     doc_info.parse()
-    static_path_list = ['/'.join(['templates', 'web', 'theme.css'])]
+    static_path_list = ['/'.join(['templates', 'web', 'theme_custom.css'])]
     static_path_list += [_gen_html_static_path(guide_path) for guide_path in guide_path_list]
 
     doc_info.write_info(

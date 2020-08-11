@@ -1,7 +1,7 @@
 @media screen and (min-width: 1400px) {
 	.wy-nav-content {
 		height: auto;
-		max-width: 100%;
+		max-width: auto;
 	}
 }
 
@@ -91,6 +91,7 @@ footer {
 
 .wy-nav-content {
 	padding-top: 26px;
+	max-width: auto !important;
 }
 
 .wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {

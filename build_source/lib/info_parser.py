@@ -81,7 +81,7 @@ class DocInfoParser():
             if static_path_list is None:
                 static_path_list = [
                     '/'.join(['t_source', 'static']),
-                    '/'.join(['templates', 'web', 'theme.css'])]
+                    '/'.join(['templates', 'web', 'theme_custom.css'])]
 
             fd.write("html_static_path = ['%s']" % "','".join(static_path_list))
 
