@@ -6,8 +6,7 @@ Tutorial
     :hidden:
 
     Getting-Started/index.rst
-    IRIS_Analyzer/index.rst
-    IRIS_Studio/index.rst
+  
 
 
 
