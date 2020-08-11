@@ -16,6 +16,26 @@
 - t_source          임시 디렉토리 - 빌드 후
 - out               최종 컴파일된 문서 보관
 
+### virtualenv 환경 구축하기
+
+clone 받은 IRIS-Documentation 디렉토리 안에서 다음과 같이 명령어를 실행한다.
+
+- for mac & linex
+
+  ```
+  $ python -m virtualenv venv
+  $ source venv/bin/activate
+  (venv) $ pip install -r requirements.txt
+  ```
+
+- for windows
+
+  ```
+  > python -m virtualenv venv
+  > call venv\Scripts\activate
+  (venv) > pip install -r requirements.txt
+  ```
+
 ### 문서 빌드하기
 
 다음과 같이 패키지 작업을 진행함
