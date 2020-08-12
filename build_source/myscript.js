@@ -26,6 +26,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$(".wy-nav-content").css("max-width","none");
 	$(".wy-nav-content-wrap").css("background","#fcfcfc");
-	$(".wy-nav-side").css("background","rgb(137, 201, 244)");
+	$(".wy-nav-content-wrap-shift").css("left","300px");
+	$(".wy-nav-side").css("background","#5D81BB");
+	$(".wy-nav-side").css("width","300px");
 })
-
