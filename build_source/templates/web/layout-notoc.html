@@ -92,7 +92,11 @@
 
     .wy-nav-content-wrap {
         margin-left: 0px;
-        background: #fcfcfc
+        background: #fcfcfc !important;
+    }
+
+    .wy-nav-side {
+        background: rgb(137, 201, 244) !important;
     }
 
   </style>
@@ -105,6 +109,9 @@
   {% block extrabody %} {% endblock %}
 
   <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+
+    </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap" style="background: #fcfcfc">
 

@@ -25,4 +25,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$(".wy-nav-content").css("max-width","none");
+	$(".wy-nav-content-wrap").css("background","#fcfcfc");
+	$(".wy-nav-side").css("background","rgb(137, 201, 244)");
 })
+
