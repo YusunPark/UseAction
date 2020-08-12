@@ -180,19 +180,19 @@ code,.rst-content tt,.rst-content code {
 .wy-nav-content {
    background: #fcfcfc;
    max-width: none !important;
+   background: #fcfcfc;
+
 }
 
 .wy-nav-content-wrap {
-   /* background: #fcfcfc; */
+   background: #fcfcfc;
 }
 
 @media screen and (max-width: 768px) {
   .wy-body-for-nav {
     background: #fcfcfc;
   }
-  .wy-nav-content {
-    /* background: #fcfcfc; */
-  }
+
 }
 
 .rst-content tt.literal,.rst-content tt.literal,.rst-content code.literal {
