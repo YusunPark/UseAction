@@ -230,8 +230,8 @@ epub_title = project
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-extensions = ['docxsphinx']
-docx_template = os.path.join(os.path.abspath('.'), 'templates', 'docx', 'default.docx')
+# extensions = ['docxsphinx']
+# docx_template = os.path.join(os.path.abspath('.'), 'templates', 'docx', 'default.docx')
 
 # added by IOS
 # Global variables available to all templates
