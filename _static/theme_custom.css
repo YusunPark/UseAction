@@ -116,6 +116,11 @@ code,
   color: #565656;
 }
 
+.wy-menu-vertical li.toctree-l1.current li.toctree-l2 > a:hover {
+  background-color: rgb(235, 235, 235);
+  color: #565656;
+}
+
 /* second level headers - selected */
 .wy-menu-vertical li.toctree-l2.current > a {
   background-color: #e7f3fc;
@@ -139,7 +144,7 @@ code,
 
 /* third-tier links that aren't selected */
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
-  background-color: #e7f3fc;
+  background-color: #d2e4f5;
   color: #565656;
 }
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a:hover {
@@ -149,7 +154,7 @@ code,
 
 /* fourth-tier links that aren't selected */
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
-  background-color: #e7f3fc;
+  background-color: #d2e4f5;
   color: #565656;
 }
 .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a:hover {
