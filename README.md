@@ -4,7 +4,7 @@
 
 ### 기본 디렉토리 구조 및 설명
 
-- build_source 빌드를 위한 모든 것이 들어있는 디렉토리
+- **build_source 빌드를 위한 모든 것이 들어있는 디렉토리**
 - build 문서를 패키지 하기위한 프로그램
 - conf.py sphinx 기본 환경 파일
 - doc 패키지할 매뉴얼이 들어 있는 디렉토리
@@ -90,7 +90,7 @@ clone 받은 yusunpark.github.io 디렉토리 안에서 다음과 같이 명령�
 
 3. 빌드 문서 확인하기
 
-   - `/index.html` 을 통해 최종 빌드된 문서를 웹으로 확인할 수 있음
+   - **`/index.html` 을 통해 최종 빌드된 문서를 웹으로 확인할 수 있음**
    - `out/IRIS/index.html` 에서도 같은 문서를 저장하고 있다.
 
 ### info.conf
