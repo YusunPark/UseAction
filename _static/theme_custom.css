@@ -111,6 +111,11 @@ code,
   border-right: 1px solid #fcfcfc;
 }
 
+.wy-menu-vertical li.toctree-l1.current li.toctree-l2 > a {
+  background-color: #e7f3fc;
+  color: #565656;
+}
+
 /* second level headers - selected */
 .wy-menu-vertical li.toctree-l2.current > a {
   background-color: #e7f3fc;
