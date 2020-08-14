@@ -92,24 +92,23 @@ clone 받은 yusunpark.github.io 디렉토리 안에서 다음과 같이 명령�
 
    - **`/index.html` 을 통해 최종 빌드된 문서를 웹으로 확인할 수 있음**
    - `out/IRIS/index.html` 에서도 같은 문서를 저장하고 있다.
-   
+
    3-1. 테마 적용
+
    - 테마 미적용시
-   ![no_custom](https://user-images.githubusercontent.com/59571464/90233145-a2521c80-de58-11ea-9b08-aa94cffd9763.png)
-   
+     ![image](https://user-images.githubusercontent.com/59571464/90234257-5ef8ad80-de5a-11ea-891e-09cac2714afe.png)
+
    - 기존 테마
-   ![theme](https://user-images.githubusercontent.com/59571464/90233136-9fefc280-de58-11ea-8c87-f0045c6b9f70.png)
-   
+     ![theme](https://user-images.githubusercontent.com/59571464/90233136-9fefc280-de58-11ea-8c87-f0045c6b9f70.png)
+
    - custom 테마
-   ![theme_custom](https://user-images.githubusercontent.com/59571464/90233148-a3834980-de58-11ea-8de8-aa86a77b5126.png)
+     ![theme_custom](https://user-images.githubusercontent.com/59571464/90233148-a3834980-de58-11ea-8de8-aa86a77b5126.png)
 
    ```plain text
-   [테마 미적용]    theme.css와 theme_custom.css 모두 build_source/templates/web 디렉토리에 있을 경우
-   [기존 테마]      theme.css만 build_source 디렉토리에 있을 경우
+   [테마 미적용]     theme.css와 theme_custom.css 모두 build_source/templates/web 디렉토리에 있을 경우
+   [기존 테마]       theme.css만 build_source 디렉토리에 있을 경우
    [custom 테마]    theme_custom.css만 build_source 디렉토리에 있을 경우
    ```
-
-
 
 ### info.conf
 
