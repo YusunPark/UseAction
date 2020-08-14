@@ -1,6 +1,4 @@
 $(document).ready(function () {
-  $(".wy-nav-content").css("max-width", "none");
-
   $("header .links__icon").on("click", function () {
     $("header .header__searchbar").hide();
     $("header .header__links").slideToggle();
