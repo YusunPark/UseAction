@@ -163,7 +163,6 @@ if __name__ == '__main__':
         dest_file_name = os.path.join(dest1, file_name)
 
 
-
         # 파일이 이미 존재하는 경우 삭제
 
         if os.path.isfile(dest1+file_name):
