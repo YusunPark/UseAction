@@ -1,7 +1,7 @@
 @media screen and (min-width: 1400px) {
   .wy-nav-content {
     height: auto;
-    max-width: auto;
+    max-width: none;
   }
 }
 
@@ -94,7 +94,7 @@ footer {
 
 .wy-nav-content {
   padding-top: 26px;
-  max-width: auto !important;
+  max-width: none !important;
 }
 
 .wy-table td,
@@ -138,17 +138,13 @@ footer {
 .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
   background: transparent;
   border: none;
-  font-size: 1em;
+  /* font-size: 1em; */
 }
 
 .wy-menu-vertical li.toctree-l2.current > a {
   background: #e0e0e0;
   border-color: #ddd;
   border-top: none;
-}
-
-.wy-menu-vertical li a {
-  white-space: nowrap;
 }
 
 .wy-menu-vertical li.on a,
