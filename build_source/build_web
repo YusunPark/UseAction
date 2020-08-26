@@ -5,6 +5,7 @@ import subprocess
 import sys
 import os
 import argparse
+import glob
 from lib import util
 from lib.info_parser import DocInfoParser
 from lib.error import DocInfoError
@@ -133,7 +134,7 @@ def build():
 
             shutil.copytree(path, os.path.join(TEMP_SOURCE_DIR, root_guide_name, guide_name))
             guide_path_list.append(os.path.join(TEMP_SOURCE_DIR, root_guide_name, guide_name))
-
+       
         setup_info(guide_path_list)
  
         # 메인 index.rst 생성
@@ -155,12 +156,18 @@ def build():
 if __name__ == '__main__':
     build()
 
+    source = './out/IRIS'
+    dest = '../docs'
+
+    # 폴더 존재할 경우 삭제
+    if os.path.isdir(dest):
+        shutil.rmtree(dest)
+    
     # 빌드 최종 결과물 /docs폴더로 이동
-    source = './out/IRIS/'
-    dest = '../docs/'
     shutil.move(source, dest)
-    # IRIS 로고를 위해서
-    shutil.copytree("./assets", dest)
+
+    # # IRIS 로고를 위해서
+    # shutil.copytree("./assets", dest)
 
     # # source = './out/IRIS'
     # # dest1 = '../'
