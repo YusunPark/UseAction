@@ -166,8 +166,8 @@ if __name__ == '__main__':
     # 빌드 최종 결과물 /docs폴더로 이동
     shutil.move(source, dest)
 
-    # # IRIS 로고를 위해서
-    # shutil.copytree("./assets", dest)
+    # IRIS 로고를 위해서
+    shutil.copytree("./assets", dest)
 
     # # source = './out/IRIS'
     # # dest1 = '../'
