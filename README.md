@@ -96,7 +96,7 @@ clone 받은 yusunpark.github.io 디렉토리 안에서 다음과 같이 명령�
    3-1. 테마 적용
 
    - `build_source/templates/web/layout.html` 와 `build_source/conf.py` 파일에 css 경로를 넣어주어야 한다.
-<!-- 
+
    - 테마 미적용시
      ![image](https://user-images.githubusercontent.com/59571464/90234257-5ef8ad80-de5a-11ea-891e-09cac2714afe.png)
 
@@ -110,7 +110,7 @@ clone 받은 yusunpark.github.io 디렉토리 안에서 다음과 같이 명령�
    [테마 미적용]     theme.css와 theme_custom.css 모두 build_source/templates/web 디렉토리에 있을 경우
    [기존 테마]       theme.css만 build_source 디렉토리에 있을 경우
    [custom 테마]    theme_custom.css만 build_source 디렉토리에 있을 경우
-   ``` -->
+   ```
 
 ### info.conf
 
