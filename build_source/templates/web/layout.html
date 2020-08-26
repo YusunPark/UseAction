@@ -2,8 +2,7 @@
 <!--  -->
 {% extends "!layout.html" %}
 <!--  -->
-{% set css_files = css_files + ['_static/theme.css']
-%}
+{% set css_files = css_files + ['_static/theme_custom.css'] %}
 <!--  -->
 {% set script_files = script_files + ['_static/myscript.js'] %}
 <!--  -->
@@ -19,7 +18,6 @@
   if (DOCUMENTATION_OPTIONS) {
     DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = "{{ sourcelink_suffix }}";
   }
- 
 </script>
 {% endblock %} {% block extrahead %}
 <meta

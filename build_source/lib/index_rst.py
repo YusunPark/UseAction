@@ -4,12 +4,13 @@
 class IndexRstGenerator():
     def __init__(self, doc_name):
         self._doc_name = doc_name
-        self._doc_path = []
+        self._doc_path = ['IRIS-Tutorial', 'IRIS-Manual', 'IRIS-Usecase', 'IRIS-FAQ']
 
     def add_doc_path_list(self, doc_path_list):
         for path in doc_path_list:
+            
             if path not in self._doc_path:
-                self._doc_path.append(path)
+                self._doc_path.insert(-2, path)
 
 
     def write(self, write_path):

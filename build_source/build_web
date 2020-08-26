@@ -119,6 +119,7 @@ def build():
 
     try:        
         root_guide_name_list = []
+
         for guide_full_name, path in build_target.items():
             _, root_guide_name, guide_name = path.split(os.sep)
             root_guide_name_list.append(root_guide_name)
@@ -147,54 +148,39 @@ def build():
         # shutil.copy(root_index_file_path, TEMP_SOURCE_DIR)
         
         run_sphinx()
-        finish('IRIS')
+        # finish('IRIS')
 
     except DocInfoError as err:
         print(err)
 
 
+def isdir(dirpath):
+    return os.path.isdir(dirpath)
+
+
 if __name__ == '__main__':
     build()
 
-    source = './out/IRIS'
-    dest = '../docs'
+    # 빌드에 필요한 각종 경로 설정
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    source_dir = f'{base_dir}/t_build/html'
+    dist_dir = f'{base_dir}/../docs'
+    assets_dir = f'{dist_dir}/assets'
+    nojekyll = f'{dist_dir}/.nojekyll'
 
-    # 폴더 존재할 경우 삭제
-    if os.path.isdir(dest):
-        shutil.rmtree(dest)
+    # docs 폴더가 존재할 경우 제거
+    if isdir(dist_dir):
+        print('The output directory already exists.')
+        print('Delete and recreate the output directory.')
+        shutil.rmtree(dist_dir, ignore_errors=False)
     
-    # 빌드 최종 결과물 /docs폴더로 이동
-    shutil.move(source, dest)
-
-    # IRIS 로고를 위해서
-    shutil.copytree("./assets", dest)
-
-    # # source = './out/IRIS'
-    # # dest1 = '../'
-
-
-    # files = os.listdir(source)
-    # for file_name in files:
-    #     full_file_name = os.path.join(source, file_name)
-    #     dest_file_name = os.path.join(dest1, file_name)
-
-
-    #     # 파일이 이미 존재하는 경우 삭제
-
-    #     if os.path.isfile(dest1+file_name):
-    #         os.remove(dest_file_name)
-    #     if os.path.isfile(full_file_name):
-    #         shutil.copy(full_file_name, dest1)
-
- 
-    # folder = ['_images', '_sources', '_static', 'IRIS-Manual', 'IRIS-Tutorial']
-    # for folder_name in folder:
-    #     full_folder_name = os.path.join(source, folder_name)
-    #     dest_folder_name = os.path.join(dest1, folder_name)
-       
-    #     # 폴더 존재할 경우 삭제
-    #     if os.path.isdir(dest_folder_name):
-    #         shutil.rmtree(dest_folder_name)
-
-    #     shutil.copytree(full_folder_name, dest_folder_name)
-
+    # 빌드 최종 결과물 docs 폴더로 이동
+    shutil.copytree(source_dir, dist_dir)
+    
+    # assets 폴더가 존재할 경우 제거
+    if isdir(assets_dir):
+        shutil.rmtree(assets_dir, ignore_errors=False)
+    shutil.copytree(f'{base_dir}/assets', assets_dir)
+    
+    # .nojekyll 파일 생성
+    open(nojekyll, 'a').close()
