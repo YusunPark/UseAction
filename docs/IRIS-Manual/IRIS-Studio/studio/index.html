@@ -1,0 +1,2563 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>보고서 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+    <li>보고서</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/studio/index.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Studio/studio/index</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Studio/studio/index</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Studio/studio/index
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Studio/studio/index</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/studio/index.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Studio/studio/index.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#contents">보고서</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id43">보고서</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id44">보고서 진입</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id45">보고서 목록</a></p>
+<ul>
+<li><p><a class="reference internal" href="#url" id="id46">내보내기 URL</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id47">편집</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id48">접근권한</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id49">대시보드</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id50">새보고서</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id8" id="id51">보고서 작성</a></p>
+<ul>
+<li><p><a class="reference internal" href="#ui" id="id52">공통 UI</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id9" id="id53">데이터 탭(공통)</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id54">데이터 유형 설정(공통)</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id55">데이터 모델</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id56">연결정보</a></p></li>
+<li><p><a class="reference internal" href="#metric" id="id57">Metric 유형 설정</a></p></li>
+<li><p><a class="reference internal" href="#id13" id="id58">시간 설정</a></p></li>
+<li><p><a class="reference internal" href="#agent" id="id59">대상 Agent</a></p></li>
+<li><p><a class="reference internal" href="#id14" id="id60">검색어</a></p></li>
+<li><p><a class="reference internal" href="#restful-api" id="id61">Restful API</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id15" id="id62">사용자 정의 탭</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id16" id="id63">데이터 추가</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id64">데이터 삭제</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id65">데이터의 순서 변경</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id19" id="id66">변수 설정(공통)</a></p></li>
+<li><p><a class="reference internal" href="#id20" id="id67">이벤트 값 전달 설정(공통)</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id68">트리거 설정(공통)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id22" id="id69">데이터 실행 방법 설정</a></p></li>
+<li><p><a class="reference internal" href="#id23" id="id70">자동실행</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id71">이벤트 객체 추가</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id72">이벤트 객체 삭제</a></p></li>
+<li><p><a class="reference internal" href="#id26" id="id73">트리거 설정 확인</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id27" id="id74">객체 설정(공통)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id28" id="id75">크기</a></p></li>
+<li><p><a class="reference internal" href="#id29" id="id76">위치</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id30" id="id77">서식 설정</a></p></li>
+<li><p><a class="reference internal" href="#canvas" id="id78">캔버스 (Canvas)</a></p></li>
+<li><p><a class="reference internal" href="#map" id="id79">지도 (Map)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id31" id="id80">레이어 선택</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id32" id="id81">레이어 관리</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id33" id="id82">데이터 설정</a></p></li>
+<li><p><a class="reference internal" href="#id34" id="id83">시각화 설정</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id35" id="id84">시각화 옵션</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id36" id="id85">추가한 레이어의 설정</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id37" id="id86">데이터 설정</a></p></li>
+<li><p><a class="reference internal" href="#id38" id="id87">시각화</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id39" id="id88">시각화 유형</a></p></li>
+<li><p><a class="reference internal" href="#id40" id="id89">시각화 옵션</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id41" id="id90">객체 설정</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#label" id="id91">라벨(Label)</a></p></li>
+<li><p><a class="reference internal" href="#rectangle" id="id92">사각형(Rectangle)</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#contents">보고서 진입</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>보고서 메뉴로 진입합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/studio_list01.jpg"><img alt="IRIS메뉴" src="../../../_images/studio_list01.jpg" style="width: 175.0px; height: 120.0px;" /></a>
+</div>
+<div class="section" id="id3">
+<h2><a class="toc-backref" href="#contents">보고서 목록</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../../../_images/studio_list02.jpg"><img alt="보고서목록" src="../../../_images/studio_list02.jpg" style="width: 960.0px; height: 382.5px;" /></a>
+<div class="section" id="url">
+<h3><a class="toc-backref" href="#contents">내보내기 URL</a><a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당 보고서의 내보내기 URL을 생성 할 수 있습니다.</div>
+<div class="line">생성된 내보내기 URL은 관리기능을 통하여 복사, 보기(내보내기 URL 보기), 삭제를 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/studio_list03.jpg"><img alt="내보내기URL" src="../../../_images/studio_list03.jpg" style="width: 153.0px; height: 188.0px;" /></a>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#contents">편집</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당보고서를 편집 할 수 있습니다.</div>
+<div class="line">보고서의 이름 변경, 수정, 복제, 삭제의 기능이 제공됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/studio_list041.jpg"><img alt="편집" src="../../../_images/studio_list041.jpg" style="width: 91.0px; height: 212.0px;" /></a>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#contents">접근권한</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당 보고서의 사용자 권한을 지정 할 수 있습니다.</div>
+<div class="line">사용자 별 권한을 추가 하거나 사용자 그룹 단위의 권한 설정을 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/studio_list051.jpg"><img alt="접근권한" src="../../../_images/studio_list051.jpg" style="width: 502.0px; height: 579.0px;" /></a>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#contents">대시보드</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당 보고서의 대시보드에서의 사용여부를 선택 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/studio_list061.jpg"><img alt="대시보드" src="../../../_images/studio_list061.jpg" style="width: 106.0px; height: 176.0px;" /></a>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#contents">새보고서</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">오른쪽 상단 “새보고서” 버튼 클릭 시, 보고서를 생성, 편집 할 수 있는 화면이 출력 됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/studio_list071.jpg"><img alt="새보고서" src="../../../_images/studio_list071.jpg" style="width: 398.0px; height: 258.0px;" /></a>
+</div>
+</div>
+<div class="section" id="id8">
+<h2><a class="toc-backref" href="#contents">보고서 작성</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ui">
+<h3><a class="toc-backref" href="#contents">공통 UI</a><a class="headerlink" href="#ui" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">다수의 객체에서 공통으로 사용되는 기능에 관해 설명합니다.</div>
+</div>
+<div class="section" id="id9">
+<h4><a class="toc-backref" href="#contents">데이터 탭(공통)</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">객체를 사용할때 데이터가 필요한 부분에서 해당 탭이 활성화됩니다.</div>
+<div class="line">데이터 유형을 설정하고 그에 따른 옵션들을 선택합니다.</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h4><a class="toc-backref" href="#contents">데이터 유형 설정(공통)</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">사용하고자 하는 데이터 유형을 설정합니다.</div>
+</div>
+<p><strong>데이터 유형 종류</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>데이터 유형</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>데이터 모델</p></td>
+<td><p>DB의 데이터를 추상화한 데이터 묶음으로서 별도의 테이블처럼 사용할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DSMS</p></td>
+<td><p>Data Source Manager Service, 다양한 데이터에 대한 접근을 제공합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>SMS</p></td>
+<td><p>System Monitoring Service, 시스템 자원 현황에 대한 정보를 제공합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>REST API</p></td>
+<td><p>데이터를 REST 형식으로 사용할 수 있게 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>객체에 따라 특정 데이터 유형은 지원하지 않을 수도 있습니다.</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_011.png"><img alt="데이터 유형" src="../../../_images/data_tab_011.png" style="width: 276.0px; height: 185.0px;" /></a>
+<p><strong>데이터 유형별 선택옵션</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>데이터 유형</p></th>
+<th class="head"><p>선택옵션</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>데이터 모델</p></td>
+<td><p>데이터모델, 시간 설정, 검색어</p></td>
+</tr>
+<tr class="row-odd"><td><p>DSMS</p></td>
+<td><p>연결정보, 검색어</p></td>
+</tr>
+<tr class="row-even"><td><p>SMS</p></td>
+<td><p>Metric 유형 설정</p></td>
+</tr>
+<tr class="row-odd"><td><p>REST API</p></td>
+<td><p>Restful API 선택</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h4><a class="toc-backref" href="#contents">데이터 모델</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">미리 정의된 데이터 모델 중 하나를 선택합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/data_tab_021.png"><img alt="데이터 모델" src="../../../_images/data_tab_021.png" style="width: 276.0px; height: 280.0px;" /></a>
+</div>
+<div class="section" id="id12">
+<h4><a class="toc-backref" href="#contents">연결정보</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">IRIS, MySQL, Oracle DataBase, Postgre 등 다양한 유형의 데이터 소스를 제공합니다.</div>
+<div class="line">사용하고자 하는 데이터 소스 중 하나를 선택합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/data_tab_031.png"><img alt="데이터 모델" src="../../../_images/data_tab_031.png" style="width: 276.0px; height: 280.0px;" /></a>
+</div>
+<div class="section" id="metric">
+<h4><a class="toc-backref" href="#contents">Metric 유형 설정</a><a class="headerlink" href="#metric" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">API Type, Equipment type, Metric type, Metric Category, Agent 또는 사용자 정의 Agent 를 선택합니다.</div>
+<div class="line">각 Metric 유형별로 필요한 선택사항이 활성화됩니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>API Type</p></th>
+<th class="head"><p>선택사항</p></th>
+<th class="head"><p>추가 선택사항</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>current</p></td>
+<td><p>server, switch</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>resource</p></td>
+<td><p>resource</p></td>
+<td><p>시간 설정, 대상 Agent</p></td>
+</tr>
+<tr class="row-even"><td><p>alarm/history</p></td>
+<td><p>Equipment, Metric</p></td>
+<td><p>시간 설정, 대상 Agent</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>current</strong> 를 선택한 경우</p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_041.png"><img alt="current 유형 설정" src="../../../_images/data_tab_041.png" style="width: 276.0px; height: 158.0px;" /></a>
+<p><strong>resource</strong> 를 선택한 경우</p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_051.png"><img alt="resource 유형 설정" src="../../../_images/data_tab_051.png" style="width: 276.0px; height: 262.0px;" /></a>
+<p><strong>alarm/history</strong> 를 선택한 경우</p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_061.png"><img alt="alarm/history 유형 설정" src="../../../_images/data_tab_061.png" style="width: 276.0px; height: 296.0px;" /></a>
+</div>
+<div class="section" id="id13">
+<h4><a class="toc-backref" href="#contents">시간 설정</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">미리 설정된 시간 또는 사용자가 임의로 날짜 및 시간 범위를 지정합니다.</div>
+</div>
+<p><strong>미리 설정</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_071.png"><img alt="미리 설정" src="../../../_images/data_tab_071.png" style="width: 570.0px; height: 391.0px;" /></a>
+<p><strong>날짜 및 시간 범위</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_081.png"><img alt="시간 범위 사용자 선택" src="../../../_images/data_tab_081.png" style="width: 570.0px; height: 481.0px;" /></a>
+</div>
+<div class="section" id="agent">
+<h4><a class="toc-backref" href="#contents">대상 Agent</a><a class="headerlink" href="#agent" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">설정된 Agent 또는 사용자 정의 Agent 를 선택합니다.</div>
+<div class="line">데이터를 수집하기 위해 별도의 Agent 가 설치되어 있으며 이를 통해 정보를 수집할수 있습니다.</div>
+</div>
+<p><strong>Agent 선택</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_091.png"><img alt="Agent 선택" src="../../../_images/data_tab_091.png" style="width: 262.0px; height: 232.0px;" /></a>
+<p><strong>사용자 정의 Agent 선택</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_101.png"><img alt="사용자 정의 Agent 선택" src="../../../_images/data_tab_101.png" style="width: 262.0px; height: 108.0px;" /></a>
+</div>
+<div class="section" id="id14">
+<h4><a class="toc-backref" href="#contents">검색어</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">선택된 데이터 모델 또는 DSMS 의 연결정보의 질의에 사용될 검색어(query)를 입력합니다.</div>
+<div class="line">검색어에는 변수명이 ${<em>VAR</em>} 와 같이 포함될 수 있습니다.</div>
+<div class="line">치환된 검색어는 미리 보기 기능으로 확인할수 있습니다.</div>
+<div class="line">사용되는 변수명은 각 객체의 변수명 설정에서 확인할 수 있으며 전체변수명 보기 기능을 통해서도 확인할 수 있습니다.</div>
+<div class="line">변수 치환에 관한 문법은 <a class="reference external" href="https://mozilla.github.io/nunjucks/">nunjucks</a> 을 참조할 수 있습니다</div>
+<div class="line"><em>{{ }} 은 ${ } 으로 변경되었으며 다른 형식은 동일하게 사용할 수 있습니다.</em></div>
+</div>
+<p><strong>검색어 입력</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_111.png"><img alt="검색어 입력" src="../../../_images/data_tab_111.png" style="width: 276.0px; height: 136.0px;" /></a>
+<p><strong>검색어 미리보기</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_121.png"><img alt="검색어 미리 보기" src="../../../_images/data_tab_121.png" style="width: 652.0px; height: 140.0px;" /></a>
+<p><strong>전체 변수명 보기</strong></p>
+<a class="reference internal image-reference" href="../../../_images/data_tab_131.png"><img alt="전체 변수명 보기" src="../../../_images/data_tab_131.png" style="width: 495.0px; height: 309.0px;" /></a>
+</div>
+<div class="section" id="restful-api">
+<h4><a class="toc-backref" href="#contents">Restful API</a><a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">데이터로 Rest 를 사용할 수 있습니다.</div>
+<div class="line">보고서에 생성된 Restful API 객체를 선택할 수 있으며 별도의 화면이 제공됩니다.</div>
+<div class="line">트리거 설정 버튼을 이용하여 Restful API 객체를 선택/삭제 할 수 있습니다.</div>
+<div class="line">해당 객체의 사용법은 <a href="#id93"><span class="problematic" id="id94">`RESTful API(REST ful API)`_</span></a> 을 참조하세요</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/data_tab_141.png"><img alt="Restful API 선택" src="../../../_images/data_tab_141.png" style="width: 547.0px; height: 155.0px;" /></a>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#contents">사용자 정의 탭</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Tab, Combo, Check-radio 객체에서 데이터를 사용자 정의로 구성할 때 사용합니다.</div>
+<div class="line">항목의 용도는 조금씩 다르지만 동일한 형식으로 데이터를 구성합니다.</div>
+</div>
+<table class="docutils align-default" id="id42">
+<caption><span class="caption-text">사용자 데이터의 설정</span><a class="headerlink" href="#id42" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>이름 또는 항목</p></td>
+<td><p>화면에 표시되는 이름입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>값</p></td>
+<td><p>해당 항목에 대한 값으로 따로 지정하지 않을 경우 해당 항목의 이름을 사용합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>사용자 정의 항목 UI</strong></p>
+<a class="reference internal image-reference" href="../../../_images/custom_01.png"><img alt="사용자 항목 UI" src="../../../_images/custom_01.png" style="width: 276.0px; height: 279.0px;" /></a>
+<div class="section" id="id16">
+<h4><a class="toc-backref" href="#contents">데이터 추가</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">추가 버튼을 클릭하여 항목을 추가 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/custom_02.png"><img alt="사용자 항목 추가" src="../../../_images/custom_02.png" style="width: 276.0px; height: 36.0px;" /></a>
+</div>
+<div class="section" id="id17">
+<h4><a class="toc-backref" href="#contents">데이터 삭제</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">항목 우측에 ‘X’ 버튼을 이용하여 삭제 합니다.</div>
+<div class="line"><strong>항목이 하나일 경우는 삭제할 수 없습니다.</strong></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/custom_03.png"><img alt="사용자 항목 삭제" src="../../../_images/custom_03.png" style="width: 276.0px; height: 72.0px;" /></a>
+</div>
+<div class="section" id="id18">
+<h4><a class="toc-backref" href="#contents">데이터의 순서 변경</a><a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>항목 좌측의 아래, 위 화살표를 이용해서 표시 순서를 변경할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/custom_04.png"><img alt="사용자 항목의 순서 변경" src="../../../_images/custom_04.png" style="width: 276.0px; height: 185.0px;" /></a>
+</div>
+</div>
+<div class="section" id="id19">
+<h3><a class="toc-backref" href="#contents">변수 설정(공통)</a><a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당객체의 값을 설정할 변수를 설정합니다.</div>
+<div class="line">변수값은 ${<em>VAR</em>} 의 값을 가질 수 있으며 문법도 동일하게 사용할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/variable_01.png"><img alt="변수 설정" src="../../../_images/variable_01.png" style="width: 273.0px; height: 104.0px;" /></a>
+</div>
+<div class="section" id="id20">
+<h3><a class="toc-backref" href="#contents">이벤트 값 전달 설정(공통)</a><a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>해당 객체의 값을 참조하고자 할 때 사용하는 내용이 표시됩니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>오브젝트 ID</p></td>
+<td><p>해당 객체의 고유 아이디로 자동으로 할당됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 명</p></td>
+<td><p>해당 객체를 사용하기 위한 변수명으로 사용자가 지정할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../../_images/event_011.png"><img alt="이벤트값 전달 설정" src="../../../_images/event_011.png" style="width: 273.0px; height: 98.0px;" /></a>
+</div>
+<div class="section" id="id21">
+<h3><a class="toc-backref" href="#contents">트리거 설정(공통)</a><a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<p>다른 객체로부터 이벤트를 수신하거나 해당 객체의 이벤트를 수신하는 객체를 확인할 수 있습니다.</p>
+<div class="section" id="id22">
+<h4><a class="toc-backref" href="#contents">데이터 실행 방법 설정</a><a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<p>다른 객체로부터 이벤트를 수신할 때 사용합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/trigger_011.png"><img alt="데이터 실행 방법 설정" src="../../../_images/trigger_011.png" style="width: 276.0px; height: 151.0px;" /></a>
+</div>
+<div class="section" id="id23">
+<h4><a class="toc-backref" href="#contents">자동실행</a><a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<p>해당 옵션을 체크하면 보고서 로딩 시 해당 객체가 실행됩니다.</p>
+<a class="reference internal image-reference" href="../../../_images/trigger_021.png"><img alt="자동실행" src="../../../_images/trigger_021.png" style="width: 84.0px; height: 26.0px;" /></a>
+</div>
+<div class="section" id="id24">
+<h4><a class="toc-backref" href="#contents">이벤트 객체 추가</a><a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">트리거 설정 버튼을 통해 이벤트를 수신하고자 하는 객체를 선택할 수 있습니다.</div>
+<div class="line"><br /></div>
+<div class="line">트리거 설정 버튼 클릭</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/trigger_031.png"><img alt="트리거 설정 버튼 클릭" src="../../../_images/trigger_031.png" style="width: 584.0px; height: 105.0px;" /></a>
+<div class="line-block">
+<div class="line">트리거 객체 선택</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/trigger_041.png"><img alt="트리거 객체 선택" src="../../../_images/trigger_041.png" style="width: 584.0px; height: 105.0px;" /></a>
+<div class="line-block">
+<div class="line">트리거 설정 완료</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/trigger_051.png"><img alt="트리거 설정 완료" src="../../../_images/trigger_051.png" style="width: 584.0px; height: 105.0px;" /></a>
+</div>
+<div class="section" id="id25">
+<h4><a class="toc-backref" href="#contents">이벤트 객체 삭제</a><a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<p>추가된 객체의 삭제(X) 버튼을 클릭하여 수신객체를 삭제할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/trigger_061.png"><img alt="트리거 이벤트 삭제" src="../../../_images/trigger_061.png" style="width: 584.0px; height: 105.0px;" /></a>
+</div>
+<div class="section" id="id26">
+<h4><a class="toc-backref" href="#contents">트리거 설정 확인</a><a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">해당 객체의 이벤트를 수신하는 객체를 확인합니다.</div>
+<div class="line">확인만 가능하며 해당 객체의 삭제는 수신대상 객체의 데이터 실행 방법 설정을 통해서만 가능합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/trigger_071.png"><img alt="트리거 설정 확인" src="../../../_images/trigger_071.png" style="width: 275.0px; height: 136.0px;" /></a>
+</div>
+</div>
+<div class="section" id="id27">
+<h3><a class="toc-backref" href="#contents">객체 설정(공통)</a><a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">객체의 가로세로 크기와 X,Y 위치를 입력값으로 수정할 수 있습니다.</div>
+<div class="line">마우스를 이용한 수정된 값이 실시간으로 반영되며 사용자가 입력한 값이 해당 객체에 반영됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/object_011.png"><img alt="트리거 설정 확인" src="../../../_images/object_011.png" style="width: 277.0px; height: 262.0px;" /></a>
+<div class="section" id="id28">
+<h4><a class="toc-backref" href="#contents">크기</a><a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">객체의 가로/세로의 크기를 설정합니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>가로</p></td>
+<td><p>객체의 가로 크기를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>세로</p></td>
+<td><p>객체의 세로 크기를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id29">
+<h4><a class="toc-backref" href="#contents">위치</a><a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<p>객체의 X,Y 위치를 설정합니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X</p></td>
+<td><p>좌표상의 X 위치를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y</p></td>
+<td><p>좌표상의 Y 위치를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id30">
+<h3><a class="toc-backref" href="#contents">서식 설정</a><a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">라벨 객체와 챠트 객체의 시각화 유형 중 단일값에 서식을 적용할 수 있습니다.</div>
+<div class="line">라벨 객체는 설정 영역에서, 챠트 객체는 시각화 옵션에서 해당 객체의 서식을 설정할 수 있습니다.</div>
+<div class="line"><br /></div>
+<div class="line"><strong>챠트(단일값) 일 때 서식설정</strong></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/style_01.png"><img alt="단일 값 일반" src="../../../_images/style_01.png" style="width: 482.0px; height: 224.0px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/style_02.png"><img alt="단일 값 정렬" src="../../../_images/style_02.png" style="width: 482.0px; height: 118.0px;" /></a>
+<p><strong>라벨(Label) 일 때 서식설정</strong></p>
+<a class="reference internal image-reference" href="../../../_images/style_03.png"><img alt="라벨 속성" src="../../../_images/style_03.png" style="width: 277.0px; height: 334.0px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>글꼴/서체</p></td>
+<td><p>글꼴을 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>색상</p></td>
+<td><p>글꼴의 색상을 선택합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>크기</p></td>
+<td><p>글꼴의 크기를 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>스타일</p></td>
+<td><p>글꼴의 스타일을 선택합니다. (굵게, 밑줄, 이탤릭체, 취소선)</p></td>
+</tr>
+<tr class="row-even"><td><p>가로 정렬</p></td>
+<td><p>글자의 가로 정렬을 선택합니다. (없음, 가운데, 왼쪽, 혼합)</p></td>
+</tr>
+<tr class="row-odd"><td><p>세로 정렬</p></td>
+<td><p>글자의 세로 정렬을 선택합니다. (위, 중간, 아래)</p></td>
+</tr>
+<tr class="row-even"><td><p>텍스트 정렬</p></td>
+<td><p>글자의 방향을 선택합니다. (가로, 세로)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="canvas">
+<h3><a class="toc-backref" href="#contents">캔버스 (Canvas)</a><a class="headerlink" href="#canvas" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">캔버스는 객체를 배치하여 캔버스의 크기만큼 화면에 보여줍니다.</div>
+</div>
+<p>캔버스의 옵션들을 설정할 수 있습니다.</p>
+<p><strong>캔버스 색상</strong></p>
+<a class="reference internal image-reference" href="../../../_images/canvas_011.png"><img alt="캔버스 색상" src="../../../_images/canvas_011.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>색상 선택</p></td>
+<td><p>Canvas 영역의 색상을 변경합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>배경 색상 선택</p></td>
+<td><p>Canvase 바깥 영역의 색상을 변경합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>변수 설정</strong></p>
+<p>보고서의 Global 변수를 설정하고 외부 보고서 및 내부에서 사용할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/canvas_02.png"><img alt="변수 설정" src="../../../_images/canvas_02.png" style="width: 300px;" /></a>
+<img alt="../../../_images/studio-chart1.png" src="../../../_images/studio-chart1.png" />
+<p>차트 객체는 요청한 데이터로 각종 차트를 구성하여 시각화할 수 있습니다.</p>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#ui">공통 UI</a> 를 참고하시면 됩니다.</p>
+<p>시각화 설정에서는 차트의 스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p>데이터를 표현하고자 하는 차트를 선택할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/chart_011.png"><img alt="시각화 유형" src="../../../_images/chart_011.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>차트</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>테이블</p></td>
+<td><p>데이터를 테이블 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>꺾은선형</p></td>
+<td><p>데이터를 Line 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>다중축</p></td>
+<td><p>데이터를 다 중축 혼합형(세로막대형, 꺾은선형) 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>세로막대형</p></td>
+<td><p>데이터를 Column 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>가로막대형</p></td>
+<td><p>데이터를 Bar 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>시계열 분포</p></td>
+<td><p>데이터를 Scatter 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>모션</p></td>
+<td><p>데이터를 Motion 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sankey</p></td>
+<td><p>데이터를 Sankey 차트 형태로 보여줍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>원형</p></td>
+<td><p>데이터를 Pie 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>히트맵</p></td>
+<td><p>데이터를 Heat Map 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>단일값</p></td>
+<td><p>데이터를 값 하나의 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Gauge</p></td>
+<td><p>데이터를 Gauge 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>트리맵</p></td>
+<td><p>데이터를 Tree Map 차트 형태로 보여 줍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>워드클라우드</p></td>
+<td><p>데이터를 Word Cloud 차트 형태로 보여 줍니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>차트를 그리기 위한 옵션들을 설정할 수 있습니다.</p>
+<p><strong>일반</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_02.png"><img alt="시각화 옵션 일반" src="../../../_images/chart_02.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>행번호</p></td>
+<td><p>테이블에서 행 번호 추가할지 여부 및 행 번호 컬럼의 이름을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>필터</p></td>
+<td><p>테이블에서 필터를 표시할지 안 할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>목록 개수</p></td>
+<td><p>테이블에서 데이터를 한 번에 몇 행까지 보여 줄지 여부 및 목록 개수를 설정할 수 있는 Select Box를 보여 줄지를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>막대형 스택모드</p></td>
+<td><p>막대형 차트에서 사용되며, 끄기는 Bar 생성 개수가 컬럼수만큼 증가하고, 스택형은 하나의 Bar에 모든 컬럼 데이터를 표시하며, 풀스택형은 하나의 Bar에 100% 비율로 모든 컬럼의 데이터의 비율을 보여줍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>꺾은선형 Null 값</p></td>
+<td><p>꺾은선형 차트에서 데이터의 null 값이 있으면 표시할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>데이터 값 표시</p></td>
+<td><p>차트에 데이터값을 표시할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>배경 색상</p></td>
+<td><p>히트맵 차트에서 데이터에 대한 기준 색을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>글꼴</p></td>
+<td><p>단일 값 차트에서 글꼴을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>글자 색상</p></td>
+<td><p>단일 값 차트에서 글자 색상을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>글자 크기</p></td>
+<td><p>단일 값 차트에서 글자 크기를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>스타일</p></td>
+<td><p>단일 값 차트에서 글자의 스타일을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>다운로드 버튼</p></td>
+<td><p>다운로드 버튼을 표시할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>상세보기 버튼</p></td>
+<td><p>상세보기 버튼을 표시할지를 설정합니다</p></td>
+</tr>
+<tr class="row-odd"><td><p>테이블 크기</p></td>
+<td><p>테이블 컬럼 크기를 객체 영역의 크기 기준으로 동일하게 맞출지를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>헤더</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_031.png"><img alt="시각화 옵션 헤더" src="../../../_images/chart_031.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>설정</p></td>
+<td><p>테이블에서 모든 헤더를 일괄 설정할지를 설정할 수 있으며, 일괄 설정 모드일 경우 체크 박스가 활성화되고 체크 박스를 체크하면 개별 설정을 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>행번호</p></td>
+<td><p>테이블에서 헤더의 순서를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>넓이</p></td>
+<td><p>테이블에서 열의 넓이를 설정할 수 있으며, 일괄 설정 모드가 아닌 거나 일괄 설정 모드이고 개별 설정이 체크되면 넓이를 설정할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>정렬</p></td>
+<td><p>테이블에서 헤더의 정렬을 설정할 수 있으며, 일괄 설정 모드가 아닌 거나 일괄 설정 모드이고 개별 설정이 체크되면 넓이를 설정할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>열</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_041.png"><img alt="시각화 옵션 열" src="../../../_images/chart_041.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>설정</p></td>
+<td><p>테이블에서 모든 열을 일괄 설정할지를 설정할 수 있으며, 일괄 설정을 모드일 경우 체크 박스가 활성화되고 체크 박스를 체크하면 개별 설정을 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>표현</p></td>
+<td><p>테이블에서 데이터를 Progress Bar로 표시할지를 설정할 수 있으며, 일괄 설정 모드가 아닌 거나 일괄 설정 모드이고 개별 설정이 체크되면 넓이를 설정할 수 있습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>정렬</p></td>
+<td><p>테이블에서 열의 정렬을 설정할 수 있으며, 일괄 설정 모드가 아닌 거나 일괄 설정 모드이고 개별 설정이 체크되면 넓이를 설정할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>조건부 서식</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_051.png"><img alt="시각화 옵션 조건부 서식" src="../../../_images/chart_051.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>새 규칙 추가</p></td>
+<td><p>테이블에서 테이터를 이용하여 색상을 변경할 수 있는 규칙을 추가합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>필드에 적용</p></td>
+<td><p>테이블에서 규칙을 추가하기 위한 필드를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>값</p></td>
+<td><p>테이블에서 규칙에 대한 값을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>서식</p></td>
+<td><p>테이블에서 규칙에 대한 색상을 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>X축</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_061.png"><img alt="시각화 옵션 X축" src="../../../_images/chart_061.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>축</p></td>
+<td><p>차트에서 X축을 표시할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>축 제목</p></td>
+<td><p>차트에서 표시할 X축의 제목을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>간격</p></td>
+<td><p>차트에서 표시할 X축의 간격을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>최소값</p></td>
+<td><p>차트에서 표시할 X축 데이터의 최솟값을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>최대값</p></td>
+<td><p>차트에서 표시할 X축 데이터의 최댓값을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>레이블 회전</p></td>
+<td><p>차트에서 X축의 값을 회전할 수 있습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>정렬</p></td>
+<td><p>히트맵 차트에서 X축의 값을 정렬할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Y축</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_071.png"><img alt="시각화 옵션 Y축" src="../../../_images/chart_071.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Y축 추가</p></td>
+<td><p>다 중축 차트에서 Y축을 새로 추가할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>축</p></td>
+<td><p>차트에서 Y축을 표시할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>축 제목</p></td>
+<td><p>차트에서 표시할 Y축의 제목을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>간격</p></td>
+<td><p>차트에서 표시할 Y축의 간격을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>최소값</p></td>
+<td><p>차트에서 표시할 Y축 데이터의 최솟값을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>최대값</p></td>
+<td><p>차트에서 표시할 Y축 데이터의 최댓값을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>차트 유형</p></td>
+<td><p>다 중축 차트에서 Y축을 추가할 때 차트 유형을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>레이블 회면</p></td>
+<td><p>차트에서 Y축의 값을 회전할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>범례</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_081.png"><img alt="시각화 옵션 범례" src="../../../_images/chart_081.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>범례</p></td>
+<td><p>차트에서 범례를 표시할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>범례 위치</p></td>
+<td><p>차트에서 표시할 범례의 위치를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>크기</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_091.png"><img alt="시각화 옵션 크기" src="../../../_images/chart_091.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>최소 크기</p></td>
+<td><p>원형 차트에서 조각의 최소 크기를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>최소 글자 크기</p></td>
+<td><p>워드 클라우드 차트에서 최소 글자 크기를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>최대 글자 크기</p></td>
+<td><p>워드 클라우드 차트에서 최대 글자 크기를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>정렬</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_101.png"><img alt="시각화 옵션 정렬" src="../../../_images/chart_101.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>가로 정렬</p></td>
+<td><p>단일 값 차트에서 단일 값의 가로 정렬을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>세로 정렬</p></td>
+<td><p>단일 값 차트에서 단일 값의 세로 정렬을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>텍스트 정렬</p></td>
+<td><p>단일 값 차트에서 텍스트를 가로로 표시할 건지 세로로 표시할 건지 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>데이터</strong></p>
+<a class="reference internal image-reference" href="../../../_images/chart_111.png"><img alt="시각화 옵션 데이터" src="../../../_images/chart_111.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>X축</p></td>
+<td><p>차트에서 X축에 표시할 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Y축</p></td>
+<td><p>차트에서 Y축에 표시할 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>시간</p></td>
+<td><p>모션 차트에서 시간을 표시할 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>그룹</p></td>
+<td><p>모션 차트에서 데이터를 차트에 표시할 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>크기</p></td>
+<td><p>모션 차트에서 값의 크기의 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>값</p></td>
+<td><p>차트에서 값을 표시할 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>키 값</p></td>
+<td><p>워드칼라우드에서 값을 표시할 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>가중치</p></td>
+<td><p>워드클라우드에서 글자 크기의 테이터 컬럼을 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#id27">객체 설정(공통)</a> 을 참고하시면 됩니다.</p>
+</div>
+<div class="section" id="map">
+<h3><a class="toc-backref" href="#contents">지도 (Map)</a><a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/studio-map1.png" src="../../../_images/studio-map1.png" />
+<p>지도 객체는 요청한 지리정보(Geospatial information)를 활용하여 지도상에 정보를 시각화 할 수 있습니다.</p>
+<div class="section" id="id31">
+<h4><a class="toc-backref" href="#contents">레이어 선택</a><a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<p>관리 버튼을 클릭하면 아래와 같이 레이어 관리 팝업이 열립니다.</p>
+<a class="reference internal image-reference" href="../../../_images/map_011.png"><img alt="레이어 선택" src="../../../_images/map_011.png" style="width: 300px;" /></a>
+<div class="section" id="id32">
+<h5><a class="toc-backref" href="#contents">레이어 관리</a><a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h5>
+<div class="line-block">
+<div class="line">레이어를 추가 및 삭제를 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/map_021.png"><img alt="레이어 관리" src="../../../_images/map_021.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>새 레이어</p></td>
+<td><p>한 지도에 여러 개의 레이어를 생성할 수 있어 레이어를 추가할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>모두 삭제</p></td>
+<td><p>생성한 레이어를 모두 삭제합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>순서</p></td>
+<td><p>레이어의 순서를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>이름</p></td>
+<td><p>레이어의 이름을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>표시</p></td>
+<td><p>레이어를 지도에 표시할지를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>삭제</p></td>
+<td><p>레이어를 삭제합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>레이어 보기/숨기기</p></td>
+<td><p>지도에서 레이어 표시 아이콘 표시할지 안 할지를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id33">
+<h4><a class="toc-backref" href="#contents">데이터 설정</a><a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../../../_images/map_031.png"><img alt="지도 API 선택" src="../../../_images/map_031.png" style="width: 300px;" /></a>
+<div class="line-block">
+<div class="line">지도 API 선택
+Open Street Map에서 제공하는 API를 사용할지 Google Maps Platform에서 제공하는 API를 사용할지를 선택합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/map_041.png"><img alt="지도 URL" src="../../../_images/map_041.png" style="width: 300px;" /></a>
+<div class="line-block">
+<div class="line">지도 URL
+지도 데이터를 가져올 Tiles URL를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/map_051.png"><img alt="기본값 설정" src="../../../_images/map_051.png" style="width: 300px;" /></a>
+<div class="line-block">
+<div class="line">기본값 설정
+현재 지도의 위치(위도, 경도, 줌 레벨)을 설정합니다.
+현재 지도 값으로 설정을 클릭하면 설정한 위치로 지도가 이동합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">데이터 실행방법 설정 : 공통 설정에 데이터 실행밥법 설정 부분을 참고</div>
+</div>
+</div>
+<div class="section" id="id34">
+<h4><a class="toc-backref" href="#contents">시각화 설정</a><a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id35">
+<h5><a class="toc-backref" href="#contents">시각화 옵션</a><a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h5>
+<p><strong>맵</strong></p>
+<a class="reference internal image-reference" href="../../../_images/map_06.png"><img alt="시각화 옵션 맵" src="../../../_images/map_06.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>지도 투명도</p></td>
+<td><p>지도의 투명도를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>최소 줌 레벨</p></td>
+<td><p>지도의 최소 줌 레벨을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>최대 줌 레벨</p></td>
+<td><p>지도의 최대 줌 레벨을 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id36">
+<h4><a class="toc-backref" href="#contents">추가한 레이어의 설정</a><a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id37">
+<h5><a class="toc-backref" href="#contents">데이터 설정</a><a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h5>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#ui">공통 UI</a> 을 참고하시면 됩니다.</p>
+</div>
+<div class="section" id="id38">
+<h5><a class="toc-backref" href="#contents">시각화</a><a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h5>
+<p>시각화 설정에서는 레이어의 스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<div class="section" id="id39">
+<h6><a class="toc-backref" href="#contents">시각화 유형</a><a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h6>
+<div class="line-block">
+<div class="line">사용할 레이어를 선택할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/map_071.png"><img alt="시각화 유형" src="../../../_images/map_071.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>종류</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tile</p></td>
+<td><p>지도에 Tile Code를 이용한 Layer를 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mash</p></td>
+<td><p>지도에 Mash Code를 이용한 Layer를 선택합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>마커</p></td>
+<td><p>지도에 Point 및 Flag Layer를 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>도형</p></td>
+<td><p>지도에 polygon Layer를 선택합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id40">
+<h6><a class="toc-backref" href="#contents">시각화 옵션</a><a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h6>
+<p>Map의 옵션을 설정할 수 있습니다.</p>
+<p><strong>Grid</strong></p>
+<a class="reference internal image-reference" href="../../../_images/map_08.png"><img alt="시각화 옵션 Grid" src="../../../_images/map_08.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>격자</p></td>
+<td><p>Tile 및 Mash에서 격자가 보이거나 안 보이도록 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>투명도</p></td>
+<td><p>Layer의 투명도를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>마커</strong></p>
+<a class="reference internal image-reference" href="../../../_images/map_09.png"><img alt="시각화 옵션 마커" src="../../../_images/map_09.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>마커 종류</p></td>
+<td><p>포인트 및 깃발을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>최대 개수</p></td>
+<td><p>마커 최대 개수를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>크기</p></td>
+<td><p>마커 크기를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>도형</strong></p>
+<p>도형의 투명도를 설정합니다</p>
+<a class="reference internal image-reference" href="../../../_images/map_10.png"><img alt="시각화 옵션 도형" src="../../../_images/map_10.png" style="width: 300px;" /></a>
+<p><strong>색상</strong></p>
+<a class="reference internal image-reference" href="../../../_images/map_111.png"><img alt="시각화 옵션 색상" src="../../../_images/map_111.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>설정 방식</p></td>
+<td><p>그라디언트, 임계치, 객체별 자동 3가지 설정이 가능하며 각각 데이터의 값으로 Layer에 색을 추가 추가하는 방식입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>최소값 색상</p></td>
+<td><p>그라디언트에서 데이터값이 최솟값일 때 어떠한 색으로 표현할지 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>최대값 색상</p></td>
+<td><p>그라디언트에서 데이터값이 최댓값일 때 어떠한 색으로 표현할지 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>구간 설정</p></td>
+<td><p>임계치에서 값의 구간마다 색을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>범례</p></td>
+<td><p>Layer에 범례를 표시할지 안 할지를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>데이터</strong></p>
+<a class="reference internal image-reference" href="../../../_images/map_12.png"><img alt="시각화 옵션 데이터" src="../../../_images/map_12.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Tilecode</p></td>
+<td><p>Tile에서 Tile을 그리기 위한 데이터의 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Meshcode</p></td>
+<td><p>Mesh에서 Mesh를 그리기 위한 데이터의 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>위도</p></td>
+<td><p>마커에서 위도의 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>경도</p></td>
+<td><p>마커에서 경도의 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>꼭짓점 좌표</p></td>
+<td><p>도형에서 도형을 그리기 위한 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>색상</p></td>
+<td><p>색상을 표현할 데이터 컬럼을 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>튤팁</strong></p>
+<p>튤팁에 표시할 데이터의 컬럼을 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/map_131.png"><img alt="시각화 옵션 튤팁" src="../../../_images/map_131.png" style="width: 300px;" /></a>
+</div>
+</div>
+<div class="section" id="id41">
+<h5><a class="toc-backref" href="#contents">객체 설정</a><a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h5>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#id27">객체 설정(공통)</a> 을 참고하시면 됩니다.</p>
+</div>
+</div>
+</div>
+<div class="section" id="label">
+<h3><a class="toc-backref" href="#contents">라벨(Label)</a><a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/button-label1.png" src="../../../_images/button-label1.png" />
+<div class="line-block">
+<div class="line">라벨(Label)로서 객체를 사용할 수 있습니다.</div>
+<div class="line">링크 설정을 통해 Linked Text 형태로 사용할 수 있습니다.</div>
+</div>
+<p>설정할 변수/값 - <a class="reference internal" href="#id19">변수 설정(공통)</a> 참조</p>
+<p>라벨을 링크 객체로 사용하고자 할 때 사용합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/label_011.png"><img alt="링크 설정" src="../../../_images/label_011.png" style="width: 277.0px; height: 116.0px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수 값/주소</p></td>
+<td><p>링크에 대한 값을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>타겟</p></td>
+<td><p>링크 타겟을 설정합니다. (self, blank)</p></td>
+</tr>
+</tbody>
+</table>
+<p>글꼴과 정렬은 <a class="reference internal" href="#id30">서식 설정</a> 참조</p>
+<p>링크설정시 마우스가 오버 될 때의 서식을 선택합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/label_02.png"><img alt="링크 설정 스타일" src="../../../_images/label_02.png" style="width: 277.0px; height: 151.0px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>색상</p></td>
+<td><p>글꼴의 색상을 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>크기</p></td>
+<td><p>글꼴의 크기를 선택합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>스타일</p></td>
+<td><p>글꼴의 스타일(굵게, 밑줄, 이탤릭체, 취소선)</p></td>
+</tr>
+</tbody>
+</table>
+<p>라벨 객체의 내부색상과 윤곽선의 색상을 선택합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/label_03.png"><img alt="꾸미기" src="../../../_images/label_03.png" style="width: 277.0px; height: 114.0px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>배경색</p></td>
+<td><p>라벨 내부 색상을 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>윤곽선</p></td>
+<td><p>라벨 윤곽선 색상을 선택합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">언어 설정에 따라 표시될 텍스트를 설정합니다.</div>
+<div class="line"><strong>다른 언어에 대한 설정이 없으면 한국어로 설정된 값이 표시됩니다.</strong></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/label_04.png"><img alt="꾸미기" src="../../../_images/label_04.png" style="width: 277.0px; height: 77.0px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ko</p></td>
+<td><p>한국어 Text</p></td>
+</tr>
+<tr class="row-odd"><td><p>en</p></td>
+<td><p>영어 Text</p></td>
+</tr>
+<tr class="row-even"><td><p>zh</p></td>
+<td><p>중국어 Text</p></td>
+</tr>
+</tbody>
+</table>
+<p>설정된 서식을 지우고 초기 상태로 되돌립니다.</p>
+<a class="reference internal image-reference" href="../../../_images/label_05.png"><img alt="서식 지우기" src="../../../_images/label_05.png" style="width: 75.0px; height: 34.0px;" /></a>
+</div>
+<div class="section" id="rectangle">
+<h3><a class="toc-backref" href="#contents">사각형(Rectangle)</a><a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/button-rectangle1.png" src="../../../_images/button-rectangle1.png" />
+<div class="line-block">
+<div class="line">사각형 도형을 그릴 때 사용합니다.</div>
+<div class="line">크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조</div>
+</div>
+<p>사각형 내부의 색상을 선택합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/rectangle_01.png"><img alt="색상 설정" src="../../../_images/rectangle_01.png" style="width: 374.0px; height: 294.0px;" /></a>
+<img alt="../../../_images/button-ellipse1.png" src="../../../_images/button-ellipse1.png" />
+<div class="line-block">
+<div class="line">원형 도형을 그릴 때 사용합니다.</div>
+<div class="line">크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조</div>
+</div>
+<p>원형 내부의 색상을 선택합나다.</p>
+<a class="reference internal image-reference" href="../../../_images/ellipse_01.png"><img alt="색상 설정" src="../../../_images/ellipse_01.png" style="width: 374.0px; height: 294.0px;" /></a>
+<img alt="../../../_images/button-image1.png" src="../../../_images/button-image1.png" />
+<p>이미지 객체는 파일 또는 URL을 이용하여 이미지를 불러와 시각화할 수 있습니다.</p>
+<p><strong>파일 업로드</strong></p>
+<p>파일 업로드를 선택 후 이미지 삽입 버튼을 클릭하면 파일을 올리면 객체 안에 이미지를 넣을 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/image_01.png"><img alt="파일 업로드01" src="../../../_images/image_01.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/image_02.png"><img alt="파일 업로드02" src="../../../_images/image_02.png" style="width: 300px;" /></a>
+<p><strong>URL 사용</strong></p>
+<p>URL 사용을 선택 후 이미지 삽입란에 URL을 입력하고 적용 버튼을 클릭하면 객체 안에 이미지를 넣을 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/image_03.png"><img alt="URL 사용" src="../../../_images/image_03.png" style="width: 300px;" /></a>
+<p><strong>이미지 정렬</strong></p>
+<a class="reference internal image-reference" href="../../../_images/image_041.png"><img alt="이미지 정렬" src="../../../_images/image_041.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>영역에 맞춤</p></td>
+<td><p>이미지의 크기를 객체의 사이즈에 맞게 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>원본 크기</p></td>
+<td><p>이미지의 크기를 객체의 사이즈에 상관없이 원본 사이즈를 유지합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#id27">객체 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<img alt="../../../_images/button-text1.png" src="../../../_images/button-text1.png" />
+<p>텍스트 입력 객체는 Input Box에 사용자가 입력하거나 외부로부터 값을 받아 화면에 보여 줍니다.</p>
+<p><strong>설정할 변수/값</strong></p>
+<p>다른 객체로 부터 받을 데이터의 변수를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/input_011.png"><img alt="설정할 변수/값" src="../../../_images/input_011.png" style="width: 300px;" /></a>
+<p><strong>유형 설정</strong></p>
+<p>Input Box의 타입 및 읽기만 가능하도록 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/input_021.png"><img alt="유형 설정" src="../../../_images/input_021.png" style="width: 300px;" /></a>
+<p><strong>디폴트 값 선택</strong></p>
+<a class="reference internal image-reference" href="../../../_images/input_031.png"><img alt="디폴트 값 선택" src="../../../_images/input_031.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>기본 값</p></td>
+<td><p>Input Box에 초기값 텍스트를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>안내문구</p></td>
+<td><p>Input Box에 placeholder를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#id27">객체 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<img alt="../../../_images/button-textarea1.png" src="../../../_images/button-textarea1.png" />
+<p>텍스트 상자 객체는 Text Area에 사용자가 입력하거나 외부로부터 값을 받아 화면에 보여 줍니다.</p>
+<p><strong>설정할 변수/값</strong></p>
+<p>다른 객체로 부터 받을 데이터의 변수를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/textarea_01.png"><img alt="설정할 변수/값" src="../../../_images/textarea_01.png" style="width: 300px;" /></a>
+<p><strong>유형 설정</strong></p>
+<p>Text Area에 읽기만 가능하도록 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/textarea_021.png"><img alt="유형 설정" src="../../../_images/textarea_021.png" style="width: 300px;" /></a>
+<p><strong>디폴트 값 선택</strong></p>
+<a class="reference internal image-reference" href="../../../_images/textarea_03.png"><img alt="디폴트 값 선택" src="../../../_images/textarea_03.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>기본 값</p></td>
+<td><p>Text Area에 초기값 텍스트를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>안내문구</p></td>
+<td><p>Text Area에 placeholder를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#id27">객체 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<img alt="../../../_images/button-combobox1.png" src="../../../_images/button-combobox1.png" />
+<p>사용자가 드롭다운 목록에서 한 항목을 선택할 수 있고, 목록은 ‘데이터’ 탭과 ‘사용자 정의’로 설정할 수 있습니다.
+항목 탭을 사용하여, 변수명을 통해 콤보박스 목록에서 변수명에 정의된 값을 이벤트 트리거 옵션에 의해 원하는 항목을 자동 선택할 수 있습니다.</p>
+<p>데이터 설정은 <a class="reference internal" href="#id9">데이터 탭(공통)</a> 을 참고하시면 됩니다.</p>
+<p>사용자 정의 데이터 목록을 작성 할 수 있고, 1개 이상의 목록을 작성 할 경우, 추가 버튼을 클릭하여 데이터를 추가 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/combo_011.png"><img alt="콤보박스 사용자 정의" src="../../../_images/combo_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>항목</p></td>
+<td><p>목록에 보여지는 텍스트 설정 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>값</p></td>
+<td><p>항목(텍스트)에 대응되는 데이터 값 입니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>시각화 설정에서는 콤보박스의 스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>콤보박스를 선택하여 목록 필드 입력 검색 기능 입니다. (사용: 입력 검색, 미사용: 입력 불가)</p>
+<a class="reference internal image-reference" href="../../../_images/combo_021.png"><img alt="콤보박스 에디터 기능" src="../../../_images/combo_021.png" style="width: 270px;" /></a>
+<p><cite>데이터</cite> 선택한 경우 활성 됩니다. 조회해온 필드 목록에서 화면에 보여질 필드 설정 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/combo_03.png"><img alt="콤보박스 화면에 보여질 필드" src="../../../_images/combo_03.png" style="width: 270px;" /></a>
+<p><cite>데이터</cite> 선택한 경우 활성 됩니다. 조회해온 필드 목록에서 값으로 사용될 필드 설정 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/combo_04.png"><img alt="콤보박스 값으로 사용될 필드 선택" src="../../../_images/combo_04.png" style="width: 270px;" /></a>
+<p>조회된 목록 중에 디폴트 값을 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/combo_051.png"><img alt="디폴트 값 선택" src="../../../_images/combo_051.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>미선택</p></td>
+<td><p>콤보박스 디폴트 값을 설정하지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>직접입력</p></td>
+<td><p>콤보박스 디폴트 값을 직접 입력하여 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>콤보박스의 변수명을 설정해 변수명의 데이터 값으로 콤보박스의 목록의 값을 찾아 자동으로 선택해 주는 기능 입니다.</p>
+<p>항목으로 설정할 변수명을 입력하여 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/combo_06.png"><img alt="항목 설정 변수" src="../../../_images/combo_06.png" style="width: 270px;" /></a>
+<p>데이터 실행방법 설정은 <a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<img alt="../../../_images/button-checkbox1.png" src="../../../_images/button-checkbox1.png" />
+<p>체크박스/라디오버튼 객체로 전환 설정 가능합니다.
+유형을 선택하여, 객체의 속성을 변경할 수 있고, 체크박스가 기본값 입니다.</p>
+<p>데이터 설정은 <a class="reference internal" href="#id9">데이터 탭(공통)</a> 을 참고하시면 됩니다.</p>
+<p>사용자 정의 데이터 목록을 작성 할 수 있고, 1개 이상의 목록을 작성 할 경우, 추가 버튼을 클릭하여 데이터를 추가 할 수 있습니다.</p>
+<p>사용자 정의 데이터를 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/check_radio_011.png"><img alt="데이터 사용자 정의" src="../../../_images/check_radio_011.png" style="width: 270px;" /></a>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>체크박스/라디오버튼 스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p>이벤트 발생시 정의한 설정값을 전달 합니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수명</p></td>
+<td><p>오브젝트의 변수명 할당합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>구분자 입력</p></td>
+<td><p>목록 데이터 구분자를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>텍스트 한정자</p></td>
+<td><p>목록 데이터의 텍스트 한정자를 설정합니다. (예: ‘data1’, “data1”)</p></td>
+</tr>
+</tbody>
+</table>
+<p>체크박스/라디오버튼 유형을 선택 합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/check_radio_021.png"><img alt="체크박스/라디오버튼 유형 선택" src="../../../_images/check_radio_021.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Check Box</p></td>
+<td><p>화면에 보이는 UI를 체크박스로 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Radio Button</p></td>
+<td><p>화면에 보이는 UI를 라디오버튼으로 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>조회된 목록 중에 디폴트 값을 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/check_radio_031.png"><img alt="체크박스/라디오버튼 디폴트 값 선택" src="../../../_images/check_radio_031.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>미선택</p></td>
+<td><p>콤보박스 디폴트 값을 설정하지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>전체선택</p></td>
+<td><p>콤보박스 디폴트 값을 직접 입력하여 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>체크박스/라디오버튼 배열 방향을 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/check_radio_041.png"><img alt="체크박스/라디오버튼 배열 방향" src="../../../_images/check_radio_041.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>가로</p></td>
+<td><p>가로 방향으로 정렬 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>세로</p></td>
+<td><p>세로 방향으로 정렬 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-date1.png" src="../../../_images/button-date1.png" />
+<p>날짜 선택 시 달력으로 시작/종료/현재 날짜를 설정할 수 있고, 시간 선택 시 시작 시간 &amp; 시간 간격을 설정 할 수 있습니다.</p>
+<p>날짜/시간의 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p>데이터 유형 설정 <a class="reference internal" href="#id10">데이터 유형 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>날짜/시간에 대한 유형선택으로 시각화 옵션이 달라 집니다.</p>
+<a class="reference internal image-reference" href="../../../_images/date_picker_011.png"><img alt="날짜/시간 유형 선택" src="../../../_images/date_picker_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>날짜</p></td>
+<td><p>달력 표시 날짜/초기 날짜 설정을 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>시간</p></td>
+<td><p>시간 선택 간격/초기 시간 설정을 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>날짜 유형을 선택한 경우에만 활성화 되며, 달력 표시 날짜를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/date_picker_021.png"><img alt="시각화옵션 달력 표시 날짜 설정" src="../../../_images/date_picker_021.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>사용여부</p></td>
+<td><p>선택 시 시작/종료 날짜를 설정 가능하지만, 미선택 시 시작/종료 날짜를 설정할 수 없습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>시작 날짜</p></td>
+<td><p>시작 날짜를 선택 합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>종료 날짜</p></td>
+<td><p>종료 날짜를 선택 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>현재 날짜</p></td>
+<td><p>기본값은 미선택이며, 선택 시 종료 날짜는 설정할 수 없고, 현재 날짜로 종료 날짜가 설정 됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>날짜 유형을 선택한 경우에만 활성화 되며, 초기 날짜를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/date_picker_031.png"><img alt="시각화옵션 초기 날짜 설정" src="../../../_images/date_picker_031.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>현재 날짜 선택</p></td>
+<td><p>기본값은 선택이며, 현재 날짜로 초기 날짜를 설정합니다. 미선택 시 초기날짜를 설정 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>날짜</p></td>
+<td><p>현재 날짜 선택이 미선택 시 설정 가능하며, 선택 시에는 날짜가 비 활성화 됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>시간 유형을 선택한 경우에만 활성화 되며, 시간을 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/date_picker_041.png"><img alt="시각화옵션 시간 선택 간격" src="../../../_images/date_picker_041.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>분</p></td>
+<td><p>분을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>초</p></td>
+<td><p>초를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>시간 유형을 선택한 경우에만 활성화 되며, 초기 시간을 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/date_picker_051.png"><img alt="시각화옵션 초기 시간 설정" src="../../../_images/date_picker_051.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>현재 시간 선택</p></td>
+<td><p>기본값은 선택이며, 현재 시간으로 초기 시간을 설정합니다. 미선택 시 초기 시간을 설정 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>분</p></td>
+<td><p>분을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>초</p></td>
+<td><p>초를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-button.png" src="../../../_images/button-button.png" />
+<p>사용자가 버튼명 문구를 설정할 수 있고, 버튼을 클릭하여 이벤트 트리거/하이퍼링크 기능을 설정 할 수 있습니다.</p>
+<p>버튼의 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>버튼에 적용할 문자를 입력 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/button_01.png"><img alt="버튼 문구 입력" src="../../../_images/button_01.png" style="width: 270px;" /></a>
+<p>하이퍼링크를 버튼에 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/button_02.png"><img alt="버튼 하이퍼링크 설정" src="../../../_images/button_02.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>주소</p></td>
+<td><p>하이퍼링크 주소를 입력 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>타겟</p></td>
+<td><p>하이퍼링크 타겟은 self, blank로 설정 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-tab1.png" src="../../../_images/button-tab1.png" />
+<p>보고서에 탭을 1개 이상 추가 할 수 있고, 탭 방향 및 해당 탭이 선택되었을 때 나타날 비주얼 객체를 설정할 수 있습니다.</p>
+<p>탭 목록의 데이터 유형을 설정합니다.</p>
+<p>데이터 목록을 작성 할 수 있고, 1개 이상의 목록을 작성 할 경우, 추가 버튼을 클릭하여 데이터를 추가 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tab_01.png"><img alt="데이터 유형 설정 탭 추가" src="../../../_images/tab_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>탭 이름</p></td>
+<td><p>표시될 탭이름을 입력 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>탭 값</p></td>
+<td><p>탭 값을 입력 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>탭의 스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p>탭의 정렬 방향을 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tab_07.png"><img alt="탭 정렬 방향" src="../../../_images/tab_07.png" style="width: 270px;" /></a>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>데이터 유형에서 설정한 탭 목록이 나타나며, 해당 항목의 아래방향 아이콘을 선택하여 표시 할 비주얼 객체를 설정 할 수 있습니다.</p>
+<p>첫번째 탭 적용 대상 설정 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tab_02.png"><img alt="첫번째 탭 적용 대상 설정" src="../../../_images/tab_02.png" style="width: 270px;" /></a>
+<p>첫번째 탭 적용 대상 UI 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tab_03.png"><img alt="첫번째 탭 적용 대상 UI" src="../../../_images/tab_03.png" style="width: 270px;" /></a>
+<p>두번째 탭 적용 대상 설정 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tab_04.png"><img alt="두번째 탭 적용 대상 설정" src="../../../_images/tab_04.png" style="width: 270px;" /></a>
+<p>두번째 탭 적용 대상 UI 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tab_05.png"><img alt="두번째 탭 적용 대상 UI" src="../../../_images/tab_05.png" style="width: 270px;" /></a>
+<p>1개 이상의 탭이 설정된 경우, 탭이 자동으로 전환되도록 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tab_06.png"><img alt="탭 자동 전환 설정" src="../../../_images/tab_06.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>사용 여부</p></td>
+<td><p>기본값은 미사용 입니다. 사용으로 선택 한 경우 탭이 자동 전환 됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>사용 간격</p></td>
+<td><p>기본값은 1초 이며, 입력한 값의 초 단위로 탭이 자동 전환 됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-list1.png" src="../../../_images/button-list1.png" />
+<p>목록 객체는 검색, 선택 가능한 목록을 추가 할 수 있습니다.
+리스트 제목 &amp; 목록으로 나타날 데이터 필드를 설정하여 나타낼 수 있습니다.</p>
+<p>데이터 설정은 <a class="reference internal" href="#id9">데이터 탭(공통)</a> 을 참고하시면 됩니다.</p>
+<p>목록의 스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p>목록 제목을 입력하여 설정할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/list_011.png"><img alt="리스트 제목" src="../../../_images/list_011.png" style="width: 270px;" /></a>
+<p>‘데이터’에서 조회한 필드를 선택하여, 화면에 나타날 필드를 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/list_021.png"><img alt="리스트 필드 선택" src="../../../_images/list_021.png" style="width: 270px;" /></a>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-tag1.png" src="../../../_images/button-tag1.png" />
+<p>태그 목록을 데이터 설정하여 시각화를 통해 목록을 표시 할 수 있습니다.</p>
+<p>데이터 설정은 <a class="reference internal" href="#id9">데이터 탭(공통)</a> 을 참고하시면 됩니다.</p>
+<p>데이터 목록을 작성 할 수 있고, 1개 이상의 목록을 작성 할 경우, 추가 버튼을 클릭하여 데이터를 추가 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/combo_011.png"><img alt="태그 목록 사용자 정의" src="../../../_images/combo_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>항목</p></td>
+<td><p>목록에 보여지는 텍스트 설정 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>값</p></td>
+<td><p>항목(텍스트)에 대응되는 데이터 값 입니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p>이벤트 발생시 정의한 설정값을 전달 합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tag_list_011.png"><img alt="태그 목록 이벤트 값 전달 설정" src="../../../_images/tag_list_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수명</p></td>
+<td><p>오브젝트의 변수명 할당합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>구분자 입력</p></td>
+<td><p>태그 목록 데이터 구분자를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>텍스트 한정자</p></td>
+<td><p>태그 목록 데이터의 텍스트 한정자를 설정합니다. (예: ‘data1’, “data1”)</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>태그 목록 배열 방향을 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tag_list_021.png"><img alt="태그 목록 항목 배열 방향" src="../../../_images/tag_list_021.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>가로</p></td>
+<td><p>가로 방향으로 정렬 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>세로</p></td>
+<td><p>세로 방향으로 정렬 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>태그 목록을 토글 형태로 선택할 수 있는 기능을 설정할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/tag_list_031.png"><img alt="태그 목록의 선택기능 사용여부" src="../../../_images/tag_list_031.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>사용</p></td>
+<td><p>기본값은 사용 입니다. 사용을 선택한 경우 태그 목록을 토글 형태로 선택할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>미사용</p></td>
+<td><p>미사용 시 태그 목록을 토글 형태로 선택할 수 없습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-datamodel.png" src="../../../_images/button-datamodel.png" />
+<p>데이터모델 사용한 객체들의 시간을 일괄 설정 할 수 있습니다.</p>
+<p>시간 설정/적용 대상 객체 설정을 합니다.</p>
+<p>시간을 사용자 지정/사용자 정의로 설정합니다.</p>
+<p><strong>사용자 지정</strong></p>
+<p>사용자 지정으로 시간을 1개로만 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/time_01.png"><img alt="시간 설정" src="../../../_images/time_01.png" style="width: 270px;" /></a>
+<p><strong>사용자 정의</strong></p>
+<p>사용자 정의로 1개 이상의 시간을 설정하며, UI에서 콤보박스 형태로 선택할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/time_04.png"><img alt="선택된 시간" src="../../../_images/time_04.png" style="width: 270px;" /></a>
+<p>1개 이상 선택한 시간을 콤보박스로 선택할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/time_05.png"><img alt="선택된 시간 UI 확인" src="../../../_images/time_05.png" style="width: 142px;" /></a>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-period1.png" src="../../../_images/button-period1.png" />
+<p>보고서의 데이터 갱신 주기를 설정 할 수 있습니다.</p>
+<p>주기/기본 설정을 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/period_011.png"><img alt="주기 설정" src="../../../_images/period_011.png" style="width: 270px;" /></a>
+<p>보고서 갱신 주기를 설정은 1개 이상 주기를 추가 해야 하며, 초/분/시간 단위로 추가 할 수 있습니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>다음 갱신까지 남은 시간 표시</p></td>
+<td><p>기본값은 미선택 입니다. 선택 시 다음 갱신까지 남은 시간이 시분초(00:00:00)로 표시 됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>시간 입력</p></td>
+<td><p>초/분/시간 단위로 시간을 입력 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>주기 설정에서 추가한 주기 목록 중 기본 주기로 실행될 주기를 선택할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/period_021.png"><img alt="주기 설정 UI" src="../../../_images/period_021.png" style="width: 236px;" /></a>
+<p>기본 주기로 설정한 항목이 표시되어 실행되며, 주기 설정에 추가한 다른 주기는 콤보박스로 선택할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/period_031.png"><img alt="주기 설정 UI" src="../../../_images/period_031.png" style="width: 270px;" /></a>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-ext-url1.png" src="../../../_images/button-ext-url1.png" />
+<p>외부 URL을 입력하여 해당 URL 페이지를 로딩 할 수 있습니다.</p>
+<p>URL 설정과 데이터 실행 방법을 설정 할 수 있습니다.</p>
+<p>http 포함된 URL을 입력하거나, 다른 객체의 변수명을 입력하여 변수값을 사용해 외부URL 페이지를 로딩 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/iframe_011.png"><img alt="외부 URL 불러오기" src="../../../_images/iframe_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>적용</p></td>
+<td><p>입력한 외부 URL의 유효성 검사를 합니다. http로 시작해야 하고 URL에 공백이 있으면 설정되지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>미리보기</p></td>
+<td><p>외부 URL에 변수명을 입력한 경우, 해당 변수 값의 데이터를 미리 보기 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>데이터 실행방법 설정은 <a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-htmlviewer1.png" src="../../../_images/button-htmlviewer1.png" />
+<p>Html 뷰어 객체는 서버로부터 받아온 데이터의 HTML 코드를 바인딩하여 화면에 보여 줍니다.</p>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#ui">공통 UI</a> 을 참고하시면 됩니다.</p>
+<p><strong>필드 선택</strong></p>
+<p>불러온 데이터로부터 HTML 코드가 있는 컬럼을 선택하면 자동으로 데이터를 읽어 화면에 보여줍니다.</p>
+<a class="reference internal image-reference" href="../../../_images/html_01.png"><img alt="필드 선택" src="../../../_images/html_01.png" style="width: 300px;" /></a>
+<p>(공통) 데이터 설정 항목 <a class="reference internal" href="#id27">객체 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<img alt="../../../_images/button-loadreport1.png" src="../../../_images/button-loadreport1.png" />
+<p>저장된 보고서를 가져와 팝업 화면에 표시하는 객체입니다.
+(저장된 보고서를 가져올 경우, 가져온 보고서의 객체 목록 중에 팝업/포틀릿 객체가 포함되어 있는 경우, 미리 보기에서 실행되지 않습니다.)</p>
+<a class="reference internal image-reference" href="../../../_images/popup_072.png"><img alt="Import Report 오류 메시지(Import 보고서에 팝업/포틀릿 객체가 포함되어 있습니다)" src="../../../_images/popup_072.png" style="width: 270px;" /></a>
+<p>저장된 보고서 목록을 선택하여 불러올 수 있습니다.</p>
+<p>저장된 보고서 목록이 기본이며, 변수/값 입력을 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_011.png"><img alt="저장된 보고서 목록 설정" src="../../../_images/popup_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>목록 선택</p></td>
+<td><p>저장된 보고서 목록을 선택할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수/값 입력</p></td>
+<td><p>변수값을 사용하여 저장된 보고서를 불러 올 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>보고서 설정 유형에서 목록을 선택한 경우만 활성화 됩니다.
+검색을 통해 보고서를 검색가능하며, 보고서 선택 시 목록에 표시되고, 팝업 객체에 보고서 이름과 바로가기 나타납니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_011.png"><img alt="저장된 보고서 목록 설정" src="../../../_images/popup_011.png" style="width: 270px;" /></a>
+<p>팝업 객체의 선택 적용 UI 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_021.png"><img alt="저장된 보고서 선택 적용 UI" src="../../../_images/popup_021.png" style="width: 270px;" /></a>
+<p>변수값을 사용하여 저장된 보고서를 불러 올 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_031.png"><img alt="보고서 설정 변수 값/입력" src="../../../_images/popup_031.png" style="width: 270px;" /></a>
+<p>팝업 열기 시, 실행될 이벤트를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_041.png"><img alt="팝업 열기 설정" src="../../../_images/popup_041.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.”</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>자동실행</p></td>
+<td><p>선택 시 팝업 버튼을 클릭하지 않고, 팝업을 자동으로 실행 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>저장된 보고서의 Canvas 변수가 설정된 경우에 설정된 Canvas 변수값에 값을 설정 할 수 있습니다.
+Canvas 변수가 3개인 경우에 변수값을 3개 설정 할 수 있으며, 변수값을 직접 입력 하거나, 변수명을 입력하여 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_051.png"><img alt="저장된 보고서 변수 설정" src="../../../_images/popup_051.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수명</p></td>
+<td><p>저장된 보고서의 Canvas 변수명 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 값</p></td>
+<td><p>저장된 보고서의 Canvas 변수값을 직접 설정가능하며, 변수명을 입력한 설정도 가능합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>팝업이 열릴 때, 팝업 제목을 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_061.png"><img alt="팝업 제목 설정" src="../../../_images/popup_061.png" style="width: 270px;" /></a>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<p>팝업이 열릴 때, 팝업의 창 크기를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_081.png"><img alt="팝업 창 크기 설정" src="../../../_images/popup_081.png" style="width: 270px;" /></a>
+<img alt="../../../_images/button-loadportlet1.png" src="../../../_images/button-loadportlet1.png" />
+<p>저장된 보고서를 가져와 보고서 화면에 표시하는 객체입니다.
+(저장된 보고서를 가져올 경우, 가져온 보고서의 객체 목록 중에 팝업/포틀릿 객체가 포함되어 있는 경우, 미리 보기에서 실행되지 않습니다.)</p>
+<a class="reference internal image-reference" href="../../../_images/popup_072.png"><img alt="Import Report 오류 메시지(Import 보고서에 팝업/포틀릿 객체가 포함되어 있습니다)" src="../../../_images/popup_072.png" style="width: 270px;" /></a>
+<p>저장된 보고서 목록을 선택하여 불러올 수 있습니다.</p>
+<p>저장된 보고서 목록이 기본이며, 변수/값 입력을 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_011.png"><img alt="저장된 보고서 목록 설정" src="../../../_images/popup_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>목록 선택</p></td>
+<td><p>저장된 보고서 목록을 선택할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수/값 입력</p></td>
+<td><p>변수값을 사용하여 저장된 보고서를 불러 올 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>보고서 설정 유형에서 목록을 선택한 경우만 활성화 됩니다.
+검색을 통해 보고서를 검색가능하며, 보고서 선택 시 목록에 표시되고, 팝업 객체에 보고서 이름과 바로가기 나타납니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_011.png"><img alt="저장된 보고서 목록 설정" src="../../../_images/popup_011.png" style="width: 270px;" /></a>
+<p>포틀릿 객체의 선택 적용 UI 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_021.png"><img alt="저장된 보고서 선택 적용 UI" src="../../../_images/popup_021.png" style="width: 270px;" /></a>
+<p>변수값을 사용하여 저장된 보고서를 불러 올 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_031.png"><img alt="보고서 설정 변수 값/입력" src="../../../_images/popup_031.png" style="width: 270px;" /></a>
+<p>포틀릿 실행 시, 실행될 이벤트를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/portlet_011.png"><img alt="Import 보고서 실행 방법 설정" src="../../../_images/portlet_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.”</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>자동실행</p></td>
+<td><p>선택 시 팝업 버튼을 클릭하지 않고, 팝업을 자동으로 실행 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>저장된 보고서의 Canvas 변수가 설정된 경우에 설정된 Canvas 변수값에 값을 설정 할 수 있습니다.
+Canvas 변수가 3개인 경우에 변수값을 3개 설정 할 수 있으며, 변수값을 직접 입력 하거나, 변수명을 입력하여 설정 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/popup_051.png"><img alt="저장된 보고서 변수 설정" src="../../../_images/popup_051.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수명</p></td>
+<td><p>저장된 보고서의 Canvas 변수명 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 값</p></td>
+<td><p>저장된 보고서의 Canvas 변수값을 직접 설정가능하며, 변수명을 입력한 설정도 가능합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-textconv1.png" src="../../../_images/button-textconv1.png" />
+<p>텍스트변환 객체에서 설정한 객체의 이벤트 발생시 해당변수의 값을 트리거에 입력된 텍스트로 변환하여 적용할 수있습니다.
+예를 들어 버튼 객체가 3개인 경우, 텍스트 변환 객체의 트리거 설정에 변환값을 입력하여 텍스트 변환 객체의 변수값을 변경하여,
+버튼클릭 시 텍스트변환 객체의 변수값이 변경되게 처리 됩니다.</p>
+<p>트리거를 설정하여, 해당 객체의 이벤트가 발생 시 변환할 텍스트 정보를 설정 할 수 있습니다.</p>
+<p>트리거를 설정한 객체의 이벤트 발생시 해당변수의 갑을 트리거에 입력된 텍스트로 변환하여 적용할 수 있습니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>대상 오브젝트 id</p></td>
+<td><p>오브젝트 ID 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>이벤트</p></td>
+<td><p>대상 객체의 이벤트 입니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>입력</p></td>
+<td><p>입력한 텍스트로 텍스트변환 객체 변수 값이 변경 됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>삭제</p></td>
+<td><p>삭제시, 해당 트리거가 삭제 되며, 해당 객체의 이벤트 발생시 텍스트 변환이 발생하지 않습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>텍스트 변환 객체 트리거 설정 압니다.</p>
+<a class="reference internal image-reference" href="../../../_images/hidden_01.png"><img alt="텍스트 변환 객체 트리거 설정" src="../../../_images/hidden_01.png" style="width: 270px;" /></a>
+<p>트리거 설정된 비주얼 객체의 적용 UI 입니다.</p>
+<a class="reference internal image-reference" href="../../../_images/hidden_02.png"><img alt="텍스트 변환 객체 트리거 설정 UI" src="../../../_images/hidden_02.png" style="width: 270px;" /></a>
+<p>스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<img alt="../../../_images/button-rest1.png" src="../../../_images/button-rest1.png" />
+<p>RESTful API를 사용하여 데이터를 설정 할 수 있는 객체입니다.</p>
+<p>데이터 설정을 통해 조회할 RESTful API 설정합니다.</p>
+<p>RESTful API의  Method, URI, Header Body를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/rest_api_011.png"><img alt="RESTful API 데이터 설정" src="../../../_images/rest_api_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Method</p></td>
+<td><p>POST 로 고정되어 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>URI</p></td>
+<td><p>업로드할 REST API URI 입력 입니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>Header</p></td>
+<td><p>전달할 Header(JSON 포맷) 값을 정의하여 전송 할 수 있으며, 변수명을 입력하여 설정 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Body</p></td>
+<td><p>전달할 Body(JSON 포맷) 값을 정의하여 전송 할 수 있으며, 변수명을 입력하여 설정 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>데이터 실행방법 설정은 <a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</p>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p><a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<img alt="../../../_images/button-upload1.png" src="../../../_images/button-upload1.png" />
+<p>파일 업로드 객체는 보고서에 데이터 추가 시, 정해진 형태의 파일을 REST API로 데이터를 업로드 할 수 있습니다.
+비주얼 객체의 이벤트에 의해 업로드 실행 트리거를 설정 할 수 있으며, 한 번에 하나의 파일만 등록 가능합니다.</p>
+<p>파일 업로드 데이터를 설정합니다.</p>
+<p>파일 업로드 데이터의 Method, URI, Body를 설정합니다.</p>
+<a class="reference internal image-reference" href="../../../_images/file_upload_011.png"><img alt="파일 업로드 데이터 설정" src="../../../_images/file_upload_011.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Method</p></td>
+<td><p>POST 로 고정되어 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>URI</p></td>
+<td><p>업로드할 REST API URI 입력 입니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>Body</p></td>
+<td><p>업로드 시 추가 파라미터(JSON 포멧)을 정의 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>데이터 실행방법 설정은 <a class="reference internal" href="#id21">트리거 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>속성탭에서 파일 업로드 업로드 가능 파일 확장자를 설정합니다.</p>
+<p>미 설정시, 확장자 구분없이 업로드 가능하며, 확장자는 ‘.csv’ or ‘csv’ 형식으로 등록가능합니다.
+하단 추가 버튼을 클릭하여 업로드 가능 파일 확장자를 1개 이상 등록할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/file_upload_021.png"><img alt="파일 업로드 가능 파일 확장자" src="../../../_images/file_upload_021.png" style="width: 270px;" /></a>
+<p><a class="reference internal" href="#id20">이벤트 값 전달 설정(공통)</a> 을 참고하시면 됩니다.</p>
+<p>크기와 위치는 <a class="reference internal" href="#id27">객체 설정(공통)</a> 참조하시면 됩니다.</p>
+<p>현재 보고서에 적용된 변수 목록을 확인 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/studio_list08.jpg"><img alt="변수명보기" src="../../../_images/studio_list08.jpg" style="width: 791.0px; height: 289.0px;" /></a>
+<div class="line-block">
+<div class="line">편집영역에 적용된 컴포넌트 선택 후 Delete 버튼 클릭 시, 해당 컴포넌트가 삭제 됩니다.</div>
+<div class="line">또는 삭제하고자 하는 컴포넌트선택 후 오른쪽 마우스 클릭 시, 컨텍스트메뉴로 삭제 버튼이 출력 됩니다. 삭제 버튼 클릭 시, 적용된 컴포넌트를 삭제 할 수 있습니다.</div>
+<div class="line">편집영역 오른쪽 상단의 전체 삭제 버튼 클릭 시, 적용된 컴포넌트를 모두 삭제 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/studio_list09.jpg"><img alt="삭제" src="../../../_images/studio_list09.jpg" style="width: 532.0px; height: 224.0px;" /></a>
+<div class="line-block">
+<div class="line">왼쪽 툴바 영역 상단 연필(수정) 버튼 클릭 시, 보고서 명을 수정할 수 있도록 수정 기능이 활성화 됩니다.</div>
+<div class="line">원하는 보고서 명으로 수정 후 체크버튼 클릭 또는 수정 영역외 다른 영역 클릭 시, 변경된 보고서 명이 적용됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/studio_list101.jpg"><img alt="보고서 이름 설정" src="../../../_images/studio_list101.jpg" style="width: 269.0px; height: 156.0px;" /></a>
+<a class="reference internal image-reference" href="../../../_images/studio_list111.jpg"><img alt="보고서 이름 설정" src="../../../_images/studio_list111.jpg" style="width: 269.0px; height: 156.0px;" /></a>
+<p>보기 버튼 클릭 시, 현재 편집 중인 보고서를 새창으로 미리 보기 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/studio_list12.jpg"><img alt="보고서 미리보기" src="../../../_images/studio_list12.jpg" style="width: 444.0px; height: 69.0px;" /></a>
+<p>저장 버튼 클릭 시, 현재 작성 중인 보고서를 저장 할 수 있습니다.</p>
+<a class="reference internal image-reference" href="../../../_images/studio_list12.jpg"><img alt="보고서 저장" src="../../../_images/studio_list12.jpg" style="width: 444.0px; height: 69.0px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,491 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>연결 정보 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="작업 조회" href="../jobs_inquiry/index.html" />
+    <link rel="prev" title="관리" href="../index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS 공통기능</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../dashboard/index.html">대시보드</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">관리</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">연결 정보</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jobs_inquiry/index.html">작업 조회</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_management/index.html">사용자 관리</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS 공통기능</a> &raquo;</li>
+    
+      <li><a href="../index.html">관리</a> &raquo;</li>
+    
+    <li>연결 정보</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Common/inquiry_management/connect_info/index</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Common/inquiry_management/connect_info/index.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>연결 정보<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>연결정보에서는 IRIS에서 사용할 수 있는 외부 데이터 소스를 선택하고 연결, 관리할 수 있는 기능을 제공합니다.</p>
+<img alt="../../../../_images/connect-info-1.png" src="../../../../_images/connect-info-1.png" />
+<p>연결 가능한 외부 데이터 소스 목록은 다음과 같습니다.
+(연결 가능한 데이터 소스 유형은 지속적으로 업데이트/추가되고 있습니다)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>순번</p></th>
+<th class="head"><p>데이터 소스 이름</p></th>
+<th class="head"><p>관련 URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>MariaDB</p></td>
+<td><p>www.mariadb.org</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>IRIS</p></td>
+<td><p>mobigen.com/solution/IRIS-Big-data-DB-Cluster.php</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>Oracle</p></td>
+<td><p>oracle.com</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>MySQL</p></td>
+<td><p>mysql.com</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>MySQL5</p></td>
+<td><p>mysql.com</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>MONGODB</p></td>
+<td><p>mongodb.com</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>HDFS</p></td>
+<td><p>hadoop.apache.org</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>HBASE</p></td>
+<td><p>hbase.apache.org</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>PostgreSQL</p></td>
+<td><p>postgresql.org</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>Tibero</p></td>
+<td><p>tmaxdata.com</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>OBJECTSTORAGE</p></td>
+<td><p>min.io</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>Elasticsearch</p></td>
+<td><p>elastic.co</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>vectorwise</p></td>
+<td><p>www.actian.com</p></td>
+</tr>
+<tr class="row-odd"><td><p>14</p></td>
+<td><p>KTCloudstorage</p></td>
+<td><p>cloud.kt.com</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="minio">
+<h2>MINIO 에 연결정보 생성하기<a class="headerlink" href="#minio" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">외부 및 내부 MINIO 에 연결 정보를 생성하는 예시입니다.</div>
+<div class="line">MINIO 가 설치되어 있는 S3, 서버 정보와 함께 bucket, access_key, secret_key 를 알고 있는 경우에만 연결 정보 만들기가 가능합니다.</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>MINIO 연결정보 추가<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>IRIS UI 메뉴에서 [관리 -&gt; 연결 정보] 를 클릭합니다.
+- “+ 새 연결 정보” 추가 버튼 클릭하면 연결정보 입력 창이 뜹니다.</p>
+<a class="reference internal image-reference" href="../../../../_images/ex21-1.png"><img alt="MINIO DataSource Connector Info" src="../../../../_images/ex21-1.png" style="width: 281.4px; height: 379.8px;" /></a>
+<ul class="simple">
+<li><p><strong>이름</strong> 은 연결정보의 이름이며, 필수 입력 사항입니다. <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Analyzer/data_model/00_data_model.html#id6">데이터모델 생성</a> 시 연결정보를 선택할 때 콤보박스 리스트에 보여지는 이름입니다.</p></li>
+<li><p>‘설명’ 부분은 생성한 연결정보에 대한 유의 사항이나 용도 등 사용시 도움이 되는 정보를 입력합니다.(선택 사항)</p></li>
+<li><p><strong>데이터소스 유형</strong> 을 OBJECTSTORAGE 로 선택합니다.</p></li>
+<li><dl class="simple">
+<dt><strong>연결 정보</strong> 의 내용을 입력합니다. 이 정보들은 MINIO 가 설치될 때 입력했던 정보를 그대로 입력합니다.</dt><dd><ul>
+<li><p>host 와 port 는 MINIO 가 설치되어 있는 서버(S3) 정보를 입력합니다.</p></li>
+<li><p>bucket 은 앞으로 생성되는 object 가 들어갈 일종의 디렉토리 이름입니다. MINIO 설치 시 만든 bucket 중 연결하려는 bucket 을 입력합니다.</p></li>
+<li><p>access_key, secret_key 를 입력합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>‘연결 테스트’ 를 클릭하여 시험해 봅니다.</p></li>
+<li><p>저장합니다.</p></li>
+<li><p>Getting Started - <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/01-intro/index.html">데이터 파일 IRIS 업로드와 분석준비 수행</a> 을 통해 MinIO로 데이터를 올리고 분석을 수행하는 튜토리얼을 확인할 수 있습니다.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>연결정보 리스트 보기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>IRIS UI 메뉴에서 [관리 -&gt; 연결 정보] 를 클릭합니다.</p></li>
+</ul>
+<img alt="Open DataSource Connector list window" src="../../../../_images/connect-info-2.png" />
+<ul class="simple">
+<li><p>연결정보 화면에 들어가면 연결 정보 목록을 확인 할 수 있습니다.
+(현재 IRIS SaaS 에서는 MinIO를 기본 스토리지로 제공하고 있습니다)</p></li>
+</ul>
+<img alt="Open DataSource Connector list window" src="../../../../_images/ex1-2-2.png" />
+</div>
+<div class="section" id="id4">
+<h2>새로운 연결정보 추가<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>“+ 새 연결 정보” 추가 버튼 클릭</p></li>
+</ul>
+<img alt="New DataSource Connector Info" src="../../../../_images/ex2-1-1.png" />
+<ul class="simple">
+<li><p>연결정보 입력 창 팝업</p></li>
+</ul>
+<img alt="New DataSource Connector Info" src="../../../../_images/ex2-2.PNG" />
+</div>
+<div class="section" id="id5">
+<h2>데이터 소스 유형 선택 및 연결 정보 입력<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>“데이터소스 유형 선택” 탭에서 원하는 데이터소스 선택</p></li>
+<li><p>해당 데이터소스에 접속하기 위한 기본 정보 입력</p></li>
+</ol>
+<img alt="New DataSource Connector Info" src="../../../../_images/ex2-3.PNG" />
+</div>
+<div class="section" id="id6">
+<h2>연결 테스트 및 저장<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>입력한 정보로 “연결 테스트” 진행</p></li>
+<li><p>연결 테스트가 성공하면 저장</p></li>
+</ol>
+<blockquote>
+<div><p>2.1. 테스트를 실패하면 접속정보 정확히 입력 후 다시 진행</p>
+</div></blockquote>
+<img alt="New DataSource Connector Info" src="../../../../_images/ex2-4.PNG" />
+</div>
+<div class="section" id="id7">
+<h2>생성된 연결정보 수정하기<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>수정 버튼을 눌러 연결정보를 수정</p></li>
+<li><p>연결 정보를 수정한 후 연결 테스트를 진행 및 저장</p></li>
+</ul>
+<img alt="Modify DataSource Connector Info" src="../../../../_images/ex3-1.PNG" />
+<img alt="Modify DataSource Connector Info" src="../../../../_images/ex3-2.PNG" />
+</div>
+<div class="section" id="id8">
+<h2>연결정보 삭제하기<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>삭제 버튼을 눌러 연결 정보 삭제</p></li>
+</ul>
+<img alt="Delete DataSource Connector Info" src="../../../../_images/ex4-1.PNG" />
+<img alt="Delete DataSource Connector Info" src="../../../../_images/ex4-2.PNG" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../jobs_inquiry/index.html" class="btn btn-neutral float-right" title="작업 조회" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="관리" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

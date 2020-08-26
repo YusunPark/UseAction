@@ -1,0 +1,1980 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. 쿼리 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3. 공간 쿼리 사용하기" href="01-01.extension_geospatial.html" />
+    <link rel="prev" title="1. SQL Reference" href="00.sql_reference.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../systemmanager_guide/index.html">System-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="00.sql_reference.html">1. SQL Reference</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2. 쿼리</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01-01.extension_geospatial.html">3. 공간 쿼리 사용하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02.load.html">4. 로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.option.html">5. 옵션</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.api_jdbc.html">6. API-JDBC 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.api_python.html">7. PYTHON-API 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html">8. 개요</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#id2">9. 목차</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-overview">10. DBeaver Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#id4">11. DBeaver 설치</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-thrift-server-hive">12. DBeaver Thrift Server (Hive) 사용방법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-iris-jdbc">13. DBeaver IRIS JDBC 사용방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">User Guide</a> &raquo;</li>
+    
+    <li><span class="section-number">2. </span>쿼리</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/01.query.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/user_guide/doc/01.query</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/user_guide/doc/01.query</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/user_guide/doc/01.query
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/user_guide/doc/01.query</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/01.query.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/user_guide/doc/01.query.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">2. </span>쿼리<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>IRIS는 사용자가 IRIS에 저장된 데이터를 자유로이 사용할 수 있도록 표준 SQL 쿼리를 지원합니다. 사용자는 iplus 혹은 API를 이용하여 쿼리를 실행함으로써 원하는 결과를 얻을 수 있습니다. 본 장에서는 iplus 상에서 SELECT, INSERT, UPDATE, DELETE 등 주요 쿼리 문을 작성하는 방법을 설명 합니다.</p>
+<p>또한 IRIS에 접속을 할 경우 특정 데이터베이스를 선택하게 되는데, 선택된 데이터베이스가 아닌 다른 데이터베이스에 존재하는 테이블을 사용할 경우에는 다음과 같이 데이터베이스명을 명시적으로 적어 주어야 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="p">{</span><span class="n">database_name</span><span class="p">}</span><span class="o">.</span><span class="p">{</span><span class="n">table_name</span><span class="p">};</span>
+</pre></div>
+</div>
+<div class="section" id="id2">
+<h2><span class="section-number">2.1. </span>테이블 생성하기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서 테이블을 생성하는 방법은 일반적인 데이터베이스에서 쿼리를 이용해서 테이블을 생성하는 방법과 유사합니다. 아래는 일반적인 데이터베이스에서 사용하는 테이블 생성 쿼리의 예입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="p">(</span>
+<span class="n">Id</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="ow">not</span> <span class="n">null</span><span class="p">,</span>
+<span class="n">ddate</span> <span class="n">date</span><span class="p">,</span>
+<span class="n">ddata</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="o">.</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>IRIS에서 테이블을 생성하기 위해서는, 상기의 쿼리에 몇 가지 옵션들이 추가됩니다. 아래는 IRIS에서 테이블을 생성하는 쿼리문의 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="p">(</span>
+<span class="nb">id</span> <span class="n">TEXT</span><span class="p">,</span>
+<span class="n">ddate</span> <span class="n">TEXT</span><span class="p">,</span>
+<span class="n">ddata</span> <span class="n">TEXT</span>
+<span class="p">)</span>
+<span class="n">datascope</span> <span class="n">LOCAL</span>
+<span class="n">ramexpire</span> <span class="mi">30</span>
+<span class="n">diskexpire</span> <span class="mi">34200</span>
+<span class="n">partitionkey</span> <span class="nb">id</span>
+<span class="n">partitiondate</span> <span class="n">ddate</span>
+<span class="n">partitionrange</span> <span class="mi">10</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+<p>위의 테이블 생성을 위한 쿼리에서 사용되는 옵션에 대한 설명은 다음과 같습니다.</p>
+<p><strong>datascope</strong>
+datascope는 데이터의 저장 방식, 즉 데이터 테이블의 유형을 설정하는 옵션입니다. 사용자는 생성하는 테이블이 GLOBAL 테이블인지 혹은 LOCAL 테이블인지 테이블의 유형을 지정할 수 있습니다. 테이블 유형에 대한 상세한 설명은 “IRIS System Overview”를 참조하시기 바랍니다.</p>
+<p><strong>ramexpire</strong>
+ramexpire는 데이터를 메모리에 보관하는 시간을 설정하는 옵션입니다. IRIS에 데이터가 입력되면, 먼저 메모리에 보관한 후, ramexpire에서 지정된 시간이 경과되면 자동으로 디스크로 옮겨서 저장하게 됩니다. Ramexpire는 분 단위로 설정할 수 있으며, default값은 제공되지 않습니다. Ramexpire를 너무 큰 값으로 설정하면, 오랜 기간 동안 메모리에 데이터를 보관하여야 하며, 결국 메모리의 부족 등으로 인하여 노드에서의 데이터 처리에 문제가 발생할 수 있습니다. 따라서, 메모리의 용량과 데이터 량에 따라 ramexpire 값을 적절하게 설정하여야 합니다. 글로벌 테이블의 경우, 데이터 량이 크지 않으므로 ramexpire를 0으로 설정하여 영구 저장됩니다.</p>
+<p><strong>diskexpire</strong>
+diskexpire는 데이터를 디스크에 보관하는 기간을 설정하는 옵션입니다. Diskexpire는 분 단위로 설정할 수 있으며, 디스크의 용량과 데이터 량에 따라 적절하게 설정하여야 합니다. 글로벌 테이블의 경우, diskexpire를 0으로 설정되어 영구 저장됩니다. 글로벌 테이블은 마스터 노드의 경우, 디스크에 저장되며, 데이터 노드의 경우, 메모리에 저장됩니다.</p>
+<p><strong>partitionkey</strong>
+데이터가 IRIS에 입력되면, 동일한 partitionkey 값을 가지며, 동일한 기간 동안 발생된 데이터들로 분류하여 저장하게 됩니다. 위의 예시에서는 partitionkey를 id로 지정하였습니다. 즉, 입력되는 데이터를 id 컬럼의 값을 partitionkey로 사용하여 분류한다는 의미입니다. 만일, datascope가 글로벌 테이블인 경우, partitionkey가 불필요하기 때문에 none으로 자동 설정됩니다.</p>
+<p><strong>partitiondate</strong>
+partitiondate는 입력되는 데이터를 동일한 기간에 발생한 데이터들로 분류하기 위하여 사용합니다. 위의 예시에서는 partitiondate를 ddate로 지정하였습니다. 즉, 입력되는 데이터의 ddate 컬럼의 값에 따라 데이터를 분류한다는 의미입니다. Partitiondate로 설정되는 컬럼 값의 형식은 14자리의 숫자(YYYYMMDDHHMMSS)로 이루어져야 합니다. 만일, datascope가 글로벌 테이블인 경우, partitiondate가 불필요하기 때문에 none으로 자동 설정됩니다.</p>
+<p><strong>partitionrange</strong>
+partitionrange는 입력되는 데이터를 상기의 partitiondate로 설정한 컬럼의 값에 따라 동일 그룹으로 분류할때, 해당되는 기간을 결정하는 옵션입니다. 예를 들어, partitionrange를 10으로 설정하였다면, partitiondate 값이 특정 시각을 기준으로 10분동안 발생된 데이터가 동일 그룹으로 분류됩니다. Partitionrange는 분 단위로 설정 가능합니다. 만일, partitionrange를 크게 설정하면, 동일 그룹으로 분류되는 데이터의 수가 커져, IRIS로 로딩하는 성능에 영향을 줄 수 있으므로 적정한 값을 설정하여야 합니다. 만일, datascope가 글로벌 테이블인 경우, partitionrange가 불필요하기 때문에 0으로 자동 설정됩니다. 만일, datascope가 로컬 테이블인 경우, partitionrange의 값은 1 &lt;= partitionrange &lt;= 1440의 범위에서 설정합니다.</p>
+<div class="section" id="id3">
+<h3><span class="section-number">2.1.1. </span>테이블 관리하기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>IRIS 사용자는 IRIS에서 제공하는 .table 명령어를 이용하여 IRIS 테이블 정보를 조회할 수 있으며, 쿼리를 통해 테이블을 생성, 삭제 할 수 있습니다. 테이블 관리 명령어는 모든 사용자가 실행할 수 있습니다. IRIS 관리자와 일반 사용자 모두 글로벌 테이블과 로컬 테이블을 생성, 수정, 삭제할 수 있습니다. 시스템 테이블의 경우, IRIS 시스템에 대한 정보가 저장된 테이블이며, IRIS 설치 시점에 제공 되며, IRIS 관리자에 의하여 수정할 수 있습니다. 테이블 관리를 위하여 제공되는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HELP</span>
+<span class="o">======================================================================================================================</span>
+ <span class="n">table</span> <span class="n">command</span> <span class="n">help</span>
+     <span class="nb">list</span>    <span class="p">:</span> <span class="n">show</span> <span class="n">table</span> <span class="nb">list</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="nb">list</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+               <span class="n">you</span> <span class="n">needs</span> <span class="n">option</span> <span class="n">help</span><span class="p">,</span> <span class="o">.</span><span class="n">table</span> <span class="nb">list</span> <span class="o">-</span><span class="n">h</span>
+     <span class="n">info</span>    <span class="p">:</span> <span class="n">show</span> <span class="n">detail</span> <span class="n">table</span> <span class="n">info</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">info</span> <span class="p">[</span><span class="n">table</span> <span class="n">name</span><span class="p">]</span>
+     <span class="n">columns</span> <span class="p">:</span> <span class="n">show</span> <span class="n">detail</span> <span class="n">table</span> <span class="n">columns</span> <span class="n">info</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">columns</span> <span class="p">[</span><span class="n">table</span> <span class="n">name</span><span class="p">]</span>
+     <span class="n">schema</span>  <span class="p">:</span> <span class="n">show</span> <span class="n">tables</span> <span class="n">schema</span> <span class="ow">or</span> <span class="nb">set</span> <span class="n">tables</span> <span class="n">schema</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">schema</span> <span class="p">[</span><span class="n">table</span> <span class="n">name</span><span class="p">]</span> <span class="o">--</span><span class="n">edit</span> <span class="p">{</span><span class="n">query</span><span class="p">}</span>
+     <span class="n">expire</span>  <span class="p">:</span> <span class="nb">set</span> <span class="n">table</span> <span class="n">expire</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">expire</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">[</span><span class="n">disk</span> <span class="o">|</span> <span class="n">ram</span><span class="p">]</span> <span class="p">{</span><span class="n">exp_time</span><span class="p">}</span>
+     <span class="nb">range</span>   <span class="p">:</span> <span class="nb">set</span> <span class="n">table</span> <span class="nb">range</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="nb">range</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">{</span><span class="n">table_range</span><span class="p">}</span>
+     <span class="n">option</span>  <span class="p">:</span> <span class="n">show</span> <span class="n">option</span> <span class="nb">list</span> <span class="ow">or</span> <span class="nb">set</span> <span class="n">table</span> <span class="n">option</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">option</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">option</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">[</span><span class="n">disk</span> <span class="o">|</span> <span class="n">ram</span><span class="p">]</span> <span class="p">[</span><span class="n">LOCAL_TIME_BASE</span><span class="o">|</span><span class="n">PARTITION_BASE</span><span class="o">|</span><span class="n">KEY_BASE</span><span class="o">|</span><span class="n">RECYCLEBIN</span><span class="o">|</span><span class="n">OFF</span><span class="p">]</span>
+     <span class="n">size</span>    <span class="p">:</span> <span class="n">show</span> <span class="n">table</span> <span class="n">size</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">size</span>
+     <span class="n">index</span>   <span class="p">:</span> <span class="n">show</span> <span class="n">table</span> <span class="n">index</span>
+               <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">table</span> <span class="n">index</span>
+<span class="o">======================================================================================================================</span>
+
+<span class="mi">21</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0693</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id13">
+<caption><span class="caption-text">.table 명령어</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>명령어</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>.table list</p></td>
+<td><p>접근 가능한 테이블목록을 조회 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.table info</p></td>
+<td><p>테이블의 보관주기, partitionrange, partitionkey, partitiondate 등의 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>.table columns</p></td>
+<td><p>테이블의 각 컬럼별 상세 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.table schema</p></td>
+<td><p>테이블 스키마 정보를 조회 혹은 변경 합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>.table expire</p></td>
+<td><p>각 테이블별 데이터의 보관 주기를 변경 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.table range</p></td>
+<td><p>각 테이블의 range를 변경 합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>.table size</p></td>
+<td><p>각 테이블의 용량 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.table index</p></td>
+<td><p>각 테이블의 인덱스 정보를 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>각 명령어는 다음과 같은 옵션이 존재합니다.</p>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">.table 명령어의 옵션</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">데이터베이스가 선택된 상황일 경우</div>
+<div class="line">선택된 데이터베이스에 존재하는 모든 테이블을 대상으로 조회</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>{table_name}</p></td>
+<td><div class="line-block">
+<div class="line">데이터베이스가 선택된 상황일 경우</div>
+<div class="line">데이터베이스에 존재하는 특정 테이블을 대상으로 조회</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>*.*</p></td>
+<td><p>접근 가능한 모든 테이블을 대상으로 조회</p></td>
+</tr>
+<tr class="row-odd"><td><p>{database_name}.*</p></td>
+<td><p>입력한 데이터베이스 이름에 존재하는 테이블을 대상으로 조회</p></td>
+</tr>
+<tr class="row-even"><td><p>{database_name}.{table_name}</p></td>
+<td><p>입력한 데이터베이스, 테이블을 대상으로 조회</p></td>
+</tr>
+</tbody>
+</table>
+<p>만약 데이터베이스를 선택하지 않은 상태에서 옵션을 주지 않을 경우 다음과 같은 오류 메시지가 발생하게 됩니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="p">:</span> <span class="o">-</span><span class="n">ERR</span> <span class="n">must</span> <span class="n">use</span> <span class="p">(</span><span class="n">DB</span><span class="o">.</span><span class="n">TABLE</span><span class="p">)</span> <span class="n">when</span> <span class="n">no</span> <span class="n">database</span> <span class="ow">is</span> <span class="n">selected</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><span class="section-number">2.2. </span>테이블 리스트보기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>생성된 테이블 리스트를 출력하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="nb">list</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래 화면은 .table 명령어를 사용하여 테이블 리스트를 출력하는 예를 보여주고 있습니다. 출력된 결과에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>           <span class="n">SCOPE</span>     <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>
+<span class="o">===============================================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>     <span class="n">LOCAL</span>     <span class="mi">30</span>              <span class="mi">34200</span>           <span class="n">k</span>             <span class="n">p</span>                   <span class="mi">10</span>
+ <span class="n">TEST</span>       <span class="n">GLOBAL_TEST_TABLE</span>    <span class="n">GLOBAL</span>    <span class="mi">0</span>               <span class="mi">0</span>               <span class="kc">None</span>          <span class="kc">None</span>                <span class="mi">0</span>
+<span class="o">===============================================================================================================================</span>
+
+<span class="mi">2</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1517</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id15">
+<caption><span class="caption-text">.table list 실행 결과의 컬럼</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>DB_NAME</p></td>
+<td><p>데이터베이스 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_NAME</p></td>
+<td><p>테이블 명</p></td>
+</tr>
+<tr class="row-even"><td><p>SCOPE</p></td>
+<td><p>테이블의 종류 (LOCAL, GLOBAL, SYSTEM)</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM_EXP_TIME</p></td>
+<td><p>메모리 보관 주기(분)</p></td>
+</tr>
+<tr class="row-even"><td><p>DSK_EXP_TIME</p></td>
+<td><p>디스크 보관 주기(분)</p></td>
+</tr>
+<tr class="row-odd"><td><p>KEY_STRING</p></td>
+<td><p>partitionkey 컬럼</p></td>
+</tr>
+<tr class="row-even"><td><p>PARTITION_STRING</p></td>
+<td><p>partitiondate 컬럼</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARTITION_RANGE</p></td>
+<td><p>partitionrange (분)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">2.3. </span>테이블 상세 정보 보기<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에 생성된 테이블의 상세 정보를 조회하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">info</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 LOCAL_TEST_TABLE 테이블의 정보를 조회하기 위하여 상기의 명령어를 실행한 예시 화면입니다. 출력된 결과에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">info</span> <span class="n">LOCAL_TEST_TABLE</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SCOPE</span>    <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>    <span class="n">ZIP_OPTION</span>    <span class="n">USING_FTS</span>
+<span class="o">========================================================================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">LOCAL</span>    <span class="mi">30</span>              <span class="mi">34200</span>           <span class="n">k</span>             <span class="n">p</span>                   <span class="mi">10</span>                 <span class="n">DEFAULT</span>       <span class="n">NO</span>
+<span class="o">========================================================================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0166</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id16">
+<caption><span class="caption-text">.table info 실행 결과의 컬럼</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_NAME</p></td>
+<td><p>테이블 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCOPE</p></td>
+<td><p>테이블의 종류 (LOCAL, GLOBAL, SYSTEM)</p></td>
+</tr>
+<tr class="row-even"><td><p>RAM_EXP_TIME</p></td>
+<td><p>메모리 보관 주기(분)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DSK_EXP_TIME</p></td>
+<td><p>디스크 보관 주기(분)</p></td>
+</tr>
+<tr class="row-even"><td><p>KEY_STRING</p></td>
+<td><p>partitionkey 컬럼</p></td>
+</tr>
+<tr class="row-odd"><td><p>PARTITION_STRING</p></td>
+<td><p>partitiondate 컬럼</p></td>
+</tr>
+<tr class="row-even"><td><p>PARTITION_RANGE</p></td>
+<td><p>partitionrange (분)</p></td>
+</tr>
+<tr class="row-odd"><td><p>USING_FTS</p></td>
+<td><p>해당 테이블이 FTS(Full Text Search) 기능의 사용 유무 (YES or NO)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">2.4. </span>테이블 컬럼정보 조회하기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에 생성된 테이블의 컬럼 정보를 조회하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">columns</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래 예시는 LOCAL_TEST_TABLE 테이블의 컬럼 정보를 확인하는 방법을 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">columns</span> <span class="n">LOCAL_TEST_TABLE</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">TABLE_CAT</span>    <span class="n">TABLE_SCHEM</span>    <span class="n">TABLE_NAME</span>          <span class="n">COLUMN_NAME</span>    <span class="n">DATA_TYPE</span>    <span class="n">TYPE_NAME</span>    <span class="n">COLUMN_SIZE</span>    <span class="n">BUFFER_SIZE</span>    <span class="n">BUFFER_LENGTH</span>    <span class="n">DECIMAL_DIGITS</span>    <span class="n">NULLABLE</span>    <span class="n">REMARKS</span>    <span class="n">COLUMN_DEF</span>    <span class="n">SQL_DATA_TYPE</span>    <span class="n">SQL_DATETIME_SUB</span>    <span class="n">CHAR_OCTET_LENGTH</span>    <span class="n">ORDINAL_POSITION</span>    <span class="n">IS_NULLABLE</span>    <span class="n">SCOPE_CATLOG</span>    <span class="n">SCOPE_SCHEMA</span>    <span class="n">SCOPE_TABLE</span>    <span class="n">SOURCE_DATA_TYPE</span>    <span class="n">IS_AUTOINCREMENT</span>    <span class="n">NOTINDEXED</span>
+<span class="o">=================================================================================================================================================================================================================================================================================================================================================================================================</span>
+ <span class="n">TEST</span>         <span class="n">null</span>           <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">K</span>              <span class="o">-</span><span class="mi">1</span>           <span class="n">TEXT</span>         <span class="mi">65535</span>          <span class="mi">65535</span>          <span class="n">null</span>             <span class="mi">10</span>                <span class="mi">1</span>                      <span class="n">null</span>          <span class="mi">0</span>                <span class="mi">0</span>                   <span class="mi">65535</span>                <span class="mi">1</span>                   <span class="n">YES</span>            <span class="n">null</span>            <span class="n">null</span>            <span class="n">null</span>           <span class="n">null</span>                <span class="kc">False</span>               <span class="kc">False</span>
+ <span class="n">TEST</span>         <span class="n">null</span>           <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">P</span>              <span class="o">-</span><span class="mi">1</span>           <span class="n">TEXT</span>         <span class="mi">65535</span>          <span class="mi">65535</span>          <span class="n">null</span>             <span class="mi">10</span>                <span class="mi">1</span>                      <span class="n">null</span>          <span class="mi">0</span>                <span class="mi">0</span>                   <span class="mi">65535</span>                <span class="mi">2</span>                   <span class="n">YES</span>            <span class="n">null</span>            <span class="n">null</span>            <span class="n">null</span>           <span class="n">null</span>                <span class="kc">False</span>               <span class="kc">False</span>
+ <span class="n">TEST</span>         <span class="n">null</span>           <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">A</span>              <span class="o">-</span><span class="mi">1</span>           <span class="n">TEXT</span>         <span class="mi">65535</span>          <span class="mi">65535</span>          <span class="n">null</span>             <span class="mi">10</span>                <span class="mi">1</span>                      <span class="n">null</span>          <span class="mi">0</span>                <span class="mi">0</span>                   <span class="mi">65535</span>                <span class="mi">3</span>                   <span class="n">YES</span>            <span class="n">null</span>            <span class="n">null</span>            <span class="n">null</span>           <span class="n">null</span>                <span class="kc">False</span>               <span class="kc">False</span>
+<span class="o">=================================================================================================================================================================================================================================================================================================================================================================================================</span>
+
+<span class="mi">3</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0235</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-text">.table columns 실행 결과의 컬럼</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_CAT</p></td>
+<td><p>데이터베이스 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_SCHEM</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_NAME</p></td>
+<td><p>테이블 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>COLUMN_NAME</p></td>
+<td><p>컬럼 명</p></td>
+</tr>
+<tr class="row-even"><td><p>DATA_TYPE</p></td>
+<td><p>java.sql.Types에 매핑되는 타입</p></td>
+</tr>
+<tr class="row-odd"><td><p>TYPE_NAME</p></td>
+<td><p>타입 명</p></td>
+</tr>
+<tr class="row-even"><td><p>COLUMN_SIZE</p></td>
+<td><p>컬럼 크기</p></td>
+</tr>
+<tr class="row-odd"><td><p>BUFFER_SIZE</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><p>BUFFER_LENGTH</p></td>
+<td><p>(사용하지 않는 컬럼)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DECIMAL_DIGITS</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><p>NULLABLE</p></td>
+<td><p>null 허용 여부</p></td>
+</tr>
+<tr class="row-odd"><td><p>REMARKS</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><p>COLUMN_DEF</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-odd"><td><p>SQL_DATA_TYPE</p></td>
+<td><p>(사용하지 않는 컬럼)</p></td>
+</tr>
+<tr class="row-even"><td><p>SQL_DATETIME_SUB</p></td>
+<td><p>(사용하지 않는 컬럼)</p></td>
+</tr>
+<tr class="row-odd"><td><p>CHAR_OCTET_LENGTH</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><p>ORDINAL_POSITION</p></td>
+<td><p>컬럼의 순서(시작 번호 1)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IS_NULLABLE</p></td>
+<td><p>컬럼 데이터의 null 포함 여부</p></td>
+</tr>
+<tr class="row-even"><td><p>SCOPE_CATLOG</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-odd"><td><p>SCOPE_SCHEMA</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><p>SCOPE_TABLE</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-odd"><td><p>SOURCE_DATA_TYPE</p></td>
+<td><p>null</p></td>
+</tr>
+<tr class="row-even"><td><p>IS_AUTOINCREMENT</p></td>
+<td><p>autoincrement 컬럼 여부</p></td>
+</tr>
+<tr class="row-odd"><td><p>NOTINDEXED</p></td>
+<td><p>fts 테이블일 경우 컬럼에 인덱스 적용 여부</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h2><span class="section-number">2.5. </span>테이블 스키마 정보 조회하기<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>각 테이블의 스키마 정보를 조회하기 위해서는 다음과 같은 명령어를 사용합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">schema</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래 예시는 LOCAL_TEST_TABLE 테이블의 스키마 정보를 확인하는 방법을 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span>  <span class="o">.</span><span class="n">table</span> <span class="n">schema</span> <span class="n">LOCAL_TEST_TABLE</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SQL_SCRIPT</span>
+<span class="o">==============================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="p">(</span> <span class="n">K</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">P</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">A</span> <span class="n">TEXT</span> <span class="p">);</span>
+<span class="o">==============================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1549</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<p>상기 예시에서와 같이 스키마 정보에는 ramexpire 등 옵션 정보는 출력되지 않습니다. 따라서, 테이블의 옵션 정보는 .table list 명령어를 통하여 확인하여야 합니다.</p>
+</div>
+<div class="section" id="id8">
+<h2><span class="section-number">2.6. </span>테이블 스키마 변경하기<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>테이블의 스키마를 수정하는 방법은 글로벌 테이블과 로컬 테이블이 상이합니다.
+글로벌 테이블의 경우, 새로운 컬럼을 추가할 수 있으나, 삭제 혹은 변경은 지원하지 않습니다. 글로벌 테이블의 컬럼을 추가하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">ALTER</span> <span class="n">TABLE</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="n">ADD</span> <span class="n">COLUMN</span> <span class="p">{</span><span class="n">new_column</span><span class="p">};</span>
+</pre></div>
+</div>
+<p>로컬 테이블에서의 테이블 수정은 Dot Command를 사용하여 기존의 스키마를 새로운 스키마로 변경하는 것입니다. 만일, alter table 명령어를 이용하여 로컬 테이블을 수정하면 모든 블록 파일에 접근하여 스키마를 변경하기 때문에 시스템의 부하에 영향을 줄 수 있습니다. 따라서, 로컬 테이블에 대해서는 Dot Command를 사용하여 테이블을 수정합니다.
+Dot Command를 사용하여 로컬 테이블의 스키마를 변경하면, 변경 직후부터 입력되는 데이터에 대하여 변경된 스키마가 적용됩니다. 따라서, 기존 데이터의 스키마는 변경되지 않습니다. 즉, 단일 테이블명에 2개의 상이한 스키마와 데이터가 존재하게 됩니다. 이 경우에도 사용자에게는 최신의 스키마 정보만 보여집니다.
+로컬 테이블에서 테이블을 수정하기 위하여 사용하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">schema</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="o">--</span><span class="n">edit</span> <span class="p">{</span><span class="n">create_query</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 로컬 테이블에서 기존의 테이블 스키마를 변경하고 확인하는 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">schema</span> <span class="n">LOCAL_TEST_TABLE</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SQL_SCRIPT</span>
+<span class="o">==============================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="p">(</span> <span class="n">K</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">P</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">A</span> <span class="n">TEXT</span> <span class="p">);</span>
+<span class="o">==============================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1437</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">schema</span> <span class="n">local_test_table</span> <span class="o">--</span><span class="n">edit</span> <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="p">(</span> <span class="n">K</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">P</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">A</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">B</span> <span class="n">TEXT</span><span class="p">);</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">copy</span> <span class="nb">all</span> <span class="n">success</span><span class="o">.</span>
+
+<span class="mf">0.0602</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">schema</span> <span class="n">LOCAL_TEST_TABLE</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SQL_SCRIPT</span>
+<span class="o">======================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="p">(</span> <span class="n">K</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">P</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">A</span> <span class="n">TEXT</span> <span class="p">,</span> <span class="n">B</span> <span class="n">TEXT</span><span class="p">);</span>
+<span class="o">======================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1607</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2><span class="section-number">2.7. </span>테이블의 데이터 보관주기 변경하기<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>테이블에서 데이터의 보관주기를 변경하는 명령어는 다음과 같습니다. 아래 명령어 사용 시, 데이터의 위치(램 혹은 디스크)에 따라 사용하는 옵션이 상이합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">expire</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">[</span><span class="n">ram</span><span class="o">|</span><span class="n">disk</span><span class="p">]</span> <span class="p">{</span><span class="n">exp_time</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 LOCAL_TEST_TABLE의 램 보관 주기를 기존의 30분에서 10분으로 변경하는 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">info</span> <span class="n">local_test_table</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SCOPE</span>    <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>    <span class="n">ZIP_OPTION</span>    <span class="n">USING_FTS</span>
+<span class="o">========================================================================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">LOCAL</span>    <span class="mi">30</span>              <span class="mi">34200</span>           <span class="n">k</span>             <span class="n">p</span>                   <span class="mi">10</span>                 <span class="n">DEFAULT</span>       <span class="n">NO</span>
+<span class="o">========================================================================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0224</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">expire</span> <span class="n">local_test_table</span> <span class="n">ram</span> <span class="mi">10</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">copy</span> <span class="nb">all</span> <span class="n">success</span><span class="o">.</span>
+
+<span class="mf">0.0547</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">info</span> <span class="n">local_test_table</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SCOPE</span>    <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>    <span class="n">ZIP_OPTION</span>    <span class="n">USING_FTS</span>
+<span class="o">========================================================================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">LOCAL</span>    <span class="mi">10</span>              <span class="mi">34200</span>           <span class="n">k</span>             <span class="n">p</span>                   <span class="mi">10</span>                 <span class="n">DEFAULT</span>       <span class="n">NO</span>
+<span class="o">========================================================================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0183</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="partitionrange">
+<h2><span class="section-number">2.8. </span>테이블의 partitionrange 수정하기<a class="headerlink" href="#partitionrange" title="Permalink to this headline">¶</a></h2>
+<p>테이블 partitionrange를 변경하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="nb">range</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">{</span><span class="nb">range</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 LOCAL_TEST_TABLE의 range값을 기존의 10분에서 20분으로 변경하는 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">info</span> <span class="n">local_test_table</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SCOPE</span>    <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>    <span class="n">ZIP_OPTION</span>    <span class="n">USING_FTS</span>
+<span class="o">========================================================================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">LOCAL</span>    <span class="mi">10</span>              <span class="mi">34200</span>           <span class="n">k</span>             <span class="n">p</span>                   <span class="mi">10</span>                 <span class="n">DEFAULT</span>       <span class="n">NO</span>
+<span class="o">========================================================================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0197</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="nb">range</span> <span class="n">local_test_table</span> <span class="mi">20</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">copy</span> <span class="nb">all</span> <span class="n">success</span><span class="o">.</span>
+
+<span class="mf">0.0532</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">info</span> <span class="n">local_test_table</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SCOPE</span>    <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>    <span class="n">ZIP_OPTION</span>    <span class="n">USING_FTS</span>
+<span class="o">========================================================================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">LOCAL</span>    <span class="mi">10</span>              <span class="mi">34200</span>           <span class="n">k</span>             <span class="n">p</span>                   <span class="mi">20</span>                 <span class="n">DEFAULT</span>       <span class="n">NO</span>
+<span class="o">========================================================================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0213</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2><span class="section-number">2.9. </span>테이블 용량정보 조회하기<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>제공되는 명령어를 이용하면 IRIS에서 사용중인 각 테이블의 사용량을 확인할 수 있습니다. 측정되는 용량은 이중화가 되어 있는 데이터 용량이며, 실시간으로 측정되는 용량이 아닙니다.</p>
+<p>테이블의 용량 정보를 조회하는 명령어는 다음과 같습니다. 기본적으로, 각 노드별 테이블의 용량을 조회할 수 있습니다. 만일 –summary 옵션을 추가하면 전체 테이블의 용량을 조회할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">size</span> <span class="o">--</span><span class="n">summary</span>
+</pre></div>
+</div>
+<p>아래는 각 노드별 테이블의 용량을 조회하는 예와 전체 테이블의 용량을 조회하는 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">size</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SIZE</span>    <span class="n">FNUM</span>    <span class="n">SIZE_RAM</span>    <span class="n">FNUM_RAM</span>    <span class="n">UPDATETIME</span>
+<span class="o">====================================================================================================</span>
+ <span class="mi">1</span>          <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">32768</span>       <span class="mi">1</span>           <span class="mi">20180328021000</span>
+<span class="o">====================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0668</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">size</span> <span class="o">--</span><span class="n">summary</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SIZE</span>    <span class="n">FNUM</span>    <span class="n">SIZE_RAM</span>    <span class="n">FNUM_RAM</span>    <span class="n">UPDATETIME</span>
+<span class="o">====================================================================================================</span>
+ <span class="o">-</span>          <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="mi">0</span>       <span class="mi">0</span>       <span class="mi">32768</span>       <span class="mi">1</span>           <span class="mi">20180328021000</span>
+<span class="o">====================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0713</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id18">
+<caption><span class="caption-text">.table columns 실행 결과의 컬럼</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>노드 아이디</p></td>
+</tr>
+<tr class="row-odd"><td><p>DB_NAME</p></td>
+<td><p>데이터베이스 명</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_NAME</p></td>
+<td><p>테이블 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>SIZE</p></td>
+<td><p>디스크에서 사용중인 용량 (byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>FNUM</p></td>
+<td><p>디스크에 존재하는 블럭 파일 개수</p></td>
+</tr>
+<tr class="row-odd"><td><p>SIZE_RAM</p></td>
+<td><p>램디스크에서 사용중인 용량 (byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>FNUM_RAM</p></td>
+<td><p>램디스크에 존재하는 블럭 파일 개수</p></td>
+</tr>
+<tr class="row-odd"><td><p>UPDATETIME</p></td>
+<td><p>정보 수집 시간</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h2><span class="section-number">2.10. </span>테이블 삭제하기<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서 제공하는 테이블 삭제 방법은 일반적인 데이터베이스에서 SQL을 이용하여 테이블을 삭제하는 방법과 동일합니다. 단, IRIS의 테이블은 테라바이트 이상 빅데이터를 저장하고 있기 때문에, 테이블을 삭제한다고 하더라도, 해당 테이블의 데이터가 즉시 삭제되지 않으며, 데이터 량에 따라 일정 시간이 소요됩니다. 따라서, 테이블을 삭제한다고 하더라도 디스크의 사용량이 급격하게 줄어들지는 않습니다.
+IRIS에서 테이블 삭제 명령을 실행하면 다음과 같은 절차에 따라 삭제가 이루어집니다.</p>
+<ol class="arabic simple">
+<li><p>테이블(테이블명 및 스키마)을 삭제합니다.</p></li>
+<li><p>마스터 노드의 데이터 위치 정보에서 해당 데이터의 위치에 삭제 표기합니다.</p></li>
+<li><p>BIM 프로세스가 마스터 노드의 데이터 위치 정보를 이용해 삭제할 데이터 리스트를 작성하면 PR 프로세스에서 실제 데이터를 삭제합니다.</p></li>
+</ol>
+<p>IRIS에서 테이블을 삭제하려면 아래와 같은 명령어를 사용합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">table</span> <span class="p">[</span><span class="n">TABLE_NAME</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>아래 화면은 특정 테이블을 삭제하는 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>          <span class="n">SCOPE</span>    <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>
+<span class="o">=============================================================================================================================</span>
+ <span class="n">TEST</span>       <span class="n">LOCAL_TEST_TABLE</span>    <span class="n">LOCAL</span>    <span class="mi">10</span>              <span class="mi">34200</span>           <span class="n">k</span>             <span class="n">p</span>                   <span class="mi">20</span>
+<span class="o">=============================================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1625</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">table</span> <span class="n">LOCAL_TEST_TABLE</span><span class="p">;</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Drop</span> <span class="n">Table</span>
+
+<span class="mf">0.2018</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>    <span class="n">TABLE_NAME</span>    <span class="n">SCOPE</span>    <span class="n">RAM_EXP_TIME</span>    <span class="n">DSK_EXP_TIME</span>    <span class="n">KEY_STRING</span>    <span class="n">PARTITION_STRING</span>    <span class="n">PARTITION_RANGE</span>
+<span class="o">=======================================================================================================================</span>
+<span class="o">=======================================================================================================================</span>
+
+<span class="mi">0</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1589</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<div class="section" id="select">
+<h3><span class="section-number">2.10.1. </span>SELECT 쿼리문 작성하기<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<p>IRIS에서 지원하는 SELECT 쿼리문은 약간의 제약 사항을 제외하면 일반 RDBMS에서 사용하는 SELECT 문과 동일합니다. 아래는 IRIS에서 작성한 SELECT 쿼리문의 기본 형식과 사용 예입니다. SELECT 쿼리문의 syntax tree는 “sql_reference”를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="p">{</span><span class="n">column_name</span><span class="p">}{,</span> <span class="n">column_name</span><span class="p">}</span> <span class="n">FROM</span> <span class="p">{</span><span class="n">table_name</span><span class="p">};</span>
+<span class="n">SELECT</span> <span class="p">{</span><span class="n">column_name</span><span class="p">}{,</span> <span class="n">column_name</span><span class="p">}</span> <span class="kn">from</span> <span class="p">{</span><span class="n">database_name</span><span class="p">}</span><span class="o">.</span><span class="p">{</span><span class="n">table_name</span><span class="p">};</span>
+
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">LOCAL_TEST_TABLE</span><span class="p">;</span>
+<span class="n">SELECT</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">count</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">FROM</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="n">WHERE</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>IRIS에서 SELECT 쿼리문 작성 시, 주의하여야 할 제약 사항은 다음과 같습니다.</p>
+<ul class="simple">
+<li><p>아래 예와 같이, SELECT 문에서 기존 테이블 명을 지정하지 않고, table alias를 사용하는 경우는 지원하지 않습니다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">a</span><span class="o">.*</span> <span class="n">FROM</span> <span class="p">(</span><span class="n">SELECT</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">X</span><span class="p">)</span> <span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>아래 예와 같이, 여러 개의 테이블을 동시에 사용시 select절에 * 를 사용할 수 없습니다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="insert">
+<h3><span class="section-number">2.10.2. </span>INSERT 쿼리문 작성하기<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h3>
+<p>IRIS에서 지원하는 INSERT 쿼리문은 일반 RDBMS에서 사용하는 INSERT 문과 유사하지만, 테이블 생성시 지정된 partitionkey와 partitiondate의 값에 유의해야 합니다.. 아래는 IRIS에서 작성한 INSERT 쿼리문의 기본 형식과 사용 예입니다. INSERT 쿼리문의 syntax tree는 “sql_reference”를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>INSERT INTO &lt;table_name (column1, column2, column3,…)&gt; VALUES &lt;(value1, value2, value3,…)&gt;;
+
+INSERT INTO LOCAL_TEST_TABLE (k, p, a) VALUES (&#39;k2&#39;, &#39;20110616000000&#39;, &#39;1&#39;);
+</pre></div>
+</div>
+<p>상기의 예에서, k는 partitionkey, p는 partitiondate, a는 일반 컬럼을 의미합니다.
+INSERT 쿼리문을 작성할 때의 제약 사항은 다음과 같습니다.</p>
+<ul class="simple">
+<li><p>Partitionkey로 지정된 컬럼의 값은 영문 대소문자, 숫자, (-), (_)를 조합하여 사용합니다.</p></li>
+<li><p>Partitiondate로 지정된 컬럼의 값은 14자리의 날자 형식(yyyymmddHHMMSS)을 사용합니다.</p></li>
+</ul>
+</div>
+<div class="section" id="update">
+<h3><span class="section-number">2.10.3. </span>UPDATE 쿼리문 작성하기<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h3>
+<p>IRIS에서 지원하는 UPDATE 쿼리문은 일반 RDBMS에서 사용하는 UPDATE 문과 유사합니다. 아래는 IRIS에서 작성한 UPDATE 쿼리문의 기본 형식과 사용 예입니다. UPDATE 쿼리문의 syntax tree는 “sql_reference”를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>UPDATE &lt;table_name&gt; SET &lt;column1 = value1, column2 = value2, column3 = value3,…&gt; WHERE &lt;some_column = some_value&gt;;
+
+UPDATE LOCAL_TEST_TABLE SET a = &#39;update&#39;;
+</pre></div>
+</div>
+<p>상기의 예는 LOCAL_TEST_TABLE의 a 컬럼의 값을 ‘update’로 변경하는 예입니다.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>[주의]
+IRIS의 특성 상, 분산 노드에 저장된 데이터의 위치는 partitionkey와 partitiondate를 기준으로 관리합니다. 만일, 사용자가 임의로 partitionkey 혹은 partitiondate 값을 변경하면, 실제 데이터의 위치와 IRIS에서 관리하는 데이터 위치 정보간에 불일치가 일어날 수 있으며, 만일 LOCATION HINT를 사용할 경우, 데이터를 찾지 못하는 경우가 발생할 수 있습니다. 따라서, UPDATE 쿼리 사용 시, partitionkey 컬럼과 partitiondate 컬럼은 변경하지 않습니다.</p>
+</div></blockquote>
+</div>
+<div class="section" id="delete">
+<h3><span class="section-number">2.10.4. </span>DELETE 쿼리문 작성하기<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<p>IRIS에서 지원하는 DELETE 쿼리문은 일반 RDBMS에서 사용하는 DELETE 문과 유사합니다. 아래는 IRIS에서 작성한 DELETE 쿼리문의 기본 형식과 사용 예입니다. DELETE 쿼리문의 syntax tree는 “sql_reference”를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DELETE</span> <span class="n">FROM</span> <span class="o">&lt;</span><span class="n">table_name</span><span class="o">&gt;</span> <span class="n">WHERE</span> <span class="o">&lt;</span><span class="n">some_column</span> <span class="o">=</span> <span class="n">some_value</span><span class="o">&gt;</span><span class="p">;</span>
+
+<span class="n">DELETE</span> <span class="n">FROM</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="n">WHERE</span> <span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;update&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>상기의 예는 LOCAL_TEST_TABLE의 a 컬럼이 ‘update’인 레코드를 삭제하는 예입니다.</p>
+</div>
+<div class="section" id="join">
+<h3><span class="section-number">2.10.5. </span>JOIN 쿼리문 작성하기<a class="headerlink" href="#join" title="Permalink to this headline">¶</a></h3>
+<p>IRIS는 제한된 범위에서 JOIN 쿼리문 사용이 가능하도록 지원합니다. IRIS에서 JOIN 사용 시 제약사항은 다음과 같습니다.</p>
+<ul class="simple">
+<li><p>JOIN 쿼리문에서 테이블간 JOIN 시 아래 표와 같이, 로컬 테이블간의 JOIN을 허용하지 않습니다.</p></li>
+</ul>
+<table class="docutils align-default" id="id19">
+<caption><span class="caption-text">IRIS 테이블간 JOIN의 use case</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 23%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>첫 번째 테이블</p></td>
+<td><p>두 번째 테이블</p></td>
+<td><p>세 번째 테이블</p></td>
+<td><p>JOIN 가능 여부</p></td>
+</tr>
+<tr class="row-even"><td><p>GLOBAL</p></td>
+<td><p>GLOBAL</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>가능</p></td>
+</tr>
+<tr class="row-odd"><td><p>GLOBAL</p></td>
+<td><p>LOCAL</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>가능</p></td>
+</tr>
+<tr class="row-even"><td><p>GLOBAL</p></td>
+<td><p>GLOBAL</p></td>
+<td><p>GLOBAL</p></td>
+<td><p>가능</p></td>
+</tr>
+<tr class="row-odd"><td><p>GLOBAL</p></td>
+<td><p>GLOBAL</p></td>
+<td><p>LOCAL</p></td>
+<td><p>가능</p></td>
+</tr>
+<tr class="row-even"><td><p>GLOBAL</p></td>
+<td><p>LOCAL</p></td>
+<td><p>LOCAL</p></td>
+<td><p>불가능</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOCAL</p></td>
+<td><p>LOCAL</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>불가능</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>INNER JOIN과 LEFT OUTER JOIN만 지원합니다.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="inner-join">
+<h2><span class="section-number">2.11. </span>INNER JOIN 사용하기<a class="headerlink" href="#inner-join" title="Permalink to this headline">¶</a></h2>
+<p>아래는 IRIS에서 작성한 INNER JOIN 쿼리문의 기본 형식과 사용 예입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT &lt;column_name(s)&gt; FROM &lt;table1&gt;, &lt;table2&gt;,… [WHERE &lt;expression&gt;] …;
+SELECT &lt;column_name(s)&gt; FROM &lt;table1&gt; INNER JOIN &lt;table2&gt; [ON &lt;expression&gt;] [WHERE &lt;expression&gt;] …;
+
+SELECT table1.pname, table1.unit, table2.carea, table2.cname FROM table1, table2 WHERE table1.unit &gt; 100;
+SELECT table1.pname, table1.unit, table2.carea, table2.cname FROM table1 INNER JOIN table2 ON table1.cid = table2.cid WHERE table1.unit &gt; 100;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">상기의 예에서와 같이, INNER JOIN문의 작성 방법은 전형적인 SQL문에서와 동일합니다.</div>
+<div class="line">만일, 상기의 첫 번째 형식과 같이 [ON &lt;expression&gt;]을 사용하지 않을 경우, n * n JOIN 즉 JOIN의 결과로 table1의 레코드 수 * table2의 레코드 수 만큼의 데이터가 리턴됩니다. 이 경우, 데이터 량이 많아지게 되고, 이는 시스템 성능 저하의 원인이 될 수 있습니다. 따라서, LOCATION HINT와 WHERE 절을 적절히 사용하여 연산에 필요한 데이터를 최소화한다면 불필요한 JOIN 연산으로 인한 시스템 성능 저하를 막을 수 있습니다.</div>
+<div class="line">만일, 각 노드에서 데이터 쿼리를 실행하여 얻은 중간 데이터량이 설정된 값(기본값: 노드당 쿼리문 수행 결과 데이터량이 5GB)보다 큰 경우, 메모리를 과다 점유할 수 있습니다. 따라서, 이로 인하여 발생될 수 있는 문제를 차단하기 위하여, IRIS에서 해당 작업을 강제로 종료할 수 있습니다.</div>
+</div>
+</div>
+<div class="section" id="left-outer-join">
+<h2><span class="section-number">2.12. </span>LEFT OUTER JOIN 사용하기<a class="headerlink" href="#left-outer-join" title="Permalink to this headline">¶</a></h2>
+<p>아래는 IRIS에서 작성한 LEFT OUTER JOIN 쿼리문의 기본 형식과 사용 예입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT &lt;column_name(s)&gt; FROM &lt;table1&gt; LEFT OUTER JOIN &lt;table2&gt; [ON &lt;expression&gt;] [WHERE &lt;expression&gt;] …;
+
+SELECT table1.pname, table1.unit, table2.carea, table2.cname FROM table1 LEFT OUTER JOIN table2 ON table1.cid = table2.cid WHERE table2.count = 11;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>[주의]
+IRIS에서는 각 노드에 분산되어 저장된 파일 단위로 JOIN 연산을 수행합니다. 상기의 기본 형식에서, table1 위치에 글로벌 테이블을 지정하고 table2 위치에 로컬 테이블을 지정하여 LEFT OUTER JOIN을 실행하여 JOIN 결과값을 확인해 보면 일부 데이터가 누락되는 것으로 알 수 있습니다. 이는 글로벌 테이블의 레코드 수가 로컬 테이블의 레코드 수보다 작기 때문입니다. 따라서, LEFT OUTER JOIN을 사용할 경우, 로컬 테이블은 상기의 쿼리문 기본 형식에서 항상 table1 위치에만 사용합니다.</p>
+</div></blockquote>
+<div class="section" id="hint">
+<h3><span class="section-number">2.12.1. </span>4.6.    HINT문 작성하기<a class="headerlink" href="#hint" title="Permalink to this headline">¶</a></h3>
+<p>쿼리문이 실행될 때, IRIS 사용자는 쿼리문 외에 부가 조건을 제시함으로써 쿼리의 응답시간을 개선시킬 수 있습니다. IRIS의 특성에 맞게 최적화된 HINT 기능은 응답 속도를 높이거나, 리소스를 효율적으로 사용하는 등 다양한 용도로 활용할 수 있습니다. 예를 들어, 데이터 조회를 위한 SELECT 쿼리문을 실행할 경우, 일반적인 DBMS에서는 해당 테이블에 저장되어 있는 전체 데이터를 대상으로 조회합니다. 그러나, IRIS에서 HINT 기능을 사용하면 참조할 데이터의 범위를 한정할 수 있고, 대상 범위내의 데이터를 대상으로 조회가 이루어지기 때문에 빠른 속도로 데이터를 조회할 수 있습니다. HINT 기능은 IRIS에서 지원하는 쿼리문 중, UPDATE, DELETE, SELECT 쿼리에서 사용할 수 있습니다.
+HINT문의 사용 형식은 다음과 같습니다. 즉, 일반 쿼리 문 앞의 /*와 */ 사이에 HINT 문을 작성합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">HINT</span><span class="o">-</span><span class="n">String</span> <span class="o">*/</span> <span class="n">Query</span><span class="o">-</span><span class="n">String</span>
+</pre></div>
+</div>
+<p>아래는 HINT 문 중에서 LOCATION HINT를 사용한 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">LOCATION</span> <span class="p">(</span><span class="n">PARTITION</span> <span class="o">&gt;=</span> <span class="s1">&#39;20160101000000&#39;</span> <span class="n">AND</span> <span class="n">PARTITION</span> <span class="o">&lt;</span> <span class="s1">&#39;20160201000000&#39;</span><span class="p">)</span><span class="o">*/</span>
+<span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">table_1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>만일, 여러 개의 HINT를 같이 사용할 경우, 아래와 같이 콤마(,)로 구분하여 사용합니다. 아래는 BYPASS HINT와 LOCATION HINT를 같이 사용한 예입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">BYPASS</span><span class="p">,</span> <span class="n">LOCATION</span> <span class="p">(</span><span class="n">PARTITION</span> <span class="o">&gt;=</span> <span class="s1">&#39;20160101000000&#39;</span> <span class="n">AND</span> <span class="n">PARTITION</span> <span class="o">&lt;</span> <span class="s1">&#39;20160201000000&#39;</span><span class="p">)</span><span class="o">*/</span>
+<span class="n">select</span> <span class="o">*</span> <span class="kn">from</span> <span class="nn">table_1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>[주의]
+로컬 테이블의 경우, 일정 기간 동안 대량의 데이터가 저장되므로, 로컬 테이블에서 데이터를 조회할 경우 조회 요구에 대한 응답에 오랜 시간이 소요되거나 timeout이 발생할 수 있습니다. 따라서, 로컬 테이블을 대상으로 데이터를 조회할 경우, 반드시 LOCANTION HINT와 함께 사용하여야 합니다.</p>
+</div></blockquote>
+<p>IRIS에서 지원하는 HINT문의 종류는 아래 표와 같습니다.</p>
+<table class="docutils align-default" id="id20">
+<caption><span class="caption-text">IRIS에서 지원하는 HINT문의 종류</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 9%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>HINT 명</p></td>
+<td><p>사용 가능한 쿼리</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCATION</p></td>
+<td><p>UPDATE, DELETE, SELECT</p></td>
+<td><p>LOCAL 테이블 대상으로, 쿼리 실행 시 참조할 데이터의 범위를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>FORMAT</p></td>
+<td><p>SELECT</p></td>
+<td><p>쿼리 실행결과의 출력 형태를 설정합니다. 즉, 각 컬럼별로 데이터의 출력 포맷을 문자열, 정수타입, 실수타입 등으로 설정할 수 있습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>THREAD_COUNT</p></td>
+<td><p>SELECT</p></td>
+<td><p>쿼리 실행 시, 해당 쿼리에 대하여 동시에 실행되는 최대 프로세스의 수를 설정하여 작업 부하 및 속도를 조절합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BYPASS</p></td>
+<td><p>SELECT</p></td>
+<td><p>IRIS에 저장된 데이터를 summary 작업 없이 고속으로 export하고자 할 경우에 사용합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>FORCE</p></td>
+<td><p>UPDATE, DELETE, SELECT</p></td>
+<td><p>일부 데이터에서 쿼리오류가 발생하여도, 이를 무시하고 나머지 정상데이터를 출력합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SAMPLING</p></td>
+<td><p>SELECT</p></td>
+<td><p>쿼리의 데이터를 설정한 퍼센트만큼만 샘플링하여 가져옵니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>LOCALITY</p></td>
+<td><p>SELECT</p></td>
+<td><p>구성된 노드의 수가 크지 않은(일반적으로, 5개 노드 이하) 소규모 클러스터의 경우, 특정 노드에 부하가 집중될 수 있습니다. 따라서, 설정한 퍼센트만큼의 확률로 작업노드의 데이터를 우선 선택하여 가져옴으로써, 노드 간의 부하를 분산하는 역할을 수행합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="location-hint">
+<h2><span class="section-number">2.13. </span>LOCATION HINT문 작성하기<a class="headerlink" href="#location-hint" title="Permalink to this headline">¶</a></h2>
+<p>LOCATION HINT는 로컬 테이블을 대상으로 쿼리 실행 시 참조할 partitionkey와 partitiondate 값의 범위를 지정하고, 해당 범위 내의 데이터를 대상으로 조회 등 일반 쿼리문을 실행합니다. 따라서, 쿼리 실행으로 인한 부하를 줄이고 쿼리 속도를 대폭 향상시킬 수 있습니다. LOCATION HINT문의 형식은 아래와 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">LOCATION</span> <span class="p">(</span> <span class="p">{</span> <span class="n">참조범위</span> <span class="p">}</span> <span class="p">)</span> <span class="o">*/</span> <span class="n">Query</span> <span class="n">문</span>
+</pre></div>
+</div>
+<p>상기의 참조 범위에 SQL의 WHERE 절과 동일한 문법으로 조건을 설정할 수 있습니다. 여기서, 조건에 사용 가능한 컬럼은 partitionkey와 partitiondate입니다.</p>
+<p>아래는 전형적인 LOCATION HINT 문의 사용 예를 보여줍니다. 아래 예는 table1 테이블에 대하여 SELECT 쿼리를 실행하기 위하여, partitionkey 값이 ‘key3’ 이며, partitiondate가 2016년 1월 1일부터 2016년 2월 1일 이전까지로 데이터 범위를 한정한 후 쿼리 문을 실행하는 문장을 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">LOCATION</span> <span class="p">(</span>
+<span class="n">KEY</span> <span class="o">=</span> <span class="s1">&#39;key3&#39;</span>
+<span class="n">AND</span> <span class="n">PARTITION</span> <span class="o">&gt;=</span> <span class="s1">&#39;20160101000000&#39;</span>
+<span class="n">AND</span> <span class="n">PARTITION</span> <span class="o">&lt;</span> <span class="s1">&#39;20160201000000&#39;</span>
+<span class="p">)</span> <span class="o">*/</span>
+<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">table1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="format-hint">
+<h2><span class="section-number">2.14. </span>FORMAT HINT문 작성하기<a class="headerlink" href="#format-hint" title="Permalink to this headline">¶</a></h2>
+<p>FORMAT HINT문은 쿼리 실행결과의 출력 형태를 설정합니다. 즉, 각 컬럼별로 데이터의 출력 포맷을 문자열, 정수타입, 실수타입 등으로 설정할 수 있습니다. 아래의 형식과 같이, 컬럼별로 데이터의 출력 포맷을 ‘인덱스번호 = 포맷’ 형태로 정의합니다. 여기서, 인덱스 번호는 0부터 시작합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">FORMAT</span> <span class="p">(</span> <span class="p">{</span> <span class="n">인덱스번호</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="n">포맷</span> <span class="p">},</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="p">)</span> <span class="o">*/</span> <span class="n">Query</span> <span class="n">문</span>
+</pre></div>
+</div>
+<p>상기의 FORMAT HINT 문을 실행할 때는 아래와 같은 몇 가지 규칙이 적용되므로, FORMAT HINT 문 사용 시 참고하시기 바랍니다.</p>
+<ul class="simple">
+<li><p>출력되는 결과는 기본적으로 우측에 정렬됩니다. 만일 좌측정렬을 하려면, {포맷} 부분의 %와 type 사이의 숫자 부분에 (-)를 추가합니다. 예를 들면, %-3s, %-3d, %-5.2f 등으로 사용할 수 있습니다. 단, %-03d, %-.2f 등의 예는 좌측정렬을 할 수 없습니다.</p></li>
+<li><p>정수 혹은 실수 타입의 경우, {포맷} 부분의 숫자가 0으로 시작하면 앞부분의 빈 공간은 0으로 채워집니다. 예를 들어, {포맷}이 %3d 인 경우, 출력 데이터는 3자리의 1, 2, 3,… 등으로 표시되지만, %03d인 경우, 001, 002, 003,… 등으로 표시됩니다.</p></li>
+<li><p>FORMAT HINT 문에 여러 개의 포맷을 사용하는 경우, 하나의 포맷 변환이라도 실패하면 해당 포맷이 포함된 FORMAT HINT 문의 실행이 실패하게 됩니다.</p></li>
+<li><p>문자열 컬럼을 정수 혹은 실수로 변환할 경우, FORMAT HINT는 독립적으로 형 변환을 할 수 없으며, 반드시 SELECT 쿼리문과 함께 사용하여야 합니다.</p></li>
+<li><p>정수 혹은 실수의 컬럼도 FORMAT HINT문을 실행하면 문자열로 형변환됩니다.</p></li>
+<li><p>실수를 출력할 때, 표현할 소수점 자리보다 실제 값의 소수점 자리가 긴 경우 자동으로 반올림됩니다.</p></li>
+</ul>
+<p>문자열 포맷의 규칙은 Python 언어에서 사용하는 문자열 포맷과 같으며, 아래 표를 참조하시기 바랍니다.</p>
+<table class="docutils align-default" id="id21">
+<caption><span class="caption-text">FORMAT HINT문에서의 문자열 포맷</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 65%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>데이터 타입</p></td>
+<td><p>포맷 문자열</p></td>
+<td><p>사용법</p></td>
+</tr>
+<tr class="row-even"><td><p>문자열</p></td>
+<td><p>%s</p></td>
+<td><p>%{최소길이}.{최대길이}s</p></td>
+</tr>
+<tr class="row-odd"><td><p>정수</p></td>
+<td><p>%d</p></td>
+<td><p>%{최소길이}.{0으로 채우는 최소길이}d</p></td>
+</tr>
+<tr class="row-even"><td><p>실수</p></td>
+<td><p>%f</p></td>
+<td><p>%{최소길이 (소숫점영역 포함)}.{소숫점자리 고정길이}f</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 전형적인 FORMAT HINT 문의 사용 예를 보여줍니다. 아래 예는 ACCOUNT 테이블에 대하여 SELECT 쿼리를 실행하며, 출력되는 결과 데이터의 포맷을 지정한 것입니다. 즉, 첫 번째 컬럼인 id의 값은 3자리 숫자이며, 앞자리의 빈칸은 0으로 채워집니다. 또한, 세 번째 컬럼인 point의 값은 소수점 2번째 자리까지 표시합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*+ FORMAT‘(0=%03’d‘,2=%.2’f) */ select id, name, point from ACCOUNT;
+</pre></div>
+</div>
+</div>
+<div class="section" id="thread-count-hint">
+<h2><span class="section-number">2.15. </span>THREAD_COUNT HINT문 작성하기<a class="headerlink" href="#thread-count-hint" title="Permalink to this headline">¶</a></h2>
+<p>THREAD_COUNT HINT는 쿼리 실행 시, 해당 쿼리에 대하여 동시에 실행되는 최대 프로세스의 수를 설정하여 작업 부하 및 속도를 조절합니다. THREAD_COUNT HINT문의 형식은 아래와 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">THREAD_COUNT</span><span class="o">=</span><span class="p">{</span><span class="n">num</span><span class="p">}</span> <span class="o">*/</span> <span class="n">Query</span> <span class="n">문</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">THREAD_COUNT의 값은 10에서 1,000 사이의 정수를 지정합니다. 여기서, 해당 값을 작게 설정할 경우, 쿼리의 실행 속도는 느리지만 노드의 부하를 줄일 수 있으며, 값을 높게 설정할 경우 쿼리의 실행 속도는 빠르나 노드의 부하가 증가할 수 있습니다.</div>
+<div class="line">만일, 쿼리 문을 실행 시, 상기의 THREAD_COUNT HINT문을 사용하지 않으면 default값은 50으로 자동 설정됩니다.</div>
+<div class="line">아래는 THREAD_COUNT HINT 문의 사용 예를 보여줍니다. 아래 예는 동시 작업 수를 10으로 지정한 예입니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">THREAD_COUNT</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*/</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">table1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="bypass-hint">
+<h2><span class="section-number">2.16. </span>BYPASS HINT문 작성하기<a class="headerlink" href="#bypass-hint" title="Permalink to this headline">¶</a></h2>
+<p>BYPASS HINT는 group by, sum, min, max 등이 포함된 merge 쿼리를 실행하지 않습니다. 즉, 각 노드에서의 쿼리 결과에 대한 summary 작업 없이 데이터를 바로 출력하기 때문에 쿼리의 응답 속도를 높일 수 있습니다. 특히, IRIS에 저장된 데이터를 고속으로 export하고자 할 경우에 사용합니다. BYPASS HINT문의 형식은 아래와 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">BYPASS</span> <span class="o">*/</span> <span class="n">Query</span> <span class="n">문</span>
+</pre></div>
+</div>
+<p>아래는 BYPASS HINT 문의 사용 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">BYPASS</span> <span class="o">*/</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">table1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>BYPASS HINT 문을 실행할 때는 아래와 같은 몇 가지 제약 사항이 존재하므로, BYPASS HINT 문 사용 시 참고하시기 바랍니다.</p>
+<ul class="simple">
+<li><p>“IRIS System Overview의 3.3.3 쿼리 실행”에서 설명한 바와 같이, IRIS는 각 노드에서 데이터 쿼리를 실행한 후, 특정 노드의 UDM에서 그 결과를 취합하여 merge 쿼리를 수행합니다. 만일, group by, sum, min, max 등 summary가 필요한 쿼리문에 BYPASS HINT를 사용하면, 실제로 merge 쿼리가 실행되지 않은 결과를 제공하므로 사용자가 원하는 데이터를 제공할 수 없습니다. 따라서, BYPASS HINT는 merge 쿼리가 포함되지 않은 일반적인 SELECT문(예를 들어, SELECT &lt;column1,…&gt; from &lt;table&gt; WHERE &lt;expression&gt;)에 사용하여야 합니다.</p></li>
+<li><p>BYPASS HINT 문에서 사용하는 SELECT문에는 연산자(예, SELECT total/2 FROM …, SELECT sales_amount / head_count FROM … 등)를 사용할 수 없습니다.</p></li>
+<li><p>각 노드에서 데이터를 취합하는 과정에서 에러가 발생하면, 에러가 발생하기 이전에 취합한 데이터만 출력합니다.</p></li>
+</ul>
+</div>
+<div class="section" id="force-hint">
+<h2><span class="section-number">2.17. </span>FORCE HINT문 작성하기<a class="headerlink" href="#force-hint" title="Permalink to this headline">¶</a></h2>
+<p>FORCE HINT는 일부 데이터에서 쿼리오류가 발생하여도, 이를 무시하고 나머지 정상 데이터를 출력합니다. 즉, 분산 데이터 파일 중, 특정 데이터 파일에서 쿼리 실패 시에도 나머지 정상 데이터 파일에서의 쿼리 결과는 정상적으로 출력합니다. 따라서, 동일한 쿼리문을 여러 번 실행하는 경우, 다른 결과를 얻을 수 있습니다. FORCE HINT문의 형식은 아래와 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">FORCE</span> <span class="o">*/</span> <span class="n">Query</span> <span class="n">문</span>
+</pre></div>
+</div>
+<p>아래는 FORCE HINT 문의 사용 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">FORCE</span> <span class="o">*/</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">table1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sampling-hint">
+<h2><span class="section-number">2.18. </span>SAMPLING HINT문 작성하기<a class="headerlink" href="#sampling-hint" title="Permalink to this headline">¶</a></h2>
+<p>SAMPLING HINT는 쿼리의 결과 데이터 중, 사용자가 설정한 비율(퍼센트)만큼만 샘플링하여 리턴합니다. 즉, 쿼리 결과의 일부만을 확인하고자 할 경우에 본 HINT문을 사용할 수 있습니다. 예를 들어, SAMPLING 값을 10으로 설정하고 실행하면, 각 노드에서 10% 만큼의 데이터를 리턴한 후, 중앙에서도 해당 데이터를 기준으로 summary하여 10%의 결과만을 리턴합니다. SAMPLING HINT문은 쿼리 결과를 앞에서부터 순차적으로 샘플링하는 것이 아니라, partitionkey와 partitiondate를 기준으로 각각 일정 비율만큼 샘플링하여 리턴합니다. 본 HINT문은 일정 시간이 소요되는 정상적인 쿼리를 실행하기 전에 쿼리 결과를 빠른 시간 내에 추정하는 등의 목적으로 사용될 수 있습니다.
+SAMPLING HINT문의 형식은 아래와 같습니다. 즉, 원본 데이터를 포함하는 최 하단 서브쿼리의 WHERE 절에 AND SAMPLE 조건을 추가하고, 최 상위 쿼리의 맨 마지막에 LIMT를 사용합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">SAMPLING</span> <span class="o">=</span> <span class="n">샘플링</span> <span class="n">비율</span><span class="p">(</span><span class="n">실수형</span><span class="p">)</span> <span class="o">*/</span>
+<span class="n">SELECT</span>
+<span class="o">...</span>
+<span class="n">FROM</span>
+<span class="p">(</span>
+<span class="n">SELECT</span>
+<span class="o">...</span>
+<span class="n">FROM</span>
+<span class="o">&lt;</span><span class="n">table</span><span class="o">&gt;</span>
+<span class="n">WEHRE</span>
+<span class="o">...</span>
+<span class="n">AND</span> <span class="n">SAMPLE</span>
+<span class="o">...</span>
+<span class="p">)</span>
+<span class="n">WHERE</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="n">LIMIT</span> <span class="n">xxx</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+<p>여기서, &lt; 0 샘플링 비율 &lt; 100</p>
+<p>사용자가 정확하게 원하는 수만큼의 레코드를 리턴받고자 할 경우, 상기 형식에서와 같이 LIMIT를 사용합니다. 예를 들어, 3,000건의 데이터 중, 정확하게 100건의 레코드만 리턴받고자 할 경우, SAMPLING = 3.4로 설정하고, LIMIT 100을 추가하면 100건의 레코드만 리턴됩니다.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><p>[주의]
+만일, SELECT 문에서 GROUP BY 등 summary를 수행하면, 리턴되는 레코드의 수가 현저하게 줄어들게 됩니다. 따라서, 예를 들어 SAMPLING 비율을 50%로 설정하더라도, SELECT 문에 따라서는 단 1건의 레코드만 리턴될 수도 있습니다.</p>
+</div></blockquote>
+</div>
+<div class="section" id="locality-hint">
+<h2><span class="section-number">2.19. </span>LOCALITY HINT문 작성하기<a class="headerlink" href="#locality-hint" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">사용자가 요청한 쿼리문이 입력되면, 특정 데이터 노드에서 동작하는 UDM 프로세스에서 쿼리문을 분석한 후, 해당 데이터가 존재하는 각 데이터 노드에 데이터 쿼리를 요청합니다. 만일, UDM 프로세스가 동작하는 노드에 해당 데이터가 존재할 경우, 물리적으로 분리된 노드에 데이터 쿼리를 요청하는 것 보다는 UDM 프로세스가 동작하는 노드에 데이터 쿼리를 요청하여 결과를 받는 것이 쿼리 속도를 높일 수 있습니다.</div>
+<div class="line">LOCALITY HINT는 소규모 클러스터(일반적으로, 5개 노드 이하)에서 쿼리 속도를 높이기 위한 목적으로 사용합니다. 즉, 쿼리 조건에 해당되는 데이터가 UDM 프로세스와 동일한 노드에 존재할 경우, 지정한 비율만큼 해당 노드에서 데이터를 우선 선택하여 리턴받기 때문에 쿼리 속도를 높일 수 있습니다.</div>
+<div class="line">단, 소규모 클러스터 환경에서, UDM 프로세스가 동작하는 노드에서 쿼리를 수행하면 해당 노드에 부하가 집중될 수 있습니다. 따라서, LOCALITY 범위를 작게 설정하여 작업노드의 데이터를 작게 선택하여 가져옴으로써, 노드 간의 부하를 분산시킬 수 있습니다.</div>
+<div class="line">LOCALITY HINT문의 형식은 아래와 같습니다. LOCALITY의 범위는 0에서 100까지 사용 가능하며, 옵션값이 0일 경우, 모든 데이터를 다른 데이터 노드에서 검색하여 가져오게 됩니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">LOCALITY</span> <span class="o">=</span> <span class="p">{</span><span class="n">num</span><span class="p">}</span> <span class="o">*/</span> <span class="n">Query</span> <span class="n">문</span>
+</pre></div>
+</div>
+<p>아래는 LOCALITY HINT 문의 사용 예를 보여줍니다. 아래 예는 inventory_table에 저장된 데이터 중, pname 컬럼과 pstock 컬럼의 값을 출력하는 쿼리문입니다. 이때, UDM이 동작하는 노드의 블록파일에서 90%의 데이터를 리턴하며, 다른 노드의 블록파일에서 나머지(10%) 데이터를 리턴하도록 설정하였습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">LOCALITY</span> <span class="o">=</span> <span class="mi">90</span> <span class="o">*/</span> <span class="n">SELECT</span> <span class="n">pname</span><span class="p">,</span> <span class="n">pstock</span> <span class="n">FROM</span> <span class="n">inventory_table</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="page-hint">
+<h2><span class="section-number">2.20. </span>PAGE HINT문 작성하기<a class="headerlink" href="#page-hint" title="Permalink to this headline">¶</a></h2>
+<p>IRIS는 분산된 데이터를 처리하기 때문에 order by 구문을 사용하지 않는 이상 같은 쿼리의 결과 순서는 변경이 될 수 있습니다. 따라서 limit 명령어를 이용한 page기능을 구현이 불가능 합니다. 이를 해결하기 위해 PAGE HINT문을 제공하고 있습니다. PAGE HINT의 구문은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">PAGE</span> <span class="p">(</span> <span class="n">start_row</span><span class="p">,</span> <span class="n">cnt</span> <span class="p">)</span> <span class="o">*/</span> <span class="n">query</span>
+</pre></div>
+</div>
+<p>아래는 LOCAL_TEST_TABLE에서 처음부터 3개의 레코드를 받아오는 PAGE HINT문의 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*+</span> <span class="n">PAGE</span> <span class="p">(</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span> <span class="p">)</span> <span class="o">*/</span> <span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">local_test_table</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="section" id="iris">
+<h3><span class="section-number">2.20.1. </span>IRIS 지원함수 사용하기<a class="headerlink" href="#iris" title="Permalink to this headline">¶</a></h3>
+<p>다음은 IRIS에서 지원하는 SQL에서 사용 가능한 함수 및 연산자 리스트에 대하여, 글로벌 테이블과 로컬 테이블로 구분하여 지원 여부를 정리한 표입니다. 아래 표에 나열된 대부분의 함수는 일반적으로 사용되는 함수이므로 별도의 설명을 기술하지 않습니다. 단, Local Table 란에 “(설명 참조)”로 표시된 일부 항목은 분산 노드에서 일반적인 상황과 다르게 동작할 수 있으므로, 아래 해당 절에 기술한 설명을 참조하시기 바랍니다.</p>
+<table class="docutils align-default" id="id22">
+<caption><span class="caption-text">IRIS SQL에서 지원하는 Aggregation 함수</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>함수명</p></td>
+<td><p>Global Table</p></td>
+<td><p>Local Table</p></td>
+</tr>
+<tr class="row-even"><td><p>count()</p></td>
+<td><p>O</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-odd"><td><p>max()</p></td>
+<td><p>O</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-even"><td><p>min()</p></td>
+<td><p>O</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-odd"><td><p>sum()</p></td>
+<td><p>O</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id23">
+<caption><span class="caption-text">IRIS SQL에서 지원하는 일반 함수</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 34%" />
+<col style="width: 32%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>함수명</p></td>
+<td><p>Global Table</p></td>
+<td><p>Local Table</p></td>
+</tr>
+<tr class="row-even"><td><p>abs()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>b64d()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>ceil()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>char()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>coalesce()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>concat()</p></td>
+<td><p>O (설명 참조)</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-even"><td><p>date()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>datetime()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>decrypt()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>encrypt()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>floor()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>fstr()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>hex()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>ifnull()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>ifnull2()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>instr()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>julianday()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>length()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>lower()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>lpad()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>ltrim()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>nullif()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>passwd()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>power()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>quote()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>randomblob()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>replace()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>rmcar()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>rmhint()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>round()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>rpad()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>rtrim()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>sha256()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>sqrt()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>strftime()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>substr()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>time()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>to_char()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>to_date()</p></td>
+<td><p>O (설명 참조)</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-odd"><td><p>trim()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>typeof()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>unicode()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>upper()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>zeroblob()</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id24">
+<caption><span class="caption-text">IRIS SQL에서 지원하는 Paragraph</span><a class="headerlink" href="#id24" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 29%" />
+<col style="width: 27%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Paragraph</p></td>
+<td><p>Global Table</p></td>
+<td><p>Local Table</p></td>
+</tr>
+<tr class="row-even"><td><p>case when then end</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>group by</p></td>
+<td><p>O</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-even"><td><p>having</p></td>
+<td><p>X</p></td>
+<td><p>X</p></td>
+</tr>
+<tr class="row-odd"><td><p>limit</p></td>
+<td><p>O (설명 참조)</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-even"><td><p>order by[asc, desc]</p></td>
+<td><p>O</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id25">
+<caption><span class="caption-text">IRIS SQL에서 지원하는 Operation</span><a class="headerlink" href="#id25" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 29%" />
+<col style="width: 27%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Operation</p></td>
+<td><p>Global Table</p></td>
+<td><p>Local Table</p></td>
+</tr>
+<tr class="row-even"><td><p>[=, &gt;, &lt;, &gt;=, &lt;=, &lt;&gt;]</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>and, or, not</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>between and</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>distinct</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>escape</p></td>
+<td><p>O (설명 참조)</p></td>
+<td><p>O (설명 참조)</p></td>
+</tr>
+<tr class="row-odd"><td><p>In</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>Is null, is not null</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>like</p></td>
+<td><p>O</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="aggregation-paragraph">
+<h2><span class="section-number">2.21. </span>Aggregation 함수 및 관련 paragraph 사용하기<a class="headerlink" href="#aggregation-paragraph" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">사용자가 쿼리를 요청하면, IRIS는 사용자 쿼리를 각 노드에서 개별 블록파일단위로 실행하는 데이터 쿼리, 그리고 각 노드의 쿼리 결과를 취합하여 서머리하는 merge 쿼리로 변형하여 내부적으로 처리합니다. 이는 오픈소스의 map/reduce 작업과 유사한 형태입니다. IRIS가 사용자 쿼리를 merge 쿼리와 데이터 쿼리로 변형하기 위하여 다음과 같은 규칙을 적용합니다.</div>
+<div class="line">Aggregation 함수(sum, min, max, count), group by, order by등이 포함된 사용자 쿼리를 로컬 테이블에 대하여 실행한다고 가정합시다. 만일, 각 노드에서 실행되는 데이터 쿼리에 aggregation 함수나 group by 등을 실행하면, 각 노드의 개별 블록파일단위로 쿼리가 실행되기 때문에 사용자 쿼리에 대하여 원하는 최종 결과를 얻을 수 없습니다. 아래는 원하는 쿼리 실행 결과를 얻기 위하여 IRIS 사용자가 작성한 쿼리의 예입니다.</div>
+</div>
+<p><strong>부적절한 쿼리 예</strong>
+아래의 예를 전형적인 DBMS에서 실행할 경우에는 동일한 결과를 얻을 수 있습니다. 그러나, IRIS에서 실행하면 다른 결과가 출력됩니다. 따라서, IRIS에서 실행할 쿼리를 작성할 경우, 데이터 쿼리에서 실행되는 쿼리와 merge 쿼리에서 실행될 쿼리를 고려하여 작성하여야 합니다.
+사용자가 아래의 첫 번째 쿼리를 요청하면, IRIS는 아래 쿼리 중에서 “(SELECT sum(a) AS a_sum FROM ONE_LOCAL_TABLE GROUP BY a)”를 각 노드에서 개별적으로 실행되는 데이터 쿼리로 인식합니다. 따라서, 최종 결과가 사용자가 원하는 결과와 다르게 됩니다.</p>
+<ul>
+<li><dl>
+<dt>IRIS에서 부적절한 쿼리 예</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="n">a_sum</span> <span class="n">FROM</span> <span class="p">(</span><span class="n">SELECT</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">AS</span> <span class="n">a_sum</span> <span class="n">FROM</span> <span class="n">ONE_LOCAL_TABLE</span> <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">a</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>IRIS에서 적절한 쿼리 예</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="n">AS</span> <span class="n">a_sum</span> <span class="n">FROM</span> <span class="n">ONE_LOCAL_TABLE</span> <span class="n">GROUP</span> <span class="n">BY</span> <span class="n">a</span><span class="p">;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>적절한 쿼리 예</strong>
+아래의 예를 보면, 데이터 쿼리에서는 각 노드의 블록파일에서 데이터만 SELECT한 후, merge 쿼리에서 aggregation 함수를 사용하여 서머리를 수행하므로 사용자가 원하는 결과를 얻을 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SELECT</span> <span class="nb">sum</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="nb">sum</span><span class="p">(</span><span class="n">val2</span><span class="p">),</span> <span class="n">count</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="n">FROM</span> <span class="p">(</span> <span class="n">SELECT</span> <span class="n">val</span><span class="p">,</span> <span class="n">val</span> <span class="o">*</span> <span class="n">val</span> <span class="n">AS</span> <span class="n">val2</span> <span class="n">FROM</span> <span class="n">ONE_LOCAL_TABLE</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2><span class="section-number">2.22. </span>일반 함수 사용하기<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<p id="concat"><strong>concat</strong></p>
+<p>concat 함수는 2개 컬럼의 문자열 값을 더하기 위하여 사용합니다. 사용 방법은 아래와 같습니다. 만일, 2개 컬럼 중, 한쪽의 값이 null이면 concat 함수의 결과도 null을 리턴합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT pnum, pname, concat(pnum || ‘-‘ || pname) id FROM product;
+</pre></div>
+</div>
+<p id="limit"><strong>limit</strong></p>
+<p>limit 함수는 쿼리 실행 결과로 리턴되는 레코드의 수를 제한하기 위하여 사용합니다. IRIS에서는 아래 표와 같이 3가지 종류의 limit 문법을 지원합니다.</p>
+<table class="docutils align-default" id="id26">
+<caption><span class="caption-text">limit 함수의 종류</span><a class="headerlink" href="#id26" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 92%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>종류</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>limit</p></td>
+<td><ul class="simple">
+<li><p>각 노드에서 데이터 쿼리 실행결과로 얻은 데이터를 취합하여 merge 쿼리 실행 결과에 limit를 적용합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>dlimit</p></td>
+<td><ul class="simple">
+<li><p>각 노드에서 데이터 쿼리 실행 시 limit를 적용한 후 취합합니다.</p></li>
+<li><p>최종 merge 쿼리 실행 시에는 limit를 적용하지 않습니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>mlimit</p></td>
+<td><ul class="simple">
+<li><p>상기의 limit와 dlimit를 동시에 지원합니다.</p></li>
+<li><p>즉, 각 노드에서 데이터 쿼리 실행 시 limit를 적용한 후, 취합하여 최종 merge 쿼리에서 다시 한번 limit을 적용합니다.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p id="escape"><strong>escape</strong></p>
+<p>escape 함수는 LIKE 연산에서 ‘%’ 나 ‘_’ 등 특수문자를 검색하기 위하여 사용합니다. 따라서, escape 함수는 항상 LIKE 연산 뒤에 사용합니다. 사용 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM product_table WHERE pname LIKE ‘_A_‘;
+</pre></div>
+</div>
+<p id="lower"><span id="upper"></span><strong>upper / lower</strong></p>
+<p>upper 함수는 영문 소문자를 대문자로 변환하는 함수입니다. 반대로, lower함수는 영문 대문자를 소문자로 변환합니다. 사용 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SELECT * FROM product_table WHERE UPPER(pname) = ‘IRIS‘;
+</pre></div>
+</div>
+<p id="substr"><strong>substr</strong></p>
+<p>substr 함수는 문자열을 잘라서 부분 문자열을 만들기 위하여 사용합니다. substr 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">substr</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">starting</span> <span class="n">index</span><span class="p">,</span> <span class="n">length</span><span class="p">)</span>
+<span class="ow">or</span>
+<span class="n">substr</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">starting</span> <span class="n">index</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>상기의 substr 인자는 다음과 같은 규칙이 적용됩니다.</p>
+<ul class="simple">
+<li><p>string 문자열을 starting index의 위치부터 length 길이만큼 잘라서 부분 문자열을 만듭니다. 만일, length 부분이 정의되어 있지 않으면 string 문자열의 끝까지 잘라서 부분 문자열을 만듭니다.</p></li>
+<li><p>starting index의 값이 양수이면 string의 왼쪽부터 오른쪽으로 starting index를 카운트하며, 음수이면 string의 오른쪽부터 왼쪽으로 카운트합니다.</p></li>
+<li><p>starting index는 1부터 시작하며, 0을 입력하더라도 1과 동일하게 첫 번째 글자를 가리킵니다. starting index가 음수인 경우, -1부터 시작합니다.</p></li>
+<li><p>length의 값은 항상 자연수를 사용합니다. 만일, 사용자가 음수를 입력한 경우, substr((string, starting index)과 동일한 형태로 처리합니다.</p></li>
+<li><dl class="simple">
+<dt>starting index 혹은 length의 값이 string의 글자 길이를 초과하는 경우, 다음 규칙을 따릅니다.</dt><dd><ul>
+<li><p>starting index와 length가 모두 음수인 경우, 예를 들어, substr(‘123’, -4, -2)의 경우, 실패로 간주하고 전체 문자열을 반환합니다.</p></li>
+<li><p>starting index가 음수이며 length가 양수인 경우, 예를 들어, substr(‘123’, -4, 2)의 경우, 범위에 허용되는 문자열(‘12’)을 반환합니다.</p></li>
+<li><p>starting index가 양수이고, length가 string의 글자 길이를 초과하는 경우(예, substr(‘123’, 2, 6)), 범위에 허용되는 문자열(‘23’)을 반환합니다.</p></li>
+<li><p>starting index가 string의 글자 길이를 초과하는 경우(예, substr(‘123’,5)), 빈 문자열(‘’)을 반환합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p id="length"><strong>length</strong></p>
+<p>length 함수는 문자열의 길이를 출력하기 위하여 사용합니다. length 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">length</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="round"><strong>round</strong></p>
+<p>round 함수는 특정 컬럼의 값을 반올림하기 위하여 사용합니다. round 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+<span class="nb">round</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>상기의 형식에서, round함수는 숫자 X를 소수점 Y+1번째 수에서 반올림합니다. round(X) 형식의 경우, 소수점 첫 번째 수에서 반올림합니다.
+Y의 값은 0을 포함한 자연수만 사용할 수 있으며, 자연수가 아닌 경우 0으로 처리합니다. 또한, 소수점 이하에서만 반올림이 가능합니다.</p>
+<p id="to-data"><strong>to_date</strong></p>
+<p>to_date 함수는 특정 문자열을 date 형식으로 인식하여 1970/01/01 00:00:00 GMT 부터 해당 날짜까지 경과한 시간을 초로 환산하기 위하여 사용합니다. to_date 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">to_date</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">FORMAT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>상기의 형식에서, X에 해당되는 값을 FORMAT에 지정한 형태로 인식한 후, 1970/01/01 00:00:00 GMT 부터 해당 날짜까지 경과한 시간을 초로 환산하여 출력합니다. 아래 예는 현재시간이 2015년 1월 1일 13시 13분 30초 30 인 경우, 해당 값을 특정 컬럼에 INSERT하는 예를 보여줍니다. 이 경우, 현재 시간을 직접 입력할 수도 있지만, 아래 예와 같이 SYSDATE를 사용하면 현재시간 문자열을 출력하게 됩니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="n">insert</span> <span class="n">into</span> <span class="n">GLOBAL</span> <span class="n">TEST</span> <span class="n">TABLE</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="n">values</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">SYSDATE</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="o">&gt;</span> <span class="n">insert</span> <span class="n">into</span> <span class="n">GLOBAL</span> <span class="n">TEST</span> <span class="n">TABLE</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="n">values</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;20150101133030&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>FORMAT에 해당되는 내용은 다음 표와 같습니다.</p>
+<table class="docutils align-default" id="id27">
+<caption><span class="caption-text">to_date 함수의 FORMAT</span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 39%" />
+<col style="width: 39%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Format</p></td>
+<td><p>설명</p></td>
+<td><p>출력</p></td>
+</tr>
+<tr class="row-even"><td><p>%d</p></td>
+<td><p>day of month</p></td>
+<td><p>00</p></td>
+</tr>
+<tr class="row-odd"><td><p>%f</p></td>
+<td><p>fractional seconds</p></td>
+<td><p>SS.SSS</p></td>
+</tr>
+<tr class="row-even"><td><p>%H</p></td>
+<td><p>hour</p></td>
+<td><p>00 ~ 24</p></td>
+</tr>
+<tr class="row-odd"><td><p>%j</p></td>
+<td><p>day of year</p></td>
+<td><p>001 ~ 366</p></td>
+</tr>
+<tr class="row-even"><td><p>%J</p></td>
+<td><p>Julian day number</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>%m</p></td>
+<td><p>month</p></td>
+<td><p>01 ~ 12</p></td>
+</tr>
+<tr class="row-even"><td><p>%M</p></td>
+<td><p>minute</p></td>
+<td><p>00 ~ 59</p></td>
+</tr>
+<tr class="row-odd"><td><p>%s</p></td>
+<td><p>seconds since</p></td>
+<td><p>1970-01-01</p></td>
+</tr>
+<tr class="row-even"><td><p>%S</p></td>
+<td><p>seconds</p></td>
+<td><p>00 ~ 59</p></td>
+</tr>
+<tr class="row-odd"><td><p>%w</p></td>
+<td><p>day of week</p></td>
+<td><p>0 ~ 6 (Sunday = 0)</p></td>
+</tr>
+<tr class="row-even"><td><p>%W</p></td>
+<td><p>week of year</p></td>
+<td><p>00 ~ 53</p></td>
+</tr>
+<tr class="row-odd"><td><p>%Y</p></td>
+<td><p>year</p></td>
+<td><p>0000 ~ 9999</p></td>
+</tr>
+<tr class="row-even"><td><p>%%</p></td>
+<td><p>%</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 p 컬럼의 값을 14자리 timestamp로 인식하여 1970/01/01 00:00:00 GMT 부터 경과한 시간을 초 단위로 환산하는 쿼리와 해당 쿼리의 실행 결과를 보여주는 예입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SELECT</span> <span class="n">to_date</span><span class="p">(</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;%Y%m</span><span class="si">%d</span><span class="s1">%H%M%S&#39;</span> <span class="p">)</span> <span class="n">FROM</span> <span class="n">LOCAL_TEST_TABLE</span><span class="p">;</span>
+
+<span class="go">TO_DATE(P, &#39;%Y%m%d%H%M%S&#39;)</span>
+<span class="go">=======================================================</span>
+<span class="go">1355106008.0</span>
+<span class="go">1355106008.0</span>
+<span class="go">1355106008.0</span>
+</pre></div>
+</div>
+<p id="to-char"><strong>to_char</strong></p>
+<p>to_char 함수는 날짜 형태의 문자열을 사용자가 지정한 문자열로 변환하기 위하여 사용합니다. to_char 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">to_char</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">FORMAT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>상기의 형식에서, X에 해당되는 날짜 형태(YYYYmmddHHMMSS)의 문자열을 FORMAT에 지정한 문자열로 변환합니다. 만일, X의 형식이 날짜 문자열이 아니면 에러가 발생합니다.
+FORMAT에 해당되는 내용은 다음 표와 같습니다.</p>
+<table class="docutils align-default" id="id28">
+<caption><span class="caption-text">to_char 함수에서 FORMAT의 형식</span><a class="headerlink" href="#id28" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Format</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>YYYY</p></td>
+<td><p>년</p></td>
+</tr>
+<tr class="row-odd"><td><p>MM</p></td>
+<td><p>월</p></td>
+</tr>
+<tr class="row-even"><td><p>DD</p></td>
+<td><p>일</p></td>
+</tr>
+<tr class="row-odd"><td><p>HH24</p></td>
+<td><p>시간</p></td>
+</tr>
+<tr class="row-even"><td><p>MI</p></td>
+<td><p>분</p></td>
+</tr>
+<tr class="row-odd"><td><p>SS</p></td>
+<td><p>초</p></td>
+</tr>
+<tr class="row-even"><td><p>D</p></td>
+<td><p>요일 (’1’ : ’ 일요일’, ’2’ : ’ 월요일’, … , ’7’ : ’ 토요일’)</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 to_char 함수를 사용한 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">SELECT</span> <span class="n">to_char</span><span class="p">(</span> <span class="n">p</span><span class="p">,</span> <span class="s1">&#39;YYYY year MM month DD day&#39;</span> <span class="p">)</span> <span class="n">FROM</span> <span class="n">LOCAL_TEST_TABLE</span><span class="p">;</span>
+
+<span class="go">TO_CHAR(P, &#39;YYYY year MM month DD day&#39;)</span>
+<span class="go">=======================================================</span>
+<span class="go">2011 year 06 month 16 day</span>
+<span class="go">2011 year 06 month 16 day</span>
+</pre></div>
+</div>
+<p id="ifnull"><strong>ifnull</strong></p>
+<p>ifnull 함수는 특정 컬럼의 값이 null인 경우, 지정한 다른 값을 출력하기 위하여 사용합니다. ifnull 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ifnull</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>상기의 형식에서, A 컬럼의 값이 null인 경우, B에 지정한 값을 리턴하고, null이 아닌 경우는 원래 값을 리턴합니다.</p>
+<p id="sum"><strong>sum</strong></p>
+<p>sum 함수는 특정 컬럼의 값을 모두 더하기 위하여 사용합니다. sum 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">sum</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>해당 컬럼의 값이 정수나 실수로 변환되지 않는 값(즉, 문자열)은 0으로 인식하며, 모든 값이 0을 제외한 정수인 경우에만 정수로 출력됩니다.</p>
+<p id="max"><strong>max</strong></p>
+<p>max 함수는 특정 컬럼에서 가장 큰 값을 반환합니다. max 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="min"><strong>min</strong></p>
+<p>min 함수는 특정 컬럼에서 가장 작은 값을 반환합니다. min 함수의 형식은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<p id="count"><strong>count</strong></p>
+<p>count 함수는 특정 컬럼의 레코드 개수를 반환합니다. count 함수의 형식은 다음과 같습니다.</p>
+<p>count 함수는 테이블의 해당 컬럼의 NULL 이 아닌 레코드의 갯수를 반환합니다. 또한, count(*) 은 테이블의 전체 레코드 갯수를 반환합니다.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="01-01.extension_geospatial.html" class="btn btn-neutral float-right" title="3. 공간 쿼리 사용하기" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="00.sql_reference.html" class="btn btn-neutral float-left" title="1. SQL Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

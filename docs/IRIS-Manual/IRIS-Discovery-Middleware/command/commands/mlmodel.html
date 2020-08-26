@@ -1,0 +1,1285 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>mlmodel &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="model" href="model.html" />
+    <link rel="prev" title="logisticRegression(LBFGS)" href="ml_algorithms/logisticregression.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Command References</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="adv.html">adv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anomalies.html">anomalies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bimatrix.html">bimatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calculate.html">calculate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concat.html">concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="corr.html">corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="count.html">count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curl.html">curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="distinct.html">distinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="eval.html">eval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fields.html">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fillna.html">fillna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit.html">fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit_predict.html">fit_predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="forecasts.html">forecasts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geoip.html">geoip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geomap.html">geomap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geostats.html">geostats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hdfs.html">hdfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="head.html">head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="img2tsv.html">img2tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indexer.html">indexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iris.html">iris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html">join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kmeans.html">kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metatron.html">metatron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestClassification.html">RandomForest Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestRegression.html">RandomForest Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeClassification.html">Spark DecisionTree Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeRegression.html">Spark DecisionTree Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkFPGrowth.html">Spark FP-Growth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkKmeans.html">Spark Kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/TFDeep.html">TFDeep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/generalizedlinearregression.html">generalizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/linearregression.html">linearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/logisticregression.html">logisticRegression(LBFGS)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">mlmodel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html">model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-stats.html">model-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-statsdetails.html">model-statsdetails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-timeline.html">model-timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modeldata.html">modeldata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="outlier.html">outlier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pivot.html">pivot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="postagger.html">postagger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict.html">predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pylambda.html">pylambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rename.html">rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="replace.html">replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="round.html">round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sampling.html">sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scaler.html">scaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="serving.html">serving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="split.html">split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="splitter.html">splitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.html">sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="substr.html">substr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="time2sec.html">time2sec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timediff.html">TIMEDIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeline.html">timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tokenizer.html">tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="top.html">top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typecast.html">TYPECAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weekend.html">weekend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="where.html">WHERE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ysort.html">ysort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example/index.html">Command 사용 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="../index.html">Command References</a> &raquo;</li>
+    
+    <li>mlmodel</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/command/commands/mlmodel</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/command/commands/mlmodel.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mlmodel">
+<h1>mlmodel<a class="headerlink" href="#mlmodel" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>ML 모델을 관리하는 명령어</p>
+</div>
+<div class="section" id="id2">
+<h2>설명<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>학습 모델에 대해 목록 조회, 상세 조회, 삭제, 적재, 반출, 배포, 중지 기능을 제공합니다.</p>
+</div>
+<div class="section" id="mlmodel-list">
+<h2>mlmodel list<a class="headerlink" href="#mlmodel-list" title="Permalink to this headline">¶</a></h2>
+<p>전체 모델 목록을 조회합니다. 아래 내용을 확인 할 수 있습니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>예</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>식별자</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>user</p></td>
+<td><p>유저명</p></td>
+<td><p>root</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>모델명</p></td>
+<td><p>mnist_v1</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>유형</p></td>
+<td><p>spark, tf, sklearn, r 등</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>범주</p></td>
+<td><p>classification, regression 등</p></td>
+</tr>
+<tr class="row-odd"><td><p>algorithm</p></td>
+<td><p>알고리즘</p></td>
+<td><p>deep</p></td>
+</tr>
+<tr class="row-even"><td><p>serving</p></td>
+<td><p>모델 서빙 상태</p></td>
+<td><p>on / off</p></td>
+</tr>
+<tr class="row-odd"><td><p>create</p></td>
+<td><p>생성 시간</p></td>
+<td><p>20191001145628</p></td>
+</tr>
+<tr class="row-even"><td><p>modified</p></td>
+<td><p>수정 시간</p></td>
+<td><p>20191002145628</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">list</span></code></p>
+</div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>전체 모델 목록을 조회합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">list</span></code></p>
+<p>출력 결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>user</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>category</p></th>
+<th class="head"><p>algorithm</p></th>
+<th class="head"><p>serving</p></th>
+<th class="head"><p>create</p></th>
+<th class="head"><p>modified</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>root</p></td>
+<td><p>mnist_v1</p></td>
+<td><p>tf</p></td>
+<td><p>classification</p></td>
+<td><p>deep</p></td>
+<td><p>off</p></td>
+<td><p>2019/11/19 00:11:22</p></td>
+<td><p>2019/11/19 00:11:33</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parameters-bnf">
+<h3>Parameters BNF<a class="headerlink" href="#parameters-bnf" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mlmodel_command : LIST
+                |
+
+LIST = r&#39;(?i)list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mlmodel-summary">
+<h2>mlmodel summary<a class="headerlink" href="#mlmodel-summary" title="Permalink to this headline">¶</a></h2>
+<p>특정 모델의 상세 내용을 조회합니다. 아래 내용을 확인 할 수 있습니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>예</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>식별자</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>user</p></td>
+<td><p>유저명</p></td>
+<td><p>root</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>모델명</p></td>
+<td><p>mnist_v1</p></td>
+</tr>
+<tr class="row-odd"><td><p>filename</p></td>
+<td><p>파일명</p></td>
+<td><p>model.h5</p></td>
+</tr>
+<tr class="row-even"><td><p>format</p></td>
+<td><p>포멧</p></td>
+<td><p>h5, saved_model 등</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>유형</p></td>
+<td><p>spark, tf, sklearn, r 등</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>범주</p></td>
+<td><p>classification, regression 등</p></td>
+</tr>
+<tr class="row-odd"><td><p>algorithm</p></td>
+<td><p>알고리즘</p></td>
+<td><p>deep</p></td>
+</tr>
+<tr class="row-even"><td><p>feature</p></td>
+<td><p>특징 컬럼</p></td>
+<td><p>x</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>레이블 컬럼</p></td>
+<td><p>y</p></td>
+</tr>
+<tr class="row-even"><td><p>parameter</p></td>
+<td><p>파라미터</p></td>
+<td><p>{ “epochs”: 3, “batch_size” : 64, “train_validation_ratio” : 0.8 }</p></td>
+</tr>
+<tr class="row-odd"><td><p>evaluation</p></td>
+<td><p>학습 평가 결과</p></td>
+<td><p>[ { “losses” : { “loss” : 12.345 , “val_loss” : 12.345 }, “metrics” : { “acc” : 12.345, “val_acc” : 12.345 } }, { “losses” : { “loss” : 12.345 , “val_loss” : 12.345 }, “metrics” : { “acc” : 12.345, “val_acc” : 12.345 } }, { “losses” : { “loss” : 12.345 , “val_loss” : 12.345 }, “metrics” : { “acc” : 12.345, “val_acc” : 12.345 } } ]</p></td>
+</tr>
+<tr class="row-even"><td><p>cross_validation</p></td>
+<td><p>교차검증 옵션</p></td>
+<td><p>{}</p></td>
+</tr>
+<tr class="row-odd"><td><p>grid_info</p></td>
+<td><p>그리드 옵션</p></td>
+<td><p>{}</p></td>
+</tr>
+<tr class="row-even"><td><p>train_cnt</p></td>
+<td><p>학습 건수</p></td>
+<td><p>10000</p></td>
+</tr>
+<tr class="row-odd"><td><p>elapsed</p></td>
+<td><p>소요 시간 (초)</p></td>
+<td><p>60</p></td>
+</tr>
+<tr class="row-even"><td><p>dictionary</p></td>
+<td><p>사전 파일명</p></td>
+<td><p>dict.tsv</p></td>
+</tr>
+<tr class="row-odd"><td><p>cdate</p></td>
+<td><p>생성 시간</p></td>
+<td><p>20191001145628</p></td>
+</tr>
+<tr class="row-even"><td><p>mdate</p></td>
+<td><p>수정 시간</p></td>
+<td><p>20191002145628</p></td>
+</tr>
+<tr class="row-odd"><td><p>serving</p></td>
+<td><p>모델 서빙 상태</p></td>
+<td><p>on / off</p></td>
+</tr>
+<tr class="row-even"><td><p>serving_name</p></td>
+<td><p>서빙 이름</p></td>
+<td><p>root_mnist_v1</p></td>
+</tr>
+<tr class="row-odd"><td><p>state</p></td>
+<td><p>모델 실행 상태</p></td>
+<td><p>READY, RUNNING, DONE, ERROR</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h3>Parameters<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">summary</span> <span class="pre">model_name</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h3>Examples<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>“mnist_v1” 모델의 상세 내용을 조회합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">summary</span> <span class="pre">mnist_v1</span></code></p>
+<p>출력 결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>user</p></td>
+<td><p>root</p></td>
+</tr>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>mnist_v1</p></td>
+</tr>
+<tr class="row-odd"><td><p>filename</p></td>
+<td><p>saved_model.pb</p></td>
+</tr>
+<tr class="row-even"><td><p>format</p></td>
+<td><p>saved_model</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>tf</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>deep</p></td>
+</tr>
+<tr class="row-odd"><td><p>algorithm</p></td>
+<td><p>deep</p></td>
+</tr>
+<tr class="row-even"><td><p>feature</p></td>
+<td><p>feature</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>label</p></td>
+</tr>
+<tr class="row-even"><td><p>parameter</p></td>
+<td><p>{‘batch_size’: 128, ‘epochs’: 5, ‘continuous’: ‘True’, ‘config’: ‘objectstorage.MINIO_AI_SOURCE:USERS/pjh0347/mnist/angora_mnist_config.json’}</p></td>
+</tr>
+<tr class="row-odd"><td><p>evaluation</p></td>
+<td><p>[]</p></td>
+</tr>
+<tr class="row-even"><td><p>cross_validation</p></td>
+<td><p>{}</p></td>
+</tr>
+<tr class="row-odd"><td><p>grid_info</p></td>
+<td><p>{}</p></td>
+</tr>
+<tr class="row-even"><td><p>train_cnt</p></td>
+<td><p>55260</p></td>
+</tr>
+<tr class="row-odd"><td><p>elapsed</p></td>
+<td><p>569.0207872390747</p></td>
+</tr>
+<tr class="row-even"><td><p>dictionary</p></td>
+<td><p>dict.tsv</p></td>
+</tr>
+<tr class="row-odd"><td><p>cdate</p></td>
+<td><p>20200323171102</p></td>
+</tr>
+<tr class="row-even"><td><p>mdate</p></td>
+<td><p>20200324100417</p></td>
+</tr>
+<tr class="row-odd"><td><p>serving</p></td>
+<td><p>off</p></td>
+</tr>
+<tr class="row-even"><td><p>serving_name</p></td>
+<td><p>root_mnist_v1</p></td>
+</tr>
+<tr class="row-odd"><td><p>state</p></td>
+<td><p>DONE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3>Parameters BNF<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mlmodel_command : SUMMARY model_name
+                | SUMMARY model_name fields
+model_name : WORD
+           |
+fields : field
+       | fields COMMA field
+field : WORD
+
+WORD = [^,|^ |^\|^(|^)|^\&#39;|\&quot;|^\=]+
+SUMMARY = (?i)list
+COMMA = &quot;,&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mlmodel-delete">
+<h2>mlmodel delete<a class="headerlink" href="#mlmodel-delete" title="Permalink to this headline">¶</a></h2>
+<p>특정 모델을 삭제합니다. 모델 meta정보와 객체저장소의 모델 파일들을 삭제합니다. 성공 시, 모델목록을 보여줍니다.</p>
+<div class="section" id="id6">
+<h3>Parameters<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">delete</span> <span class="pre">model_name</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h3>Examples<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>“mnist_v1” 모델을 삭제합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">delete</span> <span class="pre">mnist_v1</span></code></p>
+<p>출력 결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>id</p></th>
+<th class="head"><p>user</p></th>
+<th class="head"><p>name</p></th>
+<th class="head"><p>type</p></th>
+<th class="head"><p>category</p></th>
+<th class="head"><p>algorithm</p></th>
+<th class="head"><p>serving</p></th>
+<th class="head"><p>create</p></th>
+<th class="head"><p>modified</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>root</p></td>
+<td><p>multi_in_out</p></td>
+<td><p>tf</p></td>
+<td><p>classification</p></td>
+<td><p>deep</p></td>
+<td><p>on</p></td>
+<td><p>2020/03/24 10:20:57</p></td>
+<td><p>2020/03/24 10:21:19</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>root</p></td>
+<td><p>tf_clothes</p></td>
+<td><p>tf</p></td>
+<td><p>classification</p></td>
+<td><p>deep</p></td>
+<td><p>on</p></td>
+<td><p>2020/03/25 07:51:30</p></td>
+<td><p>2020/03/25 07:53:34</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h3>Parameters BNF<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mlmodel_command : DELETE model_name
+model_name : WORD
+           |
+
+WORD = [^,|^ |^\|^(|^)|^\&#39;|\&quot;|^\=]+
+DELETE = (?i)delete
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mlmodel-import">
+<h2>mlmodel import<a class="headerlink" href="#mlmodel-import" title="Permalink to this headline">¶</a></h2>
+<p>객체 저장소에 있는 내 계정 소유의 학습 모델 파일을 IRIS Discovery Service가 관리하는 객체저장소에 적재 합니다.
+적재된 모델은 학습, 예측, 평가, 배포 명령어 등에 활용할 수 있습니다.</p>
+<p>학습 모델 파일은 tar 아카이브 형태이어야 하며, 아카이브 파일 내 타입별 필수 파일은 다음과 같습니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>타입</p></th>
+<th class="head"><p>필수 포함 파일</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>R</p></td>
+<td><p>학습 모델  파일 (model.rda)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Scikit-Learn</p></td>
+<td><p>학습 모델  파일 (model.pkl)</p></td>
+</tr>
+<tr class="row-even"><td><p>Spark</p></td>
+<td><p>학습 모델  파일 (data.parquet), 학습 모델 메타 파일 (metadata)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TensorFlow</p></td>
+<td><p>학습 모델  파일 (model.h5 or saved_model.pb)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id9">
+<h3>Parameters<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">import</span> <span class="pre">name=mnist_v1</span> <span class="pre">type=tf</span> <span class="pre">category=classification</span> <span class="pre">algorithm=deep</span> <span class="pre">format=saved_model</span> <span class="pre">path=OBJECTSTORAGE.{CONNECTOR_NAME}:{KEY}</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>저장할 모델명</p></td>
+<td></td>
+<td><p>sklearn_test</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>유형</p></td>
+<td></td>
+<td><p>sklearn</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>category</p></td>
+<td><p>범주</p></td>
+<td></td>
+<td><p>classification</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>algorithm</p></td>
+<td><p>알고리즘</p></td>
+<td></td>
+<td><p>LogisticRegression</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>format</p></td>
+<td><p>모델 포멧</p></td>
+<td></td>
+<td><p>pickle 혹은 h5 혹은 saved_model</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>path</p></td>
+<td><p>객체 스토리지 내 모델 소스 경로</p></td>
+<td></td>
+<td><p>USERS/root/sklearn_model.tar</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">CONNECTOR_NAME</span></code> : Conncetor Name입니다. IRIS UI에서 연결정보 생성 후, 연결정보의 <code class="docutils literal notranslate"><span class="pre">이름</span></code> 컬럼에서 확인할 수 있는 값입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">KEY</span></code> : OBJECTSTORAGE의 key입니다. bucket은 생략해야 합니다.</p>
+</div>
+<div class="section" id="id10">
+<h3>Examples<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>모델정보를 아카이브한 파일을 IRIS Discovery Service가 관리하는 객체저장소에 업로드 합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">import</span> <span class="pre">name=tf_clothes</span> <span class="pre">type=tf</span> <span class="pre">category=classification</span> <span class="pre">algorithm=deep</span> <span class="pre">format=saved_model</span> <span class="pre">path=OBJECTSTORAGE.MIN_AI:USERS/root/clothes/model.tar</span></code></p>
+<p>출력 결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ok</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h3>Parameters BNF<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mlmodel_command : IMPORT options
+options : option
+        | options option
+        |
+option : WORD EQ WORD
+       | WORD EQ SQ_TERM_SQ
+
+WORD = [^,|^ |^\|^(|^)|^\&#39;|\&quot;|^\=]+
+SQ_TERM_SQ = &#39;[a-zA-Z0-9가-힣 _\-\[\]{}()\.:,=]*&#39;
+EQ = \=
+IMPORT = (?i)import
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mlmodel-export">
+<h2>mlmodel export<a class="headerlink" href="#mlmodel-export" title="Permalink to this headline">¶</a></h2>
+<p>객체 저장소에 관리되고 있는 학습 모델 디렉토리를 아카이브하여 개인 객체 저장소에 저장하고 download url을 제공합니다.</p>
+<p>관리되고 있는 학습모델은 fit명령으로 학습된 모델 혹은 mlmodel import로 적재된 모델을 의미합니다.</p>
+<div class="section" id="id12">
+<h3>Parameters<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">export</span> <span class="pre">name=mnist_v1</span> <span class="pre">path=OBJECTSTORAGE.{CONNECTOR_NAME}:{KEY}</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>name</p></td>
+<td><p>내보낼 모델명</p></td>
+<td></td>
+<td><p>sklearn_test</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>path</p></td>
+<td><p>객체 스토리지 내 모델 저장 경로</p></td>
+<td></td>
+<td><p>USERS/root/sklearn_test.tar</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h3>Examples<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>mnist_v1 모델을 개인 객체 저장소에 저장합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">export</span> <span class="pre">name=mnist_v1</span> <span class="pre">path=OBJECTSTORAGE.MIN_AI:USERS/root/tf_mnist.tar</span></code></p>
+<p>출력 결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>result</p></th>
+<th class="head"><p>download_url</p></th>
+<th class="head"><p>expired time (sec)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ok</p></td>
+<td><p><a class="reference external" href="http://IP:PORT/test/ANGORA/AI/DOWNLOAD/root/mnist_v1/tf_mnist.tar">http://IP:PORT/test/ANGORA/AI/DOWNLOAD/root/mnist_v1/tf_mnist.tar</a>…</p></td>
+<td><p>3600</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id14">
+<h3>Parameters BNF<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mlmodel_command : EXPORT options
+options : option
+        | options option
+        |
+option : WORD EQ WORD
+       | WORD EQ SQ_TERM_SQ
+
+WORD = [^,|^ |^\|^(|^)|^\&#39;|\&quot;|^\=]+
+SQ_TERM_SQ = &#39;[a-zA-Z0-9가-힣 _\-\[\]{}()\.:,=]*&#39;
+EQ = \=
+EXPORT = (?i)export
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mlmodel-deploy">
+<h2>mlmodel deploy<a class="headerlink" href="#mlmodel-deploy" title="Permalink to this headline">¶</a></h2>
+<p>관리되고 있는 학습된 모델을 서빙 가능하도록 TersorFlow Serving에 배포합니다. tf 타입만 제공합니다.</p>
+<p>모델 배포시, 최초 version은 1이며, 같은 모델명으로 배포 시, version이 1씩 올라갑니다.
+배포가 되면, <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html">serving 명령어</a> 로 version별 모델 예측, 모델 서빙 상태 확인이 가능합니다.</p>
+<div class="section" id="id15">
+<h3>Parameters<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">deploy</span> <span class="pre">model_name</span> <span class="pre">label='stable'</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>배포할 모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>label</p></td>
+<td><p>배포 모델 설명</p></td>
+<td></td>
+<td><p>unstable</p></td>
+<td><p>문자열</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id16">
+<h3>Examples<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>학습된 mnist_v1모델을 배포합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">deploy</span> <span class="pre">mnist_v1</span> <span class="pre">label='unstable'</span></code></p>
+<p>출력 결과</p>
+<ul class="simple">
+<li><p>serving_name은 유저명과 모델이름을 합친 문자열입니다. curl로 서빙에 요청할 경우 해당 이름으로 요청해야합니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>reslut</p></th>
+<th class="head"><p>latest_version</p></th>
+<th class="head"><p>serving_name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>on</p></td>
+<td><p>1</p></td>
+<td><p>root_mnist_v1</p></td>
+</tr>
+</tbody>
+</table>
+<p>mnist_v1모델을 업데이트하고 재배포합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">deploy</span> <span class="pre">mnist_v1</span> <span class="pre">label='stable'</span></code></p>
+<p>출력 결과</p>
+<ul class="simple">
+<li><p>버전이 1 올라갑니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>reslut</p></th>
+<th class="head"><p>latest_version</p></th>
+<th class="head"><p>serving_name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>on</p></td>
+<td><p>2</p></td>
+<td><p>root_mnist_v1</p></td>
+</tr>
+</tbody>
+</table>
+<p><a class="reference external" href="https://www.tensorflow.org/tfx/serving/api_rest#url_4">restapi</a> 로 배포 모델을 확인합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">!curl</span> <span class="pre">-d</span> <span class="pre">'{&quot;signature_name&quot;:</span> <span class="pre">&quot;serving_default&quot;,</span> <span class="pre">&quot;instances&quot;:</span> <span class="pre">[[[[0.0],</span> <span class="pre">[0.0],...,</span> <span class="pre">[0.8196078431372549],</span> <span class="pre">[0.8156862745098039],</span> <span class="pre">[1.0],</span> <span class="pre">[0.8196078431372549],...,</span> <span class="pre">[0.0],</span> <span class="pre">[0.0],</span> <span class="pre">[0.0]]]]}'</span>
+<span class="pre">-X</span> <span class="pre">POST</span> <span class="pre">http://localhost:8501/v1/models/root_mnist_v1/versions/2:predict</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{
+    &quot;predictions&quot;: [[1.34083416e-06, 6.62974609e-09, 4.16653876e-08, 6.56875301e-08, 1.06879767e-07, 0.00958874, 7.81568906e-06, 0.354254484, 0.00198251382, 0.634164929]]
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h3>Parameters BNF<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mlmodel_command : DEPLOY model_name options
+options : option
+        | options option
+        |
+option : WORD EQ WORD
+       | WORD EQ SQ_TERM_SQ
+
+WORD = [^,|^ |^\|^(|^)|^\&#39;|\&quot;|^\=]+
+SQ_TERM_SQ = &#39;[a-zA-Z0-9가-힣 _\-\[\]{}()\.:,=]*&#39;
+EQ = \=
+DEPLOY = (?i)deploy
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mlmodel-stop">
+<h2>mlmodel stop<a class="headerlink" href="#mlmodel-stop" title="Permalink to this headline">¶</a></h2>
+<p>서빙 중인 배포 모델을 더 이상 서빙 하지 않도록 중지합니다. 버전 상관없이 모두 중지합니다.</p>
+<div class="section" id="id18">
+<h3>Parameters<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">stop</span> <span class="pre">model_name</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>중지할 모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id19">
+<h3>Examples<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>mnist_v1모델을 중지합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">stop</span> <span class="pre">mnist_v1</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>reslut</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ok</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id20">
+<h3>Parameters BNF<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mlmodel_command : STOP model_name
+model_name : WORD
+           |
+
+WORD = [^,|^ |^\|^(|^)|^\&#39;|\&quot;|^\=]+
+STOP = (?i)stop
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="model.html" class="btn btn-neutral float-right" title="model" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="ml_algorithms/logisticregression.html" class="btn btn-neutral float-left" title="logisticRegression(LBFGS)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

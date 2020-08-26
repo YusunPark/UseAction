@@ -1,0 +1,594 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>검색어예제: distinct/round/calculate/concat/fields/pivot &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="IRIS Database" href="../../IRIS-Database/index.html" />
+    <link rel="prev" title="검색어예제: where/substr/fillna/pivot/join" href="DSL_ex1.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/index.html">Command References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Command 사용 예제</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="DSL_ex1.html">검색어예제: where/substr/fillna/pivot/join</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">검색어예제: distinct/round/calculate/concat/fields/pivot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="index.html">Command 사용 예제</a> &raquo;</li>
+    
+    <li>검색어예제: distinct/round/calculate/concat/fields/pivot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/example/example_flower.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/example/example_flower</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/example/example_flower</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/example/example_flower
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/example/example_flower</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/example/example_flower.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/example/example_flower.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="distinct-round-calculate-concat-fields-pivot">
+<h1><a class="toc-backref" href="#contents">검색어예제: distinct/round/calculate/concat/fields/pivot</a><a class="headerlink" href="#distinct-round-calculate-concat-fields-pivot" title="Permalink to this headline">¶</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#distinct-round-calculate-concat-fields-pivot" id="id6">검색어예제: distinct/round/calculate/concat/fields/pivot</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id7">데이터 :  붓꽃 데이터</a></p></li>
+<li><p><a class="reference internal" href="#distinct" id="id8">distinct</a></p></li>
+<li><p><a class="reference internal" href="#round" id="id9">round</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id10">컬럼이름으로 반올림하기</a></p></li>
+<li><p><a class="reference internal" href="#idx" id="id11">idx 로 반올림하기</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#calculate" id="id12">calculate</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id13">컬럼간의 사칙연산</a></p></li>
+<li><p><a class="reference internal" href="#add-avg" id="id14">ADD, AVG 함수로 행/열단위로 연산하기</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#concat" id="id15">concat</a></p></li>
+<li><p><a class="reference internal" href="#fields" id="id16">fields</a></p></li>
+<li><p><a class="reference internal" href="#pivot" id="id17">pivot</a></p>
+<ul>
+<li><p><a class="reference internal" href="#splitrow" id="id18">SPLITROW</a></p></li>
+<li><p><a class="reference internal" href="#splitcol" id="id19">SPLITCOL</a></p></li>
+<li><p><a class="reference internal" href="#splitrow-splitcol" id="id20">SPLITROW &amp; SPLITCOL</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line">계속 추가할 예정입니다.</div>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#contents">데이터 :  붓꽃 데이터</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">데이터 모델 : EDU_TRAIN_FLOWER</div>
+<div class="line">데이터 분석에서 가장 많이 사용되는 IRIS(붓꽃) 데이터입니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_01.png"><img alt="데이터" src="../../../_images/flower_01.png" style="width: 1099.2px; height: 510.59999999999997px;" /></a>
+</div>
+<div class="section" id="distinct">
+<h2><a class="toc-backref" href="#contents">distinct</a><a class="headerlink" href="#distinct" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">몇개의 종(Species) 이 있는지 distinct 로 알아보는 예제</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">distinct</span>  <span class="n">Species</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">Sepal_Length, Petal_Length 컬럼을 소수점 자리를 반올림하여 정수로 만든 후 distinct 실행 예제</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="nb">round</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="n">col</span> <span class="o">=</span> <span class="p">[</span><span class="n">Sepal_Length</span><span class="p">,</span>   <span class="n">Petal_Length</span><span class="p">]</span>  <span class="o">|</span>  <span class="n">distinct</span>  <span class="n">Sepal_Length</span><span class="p">,</span>   <span class="n">Petal_Length</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="round">
+<h2><a class="toc-backref" href="#contents">round</a><a class="headerlink" href="#round" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#contents">컬럼이름으로 반올림하기</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">데이터모델의 모든 숫자형 컬럼을 소수점 1자리로 반올림하는 예제</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="nb">round</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">컬럼(숫자형) 1개를 반올림하는 예제</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### 소수점 1자리로 Sepal_Length 를 반올림합니다.</span>
+<span class="o">*</span> <span class="o">|</span>  <span class="nb">round</span> <span class="mi">1</span> <span class="n">col</span> <span class="o">=</span> <span class="n">Sepal_Length</span>
+
+<span class="c1">### 소수점이 0자리 즉 정수로 Sepal_Length 를 반올림합니다.</span>
+<span class="o">*</span> <span class="o">|</span>  <span class="nb">round</span> <span class="mi">0</span> <span class="n">col</span> <span class="o">=</span> <span class="p">[</span><span class="n">Sepal_Length</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">컬럼(숫자형) 2개 이상을 반올림하는 예제</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span>  <span class="nb">round</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="n">col</span> <span class="o">=</span> <span class="p">[</span><span class="n">Sepal_Length</span><span class="p">,</span>   <span class="n">Petal_Length</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="idx">
+<h3><a class="toc-backref" href="#contents">idx 로 반올림하기</a><a class="headerlink" href="#idx" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">idx 는 파이프로 넘어오는 데이터 필드 순서대로 0,1,2,,, 로 assign 됩니다.</div>
+<div class="line">데이터모델 EDU_TRAIN_FLOWER 의 검색 결과 순서는 Sepal_Length, Sepal_Width, Petal_Length, Petal_Width, Species 입니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="nb">round</span> <span class="mi">0</span>  <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1">## Sepal_Length, Sepal_Width 가 반올림으로 정수가 됩니다.</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">fields</span> <span class="o">-</span><span class="n">Sepal_Length</span> <span class="o">|</span> <span class="nb">round</span> <span class="mi">0</span>  <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1">## Sepal_Length 를 제외하고 파이프로 넘어오면 Sepal_Width, Petal_Length, Sepal_Width, Species 순서이므로</span>
+<span class="c1">## Sepal_Width, Petal_Length 가 소수점없는 반올림으로 정수가 됩니다.</span>
+
+<span class="o">*</span> <span class="o">|</span> <span class="n">fields</span> <span class="o">-</span><span class="n">Sepal_Length</span> <span class="o">|</span> <span class="nb">round</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>  <span class="n">idx</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="c1">## Sepal_Width 는 소수점없는 반올림으로 정수, Petal_Length 는 소수점 1자리로 반올림합니다.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="calculate">
+<h2><a class="toc-backref" href="#contents">calculate</a><a class="headerlink" href="#calculate" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#contents">컬럼간의 사칙연산</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">사칙연산(+, -, /, <a href="#id4"><span class="problematic" id="id5">*</span></a>) 는 컬럼간의 연산이 가능합니다.</div>
+<div class="line">AS 문으로 결과 컬럼을 설정하지 않으면, 자동으로 <strong>calculated</strong> 컬럼으로 표시됩니다.</div>
+<div class="line">함수 add row, avg row 도 컬럼간의 연산이 가능합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">Sepal_Width + Sepal_Width 를  Width_sum 이라는 새 컬럼에 저장하는 예제</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">calculate</span> <span class="n">Sepal_Width</span> <span class="o">+</span> <span class="n">Sepal_Width</span> <span class="k">as</span> <span class="n">Width_sum</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>add row</strong> 를 이용하면 동일한 결과가 나옵니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">calculate</span> <span class="n">add</span> <span class="n">row</span>  <span class="n">Sepal_Width</span><span class="p">,</span> <span class="n">Petal_Width</span>  <span class="k">as</span> <span class="n">Width_sum</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_calculate_02.png"><img alt="flower calculate" src="../../../_images/flower_calculate_02.png" style="width: 1141.8px; height: 444.59999999999997px;" /></a>
+<div class="line-block">
+<div class="line">(Sepal_Width + Petal_Width) / 2  결과를 Width_avg 컬럼에 저장하는 예제.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">calculate</span> <span class="p">(</span> <span class="n">Sepal_Width</span> <span class="o">+</span>  <span class="n">Petal_Width</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>  <span class="k">as</span> <span class="n">Width_avg</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><strong>avg row</strong> 를 이용하면 동일한 결과가 나옵니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">calculate</span> <span class="n">avg</span> <span class="n">row</span> <span class="n">Sepal_Width</span> <span class="p">,</span> <span class="n">Petal_Width</span>  <span class="k">as</span> <span class="n">Width_avg</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="add-avg">
+<h3><a class="toc-backref" href="#contents">ADD, AVG 함수로 행/열단위로 연산하기</a><a class="headerlink" href="#add-avg" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">ADD 함수로 Sepal_Width,  Petal_Width 컬럼의 모든 값을 더해서 합계를 구합니다.</div>
+<div class="line">총 105개 행의 데이터에서 마지막 106번째 행에 해당 켤럼의 합계가 표시됩니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">calculate</span> <span class="n">add</span> <span class="n">col</span>  <span class="n">Sepal_Width</span><span class="p">,</span> <span class="n">Petal_Width</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_calculate_03.png"><img alt="flower calculate 03" src="../../../_images/flower_calculate_03.png" style="width: 1125.0px; height: 354.0px;" /></a>
+<div class="line-block">
+<div class="line">AVG 함수로 숫자형 컬럼의 평균을 구합니다.</div>
+<div class="line">총 105개 행의 데이터에서 마지막 106번째 행에 숫자형 켤럼의 평균값이 표시됩니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">calculate</span> <span class="n">avg</span> <span class="n">col</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_calculate_04.png"><img alt="flower calculate 04" src="../../../_images/flower_calculate_04.png" style="width: 1138.8px; height: 363.0px;" /></a>
+<div class="line-block">
+<div class="line">모든 숫자형 컬럼의 값을 행단위/열단위로 더한 합계를 표시합니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">calculate</span> <span class="n">add</span> <span class="nb">all</span> <span class="k">as</span> <span class="n">TOTAL</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_calculate_05.png"><img alt="flower calculate 05" src="../../../_images/flower_calculate_05.png" style="width: 1102.8px; height: 411.0px;" /></a>
+</div>
+</div>
+<div class="section" id="concat">
+<h2><a class="toc-backref" href="#contents">concat</a><a class="headerlink" href="#concat" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">컬럼을 연결하는 명령어입니다.</div>
+<div class="line">AS 문으로 결과 컬럼을 설정하지 않으면, 자동으로 <strong>concated</strong> 컬럼으로 표시됩니다.</div>
+</div>
+<div class="line-block">
+<div class="line">Petal_Width, Species 컬럼을 구분자없이 concatenation 하는 예제입니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">concat</span> <span class="n">Petal_Width</span><span class="p">,</span> <span class="n">Species</span> <span class="k">as</span> <span class="n">Petal_Width_Species</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_concat_06.png"><img alt="flower concat 06" src="../../../_images/flower_concat_06.png" style="width: 993.5999999999999px; height: 322.2px;" /></a>
+<div class="line-block">
+<div class="line">Petal_Width,  “:” , Species 를 concatenation 하는 예제</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">concat</span> <span class="n">Petal_Width</span><span class="p">,</span> <span class="s2">&quot;:&quot;</span><span class="p">,</span> <span class="n">Species</span> <span class="k">as</span> <span class="n">Petal_Width_Species</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_concat_07.png"><img alt="flower concat 07" src="../../../_images/flower_concat_07.png" style="width: 1106.3999999999999px; height: 316.2px;" /></a>
+<div class="line-block">
+<div class="line">컬럼이름에 빈칸, 콤마(,) 등이 있는 경우에는 <strong>‘</strong> 로 컬럼이름에 사용하여 처리합니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## 컬럼이름을 &#39;My, Species&#39; 로 rename 한 후 , 연결하는 예제</span>
+<span class="o">*</span> <span class="o">|</span> <span class="n">rename</span> <span class="n">Species</span> <span class="s1">&#39;My, Species&#39;</span> <span class="o">|</span> <span class="n">concat</span> <span class="s1">&#39;My, Species&#39;</span><span class="p">,</span> <span class="s2">&quot; petal length is &quot;</span><span class="p">,</span> <span class="n">Petal_Length</span> <span class="k">as</span> <span class="n">RESULT</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_concat_08.png"><img alt="flower concat 08" src="../../../_images/flower_concat_08.png" style="width: 1003.1999999999999px; height: 330.59999999999997px;" /></a>
+</div>
+<div class="section" id="fields">
+<h2><a class="toc-backref" href="#contents">fields</a><a class="headerlink" href="#fields" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">데이터중에서 일부 필드만 선택 및 제외하여 출력하는 명령어입니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_fields_09.png"><img alt="flower fields 09" src="../../../_images/flower_fields_09.png" style="width: 1036.8px; height: 634.8px;" /></a>
+<div class="line-block">
+<div class="line">일부 필드만 출력</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">fields</span> <span class="n">Sepal_Width</span><span class="p">,</span><span class="n">Petal_Width</span>
+
+<span class="c1">## Sepal 로 시작하는 패턴의 필드명 데이터만 출력합니다.</span>
+<span class="o">*</span> <span class="o">|</span> <span class="n">fields</span> <span class="n">Sepal</span><span class="o">*</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">일부 필드 제외하고 출력</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">fields</span> <span class="o">-</span><span class="n">Sepal_Width</span><span class="p">,</span><span class="n">Petal_Width</span>
+
+<span class="c1">## Sepal 로 시작하는 패턴의 필드명 데이터는 제외하고 출력합니다.</span>
+<span class="o">*</span> <span class="o">|</span> <span class="n">fields</span> <span class="o">-</span><span class="n">Sepal</span><span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pivot">
+<h2><a class="toc-backref" href="#contents">pivot</a><a class="headerlink" href="#pivot" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="splitrow">
+<h3><a class="toc-backref" href="#contents">SPLITROW</a><a class="headerlink" href="#splitrow" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Species(종)을 행으로 split ( <strong>SPLITROW</strong> ) 하여(3개의 종 -&gt; 3개의 행)</div>
+<div class="line">Species(종) 별로 Sepal_Width 의 평균,  Petal_Width 의 평균을 구합니다.</div>
+<div class="line">alias 로 avg(Sepal_Width) =&gt; 평균_꽃받침넓이, avg(Sepal_Length) =&gt; 평균_꽃받침길이</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">pivot</span> <span class="n">avg</span><span class="p">(</span><span class="n">Sepal_Width</span><span class="p">)</span> <span class="k">as</span> <span class="n">평균_꽃받침넓이</span><span class="p">,</span> <span class="n">avg</span><span class="p">(</span><span class="n">Sepal_Length</span><span class="p">)</span> <span class="k">as</span> <span class="n">평균_꽃받침길이</span> <span class="n">SPLITROW</span> <span class="n">Species</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_fields_10.png"><img alt="flower fields 10" src="../../../_images/flower_fields_10.png" style="width: 636.0px; height: 142.2px;" /></a>
+</div>
+<div class="section" id="splitcol">
+<h3><a class="toc-backref" href="#contents">SPLITCOL</a><a class="headerlink" href="#splitcol" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Species를 컬럼으로 split 해서 ( <strong>SPLITCOL</strong> ) Sepal_Width 의 평균,  Petal_Width 의 평균을 구합니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">pivot</span> <span class="n">avg</span><span class="p">(</span><span class="n">Sepal_Width</span><span class="p">)</span> <span class="k">as</span> <span class="n">평균_꽃받침넓이</span><span class="p">,</span> <span class="n">avg</span><span class="p">(</span><span class="n">Sepal_Length</span><span class="p">)</span> <span class="k">as</span> <span class="n">평균_꽃받침길이</span> <span class="n">SPLITCOL</span> <span class="n">Species</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/flower_fields_10_1.png"><img alt="flower fields 10_1" src="../../../_images/flower_fields_10_1.png" style="width: 1202.3999999999999px; height: 66.0px;" /></a>
+</div>
+<div class="section" id="splitrow-splitcol">
+<h3><a class="toc-backref" href="#contents">SPLITROW &amp; SPLITCOL</a><a class="headerlink" href="#splitrow-splitcol" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">continent별 원유수입량을 연도별로 보는 예제입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">연간 국가별 원유 수입량 데이터 도델 : EDU_DEMO_OIL_IMPORT</div>
+<div class="line">행 : year</div>
+<div class="line">컬럼 : Continent</div>
+<div class="line">값 : 원유수입양 합계</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Continent</span><span class="o">!=</span><span class="s1">&#39;합계&#39;</span> <span class="o">|</span> <span class="n">pivot</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Barrel</span><span class="p">)</span> <span class="k">as</span> <span class="n">원유수입양</span> <span class="n">SPLITROW</span> <span class="n">year</span> <span class="n">SPLITCOL</span> <span class="n">Continent</span> <span class="o">|</span>  <span class="n">sort</span> <span class="n">year</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/import_oil_pivot_11.png"><img alt="pivot import oil 11" src="../../../_images/import_oil_pivot_11.png" style="width: 764.4px; height: 601.8px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../IRIS-Database/index.html" class="btn btn-neutral float-right" title="IRIS Database" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DSL_ex1.html" class="btn btn-neutral float-left" title="검색어예제: where/substr/fillna/pivot/join" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

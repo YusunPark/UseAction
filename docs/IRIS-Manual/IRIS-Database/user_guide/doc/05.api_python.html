@@ -1,0 +1,485 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. PYTHON-API 사용법 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="8. 개요" href="06.DBeaver.html" />
+    <link rel="prev" title="6. API-JDBC 사용법" href="04.api_jdbc.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../systemmanager_guide/index.html">System-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="00.sql_reference.html">1. SQL Reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01.query.html">2. 쿼리</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01-01.extension_geospatial.html">3. 공간 쿼리 사용하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02.load.html">4. 로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.option.html">5. 옵션</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.api_jdbc.html">6. API-JDBC 사용법</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">7. PYTHON-API 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html">8. 개요</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#id2">9. 목차</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-overview">10. DBeaver Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#id4">11. DBeaver 설치</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-thrift-server-hive">12. DBeaver Thrift Server (Hive) 사용방법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-iris-jdbc">13. DBeaver IRIS JDBC 사용방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">User Guide</a> &raquo;</li>
+    
+    <li><span class="section-number">7. </span>PYTHON-API 사용법</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/05.api_python.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/user_guide/doc/05.api_python</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/user_guide/doc/05.api_python</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/user_guide/doc/05.api_python
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/user_guide/doc/05.api_python</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/05.api_python.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/user_guide/doc/05.api_python.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="python-api">
+<h1><span class="section-number">7. </span>PYTHON-API 사용법<a class="headerlink" href="#python-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><span class="section-number">7.1. </span>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api">
+<h3><span class="section-number">7.1.1. </span>API 버전<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>IRIS 2.1에서 사용되는 PYTHON API는 버전은 mobigen-iris-python27-2.1.0.zip 파일이며, 다른 버전에서 사용중인 API와는 호환이 안될 수 있습니다.</p>
+</div>
+<div class="section" id="python">
+<h3><span class="section-number">7.1.2. </span>PYTHON 버전 및 설정 방법<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>API를 사용하기 위해서는 python 2.7 버전에서 사용해야 합니다. (python3.6의 경우 mobigen-iris-python36-2.1.0.zip 파일 사용)</p>
+<p>제공되는 파일을 PYTHONPATH 에 설정하여 사용하시면 됩니다.</p>
+</div>
+<div class="section" id="id2">
+<h3><span class="section-number">7.1.3. </span>지원 쿼리<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>API에서 지원하는 쿼리의 종류는 다음과 같습니다.
+-       CREATE TABLE
+-       CREATE INDEX
+-       INSERT
+-       UPDATE
+-       DELETE
+-       LOAD
+-       SELECT
+-       DROP INDEX
+-       DROP TABLE</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">7.2. </span>기본 사용법<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>이 장에서는 쿼리를 사용하기 위해 API를 이용한 IRIS의 접속 방법 및 예제 코드를 설명 합니다.</p>
+<div class="section" id="id4">
+<h3><span class="section-number">7.2.1. </span>기본 구조<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">API.M6</span> <span class="k">as</span> <span class="nn">M6</span>
+
+<span class="n">conn</span> <span class="o">=</span> <span class="n">M6</span><span class="o">.</span><span class="n">Connection</span><span class="p">({</span><span class="n">master_ip</span><span class="p">}:{</span><span class="n">port</span><span class="p">},</span> <span class="p">{</span><span class="n">user_id</span><span class="p">},</span> <span class="p">{</span><span class="n">passwd</span><span class="p">},</span> <span class="n">Database</span><span class="o">=</span><span class="p">{</span><span class="n">database_name</span><span class="p">},</span> <span class="n">Direct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">Cursor</span><span class="p">()</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;query syntax&#39;</span><span class="p">;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">Execute2</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">result</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span>
+<span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="master-ip">
+<h3><span class="section-number">7.2.2. </span>MASTER_IP<a class="headerlink" href="#master-ip" title="Permalink to this headline">¶</a></h3>
+<p>IP는 IRIS의 Master IP를 의미한다.</p>
+</div>
+<div class="section" id="port">
+<h3><span class="section-number">7.2.3. </span>PORT<a class="headerlink" href="#port" title="Permalink to this headline">¶</a></h3>
+<p>IRIS에서 사용하는 Port는 일반 접속, Direct접속에 따라 다르게 설정을 해야 하며, 기본적인 Port는 다음과 같다.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>일반 접속</dt><dd><ul>
+<li><p>5050: 일반 접속을 사용할 경우에 사용하는 Port</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Direct접속</dt><dd><ul>
+<li><p>5000 : Direct접속을 사용할 경우에 사용되는 Port</p></li>
+<li><p>Direct접속을 시도할 경우에는 M6.Connection의 Direct 옵션을 True로 해주어야 합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="database-name">
+<h3><span class="section-number">7.2.4. </span>database name<a class="headerlink" href="#database-name" title="Permalink to this headline">¶</a></h3>
+<p>접속하고자 하는 database name을 설정합니다.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">7.3. </span>예제코드<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>모든 쿼리들은 Exception이 발생하지 않을 경우 성공으로 간주합니다.</p>
+<div class="section" id="create-table-index-update-insert-delete-drop-table-index">
+<h3><span class="section-number">7.3.1. </span>CREATE[table,index]/UPDATE/INSERT/DELETE/DROP[table,index]<a class="headerlink" href="#create-table-index-update-insert-delete-drop-table-index" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;query syntax&#39;</span><span class="p">;</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">Execute2</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="select">
+<h3><span class="section-number">7.3.2. </span>SELECT<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="s2">&quot;select * from LOCAL_TEST_TABLE;&quot;</span>
+<span class="n">c</span><span class="o">.</span><span class="n">Execute2</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="n">row</span>
+</pre></div>
+</div>
+<p>cursor 를 이용하여 하나의 레코드씩 fetch를 받으면 됩니다.</p>
+</div>
+<div class="section" id="load">
+<h3><span class="section-number">7.3.3. </span>LOAD<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h3>
+<p>LOAD에 성공할 경우
++OK SUCCESS. success count : 4
+와 같은 결과를 얻을 수 있습니다.
+이 경우 마지막 4의 의미는 4개의 Record가 Load되었다는 의미 입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table</span>             <span class="o">=</span> <span class="s2">&quot;LOCAL_TEST_TABLE_JDBC&quot;</span><span class="p">;</span>
+<span class="n">key</span>               <span class="o">=</span> <span class="s2">&quot;K&quot;</span><span class="p">;</span>
+<span class="n">partition</span>         <span class="o">=</span> <span class="s2">&quot;20140101000000&quot;</span><span class="p">;</span>
+<span class="n">control_file_path</span> <span class="o">=</span> <span class="s2">&quot;LOCAL_TEST_TABLE.ctl&quot;</span><span class="p">;</span>
+<span class="n">data_file_path</span>    <span class="o">=</span> <span class="s2">&quot;LOCAL_TEST_TABLE.dat&quot;</span><span class="p">;</span>
+
+<span class="n">c</span><span class="o">.</span><span class="n">SetFieldSep</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">SetRecordSep</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">Load</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">partition</span><span class="p">,</span> <span class="n">control_file_path</span><span class="p">,</span> <span class="n">data_file_path</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="n">result</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="iris-query">
+<h2><span class="section-number">7.4. </span>IRIS Query<a class="headerlink" href="#iris-query" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서는 기본적인 ANSI SQL의 거의 동일하게 지원을 하지만,
+CREATE TABLE의 경우에는 IRIS에서 사용하는 옵션을 추가로 적어 주어야 합니다.</p>
+<div class="section" id="create-table">
+<h3><span class="section-number">7.4.1. </span>CREATE TABLE<a class="headerlink" href="#create-table" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>CREATE TABLE {table_name} (
+    {colnum_name}   {type},
+    {colnum_name}   {type},
+    {colnum_name}   {type},
+            …
+    {colnum_name}   {type}
+)
+datascope           [ LOCAL                 | GLOBAL ]
+ramexpire           [ n &gt; 0                 | 0               ]
+diskexpire          [ n &gt; 0                 | 0               ]
+partitionkey        [ key_column_name       | NONE      ]
+partitiondate       [ part_column_name      | NONE      ]
+partitiondate       [ n &gt; 0                 | 0               ]
+;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">7.5. </span>주의사항<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>모든  API의 Connection은 쿼리가 종료 후 재접속 해야 합니다.</p>
+<p>즉, 두개의 쿼리를 실행할 경우 첫번째 쿼리의 결과를 얻은 후 Connection을 종료후, Connection을 재 접속 후 두번째 쿼리를 실행해야 합니다.</p>
+<p>API상에서 쿼리실행도중 에러가 발생할 경우 당시에 사용된 Connection은 강제로 종료가 됩니다. 따라서, 에러가 발생할 경우 재 접속을 해주어야 합니다.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="06.DBeaver.html" class="btn btn-neutral float-right" title="8. 개요" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="04.api_jdbc.html" class="btn btn-neutral float-left" title="6. API-JDBC 사용법" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

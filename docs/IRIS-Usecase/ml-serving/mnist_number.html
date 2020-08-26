@@ -1,0 +1,598 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ML 명령어 - mnist number 예제 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ML 명령어 - mnist clothes 예제" href="mnist_clothes.html" />
+    <link rel="prev" title="IRIS Discovery Service M/L - 모델 적재 시나리오" href="index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Usecase</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../usecase4-batting_data/index.html">IRIS Studio - 야구 타격 지표</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieve_data_from_iris_to_r/index.html">R 에서 아이리스에 저장된 데이터 가져오기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecase3-map/index.html">지도 기반의 데이터 표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecase1-syslog/index.html">SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">IRIS Discovery Service M/L - 모델 적재 시나리오</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ML 명령어 - mnist number 예제</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">학습</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">개인 객체저장소에 모델 업로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">적재</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">배포</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">서빙 상태 확인</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">테스트 데이터 업로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">예측</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mnist_clothes.html">ML 명령어 - mnist clothes 예제</a></li>
+<li class="toctree-l3"><a class="reference internal" href="boston_housing.html">서빙 명령어 활용 - boston housing 데이터 예제</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multi_in_out.html">ML 명령어 - multi input multi output 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../ml/index.html">IRIS Discovery Service M/L - 내부 모델 활용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BLOG/index.html">데이터 분석과 보고서 생성하기</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Usecase</a> &raquo;</li>
+    
+      <li><a href="index.html">IRIS Discovery Service M/L - 모델 적재 시나리오</a> &raquo;</li>
+    
+    <li>ML 명령어 - mnist number 예제</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/ml-serving/mnist_number.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Usecase/ml-serving/mnist_number</p>
+
+            
+            <p>list1[0] = IRIS-Usecase</p>
+            <p>list1[1] = ml-serving/mnist_number</p>
+            <p>list1[2] = </p>
+            IRIS-Usecase
+            IRIS-Usecase/ml-serving/mnist_number
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Usecase/ml-serving/mnist_number</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/ml-serving/mnist_number.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Usecase/blob/master/ml-serving/mnist_number.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="ml-mnist-number">
+<h1>ML 명령어 - mnist number 예제<a class="headerlink" href="#ml-mnist-number" title="Permalink to this headline">¶</a></h1>
+<p>tensorflow의 숫자 데이터로 학습을 진행하고, 개인 객체 저장소에 업로드하여 IRIS Discovery Service 적재, 서빙하는 시나리오입니다.</p>
+<div class="section" id="id1">
+<h2>학습<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">10개의 숫자 카테고리로 이루어진 7만장의 흑백 숫자 이미지를 다운로드, 전처리, 학습합니다.</div>
+<div class="line">tensorflow 2.1.0 패키지가 필요합니다.</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tensorflow==2.1.0</span></code></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import tensorflow as tf
+from tensorflow import keras
+
+fashion_mnist = keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+
+# scale the values to 0.0 to 1.0
+train_images = train_images / 255.0
+test_images = test_images / 255.0
+
+# reshape for feeding into the model
+train_images = train_images.reshape(train_images.shape[0], 28, 28, 1)
+test_images = test_images.reshape(test_images.shape[0], 28, 28, 1)
+
+class_names = [&#39;zero&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;,
+               &#39;five&#39;, &#39;six&#39;, &#39;seven&#39;, &#39;eight&#39;, &#39;nine&#39;]
+
+model = keras.Sequential([
+    keras.layers.Conv2D(input_shape=(28,28,1), filters=8, kernel_size=3,
+                        strides=2, activation=&#39;relu&#39;, name=&#39;Conv1&#39;),
+    keras.layers.Flatten(),
+    keras.layers.Dense(10, activation=tf.nn.softmax, name=&#39;Softmax&#39;)
+])
+model.summary()
+
+testing = False
+epochs = 5
+
+model.compile(optimizer=&#39;adam&#39;,
+              loss=&#39;sparse_categorical_crossentropy&#39;,
+              metrics=[&#39;accuracy&#39;])
+model.fit(train_images, train_labels, epochs=epochs)
+
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print(&#39;\nTest accuracy: {}&#39;.format(test_acc))
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>개인 객체저장소에 모델 업로드<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">IRIS Discovery Service에 적재하기 위해, tar 파일로 압축하여 개인 객체저장소에 업로드합니다.</div>
+<div class="line">boto3 패키지가 필요합니다.</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">boto3</span></code></p>
+<ul class="simple">
+<li><p>아래 인자를 입력해주세요.</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>bucket : 개인 객체 저장소의 bucket</p></li>
+<li><p>key : 개인 객체 저장소의 key</p></li>
+<li><p>endpoint_url : 개인 객체 저장소의 url</p></li>
+<li><p>aws_access_key_id : 개인 객체 저장소의 access_key</p></li>
+<li><p>aws_secret_access_key : 개인 객체 저장소의 secret_access_key</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>import tempfile
+import tarfile
+import os
+import boto3
+import tensorflow as tf
+
+# 개인 객체저장소 설정
+bucket = &#39;iris&#39;
+key = &#39;number/model.tar&#39;
+setting = {
+    &#39;endpoint_url&#39;: &quot;http://192.168.102.138:9003&quot;,
+    &#39;verify&#39;: False,
+    &#39;aws_access_key_id&#39;: &#39;minio&#39;,
+    &#39;aws_secret_access_key&#39;: &#39;minio123&#39;
+}
+
+# 모델 생성
+export_path = tempfile.mkdtemp()
+tf.keras.models.save_model(
+    model,
+    export_path,
+    overwrite=True,
+    include_optimizer=True,
+    save_format=None,
+    signatures=None,
+    options=None
+)
+
+# 모델 압축
+tar_name = export_path + &#39;/model.tar&#39;
+with tarfile.open(tar_name, &quot;w:tar&quot;) as tar:
+    tar.add(export_path, arcname=&#39;./&#39;)
+
+# 모델 업로드
+cli = boto3.client(&#39;s3&#39;, **setting)
+cli.upload_file(tar_name, bucket, key)
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>적재<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">IRIS Discovery Service에 모델을 적재합니다.</div>
+<div class="line">적재는 IRIS Discovery Service의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-import">mlmodel import</a> 를 사용합니다.</div>
+<div class="line">IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다. path 옵션에 개인 객체저장소 정보, tar로 압축한 모델 경로를 입력합니다.</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">import</span> <span class="pre">name=mnist_number</span> <span class="pre">type=tf</span> <span class="pre">category=classification</span> <span class="pre">algorithm=deep</span> <span class="pre">format=saved_model</span> <span class="pre">path=OBJECTSTORAGE.{CONNECTOR</span> <span class="pre">NAME}:model.tar</span></code></p>
+<p>결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>result</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ok</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>배포<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">IRIS Discovery Service가 관리하는 tensorflow serving에 모델을 배포합니다.</div>
+<div class="line">배포는 IRIS Discovery Service의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy">mlmodel deploy</a> 를 사용합니다.</div>
+</div>
+<p>IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mlmodel</span> <span class="pre">deploy</span> <span class="pre">mnist_number</span> <span class="pre">label='first</span> <span class="pre">number'</span></code></p>
+<p>결과</p>
+<ul class="simple">
+<li><p>mnist_number이 root_mnist_number 이름으로 배포되었습니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>result</p></th>
+<th class="head"><p>latest_version</p></th>
+<th class="head"><p>serving_name</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ok</p></td>
+<td><p>1</p></td>
+<td><p>root_mnist_number</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2>서빙 상태 확인<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">배포한 mnist_number모델의 서빙 상태를 확인합니다.</div>
+<div class="line">서빙 상태 확인은 IRIS Discovery Service의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-status">serving status</a> 를 사용합니다.</div>
+</div>
+<p>IRIS Discovery Service의 검색창에 아래 명령어를 입력합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">serving</span> <span class="pre">status</span> <span class="pre">mnist_number</span></code></p>
+<p>결과</p>
+<ul class="simple">
+<li><p>mnist_number모델로 생성한 version 1이 사용 가능한 상태로 배포되었습니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>version</p></th>
+<th class="head"><p>state</p></th>
+<th class="head"><p>label</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>AVAILABLE</p></td>
+<td><p>first number</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h2>테스트 데이터 업로드<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>예측을 위한 테스트 데이터를 IRIS에 업로드합니다. 아래 예제를 참조해주세요.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/ml/general-purpose.html#mnist">mnist 이미지 다운로드</a></p></li>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/ml/general-purpose.html#id1">개인 객체 저장소에 업로드</a></p></li>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/ml/general-purpose.html#id2">연결정보 등록</a></p></li>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/ml/general-purpose.html#id5">전처리</a></p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h2>예측<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<p>배포된 모델에 대해 4가지 유형의 예측 방법이 있습니다.</p>
+<ul class="simple">
+<li><p>python 스크립트 방식</p></li>
+<li><p>DSL 설정파일 방식</p></li>
+<li><p>DSL 데이터 소스 입력 방식</p></li>
+<li><p>curl 방식</p></li>
+</ul>
+<p>이중 DSL 데이터 소스 입력 방식에 대해 진행합니다.
+python 스크립트 방식, DSL 설정파일 방식, curl 방식은 다음 유즈케이스를 참조해주세요.
+<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/ml-serving/mnist_clothes.html">mnist 옷 모델 적재, 예측</a> 을 참조해주세요.</p>
+<div class="section" id="dsl">
+<h3>DSL 데이터 소스 입력 방식<a class="headerlink" href="#dsl" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">데이터 소스를 입력하여 예측합니다.</div>
+<div class="line">예측(서빙)은 IRIS Discovery Service의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.html#serving-predict">serving predict</a> 를 사용합니다.</div>
+</div>
+<p>IRIS Discovery Service에서 mnist_test 모델 선택 후, 검색창에 아래 명령어를 입력합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">*</span> <span class="pre">|</span> <span class="pre">top</span> <span class="pre">50</span> <span class="pre">feature</span> <span class="pre">|</span> <span class="pre">serving</span> <span class="pre">predict</span> <span class="pre">mnist_number</span> <span class="pre">feature=[(feature,</span> <span class="pre">Conv1_input,</span> <span class="pre">double,</span> <span class="pre">28,</span> <span class="pre">28,1)]</span> <span class="pre">tag=(zero,</span> <span class="pre">one,</span> <span class="pre">two,</span> <span class="pre">three,</span> <span class="pre">four,</span> <span class="pre">five,</span> <span class="pre">six,</span> <span class="pre">seven,</span> <span class="pre">egiht,</span> <span class="pre">nine,</span> <span class="pre">ten)</span> <span class="pre">version=1</span></code></p>
+<p>결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>label</p></th>
+<th class="head"><p>tag</p></th>
+<th class="head"><p>feature</p></th>
+<th class="head"><p>predictions</p></th>
+<th class="head"><p>probability</p></th>
+<th class="head"><p>interpreted</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0,0,0,0,0,1,0,0,0,0</p></td>
+<td><p>five</p></td>
+<td><p>0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0…</p></td>
+<td><p>[0.62, 0.01, 0.04…]</p></td>
+<td><p>0.62</p></td>
+<td><p>five</p></td>
+</tr>
+<tr class="row-odd"><td><p>1,0,0,0,0,0,0,0,0,0</p></td>
+<td><p>zero</p></td>
+<td><p>0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0…</p></td>
+<td><p>[0.14, 0.03, 0.03…]</p></td>
+<td><p>0.38</p></td>
+<td><p>zero</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="mnist_clothes.html" class="btn btn-neutral float-right" title="ML 명령어 - mnist clothes 예제" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="IRIS Discovery Service M/L - 모델 적재 시나리오" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

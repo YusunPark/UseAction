@@ -1,0 +1,604 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>R-studio : Retrieve data from IRIS DB &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li>R-studio : Retrieve data from IRIS DB</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/retrieve_data_from_iris_to_r/R_retrieve_data_IRIS.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Usecase/retrieve_data_from_iris_to_r/R_retrieve_data_IRIS</p>
+
+            
+            <p>list1[0] = IRIS-Usecase</p>
+            <p>list1[1] = retrieve_data_from_iris_to_r/R_retrieve_data_IRIS</p>
+            <p>list1[2] = </p>
+            IRIS-Usecase
+            IRIS-Usecase/retrieve_data_from_iris_to_r/R_retrieve_data_IRIS
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Usecase/retrieve_data_from_iris_to_r/R_retrieve_data_IRIS</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/retrieve_data_from_iris_to_r/R_retrieve_data_IRIS.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Usecase/blob/master/retrieve_data_from_iris_to_r/R_retrieve_data_IRIS.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="r-studio-retrieve-data-from-iris-db">
+<h1>R-studio : Retrieve data from IRIS DB<a class="headerlink" href="#r-studio-retrieve-data-from-iris-db" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>목차<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>설명</p></li>
+<li><p>RJDBC 를 이용하여 IRIS DB 접속하기</p></li>
+<li><p>IRIS Global 테이블 생성하기</p></li>
+<li><p>IRIS Global 테이블에 데이터를 insert / select 하기</p></li>
+<li><p>IRIS Local 테이블 생성하기</p></li>
+<li><p>IRIS Local 테이블에 데이터를 insert / select 하기</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>설명<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>R-Studio 에서 RJDBC 패키지를 이용하여 IRIS DB 에 테이블을 create 하고,</p>
+<p>데이터를 insert, select 하는 예제입니다.</p>
+<p>IRIS 의 global 테이블과 local 테이블을 특성에 맞게 각각 생성해 보고</p>
+<p>데이터를 insert / select 해 봅니다.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="rjdbc-iris-db">
+<h2>RJDBC 를 이용하여 IRIS DB 접속하기<a class="headerlink" href="#rjdbc-iris-db" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>RJDBC 패키지를 이용합니다.</dt><dd><ul>
+<li><p>id / passwd = myiris / myiris</p></li>
+<li><p>iris DB 접속 정보 : 192.168.100.180:5050</p></li>
+<li><p>JDBC path 지정</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">RJDBC</span><span class="p">)</span>
+
+<span class="o">.</span><span class="n">jinit</span><span class="p">()</span>
+<span class="o">.</span><span class="n">jaddClassPath</span><span class="p">(</span><span class="s2">&quot;/usr/share/R/library/jettison-1.3.2.jar&quot;</span><span class="p">)</span>
+<span class="o">.</span><span class="n">jaddClassPath</span><span class="p">(</span><span class="s2">&quot;/usr/share/R/library/log4j-1.2.17.jar&quot;</span><span class="p">)</span>
+<span class="o">.</span><span class="n">jaddClassPath</span><span class="p">(</span><span class="s2">&quot;/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>java class path 확인</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">.</span><span class="n">jclassPath</span><span class="p">())</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="s2">&quot;/usr/lib64/R/library/rJava/java&quot;</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="s2">&quot;/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar&quot;</span>
+<span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="s2">&quot;/usr/lib64/R/library/RJDBC/java/RJDBC.jar&quot;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>IRIS DB 접속 connector object( conn )  생성하는 코드입니다.</dt><dd><ul>
+<li><p>myiris 계정 예제</p></li>
+<li><p>jdbc driver 버전  : mobigen-iris-jdbc-2.1.0.1.jar</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">drv</span> <span class="o">&lt;-</span> <span class="n">RJDBC</span><span class="p">::</span><span class="n">JDBC</span><span class="p">(</span><span class="s2">&quot;com.mobigen.iris.jdbc.IRISDriver&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;/docker/tools/Spark-on-IRIS/lib/java/mobigen-iris-jdbc-2.1.0.1.jar&quot;</span><span class="p">,</span>
+                    <span class="n">identifier</span><span class="o">.</span><span class="n">quote</span><span class="o">=</span> <span class="s2">&quot;`&quot;</span><span class="p">)</span>
+<span class="n">conn</span> <span class="o">&lt;-</span> <span class="n">RJDBC</span><span class="p">::</span><span class="n">dbConnect</span><span class="p">(</span><span class="n">drv</span><span class="p">,</span> <span class="s2">&quot;jdbc:iris://192.168.100.180:5050/myiris&quot;</span><span class="p">,</span> <span class="s2">&quot;myiris&quot;</span><span class="p">,</span> <span class="s2">&quot;myiris&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="iris-global">
+<h2>IRIS Global 테이블 생성하기<a class="headerlink" href="#iris-global" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>붓꽃(iris) 데이터를 기준으로 한 Global 테이블을 생성해 봅니다.</p></li>
+<li><p>Global 테이블 생성 SQL</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sql_create</span> <span class="o">&lt;-</span>  <span class="s2">&quot;CREATE TABLE IRIS_GLOBAL_TEST_1 (</span>
+                <span class="n">irisid</span> <span class="n">INTEGER</span><span class="p">,</span>
+                <span class="n">sepal_length</span> <span class="n">REAL</span><span class="p">,</span>
+                <span class="n">sepal_width</span> <span class="n">REAL</span><span class="p">,</span>
+                <span class="n">petal_length</span> <span class="n">REAL</span><span class="p">,</span>
+                <span class="n">petal_width</span> <span class="n">REAL</span><span class="p">,</span>
+                <span class="n">species</span> <span class="n">TEXT</span><span class="p">)</span>
+                <span class="n">datascope</span>       <span class="n">GLOBAL</span>
+                <span class="n">ramexpire</span>       <span class="mi">0</span>
+                <span class="n">diskexpire</span>      <span class="mi">0</span>
+                <span class="n">partitionkey</span>    <span class="kc">None</span>
+                <span class="n">partitiondate</span>   <span class="kc">None</span>
+                <span class="n">partitionrange</span>  <span class="mi">0</span> <span class="p">;</span> <span class="s2">&quot;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>dbSendUpdate 로 sql 문을 실행합니다.</dt><dd><ul>
+<li><p>return 되는 값은 없으니 주의하세요!!!!</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 테이블이 있다면 DROP 하고 생성(drop 문은 항상 주의해 주세요!!) 합니다.</span>
+<span class="n">dbSendUpdate</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;DROP TABLE IF EXISTS MYIRIS.IRIS_GLOBAL_TEST_1 ;&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># CREATE GLOBAL TABLE : dbSendUpdate 를 이용하며, SQL 문 끝에 ; 를 꼭 넣어야 합니다.</span>
+<span class="c1"># return값은 없습니다.</span>
+<span class="n">dbSendUpdate</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">sql_create</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>테이블이 생성되었는 지 확인합니다.</dt><dd><ul>
+<li><p>IRIS DB 명령어인 “table list” 사용합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">table_list</span> <span class="o">&lt;-</span> <span class="n">dbGetQuery</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s2">&quot;table list&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">table_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="iris-global-insert-select">
+<h2>IRIS Global 테이블에 Insert / select<a class="headerlink" href="#iris-global-insert-select" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Insert into Global table</dt><dd><ul>
+<li><p>INSERT INTO 테이블명 VALUES (,,,,) 예제</p></li>
+<li><p>dbSendUpdate</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ins_sql</span> <span class="o">&lt;-</span> <span class="n">sprintf</span><span class="p">(</span> <span class="s2">&quot;INSERT INTO IRIS_GLOBAL_TEST_1 (irisid, sepal_length,sepal_width, petal_length,petal_width,  species) VALUES (1, 1.0, 2.0, 3.0, 4.0, &#39;test&#39;) ; &quot;</span><span class="p">)</span>
+
+<span class="n">dbSendUpdate</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">ins_sql</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Select from Global table</dt><dd><ul>
+<li><p>dbGetQuery</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># SELECT from GLOBAL TABLE</span>
+<span class="n">result2</span> <span class="o">&lt;-</span> <span class="n">dbGetQuery</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="s1">&#39;select * from IRIS_GLOBAL_TEST_1&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="iris-local">
+<h2>IRIS Local 테이블 생성하기<a class="headerlink" href="#iris-local" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>SYSLOG 데이터를 기준으로 Local 테이블을 생성합니다.</dt><dd><ul>
+<li><p>partiton range = 60min ( 60분으로 파티션 범위를 정합니다.)</p></li>
+<li><p>partition 구분 컬럼 = DATETIME ( partition 구분기준 컬럼이름. 반드시 해당 시간필드를  YYYYMMDDHHMMSS 14자리 text 형식으로 변환해 놓아야 합니다)</p></li>
+<li><p>partition키 = HOST ( partition key)</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cr_table_sql</span> <span class="o">&lt;-</span> <span class="s1">&#39;CREATE TABLE IRIS_LOCAL_TEST_2 (</span>
+   <span class="n">DATETIME</span>     <span class="n">TEXT</span><span class="p">,</span>
+   <span class="n">HOST</span>         <span class="n">TEXT</span><span class="p">,</span>
+   <span class="n">FACILITY</span>     <span class="n">TEXT</span><span class="p">,</span>
+   <span class="n">PRIORITY</span>     <span class="n">TEXT</span><span class="p">,</span>
+   <span class="n">LEVEL</span>        <span class="n">TEXT</span><span class="p">,</span>
+   <span class="n">LEVEL_INT</span>    <span class="n">TEXT</span><span class="p">,</span>
+   <span class="n">TAG</span>          <span class="n">TEXT</span><span class="p">,</span>
+   <span class="n">PROGRAM</span>      <span class="n">TEXT</span> <span class="p">)</span>
+<span class="n">datascope</span>       <span class="n">LOCAL</span>
+<span class="n">ramexpire</span>       <span class="mi">60</span>
+<span class="n">diskexpire</span>      <span class="mi">2102400</span>
+<span class="n">partitionkey</span>    <span class="n">HOST</span>
+<span class="n">partitiondate</span>   <span class="n">DATETIME</span>
+<span class="n">partitionrange</span>  <span class="mi">60</span>
+<span class="p">;</span> <span class="s1">&#39;</span>
+
+<span class="n">dbSendUpdate</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">cr_table_sql</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="iris-local-select">
+<h2>IRIS Local 테이블로부터 데이터 Select<a class="headerlink" href="#iris-local-select" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>IRIS DB 에 있는 Local 테이블로부터 데이터를 select 합니다.</p></li>
+<li><dl class="simple">
+<dt>가져온 데이터를 R dataframe 에 저장한 후 1000 개 단위로 새로 만든 테이블에 Insert 를 실행합니다.</dt><dd><ul>
+<li><p>dbSendQuery 로 데이터 select</p></li>
+<li><p>dbFetch 를 반복 해서 데이터를 가져 와서 dataframe 에 저장합니다.</p></li>
+<li><p>dbClearResult</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># SELECT from LOCAL TABLE EVA.SYSLOG</span>
+<span class="c1"># 2019-11-12 15:00:00 ~ 16:59:59 ( 20191112150000, 20191112160000 2개의 파티션에서 데이터를 가지고 옵니다)</span>
+<span class="c1"># count = 89887</span>
+
+<span class="n">select_sql</span> <span class="o">&lt;-</span> <span class="s2">&quot;/*+ LOCATION ( PARTITION &gt;= &#39;20191112150000&#39; AND PARTITION &lt;= &#39;20191112160000&#39; ) */</span>
+<span class="n">SELECT</span>
+        <span class="n">DATETIME</span><span class="p">,</span> <span class="n">HOST</span><span class="p">,</span> <span class="n">FACILITY</span><span class="p">,</span> <span class="n">PRIORITY</span><span class="p">,</span> <span class="n">LEVEL</span><span class="p">,</span> <span class="n">LEVEL_INT</span><span class="p">,</span> <span class="n">TAG</span><span class="p">,</span> <span class="n">PROGRAM</span>
+<span class="n">FROM</span>
+        <span class="n">EVA</span><span class="o">.</span><span class="n">SYSLOG</span>
+<span class="p">;</span> <span class="s2">&quot;</span>
+
+<span class="n">my_dataframe</span> <span class="o">&lt;-</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">()</span>
+<span class="n">rs</span> <span class="o">&lt;-</span> <span class="n">dbSendQuery</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">select_sql</span><span class="p">)</span>  <span class="c1"># dbSendQuery !!!! ( dbGetQuery 아님 )</span>
+
+<span class="n">nn</span> <span class="o">=</span> <span class="mi">1000</span>   <span class="c1">#  1000 개 단위로 fetch</span>
+<span class="n">tmp_df</span> <span class="o">&lt;-</span> <span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">()</span>
+
+<span class="n">tmp_df</span> <span class="o">&lt;-</span> <span class="n">dbFetch</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nn</span><span class="p">)</span>
+<span class="n">my_dataframe</span> <span class="o">&lt;-</span> <span class="n">tmp_df</span>
+
+<span class="k">while</span> <span class="p">(</span> <span class="n">nrow</span><span class="p">(</span><span class="n">tmp_df</span><span class="p">)</span> <span class="o">==</span>  <span class="n">nn</span> <span class="p">)</span> <span class="p">{</span>
+  <span class="n">tmp_df</span> <span class="o">&lt;-</span> <span class="n">dbFetch</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nn</span><span class="p">)</span>
+  <span class="n">my_dataframe</span> <span class="o">&lt;-</span> <span class="n">rbind</span><span class="p">(</span><span class="n">my_dataframe</span><span class="p">,</span> <span class="n">tmp_df</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">dbClearResult</span><span class="p">(</span><span class="n">rs</span><span class="p">)</span>
+<span class="c1"># TRUE</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">tmp_df</span><span class="p">))</span>   <span class="c1"># 마지막 fetch 레코드 수 &lt; nn</span>
+<span class="c1"># 887</span>
+
+
+<span class="c1"># select 한 전체 레코드 수</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nrow</span><span class="p">(</span><span class="n">my_dataframe</span><span class="p">))</span>
+<span class="c1"># 89887</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>R DataFrame 을 IRIS DB 에 Insert 하기</dt><dd><ul>
+<li><p>my_dataframe( 총 89887 건 ) :  1000 건을 한번에 insert 하는 예제입니다.</p></li>
+<li><p>batch insert SQL 문을 만드는 function 생성 : insert_batch_sql_f</p></li>
+<li><p>dbGetQuery  로 insert한 데이터를 확인합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="n">table_name</span> <span class="o">&lt;-</span> <span class="s1">&#39;MYIRIS.IRIS_LOCAL_TEST_2&#39;</span>
+
+<span class="n">insert_batch_sql_f</span> <span class="o">&lt;-</span> <span class="n">function</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">batch</span> <span class="o">&lt;-</span> <span class="n">apply</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">FUN</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">paste0</span><span class="p">(</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="n">trimws</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="s2">&quot;&#39;&quot;</span><span class="p">,</span><span class="n">collapse</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> <span class="n">paste0</span><span class="p">(</span><span class="s2">&quot;(&quot;</span><span class="p">,</span><span class="o">.</span><span class="p">,</span><span class="s2">&quot;)&quot;</span><span class="p">,</span><span class="n">collapse</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="p">)</span>
+
+  <span class="n">colums</span> <span class="o">&lt;-</span>  <span class="n">paste</span><span class="p">(</span><span class="n">unlist</span><span class="p">(</span><span class="n">colnames</span><span class="p">(</span><span class="n">df</span><span class="p">)),</span> <span class="n">collapse</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+  <span class="n">query</span> <span class="o">&lt;-</span> <span class="n">paste</span><span class="p">(</span><span class="s2">&quot;INSERT INTO &quot;</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="s2">&quot;(&quot;</span><span class="p">,</span> <span class="n">colums</span><span class="p">,</span> <span class="s2">&quot;) VALUES &quot;</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+  <span class="n">dbSendUpdate</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">query</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">insert_batch_sql_f</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">table_name</span><span class="p">,</span> <span class="n">my_dataframe</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span> <span class="p">])</span>
+<span class="c1"># 1건씩 인서트는 인서트 sql 을 만들어서 dbSendUpdate(conn, query)</span>
+
+<span class="n">my_count</span> <span class="o">&lt;-</span> <span class="n">dbGetQuery</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span><span class="s2">&quot;select count(*) from IRIS_LOCAL_TEST_2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_count</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="r-rmd-pdf">
+<h2>R rmd  실행 결과 (PDF)<a class="headerlink" href="#r-rmd-pdf" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/mobigen/IRIS-Usecase/blob/master/retrieve_data_from_iris_to_r/RJDBC_v0.2.utf8.md.pdf">Rmd 실행 결과 PDF</a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TFDeep &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="generalizedLinearRegression" href="generalizedlinearregression.html" />
+    <link rel="prev" title="Spark Kmeans" href="SparkKmeans.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html">Command References</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../adv.html">adv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../anomalies.html">anomalies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../bimatrix.html">bimatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../calculate.html">calculate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../concat.html">concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../corr.html">corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../count.html">count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../curl.html">curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../distinct.html">distinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../eval.html">eval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../fields.html">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../fillna.html">fillna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../fit.html">fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../fit_predict.html">fit_predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../forecasts.html">forecasts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geoip.html">geoip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geomap.html">geomap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../geostats.html">geostats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../hdfs.html">hdfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../head.html">head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../img2tsv.html">img2tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../indexer.html">indexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../iris.html">iris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../join.html">join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../kmeans.html">kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../metatron.html">metatron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RandomForestClassification.html">RandomForest Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="RandomForestRegression.html">RandomForest Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SparkDecisionTreeClassification.html">Spark DecisionTree Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SparkDecisionTreeRegression.html">Spark DecisionTree Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SparkFPGrowth.html">Spark FP-Growth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SparkKmeans.html">Spark Kmeans</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">TFDeep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="generalizedlinearregression.html">generalizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="linearregression.html">linearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="logisticregression.html">logisticRegression(LBFGS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mlmodel.html">mlmodel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../model.html">model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../model-stats.html">model-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../model-statsdetails.html">model-statsdetails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../model-timeline.html">model-timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modeldata.html">modeldata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mymnist.html">mymnist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../outlier.html">outlier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pivot.html">pivot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../postagger.html">postagger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../predict.html">predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../pylambda.html">pylambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../rename.html">rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../replace.html">replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../round.html">round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sampling.html">sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scaler.html">scaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../search.html">search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../serving.html">serving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sort.html">sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../split.html">split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../splitter.html">splitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../sql.html">sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../stats.html">stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../substr.html">substr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../time2sec.html">time2sec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../timediff.html">TIMEDIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../timeline.html">timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tokenizer.html">tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../top.html">top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../typecast.html">TYPECAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../weekend.html">weekend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../where.html">WHERE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ysort.html">ysort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mymnist.html">mymnist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../example/index.html">Command 사용 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Command References</a> &raquo;</li>
+    
+    <li>TFDeep</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/ml_algorithms/TFDeep.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/ml_algorithms/TFDeep</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/command/commands/ml_algorithms/TFDeep</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/command/commands/ml_algorithms/TFDeep
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/ml_algorithms/TFDeep</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/ml_algorithms/TFDeep.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/command/commands/ml_algorithms/TFDeep.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="tfdeep">
+<h1>TFDeep<a class="headerlink" href="#tfdeep" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Tensorflow 2.0의 keras를 이용한 간단한 네트워크를 이용해 딥러닝 모델을 학습하는 명령어</p>
+</div>
+<div class="section" id="id2">
+<h2>설명<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>TensorFlow 2.0 을 이용해 간단한 딥러닝 모델을 학습하는 명령어입니다.</p>
+<p>네트워크 구성은 설정파일에 작성하여야 하며, 특정 데이터소스(현재 objectstorage)에 업로드 한 후, 연결정보를 구성해야 합니다.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>fit 명령어를 이용해 Tensorflow Deep learning 네트워크를 사용한 학습 예제입니다.
+학습에 사용된 데이터 읽어와 사용합니다. 구성은 아래와 같습니다. (fit 명령어 앞에 사용된 명령어의 데이터는 사용하지 않습니다.)</p>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Image-Label 데이터</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>image</p></th>
+<th class="head"><p>label</p></th>
+<th class="head"><p>tag</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0,0,0,…,0.12,0.92,0.23,…,0,0</p></td>
+<td><p>1,0,0,0,0,0,0,0,0,0</p></td>
+<td><p>zero</p></td>
+</tr>
+<tr class="row-odd"><td><p>0,0,0,…,0.12,0.92,0.23,…,0,0</p></td>
+<td><p>0,0,0,0,0,1,0,0,0,0</p></td>
+<td><p>five</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>fit 명령어에 아래와 같이 옵션을 지정하고, 모델명을 지정해 줍니다.</p>
+<blockquote>
+<div><p>batch_size : train 데이터의 배치 사이즈 입니다.</p>
+<p>epochs : train 을 반복할 횟수 입니다.</p>
+<p>config : 모델 구성 정보, 데이터 정보, 사용 알고리즘, 등 학습을 하기 위한 설정파일 위치 입니다. (minio 데이터소스 사용)</p>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fit deep batch_size=128 epochs=5 config=objectstorage.MINIO_AI_SOURCE:/USERS/test/mnist/mnist_config.json into test_model
+</pre></div>
+</div>
+<p>학습결과로 각 epoch 당 정확도(accuracy), 손실률(loss) 과 같은 정보를 반환합니다.</p>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">반환 결과</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>epoch</p></th>
+<th class="head"><p>losses</p></th>
+<th class="head"><p>metrics</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>{‘loss’: 0.2142421}</p></td>
+<td><p>{‘accuracy’: 0.15123124}</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>{‘loss’: 0.1442421}</p></td>
+<td><p>{‘accuracy’: 0.32123124}</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>{‘loss’: 0.1042421}</p></td>
+<td><p>{‘accuracy’: 0.55123124}</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>{‘loss’: 0.0942421}</p></td>
+<td><p>{‘accuracy’: 0.71123124}</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>{‘loss’: 0.0542421}</p></td>
+<td><p>{‘accuracy’: 0.85123124}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>fit deep (epochs=[정수])? (batch_size=[정수])? (train_validation_ratio=[0&lt;=실수&lt;=1])? (continuous=[boolean])? (retrain=[boolean])? config=[datasource_name].[connector_name]:[config_file path] INTO [model name]
+</pre></div>
+</div>
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">파라미터 정보</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>파라미터 이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>필수/선택</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>epochs</p></td>
+<td><p>[int] 학습의 반복 횟수</p></td>
+<td><p>옵션, Default=5</p></td>
+</tr>
+<tr class="row-odd"><td><p>batch_size</p></td>
+<td><p>[int] 학습 데이터의 배치 크기, 예) 1000 rows 의 데이터, batch_size=100 -&gt; (1000 / 100 = 10)개의 배치 데이터 -&gt; 1 epoch 당 100 rows 데이터를 10번 학습</p></td>
+<td><p>옵션, Default=32</p></td>
+</tr>
+<tr class="row-even"><td><p>train_validation_ratio</p></td>
+<td><p>[float] Train 데이터를 분할 하여, 학습시 validation data 로 사용 하기 위한 비율, (<strong>현재는 지원되지 않습니다.</strong>)</p></td>
+<td><p>옵션, Default=0.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>continuous</p></td>
+<td><p>[bool] 이전에 학습된 모델에 새로운 데이터를 넣어 연속하여 학습 진행</p></td>
+<td><p>옵션, Default=False</p></td>
+</tr>
+<tr class="row-even"><td><p>retrain</p></td>
+<td><p>[bool] 이전에 학습된 모델이 있으면 삭제하고 새 학습을 진행</p></td>
+<td><p>옵션, Default=False</p></td>
+</tr>
+<tr class="row-odd"><td><p>config</p></td>
+<td><p>[str] 딥러닝 네트워크 구성 정보, loss function, optimizer, 데이터 정보, 데이터 위치 등을 구성한 설정 파일, 현재 objectstorage 만 지원 합니다.<span class="raw-html-m2r"><br /></span>[작성 포멧] 데이터소스명.컨넥터이름:설정파일경로 예) objectstorage.MINIO_SOURCE:USERS/test/config.json</p></td>
+<td><p>필수</p></td>
+</tr>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>학습 후 저장 할 이름, 같은 이름으로 학습은 1번만 가능하며 여러번 시도 시 에러가 발생합니다. 같은 이름으로 재학습을 원한다면 retrain 옵션, 연속 학습을 원한다면 continuous 옵션을 사용해야 합니다.</p></td>
+<td><p>필수</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parameters-bnf">
+<h2>Parameters BNF<a class="headerlink" href="#parameters-bnf" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>arguments : options model_name
+model_name : INTO words
+options : option
+        | options option
+option : WORD EQUAL WORD
+       | WORD EQUAL NUMBER
+words : WORD
+      | words WORD
+      | SQ words SQ
+      | DQ words DQ
+
+NUMBER : r&#39;\d+(.\d+)?&#39;
+SQ : r&quot;\&#39;&quot;
+DQ : r&#39;\&quot;&#39;
+EQUAL : r&#39;=&#39;
+WORD : r&#39;[^\s|^\=]+&#39;
+INTO : &#39;(?i)into&#39;
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="generalizedlinearregression.html" class="btn btn-neutral float-right" title="generalizedLinearRegression" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SparkKmeans.html" class="btn btn-neutral float-left" title="Spark Kmeans" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

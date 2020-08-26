@@ -1,0 +1,10 @@
+IRIS Documentation
+====================================================================================================
+
+.. toctree::
+    :maxdepth: 1
+
+    IRIS-FAQ/index.rst
+    IRIS-Manual/index.rst
+    IRIS-Tutorial/index.rst
+    IRIS-Usecase/index.rst

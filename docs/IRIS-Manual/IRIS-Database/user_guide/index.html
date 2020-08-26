@@ -1,0 +1,520 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>User Guide &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="1. SQL Reference" href="doc/00.sql_reference.html" />
+    <link rel="prev" title="UDF" href="../dbmanager_guide/doc/03.udf.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../systemmanager_guide/index.html">System-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">User Guide</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doc/00.sql_reference.html">1. SQL Reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/01.query.html">2. 쿼리</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/01-01.extension_geospatial.html">3. 공간 쿼리 사용하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/02.load.html">4. 로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/03.option.html">5. 옵션</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/04.api_jdbc.html">6. API-JDBC 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/05.api_python.html">7. PYTHON-API 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/06.DBeaver.html">8. 개요</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/06.DBeaver.html#id2">9. 목차</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver-overview">10. DBeaver Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/06.DBeaver.html#id4">11. DBeaver 설치</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver-thrift-server-hive">12. DBeaver Thrift Server (Hive) 사용방법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver-iris-jdbc">13. DBeaver IRIS JDBC 사용방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../index.html">IRIS Database</a> &raquo;</li>
+    
+    <li>User Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/index.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/user_guide/index</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/user_guide/index</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/user_guide/index
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/user_guide/index</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/index.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/user_guide/index.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="doc/00.sql_reference.html">1. SQL Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/00.sql_reference.html#ddl">1.1. DDL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#create-table">1.1.1. CREATE TABLE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doc/00.sql_reference.html#iris">1.1.1.1. IRIS 테이블 옵션</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/00.sql_reference.html#column-constraint">1.1.1.2. 지원하는 column-constraint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="doc/00.sql_reference.html#table-constraint">1.1.1.3. 지원하는 table-constraint</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#drop-table">1.1.2. DROP TABLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#create-index">1.1.3. CREATE INDEX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#drop-index">1.1.4. DROP INDEX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#alter-table">1.1.5. ALTER TABLE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/00.sql_reference.html#dml">1.2. DML</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#insert">1.2.1. INSERT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#update">1.2.2. UPDATE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#delete">1.2.3. DELETE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/00.sql_reference.html#select">1.2.4. SELECT 쿼리</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="doc/00.sql_reference.html#id1">1.2.4.1. 유의사항</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/01.query.html">2. 쿼리</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id2">2.1. 테이블 생성하기</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#id3">2.1.1. 테이블 관리하기</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id4">2.2. 테이블 리스트보기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id5">2.3. 테이블 상세 정보 보기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id6">2.4. 테이블 컬럼정보 조회하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id7">2.5. 테이블 스키마 정보 조회하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id8">2.6. 테이블 스키마 변경하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id9">2.7. 테이블의 데이터 보관주기 변경하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#partitionrange">2.8. 테이블의 partitionrange 수정하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id10">2.9. 테이블 용량정보 조회하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id11">2.10. 테이블 삭제하기</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#select">2.10.1. SELECT 쿼리문 작성하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#insert">2.10.2. INSERT 쿼리문 작성하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#update">2.10.3. UPDATE 쿼리문 작성하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#delete">2.10.4. DELETE 쿼리문 작성하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#join">2.10.5. JOIN 쿼리문 작성하기</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#inner-join">2.11. INNER JOIN 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#left-outer-join">2.12. LEFT OUTER JOIN 사용하기</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#hint">2.12.1. 4.6.    HINT문 작성하기</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#location-hint">2.13. LOCATION HINT문 작성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#format-hint">2.14. FORMAT HINT문 작성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#thread-count-hint">2.15. THREAD_COUNT HINT문 작성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#bypass-hint">2.16. BYPASS HINT문 작성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#force-hint">2.17. FORCE HINT문 작성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#sampling-hint">2.18. SAMPLING HINT문 작성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#locality-hint">2.19. LOCALITY HINT문 작성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#page-hint">2.20. PAGE HINT문 작성하기</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/01.query.html#iris">2.20.1. IRIS 지원함수 사용하기</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#aggregation-paragraph">2.21. Aggregation 함수 및 관련 paragraph 사용하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01.query.html#id12">2.22. 일반 함수 사용하기</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/01-01.extension_geospatial.html">3. 공간 쿼리 사용하기</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/01-01.extension_geospatial.html#id2">3.1. 공간 데이터 타입</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#point">3.1.1. POINT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#linestring">3.1.2. LINESTRING</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#polygon">3.1.3. POLYGON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#multipoint">3.1.4. MULTIPOINT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#multilinestring">3.1.5. MULTILINESTRING</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#multipolygon">3.1.6. MULTIPOLYGON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#geomcollection">3.1.7. GEOMCOLLECTION</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01-01.extension_geospatial.html#id3">3.2. 공간 함수</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#id4">3.2.1. 공간 기본 함수</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#id5">3.2.2. 공간 관계 함수</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/01-01.extension_geospatial.html#id6">3.2.3. 공간 분석 함수</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01-01.extension_geospatial.html#create-table">3.3. CREATE TABLE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01-01.extension_geospatial.html#insert">3.4. INSERT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/01-01.extension_geospatial.html#select">3.5. SELECT</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/02.load.html">4. 로드</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/02.load.html#id2">4.1. 데이터 파일 생성하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/02.load.html#id3">4.2. 제어 파일</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/02.load.html#iplus">4.3. iplus에서 벌크 데이터 로드하기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/02.load.html#api">4.4. API를 이용한 벌크 데이터 로드하기</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/03.option.html">5. 옵션</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/03.option.html#iris">5.1. IRIS 접속 – 다이렉트 접속</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/03.option.html#id2">5.1.1. 제약 사항</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/03.option.html#id3">5.1.2. 사용 방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/04.api_jdbc.html">6. API-JDBC 사용법</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/04.api_jdbc.html#id1">6.1. 개요</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#jdbc">6.1.1. JDBC버전</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#id2">6.1.2. 필요 파일</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#id3">6.1.3. 지원 쿼리</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/04.api_jdbc.html#id4">6.2. 기본 사용법</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#id5">6.2.1. 기본 구조</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#master-ip">6.2.2. MASTER_IP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#port">6.2.3. PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#database-name">6.2.4. database name</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/04.api_jdbc.html#id6">6.3. 예제코드</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#create-table-index-update-insert-delete-drop-table-index">6.3.1. CREATE[table,index]/UPDATE/INSERT/DELETE/DROP[table,index]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#insert">6.3.2. INSERT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#select">6.3.3. SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#load">6.3.4. LOAD</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/04.api_jdbc.html#iris-query">6.4. IRIS Query</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/04.api_jdbc.html#create-table">6.4.1. CREATE TABLE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/04.api_jdbc.html#id7">6.5. 주의사항</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/05.api_python.html">7. PYTHON-API 사용법</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/05.api_python.html#id1">7.1. 개요</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#api">7.1.1. API 버전</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#python">7.1.2. PYTHON 버전 및 설정 방법</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#id2">7.1.3. 지원 쿼리</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/05.api_python.html#id3">7.2. 기본 사용법</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#id4">7.2.1. 기본 구조</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#master-ip">7.2.2. MASTER_IP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#port">7.2.3. PORT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#database-name">7.2.4. database name</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/05.api_python.html#id5">7.3. 예제코드</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#create-table-index-update-insert-delete-drop-table-index">7.3.1. CREATE[table,index]/UPDATE/INSERT/DELETE/DROP[table,index]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#select">7.3.2. SELECT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#load">7.3.3. LOAD</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/05.api_python.html#iris-query">7.4. IRIS Query</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="doc/05.api_python.html#create-table">7.4.1. CREATE TABLE</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="doc/05.api_python.html#id6">7.5. 주의사항</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/06.DBeaver.html">8. 개요</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/06.DBeaver.html#id2">9. 목차</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver-overview">10. DBeaver Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver">10.1. DBeaver 특징</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#id3">10.2. DBeaver가 지원하는 관계형 데이터베이스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver-nosql">10.3. DBeaver가 지원하는 NoSQL 데이터베이스</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#os">10.4. 지원 가능 OS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/06.DBeaver.html#id4">11. DBeaver 설치</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver-thrift-server-hive">12. DBeaver Thrift Server (Hive) 사용방법</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#connection">12.1. Connection 생성</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#id5">12.2. Connection 생성 결과</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#id6">12.3. 쿼리 실행</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="doc/06.DBeaver.html#dbeaver-iris-jdbc">13. DBeaver IRIS JDBC 사용방법</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#iris-jdbc-driver-manager">13.1. IRIS JDBC 사용을 위한 Driver Manager 추가</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doc/06.DBeaver.html#iris">13.2. IRIS 쿼리 실행</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="doc/00.sql_reference.html" class="btn btn-neutral float-right" title="1. SQL Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../dbmanager_guide/doc/03.udf.html" class="btn btn-neutral float-left" title="UDF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

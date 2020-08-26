@@ -1,0 +1,404 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Sankey &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="히트맵" href="11_studio_chart_heatmap.html" />
+    <link rel="prev" title="시계열분포" href="10_studio_chart_ts.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Getting-Started/index.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS_Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">IRIS Studio</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../00_common/index.html">기능 컴포넌트</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">챠트의 시각화 유형 예제</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="01_studio_table_01.html">테이블과 검색어 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02_studio_table_02.html">테이블과 검색어 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05_studio_chart_line_01.html">꺾은선형</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06_studio_chart_multi_axis.html">다중축 챠트</a></li>
+<li class="toctree-l4"><a class="reference internal" href="07_studio_chart_bar_01.html">세로 / 가로 막대 그래프 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="08_studio_chart_bar_02.html">세로 / 가로 막대 그래프 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="09_studio_chart_pie.html">원형 챠트</a></li>
+<li class="toctree-l4"><a class="reference internal" href="10_studio_chart_ts.html">시계열분포</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Sankey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="11_studio_chart_heatmap.html">히트맵</a></li>
+<li class="toctree-l4"><a class="reference internal" href="12_studio_chart_number.html">단일값</a></li>
+<li class="toctree-l4"><a class="reference internal" href="13_studio_chart_gauge.html">Gauge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="14_studio_chart_treemap.html">트리맵</a></li>
+<li class="toctree-l4"><a class="reference internal" href="15_studio_wordcloud.html">워드클라우드</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../02_map_exam/index.html">지도의 시각화유형 활용 예제</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Tutorial</a> &raquo;</li>
+    
+      <li><a href="../index.html">IRIS Studio</a> &raquo;</li>
+    
+      <li><a href="index.html">챠트의 시각화 유형 예제</a> &raquo;</li>
+    
+    <li>Sankey</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Studio/01_chart_exam/03_studio_table_03.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Tutorial/IRIS_Studio/01_chart_exam/03_studio_table_03</p>
+
+            
+            <p>list1[0] = IRIS-Tutorial</p>
+            <p>list1[1] = IRIS_Studio/01_chart_exam/03_studio_table_03</p>
+            <p>list1[2] = </p>
+            IRIS-Tutorial
+            IRIS-Tutorial/IRIS_Studio/01_chart_exam/03_studio_table_03
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Tutorial/IRIS_Studio/01_chart_exam/03_studio_table_03</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Studio/01_chart_exam/03_studio_table_03.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Tutorial/blob/master/IRIS_Studio/01_chart_exam/03_studio_table_03.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sankey">
+<h1>Sankey<a class="headerlink" href="#sankey" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">IRIS Studio 의 <strong>챠트-테이블</strong> 의 sql 검색어 결과로 나온 데이터를 <strong>adv</strong> 명령어로 시각화 챠트로 바로 그릴 수 있습니다.</div>
+<div class="line">데이터를 sankey 챠트를 바로 그릴 수 있는 형식의 데이터로 변환합니다.</div>
+</div>
+<div class="section" id="id1">
+<h2>데이터 모델<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">데이터 모델 : SEOUL_MELT_FIRE_CAUSE</div>
+<div class="line">기간 : 2011 ~ 2018년 연간 통계</div>
+<div class="line">내용 : 서울시 소방서, 화재원인별 화재 발생 건수 통계</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/table_1_01.png"><img alt="table_1_01" src="../../../_images/table_1_01.png" style="width: 656.4px; height: 384.59999999999997px;" /></a>
+<ul class="simple">
+<li><dl class="simple">
+<dt>팁</dt><dd><ul>
+<li><p>챠트를 테이블 유형으로 출력할 때의 시각화 옵션은 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/studio/index.html#id35">IRIS Studio 보고서 시각화옵션</a> 을 참조하세요.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="sql-case-when">
+<h2>테이블 : sql 문 - CASE WHEN 예제<a class="headerlink" href="#sql-case-when" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">YEAR</span> <span class="o">=</span> <span class="mi">2018</span>  <span class="o">|</span>
+<span class="n">sql</span> <span class="s2">&quot;select *,</span>
+            <span class="n">CASE</span> <span class="n">WHEN</span> <span class="n">FIRE_CAUSE</span> <span class="n">like</span> <span class="s1">&#39;실화%&#39;</span>
+                 <span class="n">THEN</span> <span class="s1">&#39;실화&#39;</span>
+                 <span class="n">WHEN</span> <span class="n">FIRE_CAUSE</span> <span class="n">like</span> <span class="s1">&#39;방화%&#39;</span>
+                 <span class="n">THEN</span> <span class="s1">&#39;방화&#39;</span>
+                 <span class="n">ELSE</span>  <span class="n">FIRE_CAUSE</span>
+            <span class="n">END</span> <span class="n">CAUSE_KIND</span>
+<span class="kn">from</span> <span class="nn">angora</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">YEAR= 2018 인 데이터 중에서( 파이프로 전달함 ) <strong>CASE WHEN</strong> 문으로</div>
+<div class="line">FIRE_CAUSE(화재원인) 이 “실화”로 시작하는 데이터는 CAUSE_KIND = ‘실화’</div>
+<div class="line">FIRE_CAUSE(화재원인) 이 “방화”로 시작하는 데이터는 CAUSE_KIND = ‘방화’</div>
+<div class="line">그 외는 CAUSE_KIND = FIRE_CAUSE ( 나머지 “자연적인_요인” )</div>
+</div>
+<img alt="table_3_09" src="../../../_images/table_3_09.png" />
+</div>
+<div class="section" id="adv-sankey">
+<h2>테이블 : adv sankey<a class="headerlink" href="#adv-sankey" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">YEAR</span><span class="o">=</span><span class="mi">2018</span>   <span class="o">|</span>
+<span class="n">sql</span> <span class="s2">&quot;select *,</span>
+           <span class="n">CASE</span> <span class="n">WHEN</span> <span class="n">FIRE_CAUSE</span> <span class="n">like</span> <span class="s1">&#39;실화%&#39;</span>
+                <span class="n">THEN</span> <span class="s1">&#39;실화&#39;</span>
+                <span class="n">WHEN</span> <span class="n">FIRE_CAUSE</span> <span class="n">like</span> <span class="s1">&#39;방화%&#39;</span>
+                <span class="n">THEN</span> <span class="s1">&#39;방화&#39;</span>
+                <span class="n">ELSE</span>  <span class="n">FIRE_CAUSE</span>
+           <span class="n">END</span> <span class="n">CAUSE_KIND</span>
+    <span class="kn">from</span> <span class="nn">angora</span><span class="s2">&quot; |</span>
+<span class="n">adv</span> <span class="n">sankey</span> <span class="nb">sum</span><span class="p">(</span><span class="n">CNT</span><span class="p">)</span> <span class="n">SPLITROW</span> <span class="n">FIRE_CENTER</span><span class="p">,</span> <span class="n">FIRE_CAUSE</span><span class="p">,</span> <span class="n">CAUSE_KIND</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">adv sankey 는 입력으로 받은 데이터(파이프로 전달받은) 를 sankey chart 를 그릴 수 있는 데이터로 변환합니다.</div>
+<div class="line">시각화유형을 테이블로 하면 SOURCE, TARGET 필드가 있는 데이터로 변환되며, sankey 를 선택하면 바로 sankey chart 를 그립니다.</div>
+<div class="line">자세한 설명 - 검색어 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/adv.html">adv</a> 를 참조하세요.</div>
+</div>
+<div class="line-block">
+<div class="line">SPLITROW 뒤에 나오는 필드가 sankey챠트의 각 NODE이며, FIRE_CENTER -&gt; FIRE_CAUSE -&gt; CAUSE_KIND  로 flow 가 정해집니다.</div>
+<div class="line">선의 굵기는 각 NODE -&gt; NODE 일 때의 값을 의미하며, 여기서는 CNT의 합계입니다.</div>
+</div>
+<img alt="table_3_10" src="../../../_images/table_3_10.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="11_studio_chart_heatmap.html" class="btn btn-neutral float-right" title="히트맵" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="10_studio_chart_ts.html" class="btn btn-neutral float-left" title="시계열분포" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,906 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>명령어 개발 가이드 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="RESTful API" href="../restapi/index.html" />
+    <link rel="prev" title="ysort" href="../command/commands/ysort.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/index.html">Command References</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">명령어 개발 가이드</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">명령어 개발 환경 구축</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basecommand">명령어 인터페이스 [BaseCommand]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#xxxcommand">명령어 작성 [XXXCommand]</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#round">예제 코드 (round 명령어)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">테스트 코드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">예제코드</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../example/index.html">Command 사용 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+    <li>명령어 개발 가이드</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command_develop/index.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/command_develop/index</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/command_develop/index</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/command_develop/index
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/command_develop/index</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command_develop/index.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/command_develop/index.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>명령어 개발 가이드<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>명령어 개발 환경 구축<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>파일 다운로드<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>아래의 파일을 다운로드 받습니다.</p>
+<p><a class="reference external" href="http://docs.iris.tools/dist/iris-discovery-service_20200213.tar.gz">http://docs.iris.tools/dist/iris-discovery-service_20200213.tar.gz</a></p>
+<p>다운로드 받은 파일을 임의의 경로에 위치를 시킨 이후 다음과 같이 압축을 해제 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tar</span> <span class="n">zxvf</span> <span class="n">iris</span><span class="o">-</span><span class="n">discovery</span><span class="o">-</span><span class="n">service_20200213</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+<p>압축을 해제하면 다음과 같이 파일이 존재합니다.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.
+├── check.py
+├── env.sh
+├── example
+│   ├── anomalies.py
+│   ├── plaform2_DATE_CNT.csv
+│   └── test_anomalies.py
+├── lib
+│   └── ANGORA-CORE_4c7a4b9.zip
+├── thridpart
+└── requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>환경구성<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>spark 환경 구성</p>
+<blockquote>
+<div><p>[[<a class="reference external" href="https://archive.apache.org/dist/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz">https://archive.apache.org/dist/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz</a>]] 경로에서 spark을 다운 받습니다.</p>
+<p>다운로드한 파일은 <cite>thridpart</cite> 안에 압축을 해지 합니다.</p>
+<p>위의 과정을 거치고 나면 디렉토리는 다음과 같이 구성 됩니다.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>.
+├── check.py
+├── env.sh
+├── example
+│   ├── anomalies.py
+│   ├── plaform2_DATE_CNT.csv
+│   └── test_anomalies.py
+├── lib
+│   └── ANGORA-CORE_4c7a4b9.zip
+├── thridpart
+│   └── spark-2.4.4-bin-hadoop2.7
+└── requirements.txt
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>env.sh 파일 수정</p>
+<blockquote>
+<div><p>JAVA_HOME 등의 경로를 설정하기 위해 <cite>env.sh</cite> 파일을 수정 합니다.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home
+</pre></div>
+</div>
+<p>해당 부분을 수정하여 java의 경로를 설정합니다.</p>
+</div></blockquote>
+</li>
+<li><p>python3.6 버전 설치</p>
+<blockquote>
+<div><p>다른 환경과 격리하기 위하여 virtualenv로 python 환경을 구성합니다.
+만약 이미 설치되어 있는 python을 사용할 경우 해당 항목은 생략이 가능 합니다.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python -m virtualenv venv
+$ source venv/bin/activate
+(venv) $
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>python 라이브러리 설치</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(venv) $ pip install -r requirements.txt
+Collecting ply==3.11
+Using cached ply-3.11-py2.py3-none-any.whl (49 kB)
+Collecting numpy==1.15.2
+Using cached numpy-1.15.2-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (24.5 MB)
+Collecting pandas==0.23.4
+Using cached pandas-0.23.4-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (14.6 MB)
+Collecting statsmodels==0.9.0
+Using cached statsmodels-0.9.0-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (9.6 MB)
+Collecting scipy==1.1.0
+Using cached scipy-1.1.0-cp36-cp36m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (16.7 MB)
+Collecting pytz&gt;=2011k
+Using cached pytz-2019.3-py2.py3-none-any.whl (509 kB)
+Collecting python-dateutil&gt;=2.5.0
+Using cached python_dateutil-2.8.1-py2.py3-none-any.whl (227 kB)
+Collecting patsy
+Using cached patsy-0.5.1-py2.py3-none-any.whl (231 kB)
+Collecting six&gt;=1.5
+Using cached six-1.14.0-py2.py3-none-any.whl (10 kB)
+Installing collected packages: ply, numpy, pytz, six, python-dateutil, pandas, patsy, statsmodels, scipy
+Successfully installed numpy-1.15.2 pandas-0.23.4 patsy-0.5.1 ply-3.11 python-dateutil-2.8.1 pytz-2019.3 scipy-1.1.0 six-1.14.0 statsmodels-0.9.0
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>env 환경 설정</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(venv) $ source env.sh
+ANGORA_SDK_HOME=/Users/anhm/Dev/test/iris-discovery-service
+SPARK_HOME=/Users/anhm/Dev/test/iris-discovery-service/thridpart/spark-2.4.4-bin-hadoop2.7
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h3>환경 확인<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(venv) $ python check.py
+pyspark     2.4.4
+ply         3.11
+numpy       1.15.2
+pandas      0.23.4
+statsmodels 0.9.0
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>테스트 진행하기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><cite>example</cite> 디렉토리에 예제로 작성된 명령어와 테스트 코드가 존재합니다.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(venv) $ cd example
+(venv) $ ls
+data.csv     sort.py      test_sort.py
+</pre></div>
+</div>
+<p>해당 파일은 다음과 같이 실행이 가능 합니다.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(venv) $ python test_sort.py
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="basecommand">
+<h2>명령어 인터페이스 [BaseCommand]<a class="headerlink" href="#basecommand" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>구조<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>- class BaseCommand
+ +- def __init__<span class="o">()</span>
+ +- def parse<span class="o">()</span>
+ +- def execute<span class="o">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="xxxcommand">
+<h2>명령어 작성 [XXXCommand]<a class="headerlink" href="#xxxcommand" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>작성 규칙<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>생성할 명령어로 python 파일(.py) 생성</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">명령어</span> <span class="pre">이름</span> <span class="pre">+</span> <span class="pre">Command</span></code> 로 클래스 생성 (낙타 표기법 사용)</p></li>
+<li><p>Lexer, Paser 구현 및 인터페이스에 구성된 method overwriting</p></li>
+</ol>
+<p>ex) round 명령어 개발</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">round.py</span></code> 생성</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RoundCommand</span></code> 클래스 작성</p></li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="id9">
+<h3>상속<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>BaseCommand 상속</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">BaseCommand``를</span> <span class="pre">상속한</span> <span class="pre">``AAACommand</span></code> 상속가능</p></li>
+<li><p>최고 조상이 <code class="docutils literal notranslate"><span class="pre">BaseCommand</span></code></p></li>
+</ul>
+</li>
+<li><p>ex) <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">RoundCommand(BaseCommand)</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="inner-class-lexer-parser">
+<h3>inner class [Lexer, Parser]<a class="headerlink" href="#inner-class-lexer-parser" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Lexer</p>
+<ul>
+<li><p>명령어로 입력된 string 을 파싱하여 토큰으로 만드는 class</p></li>
+<li><p>ex) <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">|</span> <span class="pre">round</span> <span class="pre">3</span> <span class="pre">col</span> <span class="pre">=</span> <span class="pre">HOST</span></code> 쿼리 입력</p>
+<ul>
+<li><p>Lexer에 들어오는 인자: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">col</span> <span class="pre">=</span> <span class="pre">HOST</span></code></p></li>
+<li><p>토큰화된 결과:</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>LexToken<span class="o">(</span>NUMBER, <span class="m">3</span>, <span class="m">1</span>, <span class="m">0</span><span class="o">)</span>
+LexToken<span class="o">(</span>COL,<span class="s1">&#39;col&#39;</span>,1,2<span class="o">)</span>
+LexToken<span class="o">(</span>EQUAL,<span class="s1">&#39;=&#39;</span>,1,6<span class="o">)</span>
+LexToken<span class="o">(</span>TOKEN,<span class="s1">&#39;HOST&#39;</span>,1,8<span class="o">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Parser</p>
+<ul>
+<li><p>Lexer 로 토큰화 된 결과를 조합하여 python 객체로 리턴하는 class</p></li>
+<li><p>ex)</p>
+<ul>
+<li><p>위의 LexToken 를 이용해서 문법작성</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;&quot;&quot;
+round_expr : NUMBER
+            | NUMBER COL EQUAL TOKEN
+            | NUMBER COL EQUAL LIST
+            | NUMBER IDX EQUAL NUMBER
+            | NUMBER IDX EQUAL LIST
+            | LIST COL EQUAL TOKEN
+            | LIST COL EQUAL LIST
+            | LIST IDX EQUAL NUMBER
+            | LIST IDX EQUAL LIST
+&quot;&quot;&quot;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p>필요한 토큰만 이용해서 python 객체로 변경</p></li>
+</ul>
+</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if len(p) == 2:
+    p[0] = [None, p[1]]
+elif isinstance(p[1], int):
+    if isinstance(p[4], list):
+        p[0] = [p[2].lower(), map(lambda f: (f, p[1]), p[4])]
+    else:
+        p[0] = [p[2].lower(), [(p[4], p[1])]]
+elif isinstance(p[1], list):
+    if not isinstance(p[4], list):
+        raise AngoraException(&quot;If precision is List, then col/idx must be List.&quot;)
+    if len(p[1]) != len(p[4]):
+        raise AngoraException(&quot;Precision and col/idx must have equal length.&quot;)
+    p[0] = [p[2].lower(), zip(p[4], p[1])]
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<blockquote>
+<div><ul class="simple">
+<li><p>결과: <code class="docutils literal notranslate"><span class="pre">['col',</span> <span class="pre">[('HOST',</span> <span class="pre">4)]]</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="method-init-parse-execute">
+<h3>method [__init__, parse, execute]<a class="headerlink" href="#method-init-parse-execute" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>__init__</p>
+<ul>
+<li><p>lexer, parser 를 인스턴스화</p></li>
+</ul>
+</li>
+<li><p>parse</p>
+<ul>
+<li><p>인자: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">parse(self,</span> <span class="pre">raw_args,</span> <span class="pre">options=None)</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">raw_args</span></code>: 쿼리에서 명령어 뒤쪽 부분</p>
+<ul>
+<li><p>ex) <code class="docutils literal notranslate"><span class="pre">round</span> <span class="pre">3</span> <span class="pre">col</span> <span class="pre">=</span> <span class="pre">HOST</span></code> 쿼리 시, <code class="docutils literal notranslate"><span class="pre">raw_args</span></code>: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">col</span> <span class="pre">=</span> <span class="pre">HOST</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">options</span></code>: engine에서 넘겨주는 파라미터로 다음 값이 있음</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: UI로 리턴할 row 개수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sid</span></code>: 작업id</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sample</span></code>: 샘플링</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">schema</span></code>: 스키마</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">just_model_count</span></code>: UI로 부터 받은 쿼리의 마지막에 count 명령어 유무</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>처리 내용:</p>
+<ul>
+<li><p><a href="#id10"><span class="problematic" id="id11">``</span></a>parser 클래스``를 통해 명령어가 분석된 결과를 처리하여 리턴</p></li>
+<li><p>보통 <a href="#id12"><span class="problematic" id="id13">``</span></a>parser 클래스``에서 명령어를 분석하여 python 객체로 리턴을 하기 때문에 <a href="#id14"><span class="problematic" id="id15">``</span></a>parse 함수``에서는 결과를 리턴</p></li>
+<li><p>만약, 추가 작업이 필요하다면 <code class="docutils literal notranslate"><span class="pre">parse</span> <span class="pre">함수</span></code> 에서 구현</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>execute</p>
+<ul>
+<li><p>인자: <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">execute(self,</span> <span class="pre">sqlCtx,</span> <span class="pre">df=None,</span> <span class="pre">parsed_args=None,</span> <span class="pre">partition=None,</span> <span class="pre">options=None)</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqlCtx</span></code>: spark sqlContext 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">df</span></code>: 앞 명령어에서 처리된 dataframe</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">parsed_args</span></code>: parse 함수에서 리턴된 python 객체</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">partition</span></code>: 데이터의 파티션</p></li>
+</ul>
+</li>
+<li><p>처리 내용:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">parsed_args``를</span> <span class="pre">이용해서</span> <span class="pre">``df</span></code> 를 명령어에 맞게 조작(실행계획 생성)하는 함수</p></li>
+<li><p>결과는 dataframe 객체 리턴</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>추가 필요 함수는 각 명령어에 수요에 따라 작성</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="round">
+<h2>예제 코드 (round 명령어)<a class="headerlink" href="#round" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># coding: utf-8
+from ply import yacc, lex
+from pyspark.sql import functions as F
+from pyspark.sql.utils import AnalysisException
+from exceptions import IndexError
+
+from angora.cmds.base import BaseCommand
+from angora.exceptions import AngoraException
+
+
+class RoundCommand(BaseCommand):
+    # TODO: Move those lexer and parser into `BaseCommand` to generalize them.
+    # Currently, we are relying on the old parser. After replacing them all,
+    # we should change `BaseCommand` and move these into `BaseCommand`.
+    class RoundLexer(object):
+        tokens = [&#39;EQUAL&#39;, &#39;NUMBER&#39;, &#39;COL&#39;, &#39;IDX&#39;, &#39;LIST&#39;, &#39;TOKEN&#39;]
+
+        t_EQUAL = r&#39;\=&#39;
+        t_TOKEN = r&#39;[^ \t=]+&#39;
+
+        def t_NUMBER(self, t):
+            r&#39;\d+&#39;
+            t.value = int(t.value)
+            return t
+
+        def t_COL(self, t):
+            r&#39;col|COL&#39;
+            return t
+
+        def t_IDX(self, t):
+            r&#39;idx&#39;
+            return t
+
+        def t_LIST(self, t):
+            r&#39;\[[^\[\]]+\]&#39;
+            t.value = t.value.replace(&#39;[&#39;, &#39;&#39;).replace(&#39;]&#39;, &#39;&#39;).replace(&#39; &#39;, &#39;&#39;).split(&#39;,&#39;)
+            return t
+
+        # Define a rule so we can track line numbers
+        def t_newline(self, t):
+            r&#39;\n+&#39;
+            t.lexer.lineno += len(t.value)
+
+        t_ignore = &#39; \t&#39;
+
+        def t_error(self, t):
+            raise SyntaxError(&quot;Syntax error near &#39;%s&#39;&quot; % t.value)
+
+        def build(self, **kwargs):
+            self.lexer = lex.lex(module=self, **kwargs)
+            return self.lexer
+
+    class RoundParser(object):
+        tokens = [&#39;EQUAL&#39;, &#39;NUMBER&#39;, &#39;COL&#39;, &#39;IDX&#39;, &#39;LIST&#39;, &#39;TOKEN&#39;]
+
+        def p_round_expr(self, p):
+            &quot;&quot;&quot;
+            round_expr : NUMBER
+                        | NUMBER COL EQUAL TOKEN
+                        | NUMBER COL EQUAL LIST
+                        | NUMBER IDX EQUAL NUMBER
+                        | NUMBER IDX EQUAL LIST
+                        | LIST COL EQUAL TOKEN
+                        | LIST COL EQUAL LIST
+                        | LIST IDX EQUAL NUMBER
+                        | LIST IDX EQUAL LIST
+            &quot;&quot;&quot;
+            if len(p) == 2:
+                p[0] = [None, p[1]]
+            elif isinstance(p[1], int):
+                if isinstance(p[4], list):
+                    p[0] = [p[2].lower(), map(lambda f: (f, p[1]), p[4])]
+                else:
+                    p[0] = [p[2].lower(), [(p[4], p[1])]]
+            elif isinstance(p[1], list):
+                if not isinstance(p[4], list):
+                    raise AngoraException(&quot;If precision is List, then col/idx must be List.&quot;)
+                if len(p[1]) != len(p[4]):
+                    raise AngoraException(&quot;Precision and col/idx must have equal length.&quot;)
+                p[0] = [p[2].lower(), zip(p[4], p[1])]
+
+        def p_error(self, p):
+            if p is None:
+                raise AngoraException(&quot;At least a field should be specified.&quot;)
+            else:
+                raise SyntaxError(&quot;Syntax error near &#39;%s&#39;&quot; % p.value)
+
+        def build(self, **kwargs):
+            self.parser = yacc.yacc(module=self, **kwargs)
+            return self.parser
+
+    def __init__(self):
+        super(RoundCommand, self).__init__()
+        self.lexer = RoundCommand.RoundLexer().build()
+        self.new_parser = RoundCommand.RoundParser().build(write_tables=False, debug=False)
+
+    def parse(self, raw_args, options=None):
+        try:
+            round_expr_list = self.new_parser.parse(raw_args, lexer=self.lexer)
+        except SyntaxError as e:
+            e.message = &quot;%s [sort %s]&quot; % (e.message, raw_args)
+            raise e
+        return round_expr_list
+
+    def execute(self, sqlCtx, df=None, parsed_args=None, partition=None, options=None):
+        category, round_expr_list = parsed_args
+        if category is None:
+            round_size = round_expr_list
+            for field in df.columns:
+                try:
+                    df = df.withColumn(field, F.format_number(field, round_size))
+                except:
+                    pass
+        elif category == &#39;col&#39;:
+            try:
+                for field, round_size in round_expr_list:
+                    df = df.withColumn(field, F.format_number(field, int(round_size)))
+            except AnalysisException:
+                raise AngoraException(&quot;There is no field [%s].&quot; % field)
+        else:
+            fields = df.columns
+            try:
+                for field_idx, round_size in round_expr_list:
+                    df = df.withColumn(fields[int(field_idx)], F.format_number(fields[int(field_idx)], int(round_size)))
+            except IndexError:
+                raise AngoraException(&quot;There is no field_idx [%s].&quot; % field_idx)
+        return df
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>테스트 코드<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>개발한 명령어가 정상 적으로 작동하는지 확인하는 테스트 코드를 작성</p></li>
+<li><p>unittest 로 작성</p></li>
+<li><p>angora 팀만 git에 접근 권한이 있기 때문에 아래 포멧으로 테스트 코드를 작성하여 angoa 팀에게 전달</p></li>
+</ul>
+<div class="section" id="id17">
+<h3>구조<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">test_external_command.py</span></code> 파일 생성</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TestExteranlCommand</span></code> 클래스 생성</p></li>
+<li><p>명령어 별로 테스트 함수 작성</p>
+<ul>
+<li><p>이름 규칙: <code class="docutils literal notranslate"><span class="pre">test_exteranl_command_XXX</span></code> 로 구성</p></li>
+</ul>
+</li>
+<li><p>ex) <code class="docutils literal notranslate"><span class="pre">AAACommand</span></code>, <a href="#id18"><span class="problematic" id="id19">``</span></a>XXXCommand``에 대한 테스트 코드작성</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>- class TestExternalCommand
+ +- def test_query_AAA<span class="o">()</span>
+ +- def test_query_XXX<span class="o">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>이 후 명령어 추가시 해당 파일에 함수만 추가하여 angora 팀에게 전달.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>예제코드<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">test_external_command.py</span></code> (명령어 테스트 파일)</p>
+<ul>
+<li><p>각 명령어에 맞는 unittest를 작성해 주세요.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from query_api_caller import test_qeury
+
+class TestExternalCommand:
+    def test_query_[명령어이름](self):
+        print &#39;xxx command unittest\n&#39;
+        q = &quot;model name = &#39;WEATHER&#39; model_owner = choi &quot; \
+            &quot;| pivot count(*),avg(AVG_TEMP) as AAA,avg(LOWEST_TEMP) as BBB &quot; \
+            &quot;| xxx 3 col=[AAA, BBB]&quot;
+
+        results = test_query(q=q)[&#39;results&#39;][0]
+
+        ret = True
+        if len(results) &lt;= 0:
+            ret = False
+
+        if len(results[1][results[1].find(&#39;.&#39;)+1:]) != 3 or len(results[2][results[2].find(&#39;.&#39;)+1:]) != 3:
+            ret = False
+
+        self.assertTrue(ret)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>import 해서 사용 할 <code class="docutils literal notranslate"><span class="pre">query_api_caller.py</span></code></p>
+<ul>
+<li><p>이 파일은 그대로 사용하시면 됩니다.</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env python
+# -*- coding: UTF-8 -*-
+import json
+from httplib import HTTPConnection
+import sys
+
+addr = &quot;192.168.100.180&quot;
+#addr = &quot;localhost&quot;
+
+def test_query(q):
+    #print &quot;query : [%s]&quot; % q
+    # We are going to shutdown this restful server for each test.
+    host, port = (addr, 6036)
+    parameters = {}
+    parameters[&#39;q&#39;] = q
+
+    parameters[&#39;size&#39;] = 1000
+
+    http_conn = HTTPConnection(host, port)
+
+    # Generate token.
+
+    http_conn.request(
+        &quot;POST&quot;,
+        &quot;/angora/auth&quot;,
+        json.dumps({&quot;id&quot;: &quot;test&quot;, &quot;password&quot;: &quot;test&quot;}))
+    token = json.load(http_conn.getresponse())[&quot;token&quot;]
+    http_conn.close()
+
+    headers = {}
+    headers[&quot;Accept&quot;] = &quot;application/json&quot;
+    headers[&quot;Content-Type&quot;] = &quot;application/json&quot;
+    headers[&quot;Authorization&quot;] = &quot;Angora %s&quot; % token
+    body = json.dumps(parameters)
+
+    http_conn = HTTPConnection(host, port)
+    print &quot;URL : /angora/query/jobs&quot;
+
+    # Query / Fetch Session ID
+
+    http_conn.request(&quot;POST&quot;, &quot;/angora/query/jobs&quot;, body=body, headers=headers)
+    r = json.load(http_conn.getresponse())
+    try :
+        sid = r[&quot;sid&quot;]
+    except Exception, e:
+        print r
+        sys.exit()
+
+    http_conn.close()
+
+    # Fetch results
+
+    http_conn = HTTPConnection(host, port)
+    print &quot;URL : /angora/query/jobs/%s&quot; % sid
+    http_conn.request(
+        &quot;GET&quot;,
+        &quot;/angora/query/jobs/%s&quot; % sid,
+        headers=headers)
+    test = http_conn.getresponse().read()
+    return json.loads(test)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../restapi/index.html" class="btn btn-neutral float-right" title="RESTful API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../command/commands/ysort.html" class="btn btn-neutral float-left" title="ysort" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

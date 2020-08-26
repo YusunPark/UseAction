@@ -1,0 +1,775 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pivot &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="postagger" href="postagger.html" />
+    <link rel="prev" title="outlier" href="outlier.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Command References</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="adv.html">adv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anomalies.html">anomalies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bimatrix.html">bimatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calculate.html">calculate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concat.html">concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="corr.html">corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="count.html">count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curl.html">curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="distinct.html">distinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="eval.html">eval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fields.html">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fillna.html">fillna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit.html">fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit_predict.html">fit_predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="forecasts.html">forecasts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geoip.html">geoip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geomap.html">geomap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geostats.html">geostats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hdfs.html">hdfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="head.html">head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="img2tsv.html">img2tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indexer.html">indexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iris.html">iris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html">join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kmeans.html">kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metatron.html">metatron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestClassification.html">RandomForest Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestRegression.html">RandomForest Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeClassification.html">Spark DecisionTree Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeRegression.html">Spark DecisionTree Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkFPGrowth.html">Spark FP-Growth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkKmeans.html">Spark Kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/TFDeep.html">TFDeep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/generalizedlinearregression.html">generalizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/linearregression.html">linearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/logisticregression.html">logisticRegression(LBFGS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlmodel.html">mlmodel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html">model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-stats.html">model-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-statsdetails.html">model-statsdetails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-timeline.html">model-timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modeldata.html">modeldata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="outlier.html">outlier</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">pivot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="postagger.html">postagger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict.html">predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pylambda.html">pylambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rename.html">rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="replace.html">replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="round.html">round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sampling.html">sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scaler.html">scaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="serving.html">serving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="split.html">split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="splitter.html">splitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.html">sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="substr.html">substr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="time2sec.html">time2sec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timediff.html">TIMEDIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeline.html">timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tokenizer.html">tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="top.html">top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typecast.html">TYPECAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weekend.html">weekend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="where.html">WHERE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ysort.html">ysort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example/index.html">Command 사용 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="../index.html">Command References</a> &raquo;</li>
+    
+    <li>pivot</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/pivot.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/pivot</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/command/commands/pivot</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/command/commands/pivot
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/pivot</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/pivot.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/command/commands/pivot.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pivot">
+<h1>pivot<a class="headerlink" href="#pivot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>테이블을 여러 컬럼들을 축으로 회전 및 각종 통계 정보를 행과 열 별로 구할 수 있습니다.</p>
+</div>
+<div class="section" id="id2">
+<h2>설명<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">SPLITROW</span></code>, <code class="docutils literal notranslate"><span class="pre">SPLITCOL</span></code>, <code class="docutils literal notranslate"><span class="pre">AS</span></code> 와 <code class="docutils literal notranslate"><span class="pre">BY</span></code>의 문구를 지원하며, <code class="docutils literal notranslate"><span class="pre">SPLITROW</span></code>는 가로축 기반으로 그리고 <code class="docutils literal notranslate"><span class="pre">SPLITCOL</span></code>은 세로축 기반으로 데이터를 축 기준으로 회전 하거나 aggregation을 할 수 있습니다. <code class="docutils literal notranslate"><span class="pre">AS</span></code>는 결과 값의 field의 별칭을 줄 수 있습니다.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>batting이라는 모델에서 <code class="docutils literal notranslate"><span class="pre">YEARID</span></code>와 <code class="docutils literal notranslate"><span class="pre">PLAYERID</span></code> 를 각각 행렬로 그룹핑 하여 각 년도에 선수가 가장 많이 친 홈런의 갯수를 구하는 예제 입니다.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | pivot max(HR) SPLITROW YEARID SPLITCOL PLAYERID
+</pre></div>
+</div>
+<p>pivot 의 결과를 sort 하고자 할 때, 옵션 <code class="docutils literal notranslate"><span class="pre">SORTROW</span></code> , <code class="docutils literal notranslate"><span class="pre">SORTCOL</span></code>을 사용할 수 있습니다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SORTROW</span></code>,<code class="docutils literal notranslate"><span class="pre">SORTCOL</span></code> 의 인자로는 <code class="docutils literal notranslate"><span class="pre">asc</span></code> 및 <code class="docutils literal notranslate"><span class="pre">desc</span></code>를 사용 할 수 있습니다.</p></li>
+<li><p>예) <code class="docutils literal notranslate"><span class="pre">SORTCOL</span> <span class="pre">asc</span></code> or <code class="docutils literal notranslate"><span class="pre">SORTCOL</span> <span class="pre">desc</span></code></p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># SPLITCOL 인 DATE 컬럼에 대해 desc 로 정렬
+... | pivot count(LEVEL_INT) SPLITCOL DATE SORTCOL desc
+
+# SPLITROW 인 HOST 컬럼에 대해 asc 로 정렬
+... | pivot count(LEVEL_INT) SPLITROW HOST SORTROW asc
+
+# SPLITROW 인 HOST 와 SPLITCOL 인 DATE 컬럼에 대해 asc, desc 로 정렬
+... | pivot count(LEVEL_INT) SPLITROW HOST SPLITCOL DATE SORTROW asc SORTCOL desc
+</pre></div>
+</div>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | pivot FUNCTION (ASLIAS)? (, FUNCTION (ASLIAS)?)* (SPLITROW FIELD_NAME(, FIELD_NAME)*)? (SPLITCOL FIELD_NAME)? (FILTER filter_expr)? (COLSIZE N)? ((SORT order)? | (SORTROW order)? (SORTCOL order)?)
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>필수/옵션</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>FUNCTION</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FUNC(FIELD_NAME)</span></code> 입니다. 지원하는 <a href="#id3"><span class="problematic" id="id4">*</span></a><code class="docutils literal notranslate"><span class="pre">FUNC</span></code>의 종류는 아래 표를 참조해주세요. <code class="docutils literal notranslate"><span class="pre">FIELD_NAME</span></code>은 field 이름을 뜻합니다.<span class="raw-html-m2r"><br /></span>예 : avg(fieldA), count(fieldB), …</p></td>
+<td><p>필수</p></td>
+</tr>
+<tr class="row-odd"><td><p>ASLIAS</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AS</span> <span class="pre">FIELD_NAME</span></code> 입니다. <code class="docutils literal notranslate"><span class="pre">AS</span></code>는 예약어 이며 <code class="docutils literal notranslate"><span class="pre">FIELD_NAME</span></code>은 field 이름을 뜻합니다.<span class="raw-html-m2r"><br /></span> 예 : avg(fieldA) as avg_fieldA</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-even"><td><p>SPLITROW</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SPLITROW</span></code>는 예약어이며, 여기에 정의된 field를 그룹핑하여 출력합니다. 각 <code class="docutils literal notranslate"><span class="pre">FIELD_NAME</span></code>는 <code class="docutils literal notranslate"><span class="pre">,</span></code> 으로 구분 됩니다.<span class="raw-html-m2r"><br /></span>예 : splitrow fieldA, fieldB</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPLITCOL</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SPLITCOL</span></code>은 예약어이며, 여기에 정의된 field를 그룹핑하여 가로축으로 피봇하여 출력합니다. 즉 field의 데이터가 컬럼명이 됩니다.<span class="raw-html-m2r"><br /></span>예 : splitcol fieldA</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-even"><td><p>FILTER filter_expr</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">FILTER</span></code>는 예약어이며 <code class="docutils literal notranslate"><span class="pre">filter_expr</span></code>은 filter 조건을 뜻합니다.<span class="raw-html-m2r"><br /></span> 예 : filter fieldA=’valueA’</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-odd"><td><p>COLSIZE N</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">COLSIZE</span></code>는 예약어이며 <code class="docutils literal notranslate"><span class="pre">N</span></code>은 몇 개의 컬럼을 보여 줄 지에 대한 개수입니다.<span class="raw-html-m2r"><br /></span>이 때, 컬럼의 개수에 해당하는 것은 <code class="docutils literal notranslate"><span class="pre">SPLITCOL</span></code>로 지정된 필드의 피벗 결과 컬럼의 개수입니다. <code class="docutils literal notranslate"><span class="pre">SPLITROW</span></code>의 필드와는 관계가 없습니다.<span class="raw-html-m2r"><br /></span>예 : colsize 10</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-even"><td><p>SORT order</p></td>
+<td><p>삭제될 옵션</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-odd"><td><p>SORTROW order</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SORTROW</span></code>는 예약어이며 <code class="docutils literal notranslate"><span class="pre">order</span></code>은 <code class="docutils literal notranslate"><span class="pre">asc/desc</span></code>의 값이 들어 갑니다. <code class="docutils literal notranslate"><span class="pre">SPLITROW</span></code>로 지정된 필드에 대한 Sort 결과를 나타내 줍니다.<span class="raw-html-m2r"><br /></span>예 : sortrow desc</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-even"><td><p>SORTCOL order</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SORTCOL</span></code>은 예약어이며 <code class="docutils literal notranslate"><span class="pre">order</span></code>은 <code class="docutils literal notranslate"><span class="pre">asc/desc</span></code>의 값이 들어 갑니다. <code class="docutils literal notranslate"><span class="pre">SPLITCOL</span></code>로 지정된 필드의 피벗 결과에 대한 Sort 결과를 나타내 줍니다.<span class="raw-html-m2r"><br /></span>예 : sortcol desc</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ASC</span></code>, <code class="docutils literal notranslate"><span class="pre">DESC</span></code>는 일반적인 정렬을 의미합니다.<span class="raw-html-m2r"><br /></span>요일 정렬: <code class="docutils literal notranslate"><span class="pre">WEEK</span> <span class="pre">ASC</span></code>, <code class="docutils literal notranslate"><span class="pre">WEEK</span> <span class="pre">DESC</span></code><span class="raw-html-m2r"><br /></span>달 정렬: <code class="docutils literal notranslate"><span class="pre">MONTH</span> <span class="pre">ASC</span></code>, <code class="docutils literal notranslate"><span class="pre">MONTH</span> <span class="pre">DESC</span></code><span class="raw-html-m2r"><br /></span>계절 정렬: <code class="docutils literal notranslate"><span class="pre">SEASON</span> <span class="pre">ASC</span></code>, <code class="docutils literal notranslate"><span class="pre">SEASON</span> <span class="pre">DESC</span></code></p></td>
+<td><p>옵션</p></td>
+</tr>
+</tbody>
+</table>
+<p><a href="#id5"><span class="problematic" id="id6">*</span></a><code class="docutils literal notranslate"><span class="pre">FUNC</span></code>의 종류</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>지원 타입</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">avg()</span></code></p></td>
+<td><p>평균 값을 구합니다.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code>, <code class="docutils literal notranslate"><span class="pre">BINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> 불가능</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">count()</span></code></p></td>
+<td><p>카운트를 구합니다.</p></td>
+<td><p>모든Type 가능</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">first()</span></code></p></td>
+<td><p>첫 번째 값을 구합니다.</p></td>
+<td><p>모든Type 가능</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">last()</span></code></p></td>
+<td><p>마지막 값을 구합니다.</p></td>
+<td><p>모든Type 가능</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">max()</span></code></p></td>
+<td><p>제일 큰 값을 구합니다.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code>, <code class="docutils literal notranslate"><span class="pre">BINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> 불가능</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">min()</span></code></p></td>
+<td><p>제일 작은 값을 구합니다.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code>, <code class="docutils literal notranslate"><span class="pre">BINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> 불가능</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">median()</span></code></p></td>
+<td><p>중간 값을 구합니다.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code>, <code class="docutils literal notranslate"><span class="pre">BINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> 불가능</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sum()</span></code></p></td>
+<td><p>전체 값을 구합니다.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code>, <code class="docutils literal notranslate"><span class="pre">BINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> 불가능</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">stddev()</span></code></p></td>
+<td><p>표준편차 값을 구합니다.</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code>, <code class="docutils literal notranslate"><span class="pre">BINARY</span></code>, <code class="docutils literal notranslate"><span class="pre">BOOLEAN</span></code> 불가능</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">countDistinct()</span></code></p></td>
+<td><p>유니크한 값의 갯수를 구합니다.</p></td>
+<td><p>모든Type 가능</p></td>
+</tr>
+</tbody>
+</table>
+<p>요일 정렬</p>
+<p>아래 이름이나 별명에 대해 우선적으로 정렬합니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>별명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Monday</p></td>
+<td><p>MON</p></td>
+<td><p>월요일</p></td>
+</tr>
+<tr class="row-odd"><td><p>Tuesday</p></td>
+<td><p>TUE</p></td>
+<td><p>화요일</p></td>
+</tr>
+<tr class="row-even"><td><p>Wednesday</p></td>
+<td><p>WED</p></td>
+<td><p>수요일</p></td>
+</tr>
+<tr class="row-odd"><td><p>Thursday</p></td>
+<td><p>THU</p></td>
+<td><p>목요일</p></td>
+</tr>
+<tr class="row-even"><td><p>Friday</p></td>
+<td><p>FRI</p></td>
+<td><p>금요일</p></td>
+</tr>
+<tr class="row-odd"><td><p>Saturday</p></td>
+<td><p>SAT</p></td>
+<td><p>토요일</p></td>
+</tr>
+<tr class="row-even"><td><p>Sunday</p></td>
+<td><p>SUN</p></td>
+<td><p>일요일</p></td>
+</tr>
+</tbody>
+</table>
+<p>달 정렬</p>
+<p>아래 이름이나 별명에 대해 우선적으로 정렬합니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>별명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>January</p></td>
+<td><p>JAN</p></td>
+<td><p>1월</p></td>
+</tr>
+<tr class="row-odd"><td><p>February</p></td>
+<td><p>FEB</p></td>
+<td><p>2월</p></td>
+</tr>
+<tr class="row-even"><td><p>March</p></td>
+<td><p>MAR</p></td>
+<td><p>3월</p></td>
+</tr>
+<tr class="row-odd"><td><p>April</p></td>
+<td><p>APR</p></td>
+<td><p>4월</p></td>
+</tr>
+<tr class="row-even"><td><p>May</p></td>
+<td></td>
+<td><p>5월</p></td>
+</tr>
+<tr class="row-odd"><td><p>June</p></td>
+<td></td>
+<td><p>6월</p></td>
+</tr>
+<tr class="row-even"><td><p>July</p></td>
+<td></td>
+<td><p>7월</p></td>
+</tr>
+<tr class="row-odd"><td><p>August</p></td>
+<td><p>AUG</p></td>
+<td><p>8월</p></td>
+</tr>
+<tr class="row-even"><td><p>September</p></td>
+<td><p>SEPT</p></td>
+<td><p>9월</p></td>
+</tr>
+<tr class="row-odd"><td><p>October</p></td>
+<td><p>OCT</p></td>
+<td><p>10월</p></td>
+</tr>
+<tr class="row-even"><td><p>November</p></td>
+<td><p>NOV</p></td>
+<td><p>11월</p></td>
+</tr>
+<tr class="row-odd"><td><p>December</p></td>
+<td><p>DEC</p></td>
+<td><p>12월</p></td>
+</tr>
+</tbody>
+</table>
+<p>계절 정렬</p>
+<p>아래 이름에 대해 우선적으로 정렬합니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>의미</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>spring</p></td>
+<td><p>봄</p></td>
+</tr>
+<tr class="row-odd"><td><p>summer</p></td>
+<td><p>여름</p></td>
+</tr>
+<tr class="row-even"><td><p>fall, autumn</p></td>
+<td><p>가을</p></td>
+</tr>
+<tr class="row-odd"><td><p>winter</p></td>
+<td><p>겨울</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parameters-bnf">
+<h2>Parameters BNF<a class="headerlink" href="#parameters-bnf" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>causes : funcs
+       | funcs SPLITROW fields
+       | funcs SPLITCOL fields
+       | funcs SPLITROW fields SPLITCOL fields
+       | funcs FILTER tokens
+       | funcs SPLITROW fields FILTER tokens
+       | funcs SPLITCOL fields FILTER tokens
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens
+       | funcs COLSIZE NUMBER
+       | funcs SPLITROW fields COLSIZE NUMBER
+       | funcs SPLITCOL fields COLSIZE NUMBER
+       | funcs SPLITROW fields SPLITCOL fields COLSIZE NUMBER
+       | funcs FILTER tokens COLSIZE NUMBER
+       | funcs SPLITROW fields FILTER tokens COLSIZE NUMBER
+       | funcs SPLITCOL fields FILTER tokens COLSIZE NUMBER
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens COLSIZE NUMBER
+       | funcs SORT order
+       | funcs SPLITROW fields SORT order
+       | funcs SPLITCOL fields SORT order
+       | funcs SPLITROW fields SPLITCOL fields SORT order
+       | funcs FILTER tokens SORT order
+       | funcs SPLITROW fields FILTER tokens SORT order
+       | funcs SPLITCOL fields FILTER tokens SORT order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens SORT order
+       | funcs COLSIZE NUMBER SORT order
+       | funcs SPLITROW fields COLSIZE NUMBER SORT order
+       | funcs SPLITCOL fields COLSIZE NUMBER SORT order
+       | funcs SPLITROW fields SPLITCOL fields COLSIZE NUMBER SORT order
+       | funcs FILTER tokens COLSIZE NUMBER SORT order
+       | funcs SPLITROW fields FILTER tokens COLSIZE NUMBER SORT order
+       | funcs SPLITCOL fields FILTER tokens COLSIZE NUMBER SORT order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens COLSIZE NUMBER SORT order
+       | funcs SPLITROW fields SORTROW order
+       | funcs SPLITROW fields SPLITCOL fields SORTROW order
+       | funcs SPLITROW fields FILTER tokens SORTROW order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens SORTROW order
+       | funcs SPLITROW fields COLSIZE NUMBER SORTROW order
+       | funcs SPLITROW fields SPLITCOL fields COLSIZE NUMBER SORTROW order
+       | funcs SPLITROW fields FILTER tokens COLSIZE NUMBER SORTROW order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens COLSIZE NUMBER SORTROW order
+       | funcs SPLITCOL fields SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields SORTCOL order
+       | funcs SPLITCOL fields FILTER tokens SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens SORTCOL order
+       | funcs SPLITCOL fields COLSIZE NUMBER SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields COLSIZE NUMBER SORTCOL order
+       | funcs SPLITCOL fields FILTER tokens COLSIZE NUMBER SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens COLSIZE NUMBER SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields SORTROW order SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens SORTROW order SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields COLSIZE NUMBER SORTROW order SORTCOL order
+       | funcs SPLITROW fields SPLITCOL fields FILTER tokens COLSIZE NUMBER SORTROW order SORTCOL order
+
+fields : field
+       | fields COMMA field
+
+field : TOKEN
+      | TOKEN AS TOKEN
+
+funcs : funcs COMMA func
+      | func
+
+func : TOKEN LPAREN TOKEN RPAREN
+     | TOKEN LPAREN TOKEN RPAREN AS TOKEN
+
+tokens : TOKEN
+       | tokens TOKEN
+       | NUMBER
+       | tokens NUMBER
+
+order : DESC
+      | ASC
+
+TOKEN : [&quot;...&quot;|&#39;...&#39;|[^ |^,|^+|^-]+]
+COMMA : ,
+LPAREN : (
+RPAREN : )
+SPLITROW : (?i)SPLITROW
+SPLITCOL : (?i)SPLITCOL
+FILTER : (?i)FILTER
+AS : (?i)AS
+SORT : (?i)SORT
+COLSIZE : (?i)COLSIZE
+ASC : (?i)ASC
+DESC : (?i)DESC
+SORTROW : (?i)SORTROW
+SORTCOL : (?i)SORTCOL
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="postagger.html" class="btn btn-neutral float-right" title="postagger" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="outlier.html" class="btn btn-neutral float-left" title="outlier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

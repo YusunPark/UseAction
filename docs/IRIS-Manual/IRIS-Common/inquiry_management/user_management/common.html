@@ -1,0 +1,557 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>사용자 계정 관리 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="그룹" href="user_group.html" />
+    <link rel="prev" title="사용자 관리" href="index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS 공통기능</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../dashboard/index.html">대시보드</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">관리</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../connect_info/index.html">연결 정보</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../jobs_inquiry/index.html">작업 조회</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">사용자 관리</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS 공통기능</a> &raquo;</li>
+    
+      <li><a href="../index.html">관리</a> &raquo;</li>
+    
+      <li><a href="index.html">사용자 관리</a> &raquo;</li>
+    
+    <li>사용자 계정 관리</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Common/inquiry_management/user_management/common.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Common/inquiry_management/user_management/common</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Common/inquiry_management/user_management/common</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Common/inquiry_management/user_management/common
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Common/inquiry_management/user_management/common</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Common/inquiry_management/user_management/common.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Common/inquiry_management/user_management/common.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>사용자 계정 관리<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>사용자 계정은 IRIS 기능을 사용하기 위한 기본 조건으로 사용자는 계정을 발급받아야만 IRIS를 사용할 수 있습니다. 계정 생성은 super user(일반적으로 root 계정)만 가능합니다.</p>
+<img alt="account-mgr" src="../../../../_images/account-mgr-1.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>사용자 계정 추가</p></td>
+<td><p>새로운 사용자를 추가합니다. 추가 다이얼로그를 팝업합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>사용자 정보 관리</p></td>
+<td><p>사용자 항목을 관리 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>목록 설정</p></td>
+<td><p>그리드에 표시되는 항목들을 필터링하거나 선택할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>계정 목록</p></td>
+<td><ul class="simple">
+<li><p>아이디 : 계정의 고유한 ID</p></li>
+<li><p>이름 : 사용자의 이름 혹은 닉네임</p></li>
+<li><p>역할명 : 사용자의 설정된 역할(또는 등급)</p></li>
+<li><p>그룹명 : 사용자의 그룹</p></li>
+<li><p>이메일 : 사용자의 이메일 주소</p></li>
+<li><p>설명 : 설명 혹은 비고</p></li>
+<li><p>생성일 : 계정 생성 일시</p></li>
+<li><p>관리 : 계정 수정/삭제 기능</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id2">
+<h2>계정 조회<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>현재 등록된 사용자 계정들을 조회합니다. 상단의 “새로고침” 버튼을 누르면 목록이 갱신 됩니다.
+접속된 계정에 따라 조회되는 계정은 아래와 같습니다.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>역할</p></th>
+<th class="head"><p>조회 계정</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>관리자</p></td>
+<td><p>모든 계정</p></td>
+</tr>
+<tr class="row-odd"><td><p>그룹장</p></td>
+<td><p>해당 계정이 속한 그룹에 존재하는 모든 계정</p></td>
+</tr>
+</tbody>
+</table>
+<p>또한 계정 관리에 필요한 편의 기능들을 제공합니다.</p>
+<div class="section" id="option-1">
+<h3>Option 1: 목록 개수<a class="headerlink" href="#option-1" title="Permalink to this headline">¶</a></h3>
+<p>한 페이지에 표시되는 목록의 개수를 지정합니다.</p>
+<img alt="../../../../_images/grid_ctrl_012.png" src="../../../../_images/grid_ctrl_012.png" />
+</div>
+<div class="section" id="option-2">
+<h3>Option 2: 필터링<a class="headerlink" href="#option-2" title="Permalink to this headline">¶</a></h3>
+<p>입력된 텍스트가 포함된 계정만 목록에 표시됩니다.</p>
+<img alt="../../../../_images/grid_ctrl_022.png" src="../../../../_images/grid_ctrl_022.png" />
+</div>
+<div class="section" id="option-3">
+<h3>Option 3: 페이징<a class="headerlink" href="#option-3" title="Permalink to this headline">¶</a></h3>
+<p>원하는 목록의 페이지로 이동합니다.</p>
+<img alt="../../../../_images/grid_ctrl_032.png" src="../../../../_images/grid_ctrl_032.png" />
+</div>
+</div>
+<div class="section" id="id3">
+<h2>계정 생성<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>새로운 계정을 생성합니다. 상단에 “사용자 계정 추가” 버튼을 누르면 계정을 생성 할 수 있는 다이얼로그가 표시 됩니다. 필수/선택 항목을 입력한 뒤에 저장 버튼을 누르면 계정이 생성 됩니다. 생성은 super user(일반적으로 root 계정)만 가능합니다.</p>
+<img alt="../../../../_images/create-account-btt.png" src="../../../../_images/create-account-btt.png" />
+<p>각 입력란의 필수 입력 여부는 다음과 같습니다.</p>
+<img alt="../../../../_images/create-account-dlg.png" src="../../../../_images/create-account-dlg.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 67%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>필수 입력</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>아이디</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>비밀번호</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>비밀번호 재입력</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>이름</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>역할</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>그룹</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>전화번호</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>이메일</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>설명</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>역할은 다음 세 가지 중 하나로 설정할 수 있으며, 기본값은 사용자입니다.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>역할</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>관리자</p></td>
+<td><p>최고 관리자(root)와 동일한 권한이 부여됨</p></td>
+</tr>
+<tr class="row-odd"><td><p>그룹장</p></td>
+<td><p>해당 계정이 속한 그룹을 관리</p></td>
+</tr>
+<tr class="row-even"><td><p>사용자</p></td>
+<td><p>일반 사용자</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h2>계정 항목 관리<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>새로운 계정을 생성합니다. 상단에 “사용자 정보 관리” 버튼을 누르면 항목을 관리 할 수 있는 다이얼로그가 표시 됩니다. 항목을 추가한 뒤 항목에 대한 정보를 입력한 후 적용 버튼을 누르면 항목이 생성 됩니다. 생성은 super user(일반적으로 root 계정)만 가능합니다.</p>
+<img alt="User Information Management image" src="../../../../_images/user-information-mng.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>순서</p></td>
+<td><p>아이디 생성/관리시 나타나는 항목간의 순서</p></td>
+</tr>
+<tr class="row-odd"><td><p>한국어</p></td>
+<td><p>아이디 생성/관리시 나타나는 한국어로된 항목의 정의</p></td>
+</tr>
+<tr class="row-even"><td><p>영어/중국어</p></td>
+<td><p>아이디 생성/관리시 나타나는 영어/중국어로 된 항목의 정의</p></td>
+</tr>
+<tr class="row-odd"><td><p>필드 타입</p></td>
+<td><p>아이디 생성/관리시 나타나는 항목의 필드 타입(텍스트,숫자,드릴다운)</p></td>
+</tr>
+<tr class="row-even"><td><p>필드 길이제한</p></td>
+<td><p>아이디 생성/관리 항목 필드의 길이제한</p></td>
+</tr>
+<tr class="row-odd"><td><p>사용 여부</p></td>
+<td><p>아이디 생성/관리시 나타나는 항목의 사용 여부</p></td>
+</tr>
+<tr class="row-even"><td><p>필수 여부</p></td>
+<td><p>아이디 생성에 필요한 항목의 기입 필수 여부</p></td>
+</tr>
+<tr class="row-odd"><td><p>목록 표시</p></td>
+<td><p>아이디 생성/관리시 나타나는 항목의 목록 표시 여부</p></td>
+</tr>
+<tr class="row-even"><td><p>추가/삭제</p></td>
+<td><p>아이디 생성/관리시 나타나는 항목의 추가 및 삭제 여부</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2>계정 편집<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>계정 정보를 수정합니다. 조회 목록에서 특정 계정의 “수정” 버튼을 클릭하면 화면에 수정 다이얼로그가 표시되고, 항목을 수정한 뒤에 저장 버튼을 누르면 수정 내용이 반영됩니다. 다른 계정의 정보 수정은 super user(일반적으로 root 계정)만 가능합니다.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>역할</p></th>
+<th class="head"><p>수정 가능한 항목</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>관리자</p></td>
+<td><p>아이디를 제외한 모든 항목</p></td>
+</tr>
+<tr class="row-odd"><td><p>그룹장</p></td>
+<td><p>아이디, 역할, 그룹을 제외한 모든 항목</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h2>계정 삭제<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">특정 계정을 삭제합니다. 해당 계정의 데이터베이스 및 개인 폴더 등에 저장된 데이터도 같이 삭제되니 유의해야 합니다.</div>
+<div class="line">조회 목록에서 특정 계정의 “삭제” 버튼을 클릭하면 삭제 여부를 물어보는 확인 창이 나타나며, 이 때 “예” 버튼을 클릭하면 해당 계정이 삭제됩니다. 계정 삭제는 super user(일반적으로 root 계정)만 가능합니다.</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="user_group.html" class="btn btn-neutral float-right" title="그룹" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="사용자 관리" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

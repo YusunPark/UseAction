@@ -1,0 +1,811 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IRIS Studio - 서울시 공중화장실 분포 지도 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+    <li>IRIS Studio - 서울시 공중화장실 분포 지도</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/usecase3-map/IRIS_Studio.map_polygon.v01.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Usecase/usecase3-map/IRIS_Studio.map_polygon.v01</p>
+
+            
+            <p>list1[0] = IRIS-Usecase</p>
+            <p>list1[1] = usecase3-map/IRIS_Studio.map_polygon.v01</p>
+            <p>list1[2] = </p>
+            IRIS-Usecase
+            IRIS-Usecase/usecase3-map/IRIS_Studio.map_polygon.v01
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Usecase/usecase3-map/IRIS_Studio.map_polygon.v01</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/usecase3-map/IRIS_Studio.map_polygon.v01.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Usecase/blob/master/usecase3-map/IRIS_Studio.map_polygon.v01.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iris-studio">
+<h1>IRIS Studio - 서울시 공중화장실 분포 지도<a class="headerlink" href="#iris-studio" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id1">
+<h2>요약<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">데이터는 서울시 열린 데이터 광장에서 제공하는 공공 데이터인</div>
+<div class="line"><strong>서울시 공중화장실 위치정보 (좌표계: WGS1984)</strong></div>
+<div class="line">입니다.</div>
+</div>
+<div class="line-block">
+<div class="line">map 에 표시된 화장실 위치(위/경도) 로부터 적절한 접근성 정도를 파악하기 위해</div>
+<div class="line">화장실 위치를 중심으로 동,서,남,북으로 각각 50미터와 100 미터 범위의 다각형 도형으로 접근성 range를 표현합니다.</div>
+</div>
+<div class="line-block">
+<div class="line">지도 표현 방식 : 지도 레이어, 마커 레이어, polygon 레이어</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>목차<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>데이터 설명</p></li>
+<li><dl class="simple">
+<dt>데이터 변환</dt><dd><ul>
+<li><p>위/경도 좌표에 범위를 그리기 위한 GEOM 데이터컬럼 추가하기</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Import Data to IRIS DB</dt><dd><ul>
+<li><p>IRIS 데이터 추가 메뉴 이용</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>IRIS Studio</dt><dd><ul>
+<li><p>보고서 메뉴를 이용하여 맵 그리기 ( 3레이어, 마커, polygon )</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>데이터 출처<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p><strong>데이터 : 서울열린데이터광장</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/seoul_RestRoom_data.png"><img alt="이미지 설명" src="../../_images/seoul_RestRoom_data.png" style="width: 800.0px; height: 400.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>최종 지도 예시<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p><strong>서울시 공중화장실 분포  : 최종 결과 예시</strong></p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_tutorial_map1.png"><img alt="서울시 공중화장실 분포(100미터 polygon map)" src="../../_images/studio_tutorial_map1.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>원시 데이터 설명<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="simple">
+<dt>형태</dt><dd><ul>
+<li><p>출처 : 서울시 열린데이터광장 서울시 공중화장실 위치정보</p></li>
+<li><p>URL <a class="reference external" href="http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-1370&amp;srvType=S&amp;serviceKind=1&amp;currentPageNo=1">http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-1370&amp;srvType=S&amp;serviceKind=1&amp;currentPageNo=1</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/raw_seoul_data.png"><img alt="서울시 공중화장실 위치정보 (좌표계: WGS1984)에 대한 파일" src="../../_images/raw_seoul_data.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>데이터 변환<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>이번 예제는 변환 프로그래밍(python, geoPandas, R 등) 없이 SQL로 직접 geo_json 을 만드는 예제입니다.</p></li>
+</ul>
+<div class="section" id="map">
+<h3>map 을 그리기 위한 데이터로 변환하기<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>원시데이터에 있는 위도, 경도 컬럼으로 부터 map 의 polygon layer 에 필요한 GEOM 데이터를 생성합니다.</dt><dd><ul>
+<li><p>화장실의 위/경도 좌표를 사각형 도형의 센터로 두고, 50미터 거리, 100미터 거리의 사각형을 범위로 하는 지도를 그리고자 합니다.</p></li>
+<li><p>컬럼 GEOM_50M, GEOM_100M 컬럼을 생성합니다.</p></li>
+<li><p>GEOM_50M 컬럼은 화장실의 위도, 경도를 기준으로 동,서,남,북 4방향으로 각각 50미터씩 떨어진 선으로 이루어진 사각형(polygon)의 꼭지점 GPS좌표입니다.</p></li>
+<li><p>GEOM_100M 은 100미터 떨어진 선으로 이루어진 사각형의 꼭지점 좌표입니다.</p></li>
+<li><p>map 을 그리기 위해 GEOM_50M, GEOM_100M 은 다음과 같은 text 타입 데이터로 만들어야 합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span> <span class="p">[[[</span><span class="mf">37.5565729005</span><span class="p">,</span><span class="mf">126.860792131</span><span class="p">],</span> <span class="p">[</span><span class="mf">37.5574738995</span><span class="p">,</span><span class="mf">126.860792131</span><span class="p">],</span> <span class="p">[</span><span class="mf">37.5574738995</span><span class="p">,</span><span class="mf">126.861924069</span><span class="p">],</span>
+                                     <span class="p">[</span><span class="mf">37.5565729005</span><span class="p">,</span><span class="mf">126.861924069</span><span class="p">],</span> <span class="p">[</span><span class="mf">37.5565729005</span><span class="p">,</span><span class="mf">126.860792131</span><span class="p">]]]}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>위도 0도인 적도에서 위도, 경도 1도의 거리는 111km 입니다.</p></li>
+<li><p>그러나 위도가 상승할 수록, 경선 간의 거리는 감소합니다.</p></li>
+<li><dl class="simple">
+<dt>서울의 위도를 북위 37도로 하면 위선 1초의 간격은 31m, 경선 1초의 간격은 24.7m</dt><dd><ul>
+<li><p>1도는 60분, 1분은 60초. 즉 1도는 3600초</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>(표) 위도별 위도와 경도 1도의 길이</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>위도(도)</p></td>
+<td><p>위도 1도의 길이(km)</p></td>
+<td><p>경도 1도의 길이(km)</p></td>
+</tr>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>110.569</p></td>
+<td><p>111.322</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>110.578</p></td>
+<td><p>110.902</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>110.603</p></td>
+<td><p>109.643</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>110.644</p></td>
+<td><p>117.553</p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p>110.701</p></td>
+<td><p>114.650</p></td>
+</tr>
+<tr class="row-odd"><td><p>25</p></td>
+<td><p>110.770</p></td>
+<td><p>100.953</p></td>
+</tr>
+<tr class="row-even"><td><p>30</p></td>
+<td><p>110.850</p></td>
+<td><p>96.490</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>110.941</p></td>
+<td><p>91.290</p></td>
+</tr>
+<tr class="row-even"><td><p>40</p></td>
+<td><p>110.034</p></td>
+<td><p>85.397</p></td>
+</tr>
+<tr class="row-odd"><td><p>45</p></td>
+<td><p>111.132</p></td>
+<td><p>78.850</p></td>
+</tr>
+<tr class="row-even"><td><p>50</p></td>
+<td><p>111.230</p></td>
+<td><p>71.700</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>서울의 위도를 37.5도, 경도 127.0도 로 계산하면</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">서울</span> <span class="n">위도</span> <span class="p">:</span> <span class="mf">37.5</span>  <span class="n">경도</span> <span class="p">:</span> <span class="mf">127.0</span>
+<span class="p">(</span><span class="mf">110.941</span> <span class="o">+</span> <span class="mf">111.034</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">110.988</span> <span class="n">km</span>  <span class="o">-&gt;</span> <span class="n">서울</span> <span class="n">위도</span> <span class="mf">37.5</span> <span class="n">도</span> <span class="n">기준</span> <span class="n">위도</span> <span class="mi">1</span><span class="n">도에</span> <span class="n">해당하는</span> <span class="n">거리</span>
+<span class="p">(</span><span class="mf">91.290</span> <span class="o">+</span> <span class="mf">85.397</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">=</span>  <span class="mf">88.344</span> <span class="n">km</span>    <span class="o">-&gt;</span> <span class="n">서울</span> <span class="n">경도</span> <span class="mf">127.0</span> <span class="n">도</span> <span class="n">기준</span> <span class="n">경도</span> <span class="mi">1</span><span class="n">도에</span> <span class="n">해당하는</span> <span class="n">거리</span>
+
+
+
+<span class="n">서울</span> <span class="n">기준</span> <span class="n">위도</span> <span class="mi">1</span><span class="n">도</span> <span class="o">=</span> <span class="mf">110.988</span><span class="n">km</span> <span class="p">:</span>  <span class="n">위도</span> <span class="n">X</span> <span class="o">=</span>  <span class="mf">0.05</span><span class="n">km</span>  <span class="n">X</span> <span class="o">=</span> <span class="mf">0.0004504995306159225</span>
+                                       <span class="mf">0.1</span><span class="n">km</span>       <span class="mf">0.0009009983061231845</span>
+
+<span class="n">서울</span> <span class="n">기준</span> <span class="n">경도</span> <span class="mi">1</span><span class="n">도</span> <span class="o">=</span> <span class="mf">88.344</span> <span class="n">km</span> <span class="p">:</span>  <span class="n">경도</span> <span class="n">Y</span> <span class="o">=</span> <span class="mf">0.05</span><span class="n">km</span>   <span class="n">Y</span> <span class="o">=</span> <span class="mf">0.0005659693923752604</span>
+                                       <span class="mf">0.1</span><span class="n">km</span>       <span class="mf">0.0011319387847505207</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>위도, 경도 정보가 있는 원시데이터 테이블에서 동,서,남,북 4개 방향으로 50M, 100M 좌표를 만드는 쿼리</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">select</span> <span class="o">*</span><span class="p">,</span>
+<span class="p">(</span><span class="n">LATITUDE</span> <span class="o">-</span> <span class="mf">0.0004504995306</span><span class="p">)</span> <span class="k">as</span> <span class="n">LAT_S_50M</span><span class="p">,</span>
+<span class="p">(</span><span class="n">LATITUDE</span> <span class="o">+</span> <span class="mf">0.0004504995306</span><span class="p">)</span> <span class="k">as</span> <span class="n">LAT_N_50M</span><span class="p">,</span>
+<span class="p">(</span><span class="n">LONGITUDE</span> <span class="o">+</span> <span class="mf">0.000565969392375</span><span class="p">)</span> <span class="k">as</span> <span class="n">LNT_E_50M</span><span class="p">,</span>
+<span class="p">(</span><span class="n">LONGITUDE</span> <span class="o">-</span> <span class="mf">0.000565969392375</span><span class="p">)</span> <span class="k">as</span> <span class="n">LNT_W_50M</span><span class="p">,</span>
+
+<span class="p">(</span><span class="n">LATITUDE</span> <span class="o">-</span> <span class="mf">0.000900998306</span><span class="p">)</span> <span class="k">as</span> <span class="n">LAT_S_100M</span><span class="p">,</span>
+<span class="p">(</span><span class="n">LATITUDE</span> <span class="o">+</span> <span class="mf">0.000900998306</span><span class="p">)</span> <span class="k">as</span> <span class="n">LAT_N_100M</span><span class="p">,</span>
+<span class="p">(</span><span class="n">LONGITUDE</span> <span class="o">+</span> <span class="mf">0.001131938784751</span><span class="p">)</span> <span class="k">as</span> <span class="n">LNT_E_100M</span><span class="p">,</span>
+<span class="p">(</span><span class="n">LONGITUDE</span> <span class="o">-</span> <span class="mf">0.001131938784751</span><span class="p">)</span> <span class="k">as</span> <span class="n">LNT_W_100M</span><span class="p">,</span>
+
+<span class="s1">&#39;{&quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [[[&#39;</span> <span class="o">||</span>
+<span class="n">LAT_S_50M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_W_50M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_N_50M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_W_50M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_N_50M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_E_50M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_S_50M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_E_50M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_S_50M</span>  <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_W_50M</span> <span class="o">||</span> <span class="s1">&#39;]]]}&#39;</span> <span class="k">as</span> <span class="n">GEOM_50M</span> <span class="p">,</span>
+
+<span class="s1">&#39;{&quot;type&quot;: &quot;Polygon&quot;, &quot;coordinates&quot;: [[[&#39;</span> <span class="o">||</span>
+<span class="n">LAT_S_100M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_W_100M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_N_100M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_W_100M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_N_100M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_E_100M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_S_100M</span> <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_E_100M</span> <span class="o">||</span> <span class="s1">&#39;], [&#39;</span> <span class="o">||</span>
+<span class="n">LAT_S_100M</span>  <span class="o">||</span> <span class="s1">&#39;,&#39;</span> <span class="o">||</span> <span class="n">LNT_W_100M</span> <span class="o">||</span> <span class="s1">&#39;]]]}&#39;</span> <span class="k">as</span> <span class="n">GEOM_100M</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>map 을 위한 데이터 형태</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">화장실_ID</span>        <span class="mi">1</span>
+<span class="n">LATITUDE</span>       <span class="mf">37.545122</span>         <span class="n">위도</span>
+<span class="n">LONGITUDE</span>      <span class="mf">127.1197902</span>       <span class="n">경도</span>
+<span class="n">LAT_S_50M</span>       <span class="mf">37.5446715005</span>    <span class="mi">50</span><span class="n">미터</span> <span class="n">남쪽방향</span> <span class="n">위선</span>
+<span class="n">LAT_N_50M</span>       <span class="mf">37.5455724995</span>    <span class="mi">50</span><span class="n">미터</span> <span class="n">북쪽방향</span> <span class="n">위선</span>
+<span class="n">LNT_E_50M</span>      <span class="mf">127.120356169</span>     <span class="mi">50</span><span class="n">미터</span> <span class="n">동쪽방향</span> <span class="n">위선</span>
+<span class="n">LNT_W_50M</span>      <span class="mf">127.119224231</span>     <span class="mi">50</span><span class="n">미터</span> <span class="n">서쪽방향</span> <span class="n">위선</span>
+<span class="n">LAT_S_100M</span>      <span class="mf">37.5442210017</span>    <span class="mi">100</span><span class="n">미터</span> <span class="n">남쪽방향</span> <span class="n">경선</span>
+<span class="n">LAT_N_100M</span>      <span class="mf">37.5460229983</span>    <span class="mi">100</span><span class="n">미터</span> <span class="n">북쪽방향</span> <span class="n">경선</span>
+<span class="n">LNT_E_100M</span>     <span class="mf">127.120922139</span>     <span class="mi">100</span><span class="n">미터</span> <span class="n">동쪽방향</span> <span class="n">경선</span>
+<span class="n">LNT_W_100M</span>     <span class="mf">127.118658261</span>     <span class="mi">100</span><span class="n">미터</span> <span class="n">서쪽방향</span> <span class="n">경선</span>
+<span class="n">GEOM_50M</span>      <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span>
+                <span class="p">[[[</span><span class="mf">37.5446715005</span><span class="p">,</span><span class="mf">127.119224231</span><span class="p">],</span>     <span class="n">polygon</span> <span class="mi">1</span><span class="n">번쩨</span> <span class="n">꼭지점</span>
+                  <span class="p">[</span><span class="mf">37.5455724995</span><span class="p">,</span><span class="mf">127.119224231</span><span class="p">],</span>     <span class="n">polygon</span> <span class="mi">2</span><span class="n">번쩨</span> <span class="n">꼭지점</span>
+                  <span class="p">[</span><span class="mf">37.5455724995</span><span class="p">,</span><span class="mf">127.120356169</span><span class="p">],</span>     <span class="n">polygon</span> <span class="mi">3</span><span class="n">번쩨</span> <span class="n">꼭지점</span>
+                  <span class="p">[</span><span class="mf">37.5446715005</span><span class="p">,</span><span class="mf">127.120356169</span><span class="p">],</span>     <span class="n">polygon</span> <span class="mi">4</span><span class="n">번쩨</span> <span class="n">꼭지점</span>
+                  <span class="p">[</span><span class="mf">37.5446715005</span><span class="p">,</span><span class="mf">127.119224231</span><span class="p">]]]}</span>   <span class="n">polygon</span> <span class="mi">1</span><span class="n">번쩨</span> <span class="n">꼭지점</span><span class="p">(</span><span class="n">다시</span> <span class="n">첫번째꼭지점으로</span> <span class="n">연결해야</span> <span class="mi">4</span><span class="n">각형이</span> <span class="n">나옴</span><span class="p">)</span>
+<span class="n">GEOM_100M</span>     <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;Polygon&quot;</span><span class="p">,</span> <span class="s2">&quot;coordinates&quot;</span><span class="p">:</span>
+                <span class="p">[[[</span><span class="mf">37.5442210017</span><span class="p">,</span><span class="mf">127.118658261</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">37.5460229983</span><span class="p">,</span><span class="mf">127.118658261</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">37.5460229983</span><span class="p">,</span><span class="mf">127.120922139</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">37.5442210017</span><span class="p">,</span><span class="mf">127.120922139</span><span class="p">],</span>
+                  <span class="p">[</span><span class="mf">37.5442210017</span><span class="p">,</span><span class="mf">127.118658261</span><span class="p">]]]}</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>1개의 컬럼 데이터 안에 콤마가 있으므로 데이터 구분자를 탭(tab) 으로 저장합니다.</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="import-data-to-iris-db">
+<h2>IMPORT  Data  to IRIS DB<a class="headerlink" href="#import-data-to-iris-db" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>데이터 추가 메뉴<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>데이터 추가 메뉴</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/datamenu.png"><img alt="메뉴 화면" src="../../_images/datamenu.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>데이터 선택</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/dataadd_1.png"><img alt="데이터 추가 메뉴 1단계" src="../../_images/dataadd_1.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>데이터 가공</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/dataadd_proc.png"><img alt="데이터 추가 메뉴 2단계" src="../../_images/dataadd_proc.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>데이터 가공 : GPS 좌표 데이터 유형 변경(Text -&gt; Real)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/data_type_2.png"><img alt="데이터 추가 메뉴 3-2단계" src="../../_images/data_type_2.png" style="width: 400.0px; height: 350.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>데이터 입력 설정 : IRIS DB 테이블 설정(파티션 키, 파티션 구분 컬럼 지정)</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/datatable1.png"><img alt="데이터 추가 메뉴 3-2단계" src="../../_images/datatable1.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>데이터 제출하기 메뉴</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/datapull_1.png"><img alt="데이터 추가 메뉴 4-1단계" src="../../_images/datapull_1.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">입력이 정상적으로 완료된 경우의 화면입니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/datapull_2.png"><img alt="데이터 추가 메뉴 4-1단계" src="../../_images/datapull_2.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>DB브라우저 메뉴에서 입력한 IRIS table 데이터 조회해 봅니다.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/db_call.png"><img alt="데이터 추가 메뉴 4-1단계" src="../../_images/db_call.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>IRIS Studio<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>보고서 화면 생성<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h4>날짜 박스 생성<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt>날짜 박스를 선택하면 날짜박스의 속성을 설정할 수 있습니다.</dt><dd><ul>
+<li><p>현재 데이터는 1개의 날짜  2019-12-30 데이터만 있습니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/datetime.png"><img alt="날짜 속성" src="../../_images/datetime.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>날짜 데이터의 시각화 옵션</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/dateopt.png"><img alt="날짜 시각화옵션" src="../../_images/dateopt.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>범위 선택을 위한 콤보 박스 생성 : 50미터, 100미터 범위를 콤보박스에서 선택하게 합니다.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/com.png"><img alt="콤보박스" src="../../_images/com.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="map-layer-1">
+<h3>map layer 1<a class="headerlink" href="#map-layer-1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>layer map(지도) : open street map 선택합니다.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map_1.png"><img alt="layer_map_1-1" src="../../_images/map_1.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>지도의 기본 위치로 서울이 오도록 한 후 기본값 설정합니다.</p></li>
+<li><p>레이어는 3개를 설정합니다.</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map3_1.png"><img alt="layer_map_1-2" src="../../_images/map3_1.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="map-layer-2">
+<h3>map layer 2<a class="headerlink" href="#map-layer-2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>두번째 point 레이어는 서울시 공중화장실의 위/경도를 마커로 표시하는 레이어입니다.</dt><dd><ul>
+<li><p>데이터 설정하고</p></li>
+<li><p>DB 테이블에서 화장실별 위/경도를 select 합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map_4.png"><img alt="layer_map_2-1" src="../../_images/map_4.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>point 레이어의 시각화 설정</dt><dd><ul>
+<li><p>마커의 시각화 옵션 : 위/경도 표시 마커에 대한 색깔, 크기와 툴팁 컬럼 지정합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map_5.png"><img alt="layer_map_2-2" src="../../_images/map_5.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>설정값에 따라 나온 지도</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map_6.png"><img alt="layer_map_2-3" src="../../_images/map_6.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="map-layer-3">
+<h3>map layer 3<a class="headerlink" href="#map-layer-3" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>세번째 range 레이어는 콤보박스에서 선택한 50미터, 100미터에 따라서 사각형 범위가 마커 주변으로 그려집니다.</dt><dd><ul>
+<li><p>트리거 실행 : 콤보박스에서 선택된 값을 이벤트로 입력받아 실행되게 합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>실행되는 SQL 쿼리</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>/*+ LOCATION ( PARTITION = &#39;20191230000000&#39; ) */
+SELECT
+        K, UP_DATE, NUM as ID, LATITUDE, LOGITUDE, GEOM_${combo_1}M as GEOM
+FROM
+        ROOT.TEST1_REST_SEOUL_GEOM
+;
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>range 레이어 설정</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map7.png"><img alt="layer_map_3_1" src="../../_images/map7.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>100 미터 range 일 때</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map8.png"><img alt="layer_map_3_2" src="../../_images/map8.png" style="width: 800.0px; height: 450.0px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>확대 : 50 미터</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map10.png"><img alt="layer_map_4" src="../../_images/map10.png" style="width: 800.0px; height: 550.0px;" /></a>
+<ul class="simple">
+<li><p>확대 : 100 미터</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/map11.png"><img alt="layer_map_5" src="../../_images/map11.png" style="width: 800.0px; height: 550.0px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

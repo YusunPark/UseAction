@@ -1,0 +1,566 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>보고서 시작하기 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="데이터 객체" href="data.html" />
+    <link rel="prev" title="IRIS Studio" href="index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">IRIS Studio</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">보고서 시작하기</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">보고서 목록</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">보고서 진입</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#canvas">캔버스 (Canvas)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id17">예제 : 데이터 객체로 챠트그리기</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">데이터 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_visualize.html">데이터 시각화 (Data Visualize) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorate.html">꾸미기 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="form.html">양식 (Form) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control.html">제어 (Control) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="special_etc.html">특수/기타 객체</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="index.html">IRIS Studio</a> &raquo;</li>
+    
+    <li>보고서 시작하기</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/start.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Studio/start</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Studio/start</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Studio/start
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Studio/start</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/start.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Studio/start.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>보고서 시작하기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>보고서 목록<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">로그인 후 오른쪽 상단의 계정 부분에 마우스를 대면 보고서 메뉴를 선택할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list01.png"><img alt="IRIS메뉴" src="../../_images/studio_list01.png" style="width: 240.5px; height: 187.5px;" /></a>
+<div class="line-block">
+<div class="line">보고서 목록</div>
+</div>
+<img alt="보고서목록" src="../../_images/studio_list02.png" />
+<div class="section" id="id3">
+<h3>카테고리<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당 보고서를 지정한 카테고리내에서 지정하여 저장할 수 있습니다.</div>
+<div class="line">카테고리는 지정하지 않아도 됩니다.</div>
+<div class="line">관리자는 <strong>카테고리 관리</strong> 에서 카테고리를 추가/삭제/수정 할 수 있습니다.</div>
+</div>
+</div>
+<div class="section" id="url">
+<h3>내보내기 URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당 보고서의 내보내기 URL을 생성 할 수 있습니다.</div>
+<div class="line">“생성” 을 클릭하여 내보내기 URL 을 생성하면 “관리” 로  바뀝니다.</div>
+<div class="line">생성된 내보내기 URL은 관리기능을 통하여 복사, 보기(내보내기 URL 보기), 삭제를 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list03.png"><img alt="내보내기URL" src="../../_images/studio_list03.png" style="width: 570.6px; height: 195.6px;" /></a>
+</div>
+<div class="section" id="id4">
+<h3>편집<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당보고서를 편집 할 수 있습니다.</div>
+<div class="line">보고서의 이름 변경, 수정, 복제, 삭제의 기능이 제공됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list04.jpg"><img alt="편집" src="../../_images/studio_list04.jpg" style="width: 91.0px; height: 212.0px;" /></a>
+</div>
+<div class="section" id="id5">
+<h3>접근권한<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당 보고서의 사용자 권한을 지정 할 수 있습니다.</div>
+<div class="line">사용자 별 권한을 추가 하거나 사용자 그룹 단위의 권한 설정을 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list05.jpg"><img alt="접근권한" src="../../_images/studio_list05.jpg" style="width: 502.0px; height: 579.0px;" /></a>
+</div>
+<div class="section" id="id6">
+<h3>대시보드<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">해당 보고서의 대시보드에서의 사용여부를 선택 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list06.jpg"><img alt="대시보드" src="../../_images/studio_list06.jpg" style="width: 106.0px; height: 176.0px;" /></a>
+<div class="line-block">
+<div class="line">대시보드를 선택하면 메인 메뉴의 “대시보드” 에서 리스트에 추가됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/new_studio_list11.png"><img alt="대시보드" src="../../_images/new_studio_list11.png" style="width: 955.1999999999999px; height: 337.2px;" /></a>
+</div>
+<div class="section" id="id7">
+<h3>새보고서<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">오른쪽 상단 “새보고서” 버튼 클릭 시, 보고서를 생성, 편집 할 수 있는 화면이 출력 됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list07.jpg"><img alt="새보고서" src="../../_images/studio_list07.jpg" style="width: 398.0px; height: 258.0px;" /></a>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>보고서 진입<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3>전체 변수명 보기<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">현재 보고서에 적용된 변수 목록을 확인 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list08.png"><img alt="변수명보기" src="../../_images/studio_list08.png" style="width: 713.4px; height: 288.0px;" /></a>
+</div>
+<div class="section" id="id10">
+<h3>적용된 컴포넌트 삭제 / 순서 변경<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">편집영역에 적용된 컴포넌트 선택 후 Delete 버튼 클릭 시, 해당 컴포넌트가 삭제 됩니다.</div>
+<div class="line">또는 삭제하고자 하는 컴포넌트선택 후 <strong>오른쪽 마우스 클릭</strong> 시, 컨텍스트메뉴로 삭제 버튼이 출력 됩니다.</div>
+<div class="line">삭제 버튼 클릭 시, 적용된 컴포넌트를 삭제 할 수 있습니다.</div>
+<div class="line"><br /></div>
+<div class="line">삭제 버튼과 함께 출력되는 “순서” 는 적용된 컴포넌트를 다른 컴포넌트보다 앞으로, 또는 뒤로 위치 순서를 변경할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list09.png"><img alt="삭제" src="../../_images/studio_list09.png" style="width: 361.2px; height: 264.59999999999997px;" /></a>
+</div>
+<div class="section" id="id11">
+<h3>보고서 이름 설정<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">왼쪽 툴바 영역 상단 연필(수정) 버튼 클릭 시, 보고서 명을 수정할 수 있도록 수정 기능이 활성화 됩니다.</div>
+<div class="line">원하는 보고서 명으로 수정 후 체크버튼 클릭 또는 수정 영역외 다른 영역 클릭 시, 변경된 보고서 명이 적용됩니다.</div>
+</div>
+<img alt="보고서 이름 설정" src="../../_images/studio_list10.jpg" />
+<img alt="보고서 이름 설정" src="../../_images/studio_list11.jpg" />
+</div>
+<div class="section" id="id12">
+<h3>보고서 보기<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">보기 버튼 클릭 시, 현재 편집 중인 보고서를 새탭으로 미리 보기 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list12.png"><img alt="보고서 미리보기" src="../../_images/studio_list12.png" style="width: 433.8px; height: 47.4px;" /></a>
+</div>
+<div class="section" id="id13">
+<h3>보고서 저장<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">저장 버튼 클릭 시, 현재 작성 중인 보고서를 저장 할 수 있습니다.</div>
+<div class="line">이 때 카테고리와 보고서 이름을 입력/수정 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/new_studio_list12.png"><img alt="보고서 저장" src="../../_images/new_studio_list12.png" style="width: 433.8px; height: 47.4px;" /></a>
+<div class="line-block">
+<div class="line">빠른 저장은 현재 설정된 카테고리, 보고서이름 그대로 바로 저장합니다.</div>
+<div class="line">새로 저장은 다른 이름으로 저장을 의미합니다.</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>보고서 목록으로<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">저장 후 목록으로 돌아갑니다.</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3>전체 삭제<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">현재의 보고서 캔버스에 생성한 시각화 객체를 모두 삭제합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_list12_2.png"><img alt="삭제" src="../../_images/studio_list12_2.png" style="width: 293.6px; height: 31.6px;" /></a>
+</div>
+</div>
+<div class="section" id="canvas">
+<h2>캔버스 (Canvas)<a class="headerlink" href="#canvas" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">새 보고서를 클릭하면 캔버스와 캔버스의 옵션을 설정하는 사이드 패널이 있습니다.</div>
+</div>
+<img alt="studio_canvas_05" src="../../_images/studio_canvas_05.png" />
+<div class="line-block">
+<div class="line">캔버스는 객체를 배치하여 캔버스의 크기만큼 화면에 보여줍니다.</div>
+</div>
+<div class="section" id="id16">
+<h3>속성<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">캔버스의 옵션들을 설정할 수 있습니다.</div>
+</div>
+<p><strong>캔버스 색상</strong></p>
+<a class="reference internal image-reference" href="../../_images/canvas_01.png"><img alt="캔버스 색상" src="../../_images/canvas_01.png" style="width: 300px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>색상 선택</p></td>
+<td><p>Canvas 영역의 색상을 변경합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>배경 색상 선택</p></td>
+<td><p>Canvase 바깥 영역의 색상을 변경합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>변수 설정</strong></p>
+<div class="line-block">
+<div class="line">보고서의 canvas 변수를 설정하고 외부 보고서 및 내부에서 사용할 수 있습니다.</div>
+</div>
+<img alt="canvas 변수 설정" src="../../_images/studio_canvas_14.png" />
+<div class="line-block">
+<div class="line">MAIN보고서와 팝업보고서에서의 변수 설정</div>
+</div>
+<img alt="canvas 변수 설정 2" src="../../_images/studio_canvas_15.png" />
+<p><strong>output 트리거 설정</strong></p>
+<div class="line-block">
+<div class="line">“보고서 가져오기(팝업)”, “보고서 가져오기(포틀릿)” 에서 가져올 팝업 보고서 내에서 Global 변수로 설정한 값을 외부로 보낼 때 사용합니다.</div>
+<div class="line">팝업보고서에서 ouput 트리거로 외부로 보낼 변수를 생성하는 객체를 선택하면,</div>
+<div class="line">외부(가져오기를 실행하는 주체) 보고서에서 Global 변수로 받아서 사용할 수 있습니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>예제 : 데이터 객체로 챠트그리기<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">동일한 데이터로 트리맵과 가로막대 챠트 그리기</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/data_69_2.png"><img alt="studio data 69_2" src="../../_images/data_69_2.png" style="width: 340.0px; height: 314.8px;" /></a>
+<p><strong>데이터객체 파트</strong></p>
+<div class="line-block">
+<div class="line">1. 먼저 데이터객체를 캔버스에 그리면 hidden 객체로 “common_data_번호” 라는 변수로 데이터객체가 생성됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/data_60_3.png"><img alt="studio data 60_3" src="../../_images/data_60_3.png" style="width: 975.0px; height: 643.8px;" /></a>
+<p><strong>챠트객체 파트</strong></p>
+<div class="line-block">
+<div class="line">2. 챠트 객체를 캔버스에 그립니다. 챠트시각화 유형을 처음에는 <strong>테이블</strong> 로 선택합니다.</div>
+<div class="line">캔버스의 챠트객체에 “데이터가 연결되지 않았습니다” 가 표시됩니다.</div>
+<div class="line">3. 챠트객체의 <strong>데이터연결</strong> 의 <strong>설정</strong> 을 클릭한 후 연결할 데이터객체를 캔버스에서 체크합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/data_61.png"><img alt="studio data 61" src="../../_images/data_61.png" style="width: 760.4000000000001px; height: 210.0px;" /></a>
+<p><strong>데이터객체 파트</strong></p>
+<div class="line-block">
+<div class="line">4. 데이터객체를 선택한 후 데이터 설정 작업을 시작합니다.  데이터 탭에서 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id1">데이터 유형 설정</a> 을 합니다.</div>
+<div class="line"><br /></div>
+<div class="line">5. <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data.html#id6">캐시 설정</a> 은 default 가 미사용입니다.</div>
+<div class="line">만약 해당 보고서가 여러 사람들이 빈번하게 열어보는 보고서라면 가져온 데이터를 캐시에 저장하여 빠르게 챠트를 보여줄 수 있습니다.</div>
+<div class="line">또 같은 보고서에서 여러 개의 챠트에서 같이 사용한다면 캐시를 사용합니다.</div>
+<div class="line">예제에서는 같은 데이터를 2개의 챠트에 출력하므로 <strong>사용</strong> 을 설정합니다.</div>
+<div class="line"><br /></div>
+<div class="line">6. 검색어를 통해 최종적으로 가져오는 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data.html#limit">데이터의 개수 제한</a> 을 설정합니다.</div>
+<div class="line">7. <strong>실행</strong> 을 클릭합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/data_62.png"><img alt="studio data 62" src="../../_images/data_62.png" style="width: 712.1999999999999px; height: 574.8px;" /></a>
+<p><strong>챠트객체 파트</strong></p>
+<div class="line-block">
+<div class="line">8. 연결된 챠트에 데이터가 출력됩니다.</div>
+<div class="line">시각화탭에서 그려야 할 시각화유형을 선택하고, 시각화 옵션의 데이터에서 실제로 챠트에 보여줄 필드나 옵션 등을 설정합니다.</div>
+<div class="line">예제에서는 첫 챠트로 트리맵을 선택했습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/data_66.png"><img alt="studio data 66" src="../../_images/data_66.png" style="width: 754.0px; height: 440.40000000000003px;" /></a>
+<div class="line-block">
+<div class="line">9. <strong>빠른 저장</strong> 으로 저장한 후 <strong>보기</strong> 로 결과를 확인합니다.</div>
+<div class="line"><br /></div>
+<div class="line">10. 같은 데이터로 또 다른 챠트를 그리려면 챠트 객체를 캔버스에 하나 더 생성합니다.</div>
+<div class="line">11. 챠트객체의 <strong>데이터연결</strong> 의 “설정” 을 클릭한 후 연결할 데이터객체를 동일한 데이터객체로 체크합니다.</div>
+</div>
+<p><strong>데이터객체 파트</strong></p>
+<div class="line-block">
+<div class="line">12. 데이터객체에서 다시 <strong>실행</strong> 버튼을 클릭하면, 연결된 2개의 챠트에서 데이터가 표시됩니다.</div>
+</div>
+<p><strong>챠트객체 파트</strong></p>
+<div class="line-block">
+<div class="line">13. 두번째 챠트 객체의 시각화유형을 <strong>가로막대형</strong> 으로 선택하고, 시각화옵션을 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/data_67.png"><img alt="studio data 67" src="../../_images/data_67.png" style="width: 550.8000000000001px; height: 243.20000000000002px;" /></a>
+<p><strong>데이터객체 파트</strong></p>
+<div class="line-block">
+<div class="line">14. 데이터객체에서  <strong>실행</strong> 버튼을 클릭하면, 연결된 2개의 챠트에서 데이터가 표시됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/data_68.png"><img alt="studio data 68" src="../../_images/data_68.png" style="width: 594.0px; height: 677.4px;" /></a>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data.html" class="btn btn-neutral float-right" title="데이터 객체" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="IRIS Studio" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

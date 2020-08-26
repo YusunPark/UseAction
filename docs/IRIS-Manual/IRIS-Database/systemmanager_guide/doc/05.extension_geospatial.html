@@ -1,0 +1,415 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>공간DB 셋팅 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="DB-manager Guide" href="../../dbmanager_guide/index.html" />
+    <link rel="prev" title="모니터링" href="04.monitoring.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">System-manager Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="02.operating_command.html">IRIS 운영 명령</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.system_management.html">시스템 관리하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.monitoring.html">모니터링</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">공간DB 셋팅</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">System-manager Guide</a> &raquo;</li>
+    
+    <li>공간DB 셋팅</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/systemmanager_guide/doc/05.extension_geospatial.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/systemmanager_guide/doc/05.extension_geospatial</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/systemmanager_guide/doc/05.extension_geospatial</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/systemmanager_guide/doc/05.extension_geospatial
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/systemmanager_guide/doc/05.extension_geospatial</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/systemmanager_guide/doc/05.extension_geospatial.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/systemmanager_guide/doc/05.extension_geospatial.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="db">
+<h1>공간DB 셋팅<a class="headerlink" href="#db" title="Permalink to this headline">¶</a></h1>
+<p>IRIS 공간DB는 IRIS의 확장 기능이므로, 기존 IRIS 설치 방법에 따라 설치를
+완료하면 됩니다.</p>
+<div class="section" id="id1">
+<h2>확장 기능 활성화 (모든 노드)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>IRIS설치 후, 다음과 같이 설정 파일에서 extension을 True로 설정해줍니다.</p>
+<p>Default는 False이며, 해당기능 활성화시 확장기능을 핸들링을 하는 로직이
+추가되어 성능이 다소 저하될 수 있으므로 평소에는 꺼놓는게 좋습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ~/IRIS/conf/common/m6.config</span>
+<span class="p">[</span><span class="n">SYSTEM_INFO</span><span class="p">]</span>
+<span class="o">...</span>
+<span class="n">extension</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>공간DB 확장 기능 초기화<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>확장 기능을 활성화시켰으니, 공간DB 기능을 초기화하면 됩니다.</p>
+<p>iplus에 접속해서 다음과 같이 extension 명령을 통해 공간DB 기능을
+초기화시켜야합니다.</p>
+<p>공간DB를 사용하기위한 확장 기능의 이름은 ‘geospatial’ 입니다.</p>
+<p>확장 기능은 ~/IRIS/libext/ 디렉토리에 위치해있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@mobigen ~]$ iplus test
+Password:
+Connecting to IRIS(test@192.168.100.100:5050).
+Connected to IRIS.
+Enter &quot;.help&quot; for instructions
+iplus&gt; .extension init geospatial
++INIT COMPLETED
+
+After the error occured, session recreated.
+iplus&gt;
+</pre></div>
+</div>
+<p>다음과 같이 확장기능이 제대로 초기화됐는지 리스트를 확인합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">extension</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">EXT_NAME</span>      <span class="n">USE</span>
+<span class="o">=====================</span>
+ <span class="n">geospatial</span>    <span class="n">OFF</span>
+<span class="o">=====================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0374</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>현재 geospatial 기능이 OFF 상태이므로, ON으로 변경해줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">extension</span> <span class="n">on</span> <span class="n">geospatial</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="s1">&#39;geospatial&#39;</span> <span class="n">ON</span>
+
+<span class="mf">0.3168</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">extension</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">EXT_NAME</span>      <span class="n">USE</span>
+<span class="o">=====================</span>
+ <span class="n">geospatial</span>    <span class="n">ON</span>
+<span class="o">=====================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0302</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>공간 함수 라이브러리 위치<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>이제 공간 쿼리를 사용할 준비가 끝났습니다.</p>
+<p>하지만 그 전에 공간쿼리 실행에 필요한 라이브러리를 적절한 장소에
+위치시켜주어야합니다.</p>
+<p>해당 라이브러리명은 geospatia.so 이며, 공간기능 사용시 직접 제공합니다.</p>
+<p>다음과 같이 ~/IRIS/libext/geospatial/lib 경로에 위치시킵니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mv</span> <span class="n">geospatial</span><span class="o">.</span><span class="n">so</span> <span class="o">~/</span><span class="n">IRIS</span><span class="o">/</span><span class="n">libext</span><span class="o">/</span><span class="n">geospatial</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span>
+</pre></div>
+</div>
+<p>공간 쿼리의 자세한 사용법은 programmer guide의 “공간 쿼리 사용하기” 참조</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../dbmanager_guide/index.html" class="btn btn-neutral float-right" title="DB-manager Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="04.monitoring.html" class="btn btn-neutral float-left" title="모니터링" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

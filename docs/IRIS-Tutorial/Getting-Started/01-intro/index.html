@@ -1,0 +1,438 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>데이터 파일 IRIS 업로드와 분석준비 수행 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="IRIS Analyzer" href="../../IRIS_Analyzer/index.html" />
+    <link rel="prev" title="Getting Started" href="../index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Getting Started</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">데이터 파일 IRIS 업로드와 분석준비 수행</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">파일을 IRIS 에 업로드하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">공공 데이터 내려 받기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">데이터 업로드 / 데이터 모델 생성하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">데이터 업로드 전에 확장자 확인하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">데이터 모델 뷰 생성하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#join">예시 : 다른 데이터 모델과 join 하여 생성한 모델 뷰</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS_Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS_Studio/index.html">IRIS Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Tutorial</a> &raquo;</li>
+    
+      <li><a href="../index.html">Getting Started</a> &raquo;</li>
+    
+    <li>데이터 파일 IRIS 업로드와 분석준비 수행</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/Getting-Started/01-intro/index.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Tutorial/Getting-Started/01-intro/index</p>
+
+            
+            <p>list1[0] = IRIS-Tutorial</p>
+            <p>list1[1] = Getting-Started/01-intro/index</p>
+            <p>list1[2] = </p>
+            IRIS-Tutorial
+            IRIS-Tutorial/Getting-Started/01-intro/index
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Tutorial/Getting-Started/01-intro/index</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/Getting-Started/01-intro/index.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Tutorial/blob/master/Getting-Started/01-intro/index.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iris">
+<h1>데이터 파일 IRIS 업로드와 분석준비 수행<a class="headerlink" href="#iris" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>파일을 IRIS 에 업로드하기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>로컬 PC 에 있는 파일들을 MinIO 에 업로드하는 방법을 예제로 설명합니다.</p>
+<div class="line-block">
+<div class="line">업로드 대상 데이터는 서울시 열린데이터광장(<a class="reference external" href="https://data.seoul.go.kr/">서울열린데이터광장</a>) 에서 내려 받은 공공 데이터 셋 파일입니다.</div>
+<div class="line">데이터의 특성 상 text 로 다운로드 되는 경우가 많으므로,</div>
+<div class="line">분석을 위해서는 csv로 적절히 변환한 후에 MinIO 에 업로드합니다.</div>
+<div class="line">MinIO 에 업로드한 csv 파일은 IRIS의 데이터모델로 만들어야 <strong>분석/보고서</strong> 메뉴에서 활용할 수 있습니다.</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>공공 데이터 내려 받기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">대상 데이터는 <a class="reference external" href="https://data.seoul.go.kr/dataList/418/S/2/datasetView.do?tab=S">서울시 인구 추이 (주민등록인구) 통계</a> 입니다.</div>
+<div class="line">해당 데이터의 기간을 1990년 ~ 2019년 까지로 하여 text 로 다운로드합니다.</div>
+<div class="line">데이터를 다운로드 한 후, 컬럼 이름을 영문으로 다시 만들고, 숫자에 표시된 콤마를 제거한 후에 구분자를 콤마로 수정하여 csv 로 저장합니다.</div>
+</div>
+<img alt="text data" src="../../../_images/minio_pop_01.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>데이터 업로드 / 데이터 모델 생성하기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">IRIS 에서 제공하는 기본 Object 저장소로 해당 데이터 파일을 업로드합니다.</div>
+<div class="line"><strong>브라우저</strong> 메뉴를 클릭하여 나의 MINIO 저장소로 이동한 후, 데이터가 저장될 새 폴더를 생성하고, <strong>업로드</strong> 를 클릭 한 후, 파일을 업로드를 진행 합니다.</div>
+</div>
+<img alt="file upload" src="../../../_images/minio_pop_02.png" />
+<div class="line-block">
+<div class="line">업로드한 파일을 IRIS 의 <strong>분석(Analyzer), 보고서(Studio)</strong> 에서 사용하기 위해서는 <strong>데이터 모델</strong> 로 만들어야 합니다.</div>
+<div class="line"><strong>데이터 모델</strong> 메뉴를 클릭하여 새모델을 만들어 봅니다.</div>
+<div class="line">모델 이름을 정한 후, 연결정보로 OBJECTSTORAGE 와 default-minio 로 선택하고, 브라우저에서 업로드한 파일이름을 찾아서 클릭합니다.</div>
+<div class="line">선택한 파일 내용이 샘플로 10개 만 로딩되어 보여집니다.</div>
+</div>
+<div class="line-block">
+<div class="line">MinIO 에 저장된 각 컬럼의 유형은 TEXT 로 저장되므로, 데이터모델에서 컬럼별 유헝을 변경해야 합니다. 유형은 TEXT, REAL, INTEGER, BIGINT, DATE, TIMESTAMP 로 변환할 수 있습니다.</div>
+<div class="line">또한 컬럼명이 영문이라 직관적이지 않으면, 한글 별칭을 추가로 입력할 수 있습니다.</div>
+<div class="line"><strong>Manual » IRIS Discovery » 데이터 모델</strong> 부분을 참조하시기 바랍니다.</div>
+</div>
+<img alt="data model" src="../../../_images/minio_pop_03.png" />
+<div class="line-block">
+<div class="line">이제부터는 새로 만든 데이터 모델을 <strong>분석</strong> 메뉴와 <strong>보고서</strong> 메뉴 등에서 사용할 수 있습니다.</div>
+</div>
+<img alt="data model 검색" src="../../../_images/minio_pop_04.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>데이터 업로드 전에 확장자 확인하기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">공공데이터 포털에서 csv를 다운받은 경우 인코딩이 ANSI 로 되어있어서 IRIS에서 데이터 모델 생성시 아래 그림과 같이 문자가 깨지는 경우가 발생할 수 있습니다.</div>
+</div>
+<img alt="인코딩 ANSI" src="../../../_images/encoding_ansi.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple">
+<li><p>csv 데이터를 인코딩 해주는 과정을 진행하기 위해서는 먼저 파일을 메모장으로 열어야 합니다.</p></li>
+</ol>
+<img alt="인코딩 UTF-8 변경" src="../../../_images/encoding_utf_8_1.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>데이터 파일을 메모장으로 열고, 다른 이름으로 저장하기를 클릭한 후 인코딩을 UTF-8로 바꿔줍니다.</p></li>
+</ol>
+<img alt="인코딩 UTF-8 변경" src="../../../_images/encoding_utf_8_2.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>위의 과정을 통해서 IRIS의 새 모델 만들기에서 정상적으로 글자가 나타나도록 할 수 있습니다.</p></li>
+</ol>
+<img alt="인코딩 UTF-8 변경" src="../../../_images/encoding_utf_8_3.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>데이터 모델 뷰 생성하기<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">데이터 모델 목록에 있는 데이터 모델에 대해 뷰(View) 를 생성할 수 있습니다.</div>
+<div class="line">데이터 모델을 집계, 변환, 필터링 등 검색어로 전처리하여 데이터 모델 뷰로 생성하거나</div>
+<div class="line">다른 데이터 모델과 join 하여 모델 뷰를 생성하여 Studio, Analyzer 에서 데이터 모델처럼 사용할 수 있습니다.</div>
+</div>
+<img alt="data model 검색" src="../../../_images/getting_start_49.png" />
+<div class="section" id="id6">
+<h3>데이터 모델 뷰를 활용하면 좋은 점<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>보고서를 만들 때 검색어를 더 단순하게 사용할 수 있습니다.</p></li>
+<li><p>다른 사용자가 공유한 데이터 모델 중 연결 정보권한이 없어 복사할 수 없는 데이터모델은 모델 뷰 생성으로 복사 기능을 대신할 수 있습니다.</p></li>
+</ul>
+<img alt="data model 검색" src="../../../_images/getting_start_50.png" />
+</div>
+</div>
+<div class="section" id="join">
+<h2>예시 : 다른 데이터 모델과 join 하여 생성한 모델 뷰<a class="headerlink" href="#join" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">대상 데이터 모델  : EDU_SEOUL_GU_FIRE_CAUSE</div>
+</div>
+<div class="line-block">
+<div class="line">검색어</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span>  <span class="n">join</span> <span class="n">LEFT_OUTER</span>  <span class="n">EDU_SEOUL_GU_WGS84</span>  <span class="n">EDU_SEOUL_GU_WGS84</span><span class="o">.</span><span class="n">GU_NAME</span> <span class="o">=</span> <span class="n">EDU_SEOUL_GU_FIRE_CAUSE</span><span class="o">.</span><span class="n">GU_NAME</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">모델 뷰 생성  : EDU_SEOUL_GU_FIRE_CAUSE_행정구GEOM_VIEW</div>
+</div>
+<img alt="data model  view 19" src="../../../_images/getting_start_19.png" />
+<img alt="data model view 20" src="../../../_images/getting_start_20.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../IRIS_Analyzer/index.html" class="btn btn-neutral float-right" title="IRIS Analyzer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

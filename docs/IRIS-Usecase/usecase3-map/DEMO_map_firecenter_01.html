@@ -1,0 +1,573 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IRIS Studio - 서울시 안전센터와 소방서 위치 지도 / 화재 원인 통계 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제" href="../usecase1-syslog/index.html" />
+    <link rel="prev" title="IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트" href="IRIS_Studio.map_chart.v02.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Usecase</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../usecase4-batting_data/index.html">IRIS Studio - 야구 타격 지표</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieve_data_from_iris_to_r/index.html">R 에서 아이리스에 저장된 데이터 가져오기</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">지도 기반의 데이터 표현</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="IRIS_Studio.map_layer_v02.html">IRIS Studio - 수원시 공공 데이터 예제</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS_Studio.map_polygon.v02.html">IRIS Studio - 서울시 공중화장실 분포 지도</a></li>
+<li class="toctree-l3"><a class="reference internal" href="IRIS_Studio.map_chart.v02.html">IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">IRIS Studio - 서울시 안전센터와 소방서 위치 지도 / 화재 원인 통계</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">데이터 준비</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#studio">Studio 보고서 따라하기</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../usecase1-syslog/index.html">SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml-serving/index.html">IRIS Discovery Service M/L - 모델 적재 시나리오</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml/index.html">IRIS Discovery Service M/L - 내부 모델 활용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BLOG/index.html">데이터 분석과 보고서 생성하기</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Usecase</a> &raquo;</li>
+    
+      <li><a href="index.html">지도 기반의 데이터 표현</a> &raquo;</li>
+    
+    <li>IRIS Studio - 서울시 안전센터와 소방서 위치 지도 / 화재 원인 통계</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/usecase3-map/DEMO_map_firecenter_01.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Usecase/usecase3-map/DEMO_map_firecenter_01</p>
+
+            
+            <p>list1[0] = IRIS-Usecase</p>
+            <p>list1[1] = usecase3-map/DEMO_map_firecenter_01</p>
+            <p>list1[2] = </p>
+            IRIS-Usecase
+            IRIS-Usecase/usecase3-map/DEMO_map_firecenter_01
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Usecase/usecase3-map/DEMO_map_firecenter_01</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/usecase3-map/DEMO_map_firecenter_01.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Usecase/blob/master/usecase3-map/DEMO_map_firecenter_01.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iris-studio">
+<h1><a class="toc-backref" href="#contents">IRIS Studio - 서울시 안전센터와 소방서 위치 지도 / 화재 원인 통계</a><a class="headerlink" href="#iris-studio" title="Permalink to this headline">¶</a></h1>
+<p>IRIS Studio 를 이용하여 <a class="reference external" href="https://data.seoul.go.kr/dataList/datasetList.do">서울시 열린 데이터 광장</a> 에 있는 서울시 안전센터 및 소방서 관할 위치 정보와 화재 원인 통계 데이터를 이용하여 지도와 챠트로 만들어 봅니다.</p>
+<img alt="데이터 - 01" src="../../_images/demo_fire_01.png" />
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#iris-studio" id="id9">IRIS Studio - 서울시 안전센터와 소방서 위치 지도 / 화재 원인 통계</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id10">데이터 준비</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id11">데이터 가져오기</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id12">데이터 업로드</a></p></li>
+<li><p><a class="reference internal" href="#minio" id="id13">데이터모델 만들기 - MinIO</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#studio" id="id14">Studio 보고서 따라하기</a></p>
+<ul>
+<li><p><a class="reference internal" href="#map-1" id="id15">map 1 : 서울시 안전센터 및 관할 소방서 위치 정보</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id16">레이어별 데이터와 시각화옵션 설정</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id5" id="id17">선택한 연도의 소방서별 화재 원인 통계 : 챠트 - 테이블</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id18">소방서별 화재 원인 통계</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id19">소방서의 연간 화재 발생 건수 추이(2011년 ~ 2018년)</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id20">화재원인별 연간 발생 건수 추이</a></p></li>
+<li><p><a class="reference internal" href="#map-2" id="id21">map 2 :  구별 화재건수</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#contents">데이터 준비</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#contents">데이터 가져오기</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>출처</dt><dd><ul>
+<li><p>서울시 안전센터, 소방서, 화재 원인 데이터 : <a class="reference external" href="https://data.seoul.go.kr/dataList/datasetList.do">서울시 열린 데이터 광장</a></p></li>
+<li><p>서울시 구단위 행정 경계 데이터 ( SHP 파일 ) : 국토교통부 행정구역도 <a class="reference external" href="https://www.data.go.kr/dataset/3046391/openapi.do">공공 데이터 포털</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>서울시 구단위 행정 경계 데이터</p></li>
+</ul>
+<img alt="데이터 - 02" src="../../_images/demo_fire_02.png" />
+<ul class="simple">
+<li><p>서울시 관할 소방서 위치 정보</p></li>
+</ul>
+<img alt="데이터 - 03" src="../../_images/demo_fire_03.png" />
+<ul class="simple">
+<li><p>서울시 안전센터 위치 정보</p></li>
+</ul>
+<img alt="데이터 - 04" src="../../_images/demo_fire_04.png" />
+<ul class="simple">
+<li><p>서울시 소방서별 화재 원인 통계</p></li>
+</ul>
+<img alt="데이터 - 05" src="../../_images/demo_fire_05.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#contents">데이터 업로드</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>로컬 PC 에 다운로드된 파일들을 IRIS 의 <strong>HDFS브라우저</strong> 를 이용하여 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/index.html#minio">MinIO 에 데이터 업로드</a> 합니다.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="minio">
+<h3><a class="toc-backref" href="#contents">데이터모델 만들기 - MinIO</a><a class="headerlink" href="#minio" title="Permalink to this headline">¶</a></h3>
+<p>데이터모델 메뉴에서 MinIO 에 저장된 파일들을 데이터모델로 생성합니다.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>참고 : <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/index.html#id3">데이터모델 만들기 - MinIO</a></p></li>
+</ul>
+</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>모델 이름</p></th>
+<th class="head"><p>설 명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SEOUL_SAFETY_CENTER_COOR</p></td>
+<td><p>서울시 안전센터 위치</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEOUL_MELT_FIRE_CAUSE</p></td>
+<td><p>서울시 소방서별 화재원인 분포</p></td>
+</tr>
+<tr class="row-even"><td><p>SEOUL_GU_WGS84</p></td>
+<td><p>서울 행정구 경계 polygon WGS_84</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEOUL_GU_FIRE_CAUSE</p></td>
+<td><p>서울시 구별 화재원인 통계</p></td>
+</tr>
+<tr class="row-even"><td><p>SEOUL_GU_COORDINATES</p></td>
+<td><p>서울 구청 좌표 및 정보</p></td>
+</tr>
+<tr class="row-odd"><td><p>SEOUL_FIRE_STA_COOR</p></td>
+<td><p>서울시 소방서 좌표</p></td>
+</tr>
+<tr class="row-even"><td><p>SEOUL_FIRE_CAUSE</p></td>
+<td><p>서울시 관할 소방서별 화재원인(2011 ~ 2018년)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="studio">
+<h2><a class="toc-backref" href="#contents">Studio 보고서 따라하기</a><a class="headerlink" href="#studio" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="map-1">
+<h3><a class="toc-backref" href="#contents">map 1 : 서울시 안전센터 및 관할 소방서 위치 정보</a><a class="headerlink" href="#map-1" title="Permalink to this headline">¶</a></h3>
+<img alt="map - 06" src="../../_images/demo_fire_06.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id4">
+<h4><a class="toc-backref" href="#contents">레이어별 데이터와 시각화옵션 설정</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>구경계 레이어</p></li>
+</ul>
+<img alt="map - 07" src="../../_images/demo_fire_07.png" />
+<img alt="map - 08" src="../../_images/demo_fire_08.png" />
+<ul class="simple">
+<li><p>안전센터 레이어</p></li>
+</ul>
+<img alt="map - 09" src="../../_images/demo_fire_09.png" />
+<ul class="simple">
+<li><p>소방서 레이어</p></li>
+</ul>
+<img alt="map - 10" src="../../_images/demo_fire_10.png" />
+<p>참고 : 지도 레이어의 시각화옵션 설정은  <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v02.html#">IRIS Studio - 수원시 공공 데이터 예제</a> 에서 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_layer_v01.html#id8">주차장 레이어 만들기</a>  를 참고하세요.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#contents">선택한 연도의 소방서별 화재 원인 통계 : 챠트 - 테이블</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<img alt="map - 11" src="../../_images/demo_fire_11.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>조회할 연도를 선택하기 위해 콤보박스를 만듭니다.</dt><dd><ul>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/index.html#id7">콤보 박스 생성</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>데이터 출처를 라벨로 표현합니다.</dt><dd><ul>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/index2.html?highlight=%EB%9D%BC%EB%B2%A8#label">IRIS-Manual : 라벨 링크</a></p></li>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/index.html#">IRIS-Usecase : 미국 야구 데이터를 활용한 Studio 보고서 만들기</a>  에서 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase4-batting_data/index.html#id5">캔버스 및 제목 라벨 만들기</a>  부분을 참조하세요.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>테이블에 출력되는 데이터는 콤보박스에 선택한 연도에 해당하는 데이터로만 필터링되어 출력됩니다.</dt><dd><ul>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/combobox_report/combobox_report.html">IRIS-Tutorial : 콤보박스를 활용하여 데이터 필터링</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>테이블에 출력되는 데이터는 다른 오브젝트의 트리거 설정 시에 클릭 이벤트 시 이벤트값으로 전달되도록 설정합니다.</dt><dd><ul>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/studio/index2.html#id8">IRIS-Manual : 보고서 작성</a>  에서 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html#id13">이벤트값 전달 설정</a>  과 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-WEB/data_browser/studio/04.html#id13">트리거 설정</a>  을 참조하세요.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="map - 12" src="../../_images/demo_fire_12.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#contents">소방서별 화재 원인 통계</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>콤보박스에서 선택된 연도와 테이블에서 선택된 소방서로 필터링된 데이터를 가로막대형 챠트로 그린 것입니다.</dt><dd><ul>
+<li><p>참고 : <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_chart.v01.html#iris-studio-map">IRIS-Usecase : IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트</a> 에서 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/usecase3-map/IRIS_Studio.map_chart.v01.html#id12">가로막대그래프</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="map - 13" src="../../_images/demo_fire_13.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3><a class="toc-backref" href="#contents">소방서의 연간 화재 발생 건수 추이(2011년 ~ 2018년)</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>테이블에서 선택된 소방서의 연간 화재 발생 건수 추이를 챠트-꺾은선형 그래프로 그린 것입니다.</p></li>
+</ul>
+<img alt="map - 14" src="../../_images/demo_fire_14.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h3><a class="toc-backref" href="#contents">화재원인별 연간 발생 건수 추이</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>테이블에서 선택된 소방서의 화재원인별 연간 발생 건수 추이를 챠트-꺽은선형 그래프로 그린 것입니다.</p></li>
+<li><p>화재원인 별로 multi-line 챠트로 구현합니다.</p></li>
+<li><p>시각화옵션에서 X축, Y축을 선택할 때 “모두선택” 을 설정하면 미지정된 컬럼중 숫자형 타입의 컬럼들이 모두 선택,지정됩니다.</p></li>
+</ul>
+<img alt="map - 15" src="../../_images/demo_fire_15.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="map-2">
+<h3><a class="toc-backref" href="#contents">map 2 :  구별 화재건수</a><a class="headerlink" href="#map-2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>구별 화재건수 지도는 “layer map(지도)” 와 “구별 화재건수” 레이어로 이루어져 있습니다.</p></li>
+<li><p>콤보박스에서 선택된 연도의 데이터로 필터링된 데이터입니다.</p></li>
+<li><p>구별 화재건수로 그라디언트(진할 수록 많은 발생건수)된 색상으로 표현됩니다.</p></li>
+</ul>
+<img alt="map - 16" src="../../_images/demo_fire_16.png" />
+<img alt="map - 17" src="../../_images/demo_fire_17.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../usecase1-syslog/index.html" class="btn btn-neutral float-right" title="SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="IRIS_Studio.map_chart.v02.html" class="btn btn-neutral float-left" title="IRIS Studio - 행정 구역 MAP 과 인구 통계 챠트" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

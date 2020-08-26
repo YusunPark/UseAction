@@ -1,0 +1,779 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>IRIS Studio - 야구 타격 지표 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="R 에서 아이리스에 저장된 데이터 가져오기" href="../retrieve_data_from_iris_to_r/index.html" />
+    <link rel="prev" title="Usecase" href="../index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Usecase</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">IRIS Studio - 야구 타격 지표</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">데이터 준비</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">데이터 가져오기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#minio">MinIO 에 데이터 업로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">데이터모델 만들기 - MinIO</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">보고서 내용 요약</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#studio">Studio 보고서 따라하기</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5">캔버스 및 제목 라벨 만들기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">연도별 데이터 챠트</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id12">타격 지표 추이 그래프</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">타석 100 이상인 선수들의 타격 지표</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id15">PLAYERID 별 지표 추이</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieve_data_from_iris_to_r/index.html">R 에서 아이리스에 저장된 데이터 가져오기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecase3-map/index.html">지도 기반의 데이터 표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecase1-syslog/index.html">SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml-serving/index.html">IRIS Discovery Service M/L - 모델 적재 시나리오</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml/index.html">IRIS Discovery Service M/L - 내부 모델 활용</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../BLOG/index.html">데이터 분석과 보고서 생성하기</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Usecase</a> &raquo;</li>
+    
+    <li>IRIS Studio - 야구 타격 지표</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/usecase4-batting_data/index.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Usecase/usecase4-batting_data/index</p>
+
+            
+            <p>list1[0] = IRIS-Usecase</p>
+            <p>list1[1] = usecase4-batting_data/index</p>
+            <p>list1[2] = </p>
+            IRIS-Usecase
+            IRIS-Usecase/usecase4-batting_data/index
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Usecase/usecase4-batting_data/index</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/usecase4-batting_data/index.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Usecase/blob/master/usecase4-batting_data/index.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iris-studio">
+<h1><a class="toc-backref" href="#contents">IRIS Studio - 야구 타격 지표</a><a class="headerlink" href="#iris-studio" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.seanlahman.com/baseball-archive/statistics/">Lahman의 홈페이지</a> 에 있는 미국 야구 데이터에서
+타격에 관한 데이터인 batting.csv 로  IRIS Studio 에서 여러 지표와 챠트를 만들어 봅니다.</p>
+<img alt="데이터 - 01" src="../../_images/demo_batting_01.png" />
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#iris-studio" id="id18">IRIS Studio - 야구 타격 지표</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id19">데이터 준비</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id20">데이터 가져오기</a></p></li>
+<li><p><a class="reference internal" href="#minio" id="id21">MinIO 에 데이터 업로드</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id22">데이터모델 만들기 - MinIO</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id4" id="id23">보고서 내용 요약</a></p></li>
+<li><p><a class="reference internal" href="#studio" id="id24">Studio 보고서 따라하기</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id5" id="id25">캔버스 및 제목 라벨 만들기</a></p></li>
+<li><p><a class="reference internal" href="#id6" id="id26">연도별 데이터 챠트</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id27">콤보 박스 생성</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id28">챠트-테이블 생성</a></p></li>
+<li><p><a class="reference internal" href="#id11" id="id29">타격 지표 통계</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id12" id="id30">타격 지표 추이 그래프</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id13" id="id31">챠트-꺾은선형</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id14" id="id32">타석 100 이상인 선수들의 타격 지표</a></p>
+<ul>
+<li><p><a class="reference internal" href="#playerid" id="id33">해당 연도의 PLAYERID 별 타격 지표 테이블</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id15" id="id34">PLAYERID 별 지표 추이</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id16" id="id35">전체 변수명 보기</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id36">PLAYERID 별 챠트</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#contents">데이터 준비</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><a class="toc-backref" href="#contents">데이터 가져오기</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><dl>
+<dt>출처<span class="classifier"><a class="reference external" href="http://www.seanlahman.com/baseball-archive/statistics/">Lahman 의 홈페이지</a> .</span></dt><dd><ul class="simple">
+<li><p>보고서의 상단 라벨을 클릭하면 Lahman의 홈페이지로 이동합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 02" src="../../_images/demo_batting_02.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>Lahman 홈페이지에서 다운받은 zip 을 풀어서 미국 야구의 타격 데이터인 Batting.csv 를 IRIS 에 업로드합니다.</dt><dd><ul>
+<li><p>참고로 보고서에 사용된 데이터는 batting.csv 의 “yearID” 컬럼으로부터 PTIME, DECADE 라는 2개의 컬럼을 만들어서 추가한 데이터입니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 03" src="../../_images/demo_batting_03.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="minio">
+<h3><a class="toc-backref" href="#contents">MinIO 에 데이터 업로드</a><a class="headerlink" href="#minio" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><dl class="simple">
+<dt>로컬 PC 에 다운로드된  Batting.csv 파일을 IRIS 의 <strong>HDFS브라우저</strong> 를 이용하여 MinIO 에 업로드합니다.</dt><dd><ul>
+<li><p>참고 - MinIO 홈페이지 <a class="reference external" href="https://min.io/">MinIO</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 04" src="../../_images/demo_batting_04.png" />
+<ul class="simple">
+<li><p>MinIO 에 BATTING 폴더를 만들고, Batting.csv 를 업로드합니다.</p></li>
+</ul>
+<img alt="데이터 - 05" src="../../_images/demo_batting_05.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#contents">데이터모델 만들기 - MinIO</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>데이터모델 메뉴에서 MinIO 에 저장된 Batting.csv 를 데이터모델로 생성합니다.</p></li>
+</ul>
+<img alt="데이터 - 06" src="../../_images/demo_batting_06.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>데이터모델의 이름으로 DEMO_BATTING_NEW 로 생성하며, 연결 정보(MinIO) 와 대상 데이터(Batting.csv)를 선택합니다.</dt><dd><ul>
+<li><p>연결 정보 중 유형은 OBJECTSTORAGE 이고, 해당되는 연결정보의 이름을 선택합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 07" src="../../_images/demo_batting_07.png" />
+<ul class="simple">
+<li><p>생성이 완료된 후에 <strong>검색</strong> 메뉴에서 데이터 모델 DEMO_BATTING_NEW 를 조회해 봅니다.</p></li>
+</ul>
+<img alt="데이터 - 08" src="../../_images/demo_batting_08.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#contents">보고서 내용 요약</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>1871년 ~ 2016년( DEMO_BATTING_NEW 에 입력한 데이터는 1871 ~ 2016년까지의 batting.csv 입니다 ) 까지의 미국 야구 타격 데이터에서
+타율, 출루율, 장타율 등 과 같은 타격 지표를 생성합니다.</p>
+<p>그리고 연도별로 타격 지표 추이를 볼 수 있도록 시계열챠트를 그려 보고
+선택된 개별 선수(PLAYERID)의 타격 지표도 시계열 챠트로 볼 수 있도록 합니다.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>연도(yearID)별 데이터</dt><dd><ul>
+<li><p>콤보박스에서 선택된 연도의 데이터가 챠트에 그려집니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 09" src="../../_images/demo_batting_09.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>선수(PLAYERID) 의 개별 데이터</dt><dd><ul>
+<li><p>선수(PLAYERID)를 클릭하면 해당 선수의 개별 타격 지표가 시계열 챠트로 그려집니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 10" src="../../_images/demo_batting_10.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="studio">
+<h2><a class="toc-backref" href="#contents">Studio 보고서 따라하기</a><a class="headerlink" href="#studio" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3><a class="toc-backref" href="#contents">캔버스 및 제목 라벨 만들기</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>캔버스 색상 지정 및 보고서 제목 라벨 만들기</p></li>
+</ul>
+<img alt="데이터 - 11" src="../../_images/demo_batting_11.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#contents">연도별 데이터 챠트</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<img alt="데이터 - 13" src="../../_images/demo_batting_13.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#contents">콤보 박스 생성</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>참조 매뉴얼 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/combobox_report/combobox_report.html">콤보박스를 활용하여 데이터 필터링하기</a></p></li>
+<li><dl class="simple">
+<dt>조회할 연도를 선택하는 콤보박스 만드는 과정입니다.(1번)</dt><dd><ul>
+<li><p>디폴트로 2016년을 지정하여 콤보박스를 클릭하지 않고도 자동실행되어 2016년 조회결과가 출력되게 합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 14" src="../../_images/demo_batting_14.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4><a class="toc-backref" href="#contents">챠트-테이블 생성</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>참조 매뉴얼 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/IRIS_Studio/table/table.html">테이블</a></p></li>
+<li><dl class="simple">
+<dt>전체 데이터중에서 콤보박스에서 선택된 연도의 데이터만 <a href="#id9"><span class="problematic" id="id10">**</span></a>챠트**의 테이블로 출력하는 과정입니다.(2)</dt><dd><ul>
+<li><p>데이터 모델 DEMO_BATTING_NEW</p></li>
+<li><p>검색어 구문 해석  : <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/index.html">검색어에 대한 설명</a> 참조</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>* yearID  = ${combo_1} | fields -PTIME,DECADE
+
+콤보박스에서 연도를 지정하면 ${combo_1} 에 저장되며,
+데이터 모델 DEMO_BATTING_NEW 에서 yearID = ${combo_1} 인 데이터만 가져옵니다.
+그 중에서 PTIME, DECADE 컬럼은 제외하고 select 합니다.
+</pre></div>
+</div>
+<img alt="데이터 - 15" src="../../_images/demo_batting_15.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h4><a class="toc-backref" href="#contents">타격 지표 통계</a><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<ul>
+<li><dl>
+<dt>조회할 연도의 Batting 데이터로부터 타격지표 통계를 만들어서 테이블로 출력하는 과정입니다.(3)</dt><dd><ul class="simple">
+<li><p>야구 타격 지표 만드는 검색어 구문입니다.</p></li>
+<li><p>선택한 챠트의 데이터 탭에서 검색어 박스에서 내용을 확인할 수 있습니다.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>*  yearID = ${combo_1}
+| stats
+  sum(G) as sum_G,
+  sum(AB) as sum_AB,
+  sum(R) as sum_R,
+  sum(H) as sum_H,
+  sum(2B) as sum_2B,
+  sum(3B) as sum_3B,
+  sum(HR) as sum_HR,
+  sum(RBI) as sum_RBI,
+  sum(SB) as sum_SB,
+  sum(CS) as sum_CS,
+  sum(BB) as sum_BB,
+  sum(SO) as sum_SO,
+  sum(IBB) as sum_IBB,
+  sum(HBP) as sum_HBP,
+  sum(SH) as sum_SH,
+  sum(SF) as sum_SF,
+  sum(GIDP) as sum_GIDP
+  BY yearID, PLAYERID
+| sql &quot;select yearID ,PLAYERID,
+              sum_G, sum_AB, sum_H/sum_AB as BA,
+              ((sum_H + sum_BB + sum_HBP ) / ( sum_AB+ sum_BB+ sum_HBP+ sum_SF) )as OBP,
+              ((sum_H + sum_2B + 2 * sum_3B + 3 * sum_HR ) / sum_AB ) as SLG
+       from angora where sum_AB &gt; 0 &quot;
+| stats count(*) as player수, avg(sum_G) as 평균경기수, avg(sum_AB) as 평균타석,
+  avg(BA) as 평균타율, avg(OBP) as 평균출루율, avg(SLG) as  평균장타율,
+  min(sum_G) as 최소경기수, min(sum_AB) as 최소타석, min(BA) as 최소타율,
+  min(OBP) as 최소출루율, min(SLG) as  최소장타율,
+  max(sum_G) as 최대경기수, max(sum_AB) as 최대타석,
+  max(BA) as 최대타율, max(OBP) as 최대출루율, max(SLG) as 최대장타율
+  BY yearID
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 16" src="../../_images/demo_batting_16.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3><a class="toc-backref" href="#contents">타격 지표 추이 그래프</a><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<img alt="데이터 - 17" src="../../_images/demo_batting_17.png" />
+<ul class="simple">
+<li><p>타격 지표 데이터를 시계열로 꺽은 선 챠트로 추이를 확인할 수 있도록 그려봅니다.</p></li>
+</ul>
+<div class="section" id="id13">
+<h4><a class="toc-backref" href="#contents">챠트-꺾은선형</a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>경기수와 타석 데이터를 시계열 챠트로 그립니다.(1)</p></li>
+</ul>
+<img alt="데이터 - 19" src="../../_images/demo_batting_19.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>타율, 출루율, 장타율 데이터를 시계열 챠트로 그립니다.(2)</dt><dd><ul>
+<li><p>챠트의 시각화 설정은 경기수와 타석 시계열 챠트와 동일합니다.</p></li>
+<li><p>검색어 구문</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>
+<span class="o">|</span> <span class="n">stats</span>  <span class="nb">sum</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_G</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">AB</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_AB</span><span class="p">,</span> <span class="nb">sum</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_R</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">H</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_H</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="mi">2</span><span class="n">B</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_2B</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="mi">3</span><span class="n">B</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_3B</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">HR</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_HR</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">RBI</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_RBI</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">SB</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_SB</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">CS</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_CS</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">BB</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_BB</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">SO</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_SO</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">IBB</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_IBB</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">HBP</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_HBP</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">SH</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_SH</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">SF</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_SF</span><span class="p">,</span>
+  <span class="nb">sum</span><span class="p">(</span><span class="n">GIDP</span><span class="p">)</span> <span class="k">as</span> <span class="n">sum_GIDP</span>  <span class="n">BY</span> <span class="n">YEARID</span><span class="p">,</span> <span class="n">PLAYERID</span>
+<span class="o">|</span> <span class="n">sql</span> <span class="s2">&quot;select YEARID, PLAYERID, sum_H/sum_AB  as  BA,</span>
+      <span class="p">((</span><span class="n">sum_H</span> <span class="o">+</span> <span class="n">sum_BB</span> <span class="o">+</span> <span class="n">sum_HBP</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span> <span class="n">sum_AB</span><span class="o">+</span> <span class="n">sum_BB</span><span class="o">+</span> <span class="n">sum_HBP</span><span class="o">+</span> <span class="n">sum_SF</span><span class="p">)</span> <span class="p">)</span><span class="k">as</span> <span class="n">OBP</span> <span class="p">,</span>
+      <span class="p">((</span><span class="n">sum_H</span> <span class="o">+</span> <span class="n">sum_2B</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">sum_3B</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">sum_HR</span> <span class="p">)</span> <span class="o">/</span> <span class="n">sum_AB</span> <span class="p">)</span> <span class="k">as</span> <span class="n">SLG</span>  <span class="kn">from</span> <span class="nn">angora</span>
+      <span class="n">where</span> <span class="n">sum_AB</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="s2">&quot;</span>
+<span class="o">|</span> <span class="n">adv</span> <span class="n">line</span> <span class="n">avg</span><span class="p">(</span><span class="n">BA</span><span class="p">)</span> <span class="k">as</span> <span class="n">평균타율</span><span class="p">,</span> <span class="n">avg</span><span class="p">(</span><span class="n">OBP</span><span class="p">)</span> <span class="k">as</span> <span class="n">평균출루율</span><span class="p">,</span> <span class="n">avg</span><span class="p">(</span><span class="n">SLG</span><span class="p">)</span> <span class="k">as</span>  <span class="n">평균장타율</span><span class="p">,</span>
+  <span class="nb">min</span><span class="p">(</span><span class="n">BA</span><span class="p">)</span> <span class="k">as</span> <span class="n">최소타율</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">OBP</span><span class="p">)</span> <span class="k">as</span> <span class="n">최소출루율</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">SLG</span><span class="p">)</span> <span class="k">as</span>  <span class="n">최소장타율</span><span class="p">,</span>
+  <span class="nb">max</span><span class="p">(</span><span class="n">BA</span><span class="p">)</span> <span class="k">as</span> <span class="n">최대타율</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">OBP</span><span class="p">)</span> <span class="k">as</span> <span class="n">최대출루율</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">SLG</span><span class="p">)</span> <span class="k">as</span>  <span class="n">최대장타율</span>
+  <span class="n">SPLITROW</span>  <span class="n">YEARID</span> <span class="n">COLSIZE</span> <span class="mi">500</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h3><a class="toc-backref" href="#contents">타석 100 이상인 선수들의 타격 지표</a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<img alt="데이터 - 20" src="../../_images/demo_batting_20.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="playerid">
+<h4><a class="toc-backref" href="#contents">해당 연도의 PLAYERID 별 타격 지표 테이블</a><a class="headerlink" href="#playerid" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt>콤보박스에서 선택한 연도의 데이터에서 PLAYERID(선수) 별로 타격지표 통계를 만들어서 가져옵니다.</dt><dd><ul>
+<li><p><a class="reference internal" href="#id6">연도별 데이터 챠트</a>  참조합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 21" src="../../_images/demo_batting_21.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>검색어 구문</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>*  YEARID = ${combo_1}
+| stats  sum(G) as sum_G,
+  sum(AB) as sum_AB,
+  sum(R) as sum_R,
+  sum(H) as sum_H,
+  sum(2B) as sum_2B,
+  sum(3B) as sum_3B,
+  sum(HR) as sum_HR,
+  sum(RBI) as sum_RBI,
+  sum(SB) as sum_SB,
+  sum(CS) as sum_CS,
+  sum(BB) as sum_BB,
+  sum(SO) as sum_SO,
+  sum(IBB) as sum_IBB,
+  sum(HBP) as sum_HBP,
+  sum(SH) as sum_SH,
+  sum(SF) as sum_SF,
+  sum(GIDP) as sum_GIDP BY YEARID, PLAYERID
+| sql &quot;select YEARID, PLAYERID, sum_G as 경기수, sum_AB as 타석수, sum_H/sum_AB as 타율,
+       (sum_H + sum_BB + sum_HBP ) / ( sum_AB+ sum_BB+ sum_HBP+ sum_SF) as 출루율,
+       ((sum_H + sum_2B + 2 * sum_3B + 3 * sum_HR ) / sum_AB) as 장타율 from angora
+       where sum_AB &gt; 100&quot;
+| sort -타율
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h3><a class="toc-backref" href="#contents">PLAYERID 별 지표 추이</a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>타석 100 이상인 선수들의 타격 지표</strong> 에서 클릭한 PLAYERID 의 활동기간별 타격 지표 추이를 3개의 챠트로 보여줍니다.</p></li>
+</ul>
+<img alt="데이터 - 22" src="../../_images/demo_batting_22.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>클릭한 PLAYERID 로 라벨이 자동 변경되는 부분</dt><dd><ul>
+<li><dl class="simple">
+<dt>라벨 데이터 탭에서 <strong>트리거설정</strong> 을 체크하고, PLAYERID 별 타격지표 테이블을 체크합니다.</dt><dd><ul>
+<li><p>체크를 하면 대상 오브젝트id 를 확인할 수 있습니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="id16">
+<h4><a class="toc-backref" href="#contents">전체 변수명 보기</a><a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>전체 변수명 보기</strong> 를 통해 변수명이 ${area_2} 임을 확인할 수 있습니다.</dt><dd><ul>
+<li><p>라벨 데이터 탭에서 <strong>설정할 변수/값</strong> 에서 ${area_2}  로 입력하면 이벤트로 클릭되는 PLAYERID 로 자동으로 변경됩니다.</p></li>
+<li><p>라벨의 내용이 바뀌는 것은 편집 화면에서는 바로 확인이 안되며, <strong>저장</strong> 후 <strong>보기</strong> 를 통해 확인할 수 있습니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 23" src="../../_images/demo_batting_23.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id17">
+<h4><a class="toc-backref" href="#contents">PLAYERID 별 챠트</a><a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><dl class="simple">
+<dt>3개의 챠트는 모두 같은 방식으로 생성됩니다.</dt><dd><ul>
+<li><p>경기당 홈런수/안타수 챠트의 데이터탭과 시각화탭은 아래 처럼 설정되었습니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터 - 24" src="../../_images/demo_batting_24.png" />
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../retrieve_data_from_iris_to_r/index.html" class="btn btn-neutral float-right" title="R 에서 아이리스에 저장된 데이터 가져오기" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Usecase" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

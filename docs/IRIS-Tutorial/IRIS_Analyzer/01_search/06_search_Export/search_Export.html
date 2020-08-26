@@ -1,0 +1,461 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>검색 결과를 파일로 내보내기 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="피벗분석" href="../../02_pivot/index.html" />
+    <link rel="prev" title="검색 결과로 다른 화면에서 작업" href="../05_search_ToAnother/search_ToAnother.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Getting-Started/index.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Analyzer</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">검색</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../01_search_by_cond/search_by_cond.html">조건에 맞는 데이터 검색</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../02_stats_in_search/stats_in_search.html">데이터의 기초 통계 분석</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03_search_closeup/search_closeup.html">타임라인 그래프에서 특정 구간 선택하여 검색</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04_search_Sampling/search_Sampling.html">데이터 샘플링</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../05_search_ToAnother/search_ToAnother.html">검색 결과로 다른 화면에서 작업</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">검색 결과를 파일로 내보내기</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_pivot/index.html">피벗분석</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_visualization/index.html">시각화</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS_Studio/index.html">IRIS Studio</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Tutorial</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Analyzer</a> &raquo;</li>
+    
+      <li><a href="../index.html">검색</a> &raquo;</li>
+    
+    <li>검색 결과를 파일로 내보내기</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Analyzer/01_search/06_search_Export/search_Export.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Tutorial/IRIS_Analyzer/01_search/06_search_Export/search_Export</p>
+
+            
+            <p>list1[0] = IRIS-Tutorial</p>
+            <p>list1[1] = IRIS_Analyzer/01_search/06_search_Export/search_Export</p>
+            <p>list1[2] = </p>
+            IRIS-Tutorial
+            IRIS-Tutorial/IRIS_Analyzer/01_search/06_search_Export/search_Export
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Tutorial/IRIS_Analyzer/01_search/06_search_Export/search_Export</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Analyzer/01_search/06_search_Export/search_Export.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Tutorial/blob/master/IRIS_Analyzer/01_search/06_search_Export/search_Export.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>검색 결과를 파일로 내보내기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>개요<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>IRIS [검색] 메뉴에서 조회한 결과를 로컬PC와 HDFS으로 내보낼 수 있습니다.</p>
+</div>
+<div class="section" id="id3">
+<h2>[결과 내보내기] 기본 절차<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>[데이터 브라우저] &gt; [검색] 메뉴로 진입합니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/enter_001.png"><img alt="IRISMenu" src="../../../../_images/enter_001.png" style="width: 317.7px; height: 237.6px;" /></a>
+</div>
+<p>좌측의 [데이터 모델] 탭에서 데이터 모델을 선택합니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_st_00.png"><img alt="데이터 모델 선택" src="../../../../_images/export_st_00.png" style="width: 992.4px; height: 438.0px;" /></a>
+</div>
+<p>[시간] 탭에서 원하는 기간을 선택하고 필요에 따라 [검색 바]에 Command를 작성한 다음 우측의 [실행] 버튼을 눌러 실행합니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_st_01.png"><img alt="기간,Command 설정" src="../../../../_images/export_st_01.png" style="width: 992.4px; height: 435.0px;" /></a>
+</div>
+<div class="line-block">
+<div class="line">검색 결과가 나오면 중앙의 [내려받기] 버튼을 클릭하면 아래와 같이 팝업창이 나타납니다.</div>
+<div class="line">옵션 중 “위치”에서 “로컬”을 선택할 경우 로컬PC로, “HDFS”를 선택할 경우 HDFS로 파일을 내보낼 수 있습니다.</div>
+</div>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_03.png"><img alt="내보내기" src="../../../../_images/export_03.png" style="width: 1152.0px; height: 511.2px;" /></a>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>로컬로 내보내기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>로컬로 내보낼 때는 아래와 같은 옵션을 설정할 수 있습니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>위치</p></td>
+<td><p>내보낸 파일이 저장될 위치를 선택합니다. <br/> <br/>
+로컬PC로 내보낼 것이므로 “로컬”을 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>형식</p></td>
+<td><p>파일의 형식을 선택합니다. <br/> <br/> CSV, TSV, JSON 중 1개를 선택할 수 있습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>분리 기호</p></td>
+<td><p>“형식”에서 “CSV” 와 “TSV”를 선택했을 때만 표시됩니다. <br/>
+임의의 파일 구분자(delimiter)를 설정하여 내보낼 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>파일 이름 (선택)</p></td>
+<td><p>내보내지는 파일의 파일명을 설정할 수 있습니다. <br/> <br/> 만약 설정하지 않을 경우, “download”라는 이름으로 자동 설정됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>결과 수</p></td>
+<td><p>내보내지는 파일에 포함될 데이터의 수를 설정합니다. <br/> <br/>
+사용자가 아무리 많은 양의 데이터를 조회하더라도 [검색] 화면에서는 제한된 개수의 데이터만을 표시합니다.
+<br/> <br/> 만약 [검색] 화면에 표시된만큼의 데이터만 내보내고자 할 경우 “제한”을, <br/> 화면에 표시되지 않았지만 사용자가 조회한 데이터 전체를 내보내고자 할 경우 “무제한”을 선택합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래 예시는 [검색]의 조회 결과의 전체 데이터를 CSV 형태로 내보내는 예시입니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_st_03.png"><img alt="파일 설정" src="../../../../_images/export_st_03.png" style="width: 992.4px; height: 439.8px;" /></a>
+</div>
+<p>다운로드한 파일을 열어보면 미리보기에 출력된 내용과 동일한 데이터가 다운로드된 것을 확인할 수 있습니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_st_04.png"><img alt="파일 확인" src="../../../../_images/export_st_04.png" style="width: 989.4px; height: 430.2px;" /></a>
+</div>
+</div>
+<div class="section" id="hdfs">
+<h2>HDFS에 내보내기<a class="headerlink" href="#hdfs" title="Permalink to this headline">¶</a></h2>
+<p>HDFS로 내보낼 때는 아래와 같은 옵션을 설정할 수 있습니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_HDFS_03.png"><img alt="HDFS 내보내기" src="../../../../_images/export_HDFS_03.png" style="width: 1152.0px; height: 508.2px;" /></a>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>위치</p></td>
+<td><p>내보낸 파일이 저장될 위치를 선택합니다. <br/> <br/>
+HDFS로 내보낼 것이므로 “HDFS”를 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>연결 정보</p></td>
+<td><p>보내고자 하는 HDFS의 연결 정보를 선택합니다. <br/> <br/>
+등록된 연결정보는 [데이터브라우저] &gt; [관리] &gt; [연결 정보] 메뉴를 통해 확인하실 수 있습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>분리 기호</p></td>
+<td><p>내보내지는 파일의 구분자(delimiter)를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>경로</p></td>
+<td><p>파일이 내보내질 HDFS 내 경로를 선택합니다. <br/> <br/>
+경로를 선택하면 파일명이 자동으로 “download.csv”로 설정되는데, 사용자가 원하는 명칭으로 수정하셔야 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>“경로” 상의 [찾아보기] 버튼을 HDFS 브라우저 팝업창이 표시되며, 아래 예시처럼 원하는 디렉토리를 선택할 수 있습니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_HDFS_st_04.png"><img alt="폴더 선택" src="../../../../_images/export_HDFS_st_04.png" style="width: 992.4px; height: 438.0px;" /></a>
+</div>
+<p>모든 옵션 설정이 끝난 경우, [내보내기]를 클릭합니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_HDFS_st_05.png"><img alt="내보내기" src="../../../../_images/export_HDFS_st_05.png" style="width: 992.4px; height: 438.0px;" /></a>
+</div>
+<p>내보내기가 정상적으로 이루어지면 아래 화면과 같이 성공 메시지를 확인하실 수 있습니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_HDFS_06.png"><img alt="성공" src="../../../../_images/export_HDFS_06.png" style="width: 1152.0px; height: 512.4px;" /></a>
+</div>
+<p>그리고 [HDFS조회] &gt; [HDFS브라우저]로 진입하여 해당 경로로 접근하면 파일을 확인할 수 있습니다.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="../../../../_images/export_HDFS_st_08.png"><img alt="파일 확인" src="../../../../_images/export_HDFS_st_08.png" style="width: 992.4px; height: 437.4px;" /></a>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>주의사항<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Notice</span> <span class="mi">01</span><span class="p">]</span> <span class="n">HDFS으로</span> <span class="n">내보낼</span> <span class="n">때</span> <span class="n">파일명</span> <span class="n">중복으로</span> <span class="n">인한</span> <span class="n">덮어쓰기</span> <span class="n">주의</span>
+
+<span class="n">HDFS로</span> <span class="n">내보낼</span> <span class="n">때</span><span class="p">,</span> <span class="n">내보낼</span> <span class="n">경로를</span> <span class="n">설정하고</span> <span class="n">파일명을</span> <span class="s2">&quot;download.csv&quot;</span><span class="n">에서</span> <span class="n">원하는</span> <span class="n">것으로</span> <span class="n">수정하시게</span> <span class="n">됩니다</span><span class="o">.</span>
+
+<span class="n">만약</span> <span class="n">새로</span> <span class="n">수정된</span> <span class="n">파일명과</span> <span class="n">동일한</span> <span class="n">이름을</span> <span class="n">가진</span> <span class="n">파일이</span> <span class="n">해당</span> <span class="n">경로에</span> <span class="n">존재할</span> <span class="n">경우</span><span class="p">,</span> <span class="n">기존</span> <span class="n">파일은</span> <span class="n">새로</span> <span class="n">내보내지는</span> <span class="n">파일에</span> <span class="n">덮어쓰기됩니다</span><span class="o">.</span>
+
+<span class="n">파일명을</span> <span class="n">설정하실</span> <span class="n">때</span> <span class="n">반드시</span> <span class="n">내보내기</span> <span class="n">대상</span> <span class="n">경로에</span> <span class="n">동일한</span> <span class="n">이름을</span> <span class="n">가진</span> <span class="n">파일이</span> <span class="n">존재하는지</span> <span class="n">확인하시기</span> <span class="n">바랍니다</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../02_pivot/index.html" class="btn btn-neutral float-right" title="피벗분석" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../05_search_ToAnother/search_ToAnother.html" class="btn btn-neutral float-left" title="검색 결과로 다른 화면에서 작업" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

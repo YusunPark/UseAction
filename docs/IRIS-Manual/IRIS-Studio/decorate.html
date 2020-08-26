@@ -1,0 +1,536 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>꾸미기 객체 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="양식 (Form) 객체" href="form.html" />
+    <link rel="prev" title="데이터 시각화 (Data Visualize) 객체" href="data_visualize.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">IRIS Studio</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="start.html">보고서 시작하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">데이터 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_visualize.html">데이터 시각화 (Data Visualize) 객체</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">꾸미기 객체</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#label">라벨 (label)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#rectangle">사각형 (rectangle)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ellipse">원형 (ellipse)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#image">이미지 (image)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="form.html">양식 (Form) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control.html">제어 (Control) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="special_etc.html">특수/기타 객체</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="index.html">IRIS Studio</a> &raquo;</li>
+    
+    <li>꾸미기 객체</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/decorate.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Studio/decorate</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Studio/decorate</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Studio/decorate
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Studio/decorate</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/decorate.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Studio/decorate.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>꾸미기 객체<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">텍스트나 그림, 도형 등으로 문서를 다듬거나 모양을 내기 위한 객체입니다.</div>
+<div class="line"><strong>라벨</strong>, <strong>사각형</strong>, <strong>원형</strong>, <strong>이미지</strong> 가 있습니다.</div>
+</div>
+<div class="section" id="label">
+<h2>라벨 (label)<a class="headerlink" href="#label" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-label.png" src="../../_images/button-label.png" />
+<div class="line-block">
+<div class="line">라벨(Label)로서 객체를 사용할 수 있습니다.</div>
+<div class="line">링크 설정을 통해 Linked Text 형태로 사용할 수 있습니다.</div>
+</div>
+<div class="section" id="id2">
+<h3>데이터<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>설정할 변수/값<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">다른 객체로 부터 받을 데이터의 변수를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/input_01.png"><img alt="설정할 변수/값" src="../../_images/input_01.png" style="width: 300px;" /></a>
+</div>
+<div class="section" id="id4">
+<h4>링크 설정<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">라벨을 링크 객체로 사용하고자 할 때 사용합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/label_01.png"><img alt="링크 설정" src="../../_images/label_01.png" style="width: 277.0px; height: 116.0px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수 값/주소</p></td>
+<td><p>링크에 대한 값을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>타겟</p></td>
+<td><p>링크 타겟을 설정합니다. (self, blank)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">타겟이 <strong>self</strong> 이면 현재 있는 탭에서 링크 화면이 보이는 것이고, <strong>blank</strong> 는 새로운 탭에서 링크 화면이 보입니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>속성<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">라벨 변수 값의 속성을 지정합니다.</div>
+</div>
+<div class="section" id="id6">
+<h4>시각화 옵션<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../../_images/studio_label_08.png"><img alt="라벨 시각화 옵션" src="../../_images/studio_label_08.png" style="width: 637.1999999999999px; height: 597.6px;" /></a>
+<p><strong>일반</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>서체</p></td>
+<td><p>라벨의 서체를 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>글꼴</p></td>
+<td><p>글꼴의 크기, 스타일(굵게, 밑줄, 이탤릭체, 취소선), 색상을 선택합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>배경</p></td>
+<td><p>라벨의 배경 색상을 선택합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>마우스오버 글꼴</p></td>
+<td><p>마우스를 라벨에 둘 때의 글꼴 크기, 색상, 스타일을 지정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>마우스오버 배경</p></td>
+<td><p>마우스를 라벨에 둘 때의 라벨 배경 색상을 지정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>가로 정렬</p></td>
+<td><p>글자의 가로 정렬을 선택합니다. (없음, 가운데, 왼쪽, 혼합)</p></td>
+</tr>
+<tr class="row-even"><td><p>세로 정렬</p></td>
+<td><p>글자의 세로 정렬을 선택합니다. (위, 중간, 아래)</p></td>
+</tr>
+<tr class="row-odd"><td><p>텍스트 정렬</p></td>
+<td><p>글자의 방향을 선택합니다. (가로, 세로)</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>조건부 서식</strong></p>
+<div class="line-block">
+<div class="line">라벨의 글꼴과 배경 색상이 조건에 따라 변경되어 적용하도록 합니다.</div>
+<div class="line">여러 개의 조건을 추가할 수 있습니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>객체 설정<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id1">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="rectangle">
+<h2>사각형 (rectangle)<a class="headerlink" href="#rectangle" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-rectangle.png" src="../../_images/button-rectangle.png" />
+<div class="line-block">
+<div class="line">사각형 도형을 그릴 때 사용합니다.</div>
+</div>
+<div class="section" id="id8">
+<h3>객체<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">사각형의 크기/ 위치</div>
+<div class="line">내부의 채우기 색상/투명도 및 윤곽선의 그림자 유무를 선택합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_rectangle_06.png"><img alt="studio_rectangle_06" src="../../_images/studio_rectangle_06.png" style="width: 210.0px; height: 579.6px;" /></a>
+</div>
+</div>
+<div class="section" id="ellipse">
+<h2>원형 (ellipse)<a class="headerlink" href="#ellipse" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-ellipse.png" src="../../_images/button-ellipse.png" />
+<div class="line-block">
+<div class="line">원형 도형을 그릴 때 사용합니다.</div>
+</div>
+<div class="section" id="id9">
+<h3>객체<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">원형의 크기/ 위치</div>
+<div class="line">내부의 채우기 색상/투명도 및 윤곽선의 그림자 유무를 선택합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_ellipse_06.png"><img alt="studio_ellipse_06" src="../../_images/studio_ellipse_06.png" style="width: 210.0px; height: 565.1999999999999px;" /></a>
+</div>
+</div>
+<div class="section" id="image">
+<h2>이미지 (image)<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-image.png" src="../../_images/button-image.png" />
+<div class="line-block">
+<div class="line">이미지 객체는 파일 또는 URL을 이용하여 이미지를 불러와 시각화할 수 있습니다.</div>
+</div>
+<div class="section" id="id10">
+<h3>데이터<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4>설정할 변수/값<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">URL 로 이미지 파일을 가져오는 경우, URL 에 적용할 변수를 설정할 수 있습니다.</div>
+<div class="line">예) <a class="reference external" href="http://data">http://data</a>.${input_1}.go.kr/imageList/${combo_1}</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/input_01.png"><img alt="설정할 변수/값" src="../../_images/input_01.png" style="width: 300px;" /></a>
+</div>
+<div class="section" id="id12">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">트리거 이벤트가 발생할 때 실행되도록 설정 할 수 있습니다.</div>
+<div class="line">트리거 설정과 변수를 활용하면 이미지 객체를 설정 값에 따라 다른 이미지파일을 불러올 수 있습니다.</div>
+</div>
+<img alt="데이터 실행 방법 설정" src="../../_images/studio_image_38.png" />
+</div>
+<div class="section" id="id13">
+<h4>속성<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<img alt="속성" src="../../_images/studio_image_38_1.png" />
+<p><strong>설정</strong></p>
+<img alt="설정" src="../../_images/studio_image_38_2.png" />
+<div class="line-block">
+<div class="line"><strong>URL 사용</strong> 을 선택 후 이미지 삽입란에 URL을 입력하고 적용 버튼을 클릭하면 객체 안에 이미지를 넣을 수 있습니다.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>파일 업로드</strong> 를 선택 후 이미지 삽입 버튼을 클릭하여 파일을 올리면 객체 안에 이미지를 넣을 수 있습니다.</div>
+</div>
+<p><strong>이미지 정렬</strong></p>
+<a class="reference internal image-reference" href="../../_images/image_04.png"><img alt="이미지 정렬" src="../../_images/image_04.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>영역에 맞춤</p></td>
+<td><p>이미지의 크기를 객체의 사이즈에 맞게 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>원본 크기</p></td>
+<td><p>이미지의 크기를 객체의 사이즈에 상관없이 원본 사이즈를 유지합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id14">
+<h4>객체 설정<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="form.html" class="btn btn-neutral float-right" title="양식 (Form) 객체" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_visualize.html" class="btn btn-neutral float-left" title="데이터 시각화 (Data Visualize) 객체" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

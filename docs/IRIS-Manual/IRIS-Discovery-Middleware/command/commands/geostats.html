@@ -1,0 +1,788 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>geostats &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="hdfs" href="hdfs.html" />
+    <link rel="prev" title="geomap" href="geomap.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Command References</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="adv.html">adv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anomalies.html">anomalies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bimatrix.html">bimatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calculate.html">calculate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concat.html">concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="corr.html">corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="count.html">count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curl.html">curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="distinct.html">distinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="eval.html">eval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fields.html">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fillna.html">fillna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit.html">fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit_predict.html">fit_predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="forecasts.html">forecasts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geoip.html">geoip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geomap.html">geomap</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">geostats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hdfs.html">hdfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="head.html">head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="img2tsv.html">img2tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indexer.html">indexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iris.html">iris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html">join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kmeans.html">kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metatron.html">metatron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestClassification.html">RandomForest Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestRegression.html">RandomForest Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeClassification.html">Spark DecisionTree Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeRegression.html">Spark DecisionTree Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkFPGrowth.html">Spark FP-Growth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkKmeans.html">Spark Kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/TFDeep.html">TFDeep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/generalizedlinearregression.html">generalizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/linearregression.html">linearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/logisticregression.html">logisticRegression(LBFGS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlmodel.html">mlmodel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html">model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-stats.html">model-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-statsdetails.html">model-statsdetails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-timeline.html">model-timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modeldata.html">modeldata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="outlier.html">outlier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pivot.html">pivot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="postagger.html">postagger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict.html">predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pylambda.html">pylambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rename.html">rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="replace.html">replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="round.html">round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sampling.html">sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scaler.html">scaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="serving.html">serving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="split.html">split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="splitter.html">splitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.html">sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="substr.html">substr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="time2sec.html">time2sec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timediff.html">TIMEDIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeline.html">timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tokenizer.html">tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="top.html">top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typecast.html">TYPECAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weekend.html">weekend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="where.html">WHERE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ysort.html">ysort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example/index.html">Command 사용 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="../index.html">Command References</a> &raquo;</li>
+    
+    <li>geostats</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/geostats.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/geostats</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/command/commands/geostats</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/command/commands/geostats
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/geostats</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/geostats.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/command/commands/geostats.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="geostats">
+<h1>geostats<a class="headerlink" href="#geostats" title="Permalink to this headline">¶</a></h1>
+<p>geostats  명령어 문법 및 연동규격 설명서 입니다.</p>
+<div class="section" id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>이 명령어는 위, 경도 데이터를 포함한 두 개의 필드를 기반으로 그룹(지정 지역 클러스터)별 통계정보를 제공합니다.</p>
+</div>
+<div class="section" id="id2">
+<h2>설명<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>해당하는 두 개의 필드에 포함된 위, 경도를 십진수 도(DD)로 나타내는(ex 41.40338, 2.17403) 지역들을 사용자의 기준으로 그룹짓고 이에대한 통계(count, sum, avg, min, max 등)결과를 새로운 필드로 생성하여 제공합니다. 생성된 필드는 명령어 순서에 맞게 기존 테이블의 마지막에 위치하게 됩니다.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>검색대상이되는 데이터가 다음과 같이 존재합니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>UPDATE_TIME</p></th>
+<th class="head"><p>SYS_OUT</p></th>
+<th class="head"><p>OUT_TYPE</p></th>
+<th class="head"><p>LAT</p></th>
+<th class="head"><p>LON</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2018-03-08  1:00</p></td>
+<td><p>a</p></td>
+<td><p>37.5</p></td>
+<td><p>127.5</p></td>
+<td><p>107</p></td>
+</tr>
+<tr class="row-odd"><td><p>2018-03-08  1:00</p></td>
+<td><p>b</p></td>
+<td><p>37</p></td>
+<td><p>126.5</p></td>
+<td><p>145</p></td>
+</tr>
+<tr class="row-even"><td><p>2018-03-08  1:00</p></td>
+<td><p>c</p></td>
+<td><p>38.5</p></td>
+<td><p>126</p></td>
+<td><p>797</p></td>
+</tr>
+<tr class="row-odd"><td><p>2018-03-08 1:00</p></td>
+<td><p>a</p></td>
+<td><p>38</p></td>
+<td><p>128</p></td>
+<td><p>456</p></td>
+</tr>
+<tr class="row-even"><td><p>2018-03-08 1:00</p></td>
+<td><p>d</p></td>
+<td><p>36.5</p></td>
+<td><p>127</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-odd"><td><p>2018-03-08 1:00</p></td>
+<td><p>c</p></td>
+<td><p>37</p></td>
+<td><p>126</p></td>
+<td><p>179</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>LAT, LON 필드값을 이용해 클러스터링 및  COUNT집계함수 실행 결과를 테이블에 추가하는 예제 입니다.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | geostats lat lon count by OUT_TYPE
+</pre></div>
+</div>
+<p>명령어 이후 테이블 (클러스터링 및 count 필드 추가)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>cluster_id</p></th>
+<th class="head"><p>latitude</p></th>
+<th class="head"><p>longitude</p></th>
+<th class="head"><p>OUT_TYPE</p></th>
+<th class="head"><p>count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0_6_5</p></td>
+<td><p>37.75</p></td>
+<td><p>127.75</p></td>
+<td><p>a</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-odd"><td><p>0_6_5</p></td>
+<td><p>37.75</p></td>
+<td><p>127.75</p></td>
+<td><p>c</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>0_6_6</p></td>
+<td><p>37</p></td>
+<td><p>126.5</p></td>
+<td><p>b</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0_6_6</p></td>
+<td><p>36.5</p></td>
+<td><p>127</p></td>
+<td><p>d</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>LAT, LON 필드값을 이용해 클러스터링 및 SUM 집계함수 실행 결과를 테이블에 추가하는 예제 입니다.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | geostats lat lon sum(SYS_OUT) by OUT_TYPE
+</pre></div>
+</div>
+<p>명령어 이후 테이블 (클러스터링 및 sum 필드 추가)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>cluster_id</p></th>
+<th class="head"><p>latitude</p></th>
+<th class="head"><p>longitude</p></th>
+<th class="head"><p>OUT_TYPE</p></th>
+<th class="head"><p>sum(SYS_OUT)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0_6_5</p></td>
+<td><p>37.75</p></td>
+<td><p>127.75</p></td>
+<td><p>a</p></td>
+<td><p>563</p></td>
+</tr>
+<tr class="row-odd"><td><p>0_6_5</p></td>
+<td><p>37.75</p></td>
+<td><p>127.75</p></td>
+<td><p>c</p></td>
+<td><p>976</p></td>
+</tr>
+<tr class="row-even"><td><p>0_6_6</p></td>
+<td><p>36.5</p></td>
+<td><p>127</p></td>
+<td><p>d</p></td>
+<td><p>41</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>LAT, LON 필드값을 이용해 클러스터링 및 COUNT,  SUM 집계함수 실행 결과를 테이블에 추가하는 예제 입니다.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | geostats lat lon count,sum(SYS_OUT) by OUT_TYPE
+</pre></div>
+</div>
+<p>명령어 이후 테이블 (클러스터링 및 count, sum 필드 추가)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>cluster_id</p></th>
+<th class="head"><p>latitude</p></th>
+<th class="head"><p>longitude</p></th>
+<th class="head"><p>OUT_TYPE</p></th>
+<th class="head"><p>count</p></th>
+<th class="head"><p>sum(SYS_OUT)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0_6_5</p></td>
+<td><p>37.75</p></td>
+<td><p>127.75</p></td>
+<td><p>a</p></td>
+<td><p>2</p></td>
+<td><p>563</p></td>
+</tr>
+<tr class="row-odd"><td><p>0_6_5</p></td>
+<td><p>37.75</p></td>
+<td><p>127.75</p></td>
+<td><p>c</p></td>
+<td><p>2</p></td>
+<td><p>976</p></td>
+</tr>
+<tr class="row-even"><td><p>0_6_6</p></td>
+<td><p>37</p></td>
+<td><p>126.5</p></td>
+<td><p>b</p></td>
+<td><p>1</p></td>
+<td><p>145</p></td>
+</tr>
+<tr class="row-odd"><td><p>0_6_6</p></td>
+<td><p>36.5</p></td>
+<td><p>127</p></td>
+<td><p>d</p></td>
+<td><p>1</p></td>
+<td><p>41</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>LAT, LON 필드값을 이용해 클러스터링 및 COUNT집계함수 실행 결과를 테이블에 추가하는 예제 입니다.( groub by 절 생략.)</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | geostats lat lon count
+</pre></div>
+</div>
+<p>명령어 이후 테이블 (클러스터링 및 count 필드 추가 )</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>cluster_id</p></th>
+<th class="head"><p>latitude</p></th>
+<th class="head"><p>longitude</p></th>
+<th class="head"><p>count</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0_6_5</p></td>
+<td><p>37</p></td>
+<td><p>126.5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>0_6_5</p></td>
+<td><p>37.5</p></td>
+<td><p>127.5</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>0_6_5</p></td>
+<td><p>38.5</p></td>
+<td><p>128</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>...| geostats latitude longitude aggr_funcs(, aggr_funcs)* (aggr_by)? (cell_size)* (level)* (bounds_sqr)*
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>필수/옵션</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>latitude longitude</p></td>
+<td><p>위, 경도 한 쌍을 필수로 입력해야하며 십진수 도(DD)(ex 41.40338, 2.17403) 형식을 따라야합니다. (Latitude, 위도 / Longitude, 경도)</p></td>
+<td><p>필수</p></td>
+</tr>
+<tr class="row-odd"><td><p>aggr_funcs</p></td>
+<td><p>집계 함수를 나타내며, 통계 함수를 실행합니다. 아래 표와 같은 옵션이 존재합니다.</p></td>
+<td><p>필수</p></td>
+</tr>
+<tr class="row-even"><td><p>aggr_by</p></td>
+<td><p>명령어 사용시 생략 가능하며 필드를 집계 기준으로 두어  <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">by</span></code> 역할을 합니다. <code class="docutils literal notranslate"><span class="pre">by</span></code> 다음 <code class="docutils literal notranslate"><span class="pre">필드명</span></code>이 필요하며 다수의 필드명 입력이 가능합니다.</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-odd"><td><p>cell_size</p></td>
+<td><p>데이터 클러스터링을 하는 셀의 크기를 설정하며 (위,경도의)도 값을 의미합니다.  해당 옵션 <strong>생략 시</strong> default(size = 22.5) 값이 지정됩니다.<span class="raw-html-m2r"><br/></span>ex) size = 15.5  (이 결과로 한 셀의 크기는 15.5로 생성됩니다.)</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-even"><td><p>level</p></td>
+<td><p>위,경도 데이터를 전달 된 Level 에 따라 각각의 위치를 기록합니다.</p></td>
+<td><p>옵션</p></td>
+</tr>
+<tr class="row-odd"><td><p>bounds_sqr</p></td>
+<td><p>검색 초기결과 값 및 표시화면 제한을 위한 두 쌍의 위,경도를 지정(남서, 북동경계 좌표 순)합니다.  <strong>생략 시</strong> 전세계 화면 및 보유한 모든 결과를 보여줍니다.<span class="raw-html-m2r"><br/></span>ex) bounds(35.73687,125.51806, 35.73687, 128.58325)</p></td>
+<td><p>옵션</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>aggregation function list</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>함수 명</p></th>
+<th class="head"><p>역할</p></th>
+<th class="head"><p>필수요소</p></th>
+<th class="head"><p>예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>count</p></td>
+<td><p>대상의 수를 구하는 함수.</p></td>
+<td><p>괄호 및 필드명 미사용</p></td>
+<td><p>count</p></td>
+</tr>
+<tr class="row-odd"><td><p>sum</p></td>
+<td><p>대상 필드의 합계를 구하는 함수.</p></td>
+<td><p>괄호 및 필드명</p></td>
+<td><p>sum(Out)</p></td>
+</tr>
+<tr class="row-even"><td><p>avg</p></td>
+<td><p>대상 필드의 평균을 구하는 함수.</p></td>
+<td><p>괄호 및 필드명</p></td>
+<td><p>avg(Out)</p></td>
+</tr>
+<tr class="row-odd"><td><p>max</p></td>
+<td><p>대상 필드의 최고 값을 구하는 함수.</p></td>
+<td><p>괄호 및 필드명</p></td>
+<td><p>max(Out)</p></td>
+</tr>
+<tr class="row-even"><td><p>min</p></td>
+<td><p>대상 필드의 최저 값을 구하는 함수</p></td>
+<td><p>괄호 및 필드명</p></td>
+<td><p>min(Out)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parameters-bnf">
+<h2>Parameters BNF<a class="headerlink" href="#parameters-bnf" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>geostats_command : latitude longitude aggr_funcs aggr_by cell_size level bound_sqr
+
+latitude : field
+
+longitude : field
+
+aggr_funcs : aggr_funcs COMMA aggr_func
+            | aggr_func
+
+aggr_func : WORD LPAREN field RPAREN
+            | WORD
+
+aggr_by : BY field
+
+bound_sqr : BOUNDS LPAREN latlon COMMA latlon COMMA latlon COMMA latlon RPAREN
+
+cell_size : SIZE EQUALS DOUBLE
+
+level : LEVEL EQUALS NUMBER
+
+field : WORD
+
+latlon : DOUBLE
+
+WORD : \w+
+COMMA : ,
+LPAREN : \(
+RPAREN : \)
+EQUALS : \=
+SIZE : size|SIZE
+LEVEL : level|LEVEL
+BOUNDS : bounds|BOUNDS
+NUMBER : \d+
+BY : by|BY
+DOUBLE : [-+]?[0-9]+(\.([0-9]+)?([eE][-+]?[0-9]+)?|[eE][-+]?[0-9]+)
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hdfs.html" class="btn btn-neutral float-right" title="hdfs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="geomap.html" class="btn btn-neutral float-left" title="geomap" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

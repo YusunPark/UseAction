@@ -1,0 +1,383 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>UDF &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="User Guide" href="../../user_guide/index.html" />
+    <link rel="prev" title="권한" href="02.privilege.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../systemmanager_guide/index.html">System-manager Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">DB-manager Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="01.iplus.html">iplus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02.privilege.html">권한</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">UDF</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">DB-manager Guide</a> &raquo;</li>
+    
+    <li>UDF</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/dbmanager_guide/doc/03.udf.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/dbmanager_guide/doc/03.udf</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/dbmanager_guide/doc/03.udf</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/dbmanager_guide/doc/03.udf
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/dbmanager_guide/doc/03.udf</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/dbmanager_guide/doc/03.udf.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/dbmanager_guide/doc/03.udf.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="udf">
+<h1>UDF<a class="headerlink" href="#udf" title="Permalink to this headline">¶</a></h1>
+<p>IRIS는 사용자 정의한 함수 (UDF; User Defined Function) 기능을 제공하고 있습니다. 단, 함수 중에서 Aggregate 계열의 UDF는 등록이 불가능 하며, 일반 함수(레코드 단위로 사용 되는 함수) 만 UDF로 등록할 수 있습니다.</p>
+<p>UDF를 등록하기 위해서는 다음과 같은 과정을 거쳐야 합니다.</p>
+<ol class="arabic simple">
+<li><p>UDF 기능 활성화</p></li>
+<li><p>UDF 함수 제작</p></li>
+<li><p>UDF 함수 배포 및 설치</p></li>
+</ol>
+<div class="section" id="id1">
+<h2>UDF 기능 활성화<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>IRIS를 기본설치할 경우 UDF 는 사용하지 안하도록 설정이 되어 있습니다. 따라서, 해당 기능을 사용하기 위해서는 IRIS의 설정값 변경을 통해 UDF기능을 활성화 시켜주어야 합니다.</p>
+<p>해당 설정은 모든 노드에서 반복적으로 이루어 져야 합니다.
+이래와 같이 m6.config의 SYSTEM_INFO 섹션의 udf 항목을 True로 변경 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~] vi ~/IRIS/conf/common/m6.config
+#################################################
+[SYSTEM_INFO]
+…
+udf = True
+…
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>UDF 함수 제작<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>UDF함수를 제작하기 위해서는 python언어를 사용해야 합니다. 아래는 power함수를 제작하는 예제 입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_power</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">pow</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+
+<span class="n">fun_name</span> <span class="o">=</span> <span class="s1">&#39;power&#39;</span>
+<span class="n">fun_params</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="n">_power</span>
+</pre></div>
+</div>
+<p>UDF 함수에서는 3개의 변수를 선언해 주어야 합니다.</p>
+<ul class="simple">
+<li><p>fun_name: 쿼리상에서 사용할 함수 이름</p></li>
+<li><p>fun_param: 함수에 들어가는 인자의 개수</p></li>
+<li><p>fun: UDF로 사용되는 메인 함수 이름</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>UDF 함수 배포 및 설치<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>UDF함수는 각 노드에 배포 및 설치가 이루어 져야 합니다. 사용자가 작성한 파일은 각 노드에 다음 경로에 배포를 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${M6_HOME}/libext/udf
+</pre></div>
+</div>
+<p>이후 다음 파일을 수정 합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ vi ${M6_HOME}/libext/udf/__init__.py
+__all__ = [‘power’]
+</pre></div>
+</div>
+<p>__all__ = [] 변수 안에 생성한 UDF 파일의 파일 명을 기록해 둡니다.
+만약 power.py 로 파일을 생성했을 경우 __all__ = [‘power’] 를 기록하게 됩니다.</p>
+<p>위의 작업을 전부 거친 이후부터 power함수를 사용할 수 있습니다.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../user_guide/index.html" class="btn btn-neutral float-right" title="User Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.privilege.html" class="btn btn-neutral float-left" title="권한" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

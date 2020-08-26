@@ -8,6 +8,7 @@ import argparse
 from lib import util
 from lib.info_parser import DocInfoParser
 from lib.error import DocInfoError
+from lib.index_rst import IndexRstGenerator
 
 TEMP_SOURCE_DIR = 't_source'
 TEMP_BUILD_DIR = 't_build'
@@ -115,9 +116,11 @@ def build():
 
     guide_path_list = []
 
-    try:
+    try:        
+        root_guide_name_list = []
         for guide_full_name, path in build_target.items():
             _, root_guide_name, guide_name = path.split(os.sep)
+            root_guide_name_list.append(root_guide_name)
 
             try:
                 os.makedirs(os.path.join(TEMP_SOURCE_DIR, root_guide_name))
@@ -132,11 +135,17 @@ def build():
             guide_path_list.append(os.path.join(TEMP_SOURCE_DIR, root_guide_name, guide_name))
 
         setup_info(guide_path_list)
-        # 메인 index.rst 복사
-        root_index_file_path = os.path.join('templates', 'index.rst')
-        shutil.copy(root_index_file_path, TEMP_SOURCE_DIR)
-        run_sphinx()
+ 
+        # 메인 index.rst 생성
+        index_rst = IndexRstGenerator("IRIS")
+        index_rst.add_doc_path_list(root_guide_name_list)
+        index_rst.write(os.path.join(TEMP_SOURCE_DIR, 'index.rst'))
 
+        # # 메인 index.rst 복사
+        # root_index_file_path = os.path.join('templates', 'index.rst')
+        # shutil.copy(root_index_file_path, TEMP_SOURCE_DIR)
+        
+        run_sphinx()
         finish('IRIS')
 
     except DocInfoError as err:
@@ -145,40 +154,40 @@ def build():
 
 if __name__ == '__main__':
     build()
-    # shutil.copytree("./assets", "./out/iris/assets")
 
-    source = './out/IRIS'
-    dest1 = '../'
+    # 빌드 최종 결과물 /docs폴더로 이동
+    source = './out/IRIS/'
+    dest = '../docs/'
+    shutil.move(source, dest)
+    # IRIS 로고를 위해서
+    shutil.copytree("./assets", dest)
+
+    # # source = './out/IRIS'
+    # # dest1 = '../'
 
 
     # files = os.listdir(source)
-
-    # for f in files:
-    #     shutil.copy(source+f, dest1)
-    #     #copy_tree(source+f, dest1)
-
-    files = os.listdir(source)
-    for file_name in files:
-        full_file_name = os.path.join(source, file_name)
-        dest_file_name = os.path.join(dest1, file_name)
+    # for file_name in files:
+    #     full_file_name = os.path.join(source, file_name)
+    #     dest_file_name = os.path.join(dest1, file_name)
 
 
-        # 파일이 이미 존재하는 경우 삭제
+    #     # 파일이 이미 존재하는 경우 삭제
 
-        if os.path.isfile(dest1+file_name):
-            os.remove(dest_file_name)
-        if os.path.isfile(full_file_name):
-            shutil.copy(full_file_name, dest1)
+    #     if os.path.isfile(dest1+file_name):
+    #         os.remove(dest_file_name)
+    #     if os.path.isfile(full_file_name):
+    #         shutil.copy(full_file_name, dest1)
 
  
-    folder = ['_images', '_sources', '_static', 'IRIS-Manual', 'IRIS-Tutorial']
-    for folder_name in folder:
-        full_folder_name = os.path.join(source, folder_name)
-        dest_folder_name = os.path.join(dest1, folder_name)
+    # folder = ['_images', '_sources', '_static', 'IRIS-Manual', 'IRIS-Tutorial']
+    # for folder_name in folder:
+    #     full_folder_name = os.path.join(source, folder_name)
+    #     dest_folder_name = os.path.join(dest1, folder_name)
        
-        # 폴더 존재할 경우 삭제
-        if os.path.isdir(dest_folder_name):
-            shutil.rmtree(dest_folder_name)
+    #     # 폴더 존재할 경우 삭제
+    #     if os.path.isdir(dest_folder_name):
+    #         shutil.rmtree(dest_folder_name)
 
-        shutil.copytree(full_folder_name, dest_folder_name)
+    #     shutil.copytree(full_folder_name, dest_folder_name)
 

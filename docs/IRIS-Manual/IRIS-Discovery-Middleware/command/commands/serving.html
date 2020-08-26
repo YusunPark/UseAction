@@ -1,0 +1,844 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>serving &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="sort" href="sort.html" />
+    <link rel="prev" title="search" href="search.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Command References</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="adv.html">adv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anomalies.html">anomalies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bimatrix.html">bimatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calculate.html">calculate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concat.html">concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="corr.html">corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="count.html">count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curl.html">curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="distinct.html">distinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="eval.html">eval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fields.html">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fillna.html">fillna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit.html">fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit_predict.html">fit_predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="forecasts.html">forecasts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geoip.html">geoip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geomap.html">geomap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geostats.html">geostats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hdfs.html">hdfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="head.html">head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="img2tsv.html">img2tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indexer.html">indexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iris.html">iris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html">join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kmeans.html">kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metatron.html">metatron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestClassification.html">RandomForest Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestRegression.html">RandomForest Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeClassification.html">Spark DecisionTree Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeRegression.html">Spark DecisionTree Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkFPGrowth.html">Spark FP-Growth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkKmeans.html">Spark Kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/TFDeep.html">TFDeep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/generalizedlinearregression.html">generalizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/linearregression.html">linearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/logisticregression.html">logisticRegression(LBFGS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlmodel.html">mlmodel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html">model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-stats.html">model-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-statsdetails.html">model-statsdetails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-timeline.html">model-timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modeldata.html">modeldata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="outlier.html">outlier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pivot.html">pivot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="postagger.html">postagger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict.html">predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pylambda.html">pylambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rename.html">rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="replace.html">replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="round.html">round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sampling.html">sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scaler.html">scaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">search</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">serving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="split.html">split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="splitter.html">splitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.html">sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="substr.html">substr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="time2sec.html">time2sec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timediff.html">TIMEDIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeline.html">timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tokenizer.html">tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="top.html">top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typecast.html">TYPECAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weekend.html">weekend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="where.html">WHERE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ysort.html">ysort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example/index.html">Command 사용 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="../index.html">Command References</a> &raquo;</li>
+    
+    <li>serving</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/command/commands/serving</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/serving.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/command/commands/serving.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="serving">
+<h1>serving<a class="headerlink" href="#serving" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Tensorflow Serving을 통해 예측, 모델의 서빙 상태를 확인하는 명령어</p>
+</div>
+<div class="section" id="id2">
+<h2>설명<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>배포된 모델에 대해 예측하거나 서빙 상태를 확인할 수 있습니다. 배포는 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-import">적재</a> , <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/mlmodel.html#mlmodel-deploy">배포</a> 를 참조해주세요.</p>
+</div>
+<div class="section" id="serving-predict">
+<h2>serving predict<a class="headerlink" href="#serving-predict" title="Permalink to this headline">¶</a></h2>
+<p>배포된 모델에 대해 예측합니다. 예측 컬럼, 예측 확률을 출력합니다. tag 옵션이 있으면 예측되는 tag 값도 추가적으로 출력합니다.</p>
+<p>DSL 방식과 설정파일 제출 방식을 지원합니다.</p>
+<dl class="simple">
+<dt>관련 USECASE</dt><dd><ul class="simple">
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/ml-serving/index.html">외부 모델 활용</a></p></li>
+<li><p><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Usecase/ml/index.html">내부 모델 활용</a></p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>DSL 방식 1</p>
+<ul class="simple">
+<li><p>feature옵션에 예측에 필요한 정보를 모두 입력합니다.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">serving</span> <span class="pre">predict</span> <span class="pre">model_name</span> <span class="pre">feature=[(feature,</span> <span class="pre">Conv1_input,</span> <span class="pre">double,</span> <span class="pre">28,</span> <span class="pre">28,</span> <span class="pre">1)]</span> <span class="pre">version=11</span> <span class="pre">tag=(zero,</span> <span class="pre">one,</span> <span class="pre">two,</span> <span class="pre">three,</span> <span class="pre">four,</span> <span class="pre">five,</span> <span class="pre">six,</span> <span class="pre">seven,</span> <span class="pre">egiht,</span> <span class="pre">nine,</span> <span class="pre">ten)</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>예측할 모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>feature</p></td>
+<td><p>특징 컬럼명, 입력 텐서 이름, 입력 텐서 자료형, 입력 텐서 모양의 리스트</p></td>
+<td></td>
+<td><p>[(body, body, float, 10), (tags, tags, double, 12), (feature, Conv1_input, int, 28, 28, 1)]</p></td>
+<td><p>list of tuple</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>모델의 서빙 버전</p></td>
+<td><p>최근 버전</p></td>
+<td><p>3</p></td>
+<td><p>숫자형</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>tag</p></td>
+<td><p>태그값</p></td>
+<td></td>
+<td><p>(‘T-shirt/top’, ‘Trouser’, ‘Pullover’, ‘Dress’, ‘Coat’, ‘Sandal’, ‘Shirt’, ‘Sneaker’, ‘Bag’, ‘Ankle boot’)</p></td>
+<td><p>튜플형</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>DSL 방식 2</p>
+<ul class="simple">
+<li><p>feature 옵션을 col, dtype, shape, layer_name으로 나누어 입력합니다.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">serving</span> <span class="pre">predict</span> <span class="pre">model_name</span> <span class="pre">col=(feature)</span> <span class="pre">shape=[(28,28,1)]</span> <span class="pre">dtype=(float)</span> <span class="pre">layer_name=(Conv1_input)</span> <span class="pre">version=11</span> <span class="pre">tag=(zero,</span> <span class="pre">one,</span> <span class="pre">two,</span> <span class="pre">three,</span> <span class="pre">four,</span> <span class="pre">five,</span> <span class="pre">six,</span> <span class="pre">seven,</span> <span class="pre">egiht,</span> <span class="pre">nine,</span> <span class="pre">ten)</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>예측할 모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>col</p></td>
+<td><p>특징 컬럼명</p></td>
+<td></td>
+<td><p>(body, tags, title)</p></td>
+<td><p>튜플형</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>shape</p></td>
+<td><p>입력 텐서 모양의 리스트</p></td>
+<td></td>
+<td><p>[(-1), (10), (-1)]</p></td>
+<td><p>list of tuple</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>dtype</p></td>
+<td><p>입력 텐서 자료형</p></td>
+<td><p>(float, float, …) col에 정의된 특징 컬럼의 개수</p></td>
+<td><p>(float, double, int)</p></td>
+<td><p>튜플형</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>layer_name</p></td>
+<td><p>입력 텐서 이름</p></td>
+<td><p>col과 같은 값으로 간주합니다.</p></td>
+<td><p>(body, tags, title)</p></td>
+<td><p>튜플형</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>version</p></td>
+<td><p>모델의 서빙 버전</p></td>
+<td><p>최근 버전</p></td>
+<td><p>3</p></td>
+<td><p>숫자형</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>tag</p></td>
+<td><p>태그값</p></td>
+<td></td>
+<td><p>(‘T-shirt/top’, ‘Trouser’, ‘Pullover’, ‘Dress’, ‘Coat’, ‘Sandal’, ‘Shirt’, ‘Sneaker’, ‘Bag’, ‘Ankle boot’)</p></td>
+<td><p>튜플형</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>설정파일 제출 방식</p>
+<ul class="simple">
+<li><p>설정파일을 객체저장소에 업로드하고, 업로드 경로를 입력하여 예측합니다.</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/tfx/serving/api_rest#request_format_2">설정 파일 포맷</a></p></li>
+<li><p>설정 파일 예시</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{
+&quot;signature_name&quot;: &quot;serving_default&quot;,
+&quot;instances&quot;: [[[[0.0], [0.0], [0.0],..., [0.011764705882352941], [0.0], [0.0], [0.45098039215686275], [0.4470588235294118], [0.41568627450980394], [0.5372549019607843],..., [0.0], [0.0]]]]
+}
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">serving</span> <span class="pre">predict</span> <span class="pre">model_name</span> <span class="pre">conf=OBJECTSTORAGE.{CONNECTOR_NAME}:{KEY}</span> <span class="pre">version=1</span> <span class="pre">tag=(T-shirt/top,</span> <span class="pre">Trouser,</span> <span class="pre">Pullover,</span> <span class="pre">Dress,</span> <span class="pre">Coat,</span> <span class="pre">Sandal,</span> <span class="pre">Shirt,</span> <span class="pre">Sneaker,</span> <span class="pre">Bag,</span> <span class="pre">Ankle</span> <span class="pre">boot)</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>예측할 모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-odd"><td><p>conf</p></td>
+<td><p>설정 파일</p></td>
+<td></td>
+<td><p>OBJECTSTORAGE.MINAI:USERS/root/clothes/predict/1.json</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>모델의 서빙 버전</p></td>
+<td><p>최근 버전</p></td>
+<td><p>3</p></td>
+<td><p>숫자형</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>tag</p></td>
+<td><p>태그값</p></td>
+<td></td>
+<td><p>(‘T-shirt/top’, ‘Trouser’, ‘Pullover’, ‘Dress’, ‘Coat’, ‘Sandal’, ‘Shirt’, ‘Sneaker’, ‘Bag’, ‘Ankle boot’)</p></td>
+<td><p>튜플형</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code class="docutils literal notranslate"><span class="pre">CONNECTOR_NAME</span></code> : Conncetor Name입니다. IRIS UI에서 연결정보 생성 후, 연결정보의 <code class="docutils literal notranslate"><span class="pre">이름</span></code> 컬럼에서 확인할 수 있는 값입니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">KEY</span></code> : OBJECTSTORAGE의 key입니다. bucket은 생략해야 합니다.</p>
+</div>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>angora mnist test 데이터의 30개 레코드를 소스로하여 예측합니다. 숫자를 분류하는 모델이 사용되었습니다. layer_name은 학습시 input 텐서의 이름을 뜻합니다.</p>
+<ul class="simple">
+<li><p>layer_name을 잘못 입력하면 아래와 같이 에러 문구가 나옵니다. 에러 문구의 signiture를 참조하여 layer_name을 입력하면 됩니다. 아래 예시에서는 input 텐서의 이름을 feature로 잘못 주었고, input 텐서 이름을 Conv1_input로 주어야 합니다.</p></li>
+</ul>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>raise AngoraException(servingCommand.EXCEPTION_05.format(res.status_code, res.text, signature))
+angora.exceptions.AngoraException: Incorrect response[404]. Please check the signature.
+&quot;error&quot;: &quot;Failed to process element: 0 key: feature of \&#39;instances\&#39; list. Error: Invalid argument: JSON object: does not have named input: feature&quot; }
+signature=b\&quot;The given SavedModel SignatureDef contains the following input(s):\\n
+inputs[&#39;Conv1_input&#39;] tensor_info:\\n
+dtype: DT_FLOAT\\n
+shape: (-1, 28, 28, 1)\\n
+name: serving_default_Conv1_input:0\\n
+The given SavedModel SignatureDef contains the following output(s):\\n
+outputs[&#39;Softmax&#39;] tensor_info:\\n
+dtype: DT_FLOAT\\n
+shape: (-1, 10)\\n
+name: StatefulPartitionedCall:0\\nMethod name is: tensorflow/serving/predict\\n\&quot;\n
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">'angora</span> <span class="pre">mnist</span> <span class="pre">test'</span> <span class="pre">|</span> <span class="pre">top</span> <span class="pre">30</span> <span class="pre">feature</span> <span class="pre">|</span> <span class="pre">serving</span> <span class="pre">predict</span> <span class="pre">mnist_v1</span> <span class="pre">col=feature</span> <span class="pre">shape=[(28,28,1)]</span> <span class="pre">layer_name=Conv1_input</span> <span class="pre">version=12</span> <span class="pre">tag=(zero,</span> <span class="pre">one,</span> <span class="pre">two,</span> <span class="pre">three,</span> <span class="pre">four,</span> <span class="pre">five,</span> <span class="pre">six,</span> <span class="pre">seven,</span> <span class="pre">egiht,</span> <span class="pre">nine,</span> <span class="pre">ten)</span></code></p>
+<p>출력 결과</p>
+<ul class="simple">
+<li><p>predictions은 output 텐서의 각 확률 값을 출력합니다.</p></li>
+<li><p>probability컬럼은 predictions 중 가장 높은 값을 출력합니다.</p></li>
+<li><p>interpreted는 tag 옵션이 있는 경우 predictions에서 가장 큰값의 index를 tag에서 선택하여 출력합니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>label</p></th>
+<th class="head"><p>tag</p></th>
+<th class="head"><p>feature</p></th>
+<th class="head"><p>predictions</p></th>
+<th class="head"><p>probability</p></th>
+<th class="head"><p>interpreted</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0,0,0,0,0,1,0,0,0,0</p></td>
+<td><p>five</p></td>
+<td><p>0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0…</p></td>
+<td><p>[0.62, 0.01, 0.04…]</p></td>
+<td><p>0.62</p></td>
+<td><p>five</p></td>
+</tr>
+<tr class="row-odd"><td><p>1,0,0,0,0,0,0,0,0,0</p></td>
+<td><p>zero</p></td>
+<td><p>0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0…</p></td>
+<td><p>[0.14, 0.03, 0.03…]</p></td>
+<td><p>0.38</p></td>
+<td><p>zero</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>multi_in_out test 데이터를 소스로 예측합니다. 다중 컬럼을 입력으로하고 다중 컬럼을 출력합니다. 특징 컬럼과 input 텐서이름이 같다면 layer_name을 생략합니다. version을 최신 버전을 사용할거라면 생략합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">model</span> <span class="pre">name</span> <span class="pre">=</span> <span class="pre">'multi_in_out</span> <span class="pre">test'</span> <span class="pre">|</span> <span class="pre">serving</span> <span class="pre">predict</span> <span class="pre">multi_in_out</span> <span class="pre">col=(title,</span> <span class="pre">body,</span> <span class="pre">tags)</span> <span class="pre">shape=[(10),</span> <span class="pre">(10),</span> <span class="pre">(12)]</span></code></p>
+<p>출력 결과</p>
+<ul class="simple">
+<li><p>다중 출력의 경우 각 출력의 텐서 이름을 컬럼명으로 하여 값을 출력합니다.</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>title</p></th>
+<th class="head"><p>body</p></th>
+<th class="head"><p>tags</p></th>
+<th class="head"><p>department</p></th>
+<th class="head"><p>priority</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>[0.43, 0.77, 0.3, 0.19, 0.38, 0.37, 0.56, 0.48, 0.8, 0.4]</p></td>
+<td><p>[0.9, 0.5, 0.16, 0.74, 0.9, 0.64, 0.37, 0.18, 0.08, 0.87]</p></td>
+<td><p>[0.44, 0.45, 0.56, 0.63, 0.72, 0.28, 0.57, 0.19, 0.66, 0.47, 0.89, 0.37]</p></td>
+<td><p>[-0.17423968, -0.243361622, -0.155712008, -0.312662631]</p></td>
+<td><p>[-0.115426637]</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>설정파일을 제출하여 예측합니다. 옷을 분류하는 모델이 사용되었습니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">serving</span> <span class="pre">predict</span> <span class="pre">clothes</span> <span class="pre">conf=OBJECTSTORAGE.MIN_AI:USERS/namjals/clothes/predict/1.json</span> <span class="pre">version=1</span> <span class="pre">tag=(T-shirt/top,</span> <span class="pre">Trouser,</span> <span class="pre">Pullover,</span> <span class="pre">Dress,</span> <span class="pre">Coat,</span> <span class="pre">Sandal,</span> <span class="pre">Shirt,</span> <span class="pre">Sneaker,</span> <span class="pre">Bag,</span> <span class="pre">Ankle</span> <span class="pre">boot)</span></code></p>
+<p>출력 결과</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>predictions</p></th>
+<th class="head"><p>probability</p></th>
+<th class="head"><p>interpreted</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>[0.14, 0.03, 0.03…]</p></td>
+<td><p>0.38</p></td>
+<td><p>Ankle boot</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parameters-bnf">
+<h3>Parameters BNF<a class="headerlink" href="#parameters-bnf" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>serving_command : PREDICT WORD options
+options : option
+        | options option
+        |
+option : WORD EQ WORD
+        | WORD EQ WORD_WITH_BRACKET
+        | WORD EQ WORD_WITH_SQUARE_BRACKET
+
+WORD = [^ |^\|^\&#39;|\&quot;|^\=]+
+WORD_WITH_BRACKET =  \([^\|^\&#39;|\&quot;|^\=]+\)
+WORD_WITH_SQUARE_BRACKET = \[[^\|^\&#39;|\&quot;|^\=]+\]
+EQ = \=
+PREDICT = (?i)predict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="serving-status">
+<h2>serving status<a class="headerlink" href="#serving-status" title="Permalink to this headline">¶</a></h2>
+<p>서빙 중인 모델의 서빙 상태를 확인합니다.</p>
+<div class="section" id="id8">
+<h3>Parameters<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">serving</span> <span class="pre">status</span> <span class="pre">model_name</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>기본값</p></th>
+<th class="head"><p>예시값</p></th>
+<th class="head"><p>타입</p></th>
+<th class="head"><p>필수</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>model_name</p></td>
+<td><p>서빙 상태를 확인할 모델명</p></td>
+<td></td>
+<td><p>mnist_v1</p></td>
+<td><p>문자열</p></td>
+<td><p>O</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h3>Examples<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>mnist_v1모델의 서빙 상태를 확인합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">serving</span> <span class="pre">status</span> <span class="pre">mnist_v1</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>version</p></th>
+<th class="head"><p>state</p></th>
+<th class="head"><p>label</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>AVAILABLE</p></td>
+<td><p>stable</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>AVAILABLE</p></td>
+<td><p>unstable</p></td>
+</tr>
+<tr class="row-even"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h3>Parameters BNF<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>serving_command : STATUS WORD
+
+WORD = [^ |^\|^\&#39;|\&quot;|^\=]+
+STATUS = (?i)status
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sort.html" class="btn btn-neutral float-right" title="sort" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="search.html" class="btn btn-neutral float-left" title="search" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

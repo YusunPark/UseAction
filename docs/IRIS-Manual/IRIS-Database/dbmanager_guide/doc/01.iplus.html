@@ -1,0 +1,1541 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>iplus &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="권한" href="02.privilege.html" />
+    <link rel="prev" title="DB-manager Guide" href="../index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../systemmanager_guide/index.html">System-manager Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">DB-manager Guide</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">iplus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02.privilege.html">권한</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.udf.html">UDF</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">DB-manager Guide</a> &raquo;</li>
+    
+    <li>iplus</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/dbmanager_guide/doc/01.iplus.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/dbmanager_guide/doc/01.iplus</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/dbmanager_guide/doc/01.iplus</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/dbmanager_guide/doc/01.iplus
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/dbmanager_guide/doc/01.iplus</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/dbmanager_guide/doc/01.iplus.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/dbmanager_guide/doc/01.iplus.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="iplus">
+<h1>iplus<a class="headerlink" href="#iplus" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="ipuls">
+<h2>ipuls 사용하기<a class="headerlink" href="#ipuls" title="Permalink to this headline">¶</a></h2>
+<p>iplus는 IRIS 사용자가 원격의 클라이언트에서 IRIS에 접속하여 IRIS를 제어하고 관리하거나 데이터를 조회하는 명령을 실행할 수 있는 CLI(Command Line Interface) 툴입니다. iplus는 마스터 노드 혹은 데이터 노드에 접속하여 실행할 수 있습니다.</p>
+<div class="section" id="id1">
+<h3>계정 정보를 이용한 접속<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master01 ~]$ iplus
+Usage:
+    iplus user[@host[:port]]
+    iplus &lt; file
+</pre></div>
+</div>
+<p>상기의 화면에서와 같이, iplus 실행 시 사용하는 아규먼트(인자)는 다음과 같습니다.</p>
+<ul class="simple">
+<li><p>user: iplus에 접속하기 위한 사용자 ID (필수)</p></li>
+<li><p>host: 마스터 노드의 호스트 명 (옵션)</p></li>
+<li><p>port: 마스터 노드의 LISTENER 포트 번호 (옵션)</p></li>
+</ul>
+<p>iplus를 상기의 파라미터 및 패스워드와 함께 입력하여 실행하면 아래와 같이 iplus&gt; 콘솔이 나타납니다. 만일, host와 port 정보를 입력하지 않고 iplus를 실행하면, IRIS는 환경 설정 파일은 config에 정의된 마스터 노드의 IP 주소와 LISTNER의 포트로 자동으로 접속하게 됩니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ iplus test
+Password:
+Connecting to IRIS(test@127.0.0.1:5050).
+Connected to IRIS.
+Enter &quot;.help&quot; for instructions
+iplus&gt;
+</pre></div>
+</div>
+<p>iplus 에서 사용할 수 있는 명령은 아래 화면과 같이 .h 혹은 .help를 입력하여 확인할 수 있습니다. 각 명령에 대한 자세한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iplus&gt; .h
+
+HELP
+=======================================================
+.h / .help                     show this message
+.i / .info                     show IRIS connection information
+.q / .quit                     quit iplus console
+.history                       print command(query) history
+.sep &lt;f sep&gt; &lt;r sep&gt;           change seperator
+                               &lt;f sep&gt; : field seperator
+                               &lt;r sep&gt; : record seperator
+.field_sep &lt;f sep&gt;             change field seperator
+.record_sep &lt;r sep&gt;            change record seperator
+.width &lt;num&gt; &lt;num&gt; ...         set column widths
+.load &lt;t&gt; &lt;k&gt; &lt;p&gt; &lt;c&gt; &lt;d&gt;      load data
+                               &lt;t&gt; : table
+                               &lt;k&gt; : partition key
+                               &lt;p&gt; : partition date
+                               &lt;c&gt; : control file path
+                               &lt;d&gt; : data file path
+.spool [filename]              output to file
+                               if filename is empty, output to console
+.whoami                        print current user id
+.database                      database command
+                               more infomation with -h
+.table                         table command
+                               more infomation with -h
+.vacuum                        vacuum command
+                               more infomation with -h
+.session                       session command
+                               more infomation with -h
+.error                         error command
+                               more infomation with -h
+.node                          node command
+                               more infomation with -h
+.statistics                    system monitor command
+                               more infomation with -h
+.system                        system command
+                               more infomation with -h
+.config                        config command
+                               more infomation with -h
+.noti                          noti command
+                               more infomation with -h
+!&lt;shell command&gt;               execute shell command
+@&lt;sequence file&gt;               run sequence file
+</pre></div>
+</div>
+<p>iplus의 명령어는 iplus에서만 사용 가능한 일반 명령어와 iplus는 물론, API에서도 실행할 수 있는 Dot Command로 구분할 수 있으며, 일반적인 쿼리문도 실행할 수 있습니다. 아래는 iplus에 접속하여 Dot Command를 실행한 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master01 IPlus]$ iplus test
+Password:
+Connecting to IRIS(test@192.168.123.58:5050).
+Connected to IRIS.
+Enter &quot;.help&quot; for instructions
+iplus&gt; .whoami
+Ret : +OK Success
+
+
+ USER_NAME    CONNECTED_IP      DB_NAME    DB_REALNAME
+=========================================================
+ test         192.168.123.58    D2         TEST
+=========================================================
+
+1 row in set
+
+0.0158 sec
+</pre></div>
+</div>
+<p>상기의 화면과 같이, iplus에서 명령어를 실행하면, 명령어 실행 결과가 출력된 후에 명령어를 실행하기 위하여 소요된 시간이 표시됩니다. 소요시간은 쿼리의 실행 및 데이터를 화면에 출력하는 시간을 포함하고 있기 때문에 SELECT 쿼리 등, 대량의 데이터를 조회하는 경우, API에서 데이터를 Fetch하는 시간과는 다를 수 있습니다</p>
+<table class="colwidths-given docutils align-default" id="id21">
+<caption><span class="caption-text">iplus 전용 명령어</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>명령어</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>.v</p></td>
+<td><div class="line-block">
+<div class="line">IRIS 버전 정보를 표시합니다</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.i</p></td>
+<td><div class="line-block">
+<div class="line">iplus로 IRIS에 접속하는 사용자 호스트의 IP 주소 및 포트 정보를 출력합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.q</p></td>
+<td><div class="line-block">
+<div class="line">iplus 를 종료하고 콘솔에서 운영체제로 리턴합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.history</p></td>
+<td><div class="line-block">
+<div class="line">iplus에 접속하여 실행한 커맨트 혹은 쿼리 히스토리를 표시합니다.</div>
+<div class="line">.h로 입력하여도 동일한 결과가 표시됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.sep</p></td>
+<td><div class="line-block">
+<div class="line">iplus를 사용하여 IRIS로 데이터를 직접 로딩하는 경우, 로딩하는 데이터의 구분자를 지정할 수 있습니다. 이때 데이터 파일을 구성하는 레코드와 각 레코드의 필드 구분자를 동일하게 지정합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.field_sep</p></td>
+<td><div class="line-block">
+<div class="line">iplus를 사용하여 데이터를 로딩할 경우, 필드 구분자를 지정합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.record_sep</p></td>
+<td><div class="line-block">
+<div class="line">iplus를 사용하여 데이터를 로딩할 경우, 레코드 구분자를 지정합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.width</p></td>
+<td><div class="line-block">
+<div class="line">iplus에서 SELECT 쿼리문을 실행할 경우, 출력되는 데이터의 컬럼간의 폭(캐릭터수)을 지정합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.load</p></td>
+<td><div class="line-block">
+<div class="line">iplus를 사용하여 데이터를 IRIS에 직접 로딩하는 명령어입니다. 데이터 로딩 시, 아래의 옵션을 지정합니다.</div>
+</div>
+<ul class="simple">
+<li><p>&lt;t&gt;: 테이블명을 지정합니다.</p></li>
+<li><p>&lt;k&gt;: partitionkey 값을 정의합니다.</p></li>
+<li><p>&lt;p&gt;: partitiondate 값을 정의합니다.</p></li>
+<li><p>&lt;c&gt;: 데이터 파일의 각 컬럼명이 정의된 파일의 경로를 지정합니다.</p></li>
+<li><p>&lt;d&gt;: 데이터 파일의 경로를 지정합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.spool</p></td>
+<td><p>iplus에서 출력되는 내용을 파일에 저장하고자 할 경우에 사용합니다. 해제 시, [filename]을 입력하지 않고 .spool 명령어를 실행하면 다시 화면에 출력됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>!&lt;shell command&gt;</p></td>
+<td><p>iplus에서 shell command를 실행하고자 할 경우에 사용합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>&#64;&lt;sequence file&gt;</p></td>
+<td><p>쿼리문을 작성하여 파일로 저장한 후, 해당 파일을 iplus에서 실행할 경우에 사용합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id22">
+<caption><span class="caption-text">dot command</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>명령어</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>.whoami</p></td>
+<td><div class="line-block">
+<div class="line">현재 iplus의 사용자 ID, 접속한 IP, 데이터베이스 이름 표시합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.database</p></td>
+<td><div class="line-block">
+<div class="line">데이터베이스의 정보를 조회하기 위한 명령어 입니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.table</p></td>
+<td><div class="line-block">
+<div class="line">테이블의 정보 조회, 스키마 변경 등 테이블 관리를 위한 명령어입니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.vacuum</p></td>
+<td><div class="line-block">
+<div class="line">블럭 파일을 최적화 하기 위한 명령어 입니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.session</p></td>
+<td><div class="line-block">
+<div class="line">특정 계정의 쿼리 이력 등 각 세션에 대한 조회 및 현재 실행중인 세션을 강제로 종료할 수 있습니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.error</p></td>
+<td><div class="line-block">
+<div class="line">IRIS에서 발생된 에러 정보를 확인할 수 있습니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.node</p></td>
+<td><div class="line-block">
+<div class="line">각 노드의 상태 및 상태 변경이 가능합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.statistics</p></td>
+<td><div class="line-block">
+<div class="line">IRIS 시스템 및 테이블에 대한 통계 정보를 제공합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.system</p></td>
+<td><div class="line-block">
+<div class="line">각 노드의 CPU, 메모리 등 자원에 용량 및 사용량 정보를 제공합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>.config</p></td>
+<td><div class="line-block">
+<div class="line">현 상태의 IRIS 설정 값을 제공합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>.noti</p></td>
+<td><div class="line-block">
+<div class="line">노드의 상태가 변경되면, 상태 변경에 대한 원인 (예를 들어, swap 메모리가 설정된 값을 초과)에 대한 정보가 포함된 로그 파일(*.busy, *.info, *.warning, *.error 등)이 noti 디렉토리에 저장됩니다. .noti 명령어는 noti 디렉토리에 저장된 로그 파일 목록과 상세 정보를 조회할 수 있는 기능을 제공합니다.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="seq">
+<h3>seq파일을 이용한 실행<a class="headerlink" href="#seq" title="Permalink to this headline">¶</a></h3>
+<p>seq파일은 쿼리가 순차적으로 나열된 파일을 의미합니다. 사용자는 실행하고자 하는 일련의 쿼리들을 하나의 텍스트 파일에 기록을 한 이후 해당 파일을 iplus를 통해 실행할 수 있습니다.</p>
+<p>만약 다음과 같이 seq 파일을 생성되었다고 가정을 하면,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ cat whoami.seq
+.whoami
+</pre></div>
+</div>
+<p>다음과 같이 whoami.seq 파일을 iplus를 통해 실행할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master01 ~]$ iplus test &lt; whoami.seq
+Password:
+Connecting to IRIS(eva@192.168.100.180:5050).
+Connected to IRIS.
+Enter &quot;.help&quot; for instructions
+Ret : +OK Success
+
+
+USER_NAME    CONNECTED_IP      DB_NAME    DB_REALNAME
+=========================================================
+ test         192.168.123.58    D2         TEST
+=========================================================
+
+1 row in set
+
+0.0197 sec
+
+Goodbye.
+</pre></div>
+</div>
+<p>seq 파일에는 여러 줄의 쿼리를 사용할 수 있습니다. seq파일을 이용할 때 주의해야 하는 점은 여려 줄의 쿼리를 사용하여 seq파일을 생성할 경우 앞쪽의 쿼리가 실패하더라도 뒷쪽의 쿼리를 실행 한다는 점입니다.</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>접속 계정 정보 확인<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>.whoami명령어를 이용하면 IRIS로 접속하기 위해 사용된 계정정보를 확인할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">whoami</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">USER_NAME</span>    <span class="n">CONNECTED_IP</span>      <span class="n">DB_NAME</span>    <span class="n">DB_REALNAME</span>
+<span class="o">=========================================================</span>
+ <span class="n">test</span>         <span class="mf">192.168</span><span class="o">.</span><span class="mf">123.58</span>    <span class="n">D2</span>         <span class="n">TEST</span>
+<span class="o">=========================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0248</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id23">
+<caption><span class="caption-text">.database 명령어</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>USER_NAME</p></td>
+<td><p>접속에 사용된 사용자 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>CONNECTED_IP</p></td>
+<td><p>접속에 사용된 IP</p></td>
+</tr>
+<tr class="row-even"><td><p>DB_NAME</p></td>
+<td><p>IRIS에서 관리하고 있는 데이터베이스 이름</p></td>
+</tr>
+<tr class="row-odd"><td><p>DB_REALNAME</p></td>
+<td><p>사용자가 접속한 데이터베이스 이름</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>사용자 관리하기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>IRIS 관리자는 IRIS에서 제공하는 .user 명령어를 이용하여 IRIS의 사용자 정보를 관리할 수 있습니다. 사용자 정보를 관리하기 위해서는 IRIS 관리자 계정으로 접속합니다.</p>
+<div class="section" id="id4">
+<h3>사용자 리스트 보기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>현재 iplus에 접속한 사용자 리스트를 출력하는 명령어는 다음과 같으며, IRIS 관리자 계정에서만 실행 가능합니다</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HOST</span>    <span class="n">USER</span>    <span class="n">CREATE_PRIV</span>    <span class="n">DROP_PRIV</span>    <span class="n">SELECT_PRIV</span>    <span class="n">INSERT_PRIV</span>    <span class="n">UPDATE_PRIV</span>    <span class="n">DELETE_PRIV</span>    <span class="n">ALTER_PRIV</span>    <span class="n">GRANT_PRIV</span>
+<span class="o">====================================================================================================================================</span>
+ <span class="o">*</span>       <span class="n">root</span>    <span class="mi">1</span>              <span class="mi">1</span>            <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>             <span class="mi">1</span>
+ <span class="o">*</span>       <span class="n">test</span>    <span class="mi">0</span>              <span class="mi">0</span>            <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>             <span class="mi">0</span>
+<span class="o">====================================================================================================================================</span>
+
+<span class="mi">2</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0508</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<p>상기의 화면에서와 같이 각 사용자별로 권한에 대한 정보가 출력되며, 각 컬럼에 대한 설명은 아래 표와 같습니다.</p>
+<table class="colwidths-given docutils align-default" id="id24">
+<caption><span class="caption-text">사용자 정보</span><a class="headerlink" href="#id24" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>HOST</p></td>
+<td><p>해당 사용자가 iplus로 접속이 허용된 클라이언트 호스트의 IP 정보를 나타냅니다. 만일, *로 표시되어 있다면 모든 호스트에서 접속 가능합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>USER</p></td>
+<td><p>사용자 ID</p></td>
+</tr>
+<tr class="row-even"><td><p>CREATE_PRIV</p></td>
+<td><p>CREATE TABLE의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DROP_PRIV</p></td>
+<td><p>DROP TABLE의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+<tr class="row-even"><td><p>SELECT_PRIV</p></td>
+<td><p>SELECT 쿼리의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+<tr class="row-odd"><td><p>INSERT_PRIV</p></td>
+<td><p>INSERT 쿼리의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE_PRIV</p></td>
+<td><p>UPDATE 쿼리의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DELETE_PRIV</p></td>
+<td><p>DELETE 쿼리의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+<tr class="row-even"><td><p>ALTER_PRIV</p></td>
+<td><p>ALTER TABLE의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+<tr class="row-odd"><td><p>GRANT_PRIV</p></td>
+<td><p>GRANT의 허용 여부를 지정합니다. (1: 허용, 0: 금지)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3>사용자 추가하기<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>새로운 사용자를 추가하기 위한 명령어는 다음과 같으며, IRIS 관리자 계정에서만 실행 가능합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="n">add</span> <span class="p">{</span><span class="n">user_id</span><span class="p">}:{</span><span class="n">user_pass</span><span class="p">}</span><span class="o">@</span><span class="p">{</span><span class="n">host</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>USER_ID: 추가하는 사용자의 ID</p></li>
+<li><p>USER_PASS: 추가하는 사용자의 패스워드</p></li>
+<li><p>HOST: 해당 사용자가 어느 호스트에서 접속할 것인지 IP 정보를 지정합니다. 동일 사용자가 접속하는 호스트의 IP 정보가 상이할 경우, 접속이 제한되므로 * 로 설정할 것을 권장합니다.</p></li>
+</ul>
+<p>아래 화면은 새로운 사용자를 추가한 후, .user list 명령어로 확인하는 과정을 보여주고 있습니다</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HOST</span>    <span class="n">USER</span>    <span class="n">CREATE_PRIV</span>    <span class="n">DROP_PRIV</span>    <span class="n">SELECT_PRIV</span>    <span class="n">INSERT_PRIV</span>    <span class="n">UPDATE_PRIV</span>    <span class="n">DELETE_PRIV</span>    <span class="n">ALTER_PRIV</span>    <span class="n">GRANT_PRIV</span>
+<span class="o">====================================================================================================================================</span>
+ <span class="o">*</span>       <span class="n">root</span>    <span class="mi">1</span>              <span class="mi">1</span>            <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>             <span class="mi">1</span>
+ <span class="o">*</span>       <span class="n">test</span>    <span class="mi">0</span>              <span class="mi">0</span>            <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>             <span class="mi">0</span>
+<span class="o">====================================================================================================================================</span>
+
+<span class="mi">2</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0508</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="n">add</span> <span class="n">iris_test</span><span class="p">:</span><span class="n">iris_test</span><span class="o">@*</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">ADDUSER</span> <span class="n">iris_test</span><span class="o">@*</span> <span class="n">has</span> <span class="n">added</span>
+
+<span class="mf">0.0832</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HOST</span>    <span class="n">USER</span>         <span class="n">CREATE_PRIV</span>    <span class="n">DROP_PRIV</span>    <span class="n">SELECT_PRIV</span>    <span class="n">INSERT_PRIV</span>    <span class="n">UPDATE_PRIV</span>    <span class="n">DELETE_PRIV</span>    <span class="n">ALTER_PRIV</span>    <span class="n">GRANT_PRIV</span>
+<span class="o">=========================================================================================================================================</span>
+ <span class="o">*</span>       <span class="n">root</span>         <span class="mi">1</span>              <span class="mi">1</span>            <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>             <span class="mi">1</span>
+ <span class="o">*</span>       <span class="n">test</span>         <span class="mi">0</span>              <span class="mi">0</span>            <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>             <span class="mi">0</span>
+ <span class="o">*</span>       <span class="n">iris_test</span>    <span class="mi">0</span>              <span class="mi">0</span>            <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>             <span class="mi">0</span>
+<span class="o">=========================================================================================================================================</span>
+
+<span class="mi">3</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0459</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>사용자 패스워드 변경하기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>사용자의 패스워드를 변경하는 명령어는 다음과 같습니다. IRIS 관리자는 모든 사용자의 패스워드를 변경할 수 있으며, 일반 사용자는 자신의 패스워드만 변경할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="n">password</span> <span class="p">{</span><span class="n">user_id</span><span class="p">}:{</span><span class="n">new_passwd</span><span class="p">}</span><span class="o">@</span><span class="p">{</span><span class="n">host</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>USER_ID: 추가하는 사용자의 ID</p></li>
+<li><p>USER_PASS: 추가하는 사용자의 패스워드</p></li>
+<li><p>HOST: 해당 사용자가 접속하는 호스트의 IP 정보</p></li>
+</ul>
+<p>아래 화면은 특정 사용자의 패스워드를 변경하는 예를 보여주고 있습니다. 일반 사용자는 자신의 패스워드를 변경할 수 있지만, root 사용자의 패스워드를 변경하고자 할 경우, 에러가 발생합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master01 IPlus]$ iplus iris_test
+Password:
+Connecting to IRIS(iris_test@192.168.123.58:5050).
+Connected to IRIS.
+Enter &quot;.help&quot; for instructions
+iplus&gt; .user password iris_test:iris_test2@*
+Ret : +OK PASSWORD iris_test:iris_test2@* password(s) has modified
+
+0.0854 sec
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>사용자 삭제하기<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>기존 사용자를 삭제하기 위한 명령어는 다음과 같으며, IRIS 관리자 계정에서만 실행 가능합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="k">del</span> <span class="p">{</span><span class="n">user_id</span><span class="p">}</span><span class="o">@</span><span class="p">{</span><span class="n">host</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>USER_ID: 추가하는 사용자의 ID</p></li>
+<li><p>HOST: 해당 사용자가 접속하는 호스트의 IP 정보</p></li>
+</ul>
+<p>아래 화면은 기존 사용자를 삭제한 후, 삭제 여부를 확인하는 과정을 보여주고 있습니다</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HOST</span>    <span class="n">USER</span>         <span class="n">CREATE_PRIV</span>    <span class="n">DROP_PRIV</span>    <span class="n">SELECT_PRIV</span>    <span class="n">INSERT_PRIV</span>    <span class="n">UPDATE_PRIV</span>    <span class="n">DELETE_PRIV</span>    <span class="n">ALTER_PRIV</span>    <span class="n">GRANT_PRIV</span>
+<span class="o">=========================================================================================================================================</span>
+ <span class="o">*</span>       <span class="n">root</span>         <span class="mi">1</span>              <span class="mi">1</span>            <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>             <span class="mi">1</span>
+ <span class="o">*</span>       <span class="n">test</span>         <span class="mi">0</span>              <span class="mi">0</span>            <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>             <span class="mi">0</span>
+ <span class="o">*</span>       <span class="n">iris_test</span>    <span class="mi">0</span>              <span class="mi">0</span>            <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>             <span class="mi">0</span>
+<span class="o">=========================================================================================================================================</span>
+
+<span class="mi">3</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0590</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="k">del</span> <span class="n">iris_test</span><span class="o">@*</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">DELUSER</span> <span class="n">iris_test</span><span class="o">@*</span> <span class="n">has</span> <span class="n">deleted</span>
+
+<span class="mf">0.2080</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">user</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HOST</span>    <span class="n">USER</span>    <span class="n">CREATE_PRIV</span>    <span class="n">DROP_PRIV</span>    <span class="n">SELECT_PRIV</span>    <span class="n">INSERT_PRIV</span>    <span class="n">UPDATE_PRIV</span>    <span class="n">DELETE_PRIV</span>    <span class="n">ALTER_PRIV</span>    <span class="n">GRANT_PRIV</span>
+<span class="o">====================================================================================================================================</span>
+ <span class="o">*</span>       <span class="n">root</span>    <span class="mi">1</span>              <span class="mi">1</span>            <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>              <span class="mi">1</span>             <span class="mi">1</span>
+ <span class="o">*</span>       <span class="n">test</span>    <span class="mi">0</span>              <span class="mi">0</span>            <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>             <span class="mi">0</span>
+<span class="o">====================================================================================================================================</span>
+
+<span class="mi">2</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0487</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>데이터베이스 관리하기<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>IRIS 관리자는 IRIS에서 제공하는 database 관련 명령어를 이용하여 데이터베이스를 조회하고, 생성, 삭제 할 수 있습니다. 데이터베이스의 생성 및 삭제는 데이터베이스를 조작할 수 있는 권한을 가진 사용자만 실행할 수 있습니다. 데이터베이스 관리를 위하여 제공되는 명령어는 다음과 같습니다.</p>
+<table class="colwidths-given docutils align-default" id="id25">
+<caption><span class="caption-text">.database 명령어</span><a class="headerlink" href="#id25" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>명령어</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>.database list</p></td>
+<td><p>현재 접속한 계정이 접근 가능한 데이터베이스 목록을 출력 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.database current</p></td>
+<td><p>현재 선택된 데이터베이스 이름을 출력 합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>use</p></td>
+<td><p>사용할 데이터베이스를 선택 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>create database</p></td>
+<td><p>데이터베이스를 생성 합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>drop database</p></td>
+<td><p>데이터베이스를 삭제 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>iplus를 이용하여 접속할 경우 기본적으로 계정명과 동일한 데이터베이스를 선택하여 접속 하지만, 계정명과 동일한 데이터베이스가 없거나, 권한이 없을 경우에는 DEFAULT 데이터베이스로 접속하게 됩니다. DEFAULT 데이터베이스에서는 테이블 생성 및 삭제가 불가능 하며, 사용자가 직접 use명령어를 통해 특정 데이터베이스를 선택해야 합니다.</p>
+<div class="section" id="id9">
+<h3>데이터베이스 리스트 보기<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>기 생성된 데이터베이스 리스트를 출력하는 명령어는 다음과 같습니다. 사용자가 접속 가능한 데이터베이스만 목록으로 출력되며, 권한이 없는 데이터베이스는 목록에 출력되지 않습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">database</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>아래는 관리자 계정으로 데이터베이스 리스트를 확인한 내용입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master01 IPlus]$ iplus root
+Password:
+Connecting to IRIS(root@192.168.123.58:5050).
+Connected to IRIS.
+Enter &quot;.help&quot; for instructions
+iplus&gt; .database list
+Ret : +OK Success
+
+
+ DATABASE_NAME    CURRENT_DATABASE
+=====================================
+ TEST
+ROOT             *
+ SYS
+=====================================
+
+2 row in set
+
+0.0236 sec
+</pre></div>
+</div>
+<table class="docutils align-default" id="id26">
+<caption><span class="caption-text">.database list 실행 결과의 컬럼</span><a class="headerlink" href="#id26" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>DATABASE_NAME</p></td>
+<td><p>데이터베이스 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>CURRENT_DATABASE</p></td>
+<td><p>현재 선택되어 있는 데이터베이스 표시, * 문자로 구분</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h3>선택된 데이터베이스 이름 확인<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>현재 접속된 데이터베이스 이름 확인하기 위해서는 아래와 같은 명령어를 사용하면 됩니다. 만약 아무 데이터베이스도 선택되지 않았을 경우에는 DEFAULT로 표가 됩니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">database</span> <span class="n">current</span>
+</pre></div>
+</div>
+<p>아래는 일반 사용자 계정으로 선택된 데이터베이스 이름을 확인하는 과정입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">database</span> <span class="n">current</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DB_NAME</span>
+<span class="o">===========</span>
+ <span class="n">TEST</span>
+<span class="o">===========</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0177</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h3>데이터베이스 선택하기<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<p>사용자가 특정 데이터베이스를 선택하기 위해서는 아래와 같은 명령어를 사용하면 됩니다. 선택 가능한 데이터베이스목록은 .database list 명령어로 확인이 가능합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">use</span> <span class="p">{</span><span class="n">database_name</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>DATABASE_NAME: 선택하고자 하는 데이터베이스 이름</p></li>
+</ul>
+<p>아래는 관리자 계정으로 TEST 데이터베이스를 선택하는 과정 입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master01 ~]$ iplus root
+Password:
+Connecting to IRIS(root@192.168.123.58:5050).
+Connected to IRIS.
+Enter &quot;.help&quot; for instructions
+iplus&gt; .database list
+Ret : +OK Success
+
+
+ DATABASE_NAME    CURRENT_DATABASE
+=====================================
+ TEST
+ ROOT             *
+ SYS
+=====================================
+
+3 row in set
+
+0.0245 sec
+
+iplus&gt; use TEST;
+Ret : +OK Current Database is TEST:D2
+
+0.0189 sec
+
+iplus&gt; .database list
+Ret : +OK Success
+
+
+ DATABASE_NAME    CURRENT_DATABASE
+=====================================
+ TEST             *
+ ROOT
+ SYS
+=====================================
+
+3 row in set
+
+0.0237 sec
+</pre></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>데이터베이스 생성하기<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>새로운 데이터베이스를 생성하기 위해서는 다음과 같은 명령어를 사용합니다. 데이터베이스 이름은 대소문자 구분이 없고, 특수문자를 사용할 수 없습니다. 데이터베이스 생성은 관리자 권한을 가진 유저만 가능합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">create</span> <span class="n">database</span> <span class="p">{</span><span class="n">database_name</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>DATABASE_NAME: 생성하고자 하는 데이터베이스 이름</p></li>
+</ul>
+<p>아래는 관리자 계정으로 NEW_DB 데이터베이스를 생성하는 과정 입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">database</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DATABASE_NAME</span>    <span class="n">CURRENT_DATABASE</span>
+<span class="o">=====================================</span>
+ <span class="n">TEST</span>
+ <span class="n">ROOT</span>             <span class="o">*</span>
+ <span class="n">SYS</span>
+<span class="o">=====================================</span>
+
+<span class="mi">3</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0256</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="n">create</span> <span class="n">database</span> <span class="n">NEW_DB</span><span class="p">;</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">NEW_DB</span>
+
+<span class="mf">0.0805</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">database</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DATABASE_NAME</span>    <span class="n">CURRENT_DATABASE</span>
+<span class="o">=====================================</span>
+ <span class="n">TEST</span>
+ <span class="n">ROOT</span>             <span class="o">*</span>
+ <span class="n">NEW_DB</span>
+ <span class="n">SYS</span>
+<span class="o">=====================================</span>
+
+<span class="mi">4</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0222</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h3>데이터베이스 삭제하기<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<p>기 생성되어 있는 데이터베이스를 삭제하기 위해서는 다음과 같은 명령어를 사용합니다. 데이터 베이스 삭제는 관리자 권한을 가진 유저만 가능하며, 데이터베이스에 테이블이 존재할 경우 데이터베이스를 삭제할 수 없습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">database</span> <span class="p">{</span><span class="n">database_name</span><span class="p">};</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>DATABASE_NAME: 생성하고자 하는 데이터베이스 이름</p></li>
+</ul>
+<p>아래는 관리자 계정으로 NEW_DB 데이터베이스를 삭제하는 과정 입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">database</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DATABASE_NAME</span>    <span class="n">CURRENT_DATABASE</span>
+<span class="o">=====================================</span>
+ <span class="n">TEST</span>
+ <span class="n">ROOT</span>             <span class="o">*</span>
+ <span class="n">NEW_DB</span>
+ <span class="n">SYS</span>
+<span class="o">=====================================</span>
+
+<span class="mi">4</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0259</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">database</span> <span class="n">NEW_DB</span><span class="p">;</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">NEW_DB</span>
+
+<span class="mf">0.1382</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">database</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">DATABASE_NAME</span>    <span class="n">CURRENT_DATABASE</span>
+<span class="o">=====================================</span>
+ <span class="n">TEST</span>
+ <span class="n">ROOT</span>             <span class="o">*</span>
+ <span class="n">SYS</span>
+<span class="o">=====================================</span>
+
+<span class="mi">3</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0298</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>데이터 관리하기<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에 입력되는 데이터는 각 데이터 노드에 블록 파일 형태로 저장됩니다. 여기서, 블록 파일은 데이터를 로컬 테이블, partitionkey, partitiondate 으로 분류하여 저장하는 최소 단위입니다. IRIS에 데이터가 입력되면, 블록 파일을 생성한 후, 각 데이터 노드의 메모리에서 일정 시간 동안 유지하였다가 디스크로 이동하여 저장합니다. IRIS는 블록 파일을 생성하여 메모리에 적재하고, 디스크로 이동하며, 일정 기간이 경과된 블록 파일을 디스크에서 영구 저장하는 일련의 데이터 관리 절차를 자동으로 수행합니다.
+본 절에서는 블록 파일을 수동으로 삭제하는 방법과 상기의 데이터 관리 절차를 자동으로 수행하기 위하여, 블록 파일을 메모리에서 디스크로 이동하기 위한 설정, 그리고 디스크에 저장된 블록 파일의 자동 삭제를 위한 설정 방법에 대하여 기술하였습니다. IRIS 관리자는 모든 테이블을 관리할 수 있으나, 일반 사용자는 자신이 생성한 테이블만 삭제 등 관리할 수 있습니다.</p>
+<div class="section" id="id15">
+<h3>데이터 삭제하기<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<p>데이터 노드에 저장된 블록 파일을 수동으로 삭제하기 위해서는 drop backend 명령어를 사용합니다. 사용자는 다음과 같은 3가지 방법으로 데이터를 삭제할 수 있습니다. 단, 사용자가 drop backend 명령어를 실행하는 즉시 데이터가 삭제되는 것은 아니기 때문에, 명령어를 실행하는 즉시 디스크의 용량이 늘어나지는 않습니다.</p>
+<ul>
+<li><dl>
+<dt>특정 테이블의 모든 데이터 삭제하기</dt><dd><p>특정 테이블에 저장된 데이터를 모두 삭제하려면 다음의 명령어를 실행합니다. 사용자는 테이블의 스키마는 유지한 채, 해당 테이블의 데이터를 모두 삭제합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">backend</span> <span class="p">{</span><span class="n">table_name</span><span class="p">};</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>특정 partitionkey의 데이터 삭제하기</dt><dd><p>특정 테이블에서 특정 partitionkey를 갖는 데이터만 삭제하고자 할 경우, 아래와 같이 실행합니다. 여기서, 사용자는 하나의 partitionkey 값을 갖는 데이터만 삭제할 수 있습니다. 만일, 여러 개의 partitionkey값을 지정하면, 해당 partitionkey값을 갖는 모든 데이터를 삭제할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">backend</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">(</span> <span class="n">KEY</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{KEY_VALUE}</span><span class="s1">&#39;</span> <span class="p">);</span>
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">backend</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">(</span> <span class="n">KEY</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">{KEY_VALUE}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">{KEY_VALUE}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="o">...</span> <span class="p">));</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>특정 partitiondate의 데이터 삭제하기</dt><dd><p>특정 partitiondate 혹은 partitiondate의 범위에 해당하는 데이터를 삭제하고자 할 경우, 아래와 같이 실행합니다. 아래의 예시는, 특정 테이블에서 partitiondate값이 ‘20130101000000’인 데이터를 삭제하거나, partitiondate값이 ‘20130101000000’보다 작은 모든 데이터를 삭제하는 방법을 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">backend</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">(</span> <span class="n">PARTITION</span> <span class="o">=</span> <span class="s1">&#39;20130101000000&#39;</span> <span class="p">);</span>
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">backend</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">(</span> <span class="n">PARTITION</span> <span class="o">&lt;</span> <span class="s1">&#39;20130101000000&#39;</span><span class="p">);</span>
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="n">drop</span> <span class="n">backend</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">(</span> <span class="n">PARTITION</span> <span class="n">between</span> <span class="s1">&#39;20130101000000&#39;</span> <span class="ow">and</span> <span class="s1">&#39;20130102000000&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Drop backend 명령어를 통하여 데이터를 삭제한 후, 데이터의 삭제 여부를 확인하려면 마스터 노드에서 다음의 명령어를 사용합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@Master1 ~]$ ~/IRIS/bin/Admin/TablePartitionInfo --table {database_name}.{table_name}
+</pre></div>
+</div>
+<p>상기의 명령어는 특정 테이블의 파티션 정보를 확인할 수 있으며, 명령어 실행 결과로 출력되는 정보 중, Status 컬럼의 값으로 삭제 여부를 판단할 수 있습니다. 만일, 특정 파티션이 이미 삭제되었다면 목록에 나타나지 않습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master01 Admin]$ ~/IRIS/bin/Admin/TablePartitionInfo --table TEST.LOCAL_TEST_TABLE
+  TABLE_ID    DB_NAME                TABLE_NAME   Key         Partition    Node ID      IP Address 1     Status
+================================================================================================================
+      T457       TEST          LOCAL_TEST_TABLE    k2    20110616000000          1    192.168.123.59          C
+      T457       TEST          LOCAL_TEST_TABLE    k4    20110616000000          1    192.168.123.59          C
+      T457       TEST          LOCAL_TEST_TABLE    k6    20110616000000          1    192.168.123.59 R$DB1522392203.8548291
+      T457       TEST          LOCAL_TEST_TABLE    k3    20110616000000          1    192.168.123.59          C
+      T457       TEST          LOCAL_TEST_TABLE    k5    20110616000000          1    192.168.123.59 R$DB1522392205.6798401
+      T457       TEST          LOCAL_TEST_TABLE    k7    20110616000000          1    192.168.123.59 R$DB1522392199.4232881
+</pre></div>
+</div>
+<p>상기의 예에서, Status 컬럼의 의미는 다음과 같습니다.</p>
+<ul class="simple">
+<li><p>C: 데이터가 현재 사용 가능한 상태</p></li>
+<li><p>R$yyyymmddHHMMSS: 데이터가 현재 삭제 중인 상태 (drop backend를 실행한 시각 정보)</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>데이터 이동/삭제옵션 설정하기<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<p>메모리에서 디스크로 데이터의 이동은 각 데이터 노드에서 동작하는 PL(Partition Locator) 프로세스에서 관리합니다. PL 프로세스는 사용자가 테이블을 생성하면서 입력한 ramexpire값과 데이터 이동을 위하여 참조할 데이터 이동 옵션을 비교하여 블록 파일을 메모리에서 디스크로 이동합니다.
+마찬가지로, PR(Partition Remover) 프로세스는 디스크에 저장된 데이터 중, 일정 시간이 경과한 데이터를 삭제합니다. PR 프로세스는 사용자가 테이블을 생성하면서 입력한 diskexpire값을 기준으로 디스크에서 데이터를 삭제합니다.
+PL/PR 프로세스가 데이터를 이동하거나 삭제하기 위하여 참조하는 옵션은 아래 표와 같습니다. 또한, 아래 표에는 다음 예시의 파일에 대하여, 각 옵션별로 데이터를 이동하거나 삭제하는 방법이 어떻게 다른지에 대한 설명도 포함되어 있습니다.</p>
+<ul class="simple">
+<li><p>ram expire time : 30 min</p></li>
+<li><p>dst file name : TEST_TABLE_K1_20130101000000.DAT</p></li>
+<li><p>dst file’s info :</p></li>
+<li><p>table name : TEST_TABLE</p></li>
+<li><p>key : K1</p></li>
+<li><p>partition : 20130101000000</p></li>
+</ul>
+<table class="docutils align-default" id="id27">
+<caption><span class="caption-text">데이터 이동/삭제옵션</span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 94%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>OFF</p></td>
+<td><p>데이터를 이동/삭제하지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOCAL_TIME_BASE</p></td>
+<td><p>데이터 노드의 시스템 시간을 기준으로, ramexpire/diskexpire에 정의한 시간이 경과한 파일을 디스크로 이동하거나, 디스크에서 삭제합니다.</p>
+<ul class="simple">
+<li><p>사용자가 옵션을 지정하지 않으면, LOCAL_TIME_BASE가 기본 옵션으로 자동 설정됩니다.</p></li>
+<li><p>IRIS는 리눅스에서 제공하는 시스템 시간 동기화 방식을 사용하므로, 노드 간의 시간 오차는 1초 이내입니다.</p></li>
+</ul>
+<p>상기 예의 경우, 해당 데이터 노드의 시스템 시간이 20130101003000을 지나면 해당 파일을 디스크로 이동하거나, 디스크에서 삭제합니다.</p>
+</td>
+</tr>
+<tr class="row-even"><td><p>PARTITION_BASE</p></td>
+<td><div class="line-block">
+<div class="line">가장 최근에 입력된 데이터의 partitiondate 시간을 기준으로, ramexpire/diskexpire에 정의한 시간이 경과한 파일을 디스크로 이동하거나 디스크에서 삭제합니다.</div>
+<div class="line">상기 예의 경우, 해당 파일이 저장된 데이터 노드의 partitiondate 값이 20130101003000인 파일이 생성되면, 즉 해당 노드에 TEST_TABLE_K1_20130101003000.DAT 파일이 생성되면 상기 예의 파일이 디스크로 이동되거나 디스크에서 삭제됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>KEY_BASE</p></td>
+<td><div class="line-block">
+<div class="line">PARTITION_BASE 옵션이 partitionkey의 구분없이 가장 최근의 partitiondate 시간을 기준으로 하는 반면, KEY_BASE는 각 partitionkey 단위로 구분하여 가장 최근에 입력된 데이터의 partitiondate 시간을 기준으로 ramexpire/diskexpire에 정의한 시간이 경과한 파일을 디스크로 이동하거나 디스크에서 삭제합니다.</div>
+<div class="line">상기 예의 경우, 해당 파일이 저장된 데이터 노드에 partitionkey값이 ‘K1’이고, partitiondate값이 20130101003000인 파일이 생성되면, 즉 해당 노드에 TEST_TABLE_K1_20130101003000.DAT 파일이 생성되면 상기 예의 파일이 디스크로 이동되거나 디스크에서 삭제됩니다.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>상기의 데이터 이동/삭제옵션을 설정하는 방법은 다음과 같습니다.</p>
+<ul>
+<li><dl>
+<dt>기 설정된 옵션 확인하기</dt><dd><p>먼저, 아래와 같이, .table option 명령어를 사용하여 현재 데이터 이동 및 삭제와 관련하여 설정된 옵션을 확인할 수 있습니다. 아래의 명령어 실행 결과, RAM_OPTION이 데이터 이동 옵션이며, DSK_OPTION이 데이터 삭제 옵션입니다. 테이블 옵션 명령은 IRIS 관리자 혹은 일반 사용자에 대한 구분 없이, 모든 사용자에게 동일한 정보를 제공합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iplus&gt; .table option LOCAL_TEST_TABLE
+Ret : +OK Success
+
+
+ DB_NAME    TABLE_NAME                RAM_OPTION        DSK_OPTION
+==========================================================================
+            $DEFAULT_TABLE_SETTING    PARTITION_BASE    LOCAL_TIME_BASE
+ TEST       LOCAL_TEST_TABLE
+==========================================================================
+
+2 row in set
+
+0.1533 sec
+</pre></div>
+</div>
+<p>.table option 명령을 실행하면, $DEFAULT_TABLE_SETTING에 대한 정보가 출력됩니다. 이는 옵션을 설정하지 않은 테이블의 default에 해당되는 값을 의미합니다. 위의 예시 화면의 경우, LOCAL_TEST_TABLE에 옵션이 적용되지 않은 것을 확인할 수 있습니다. 이 경우, LOCAL_TEST_TABLE의 옵션은 $DEFAULT_TABLE_SETTING에 설정된 옵션을 따르게 됩니다. 즉, LOCAL_TEST_TABLE의 RAM_OPTION은 PARTITION_BASE, DSK_OPTION은 LOCAL_TIME_BASE로 자동 설정됩니다.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>디폴트 옵션 수정하기</dt><dd><p>디폴트 옵션 수정이란 .table option을 실행하여 출력된 $DEFAULT_TABLE_SETTING의 옵션 즉, 기본 옵션을 임의로 변경하는 것을 의미하며, iplus에 root 계정으로 접속한 사용자에 한하여 수정이 가능합니다. 디폴트 옵션을 수정하려면 아래 명령어를 사용합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iplus&gt; .table option $DEFAULT_TABLE_SETTING [ram|disk] [ram_option|disk_option]
+</pre></div>
+</div>
+<p>예를 들어, 이동 옵션, 즉 RAM의 ram_option을 OFF로 변경하고자 할 경우, 다음과 같이 실행할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iplus&gt; .table option $DEFAULT_TABLE_SETTING ram OFF
+Ret : +OK
+0.3987 sec
+
+iplus&gt; .pm list
+Ret : +OK Success
+TABLE_NAME RAM_OPTION DSK_OPTION
+===========================================================
+$DEFAULT_TABLE_SETTING OFF LOCAL_TIME_BASE
+===========================================================
+1 row in set
+0.2063 sec
+
+iplus&gt;
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>테이블의 이동/삭제 옵션 설정하기</dt><dd><p>특정 테이블의 이동/삭제 옵션을 설정하려면 다음과 같이 명령어를 실행합니다. 이때, 사용자 계정별로 자신이 생성한 테이블의 이동/삭제 옵션만 수정할 수 있습니다. 단, IRIS 관리자는 모든 테이블의 옵션을 수정할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">table</span> <span class="n">option</span> <span class="p">{</span><span class="n">table_name</span><span class="p">}</span> <span class="p">[</span><span class="n">ram</span><span class="o">|</span><span class="n">disk</span><span class="p">]</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 LOCAL_TEST_TABLE이라는 테이블의 옵션을 설정하는 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iplus&gt; .table option
+Ret : +OK Success
+
+
+ DB_NAME    TABLE_NAME                RAM_OPTION        DSK_OPTION
+==========================================================================
+            $DEFAULT_TABLE_SETTING    PARTITION_BASE    LOCAL_TIME_BASE
+ TEST       LOCAL_TEST_TABLE
+==========================================================================
+
+2 row in set
+
+0.1532 sec
+
+iplus&gt; .table option LOCAL_TEST_TABLE ram LOCAL_TIME_BASE
+Ret : +OK copy all success.
+
+0.0644 sec
+
+iplus&gt; .table option
+Ret : +OK Success
+
+
+ DB_NAME    TABLE_NAME                RAM_OPTION         DSK_OPTION
+===========================================================================
+            $DEFAULT_TABLE_SETTING    PARTITION_BASE     LOCAL_TIME_BASE
+ TEST       LOCAL_TEST_TABLE          LOCAL_TIME_BASE
+===========================================================================
+
+2 row in set
+
+0.1572 sec
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>세션 관리하기<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서는 사용자가 요청한 하나의 쿼리를 세션으로 정의합니다. 만일, 특정 사용자가 iplus로 IRIS에 접속하여 다수의 쿼리를 동시에 실행하였다면, 동시에 실행되는 쿼리의 수만큼 세션이 생성됩니다. 본 절에서는 IRIS에서 사용자의 쿼리 요구에 따라 생성된 세션을 관리하는 방법에 대하여 설명합니다. IRIS 관리자는 모든 사용자의 세션을 관리할 수 있으나, 일반 사용자는 자신의 계정에 해당되는 세션만 관리할 수 있습니다.
+IRIS에서 세션을 관리하기 위한 명령어는 다음과 같습니다.</p>
+<table class="docutils align-default" id="id28">
+<caption><span class="caption-text">.session 명령어</span><a class="headerlink" href="#id28" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 31%" />
+<col style="width: 69%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>명령어</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>.session list</p></td>
+<td><p>접속한 계정의 세션 히스토리를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.session info</p></td>
+<td><p>선택한 세션의 상세 정보 표시합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>.session term</p></td>
+<td><p>특정 세션을 강제로 종료합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">session</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HELP</span>
+<span class="o">======================================================</span>
+ <span class="n">session</span> <span class="n">command</span> <span class="n">help</span>
+     <span class="nb">list</span> <span class="p">:</span> <span class="n">show</span> <span class="n">session</span> <span class="nb">list</span>
+            <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">session</span> <span class="nb">list</span> <span class="p">[</span><span class="n">options</span><span class="p">]</span>
+            <span class="n">you</span> <span class="n">needs</span> <span class="n">option</span> <span class="n">help</span><span class="p">,</span> <span class="o">.</span><span class="n">session</span> <span class="nb">list</span> <span class="o">-</span><span class="n">h</span>
+     <span class="n">info</span> <span class="p">:</span> <span class="n">show</span> <span class="n">session</span> <span class="n">detail</span> <span class="n">info</span>
+            <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">session</span> <span class="n">info</span> <span class="p">[</span><span class="n">session</span> <span class="nb">id</span><span class="p">]</span>
+     <span class="n">term</span> <span class="p">:</span> <span class="n">term</span> <span class="n">targeted</span> <span class="n">session</span>
+            <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">session</span> <span class="n">term</span> <span class="p">[</span><span class="n">session</span> <span class="nb">id</span><span class="p">]</span>
+<span class="o">======================================================</span>
+
+<span class="mi">8</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0733</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<div class="section" id="id18">
+<h3>세션 히스토리 보기<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<p>IRIS에 생성된 세션의 히스토리를 확인하기 위한 명령어는 다음과 같으며, 아래 표에 각 옵션에 대한 설명을 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">session</span> <span class="nb">list</span> <span class="o">-</span><span class="n">h</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HELP</span>
+<span class="o">====================================================</span>
+ <span class="n">session</span> <span class="nb">list</span> <span class="n">option</span> <span class="n">help</span>
+     <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">stime</span> <span class="p">:</span> <span class="n">start</span> <span class="n">time</span> <span class="mi">14</span> <span class="n">digit</span>
+                   <span class="n">default</span> <span class="ow">is</span> <span class="n">onehour</span> <span class="n">before</span> <span class="n">time</span>
+                   <span class="n">ex</span><span class="p">)</span> <span class="mi">20140101000000</span>
+     <span class="o">-</span><span class="n">e</span><span class="p">,</span> <span class="o">--</span><span class="n">etime</span> <span class="p">:</span> <span class="n">end</span> <span class="n">time</span> <span class="mi">14</span> <span class="n">digit</span>
+                   <span class="n">default</span> <span class="ow">is</span> <span class="mi">99999999999999</span>
+                   <span class="n">ex</span><span class="p">)</span> <span class="mi">20140101000000</span>
+     <span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="nb">type</span>  <span class="p">:</span> <span class="n">session</span> <span class="nb">type</span>
+                   <span class="p">[</span> <span class="n">START</span> <span class="o">|</span> <span class="n">END</span> <span class="o">|</span> <span class="n">ABN</span> <span class="p">]</span>
+     <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="o">--</span><span class="n">help</span>  <span class="p">:</span> <span class="n">show</span> <span class="n">this</span> <span class="n">message</span>
+<span class="o">====================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0591</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id29">
+<caption><span class="caption-text">.session list 명령어의 옵션</span><a class="headerlink" href="#id29" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 34%" />
+<col style="width: 54%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.session list</p></td>
+<td><p>최근 10개의 세션 히스토리를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-r, –row</p></td>
+<td><p>.session list -r {num}</p></td>
+<td><p>입력한 개수 만큼의 세션 정보를 표시합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-s, –stime</p></td>
+<td><p>.session list -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후로 발생된 10개의 세션 히스토리를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-e, –etime</p></td>
+<td><p>.session list -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전에 발생된 10개의 세션 히스토리를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-t, –type</p></td>
+<td><p>.session list -t [START | END | ABN]</p></td>
+<td><p>설정한 세션과 동일한 type의 세션을 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>세션 리스트 명령어를 실행하면, 기본적으로 최근에 실행된 10개의 세션 히스토리가 출력됩니다. 만일, 더 많은 세션 히스토리를 보고자 할 경우, -r 옵션을 사용합니다. 예를 들어, 50개의 세션 히스토리를 출력하려면, 다음과 같이 실행합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>iplus&gt; .session list –r 50
+</pre></div>
+</div>
+<p>아래는 세션 리스트 명령어를 실행한 결과 화면과 화면에 출력된 각 컬럼의 정보를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">session</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">SID</span>                         <span class="n">START_TIME</span>        <span class="n">END_TIME</span>          <span class="n">STYEP</span>    <span class="n">NODE</span>    <span class="n">PID</span>      <span class="n">USER</span>    <span class="n">IP</span>                <span class="n">RESULT</span>    <span class="n">QUERY_STRING</span>
+<span class="o">==============================================================================================================================================</span>
+ <span class="mi">20180330071416_1_30107_1</span>    <span class="mi">20180330071416</span>    <span class="mi">20180330071417</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30107</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">INSERT</span>
+ <span class="mi">20180330071417_1_30107_2</span>    <span class="mi">20180330071417</span>    <span class="mi">20180330071417</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30107</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">INSERT</span>
+ <span class="mi">20180330071417_1_30107_3</span>    <span class="mi">20180330071417</span>    <span class="mi">20180330071417</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30107</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">INSERT</span>
+ <span class="mi">20180330071417_1_30107_4</span>    <span class="mi">20180330071417</span>    <span class="mi">20180330071417</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30107</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">INSERT</span>
+ <span class="mi">20180330071417_1_30107_5</span>    <span class="mi">20180330071417</span>    <span class="mi">20180330071417</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30107</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">INSERT</span>
+ <span class="mi">20180330071416_1_30107_0</span>    <span class="mi">20180330071416</span>    <span class="mi">20180330071416</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30107</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">INSERT</span>
+ <span class="mi">20180330071414_1_30029_0</span>    <span class="mi">20180330071414</span>    <span class="mi">20180330071415</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30029</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">UPDATE</span>
+ <span class="mi">20180330071411_1_30011_0</span>    <span class="mi">20180330071411</span>    <span class="mi">20180330071411</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30011</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">LOAD</span>
+ <span class="mi">20180330071358_1_29906_1</span>    <span class="mi">20180330071358</span>    <span class="mi">20180330071358</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">29906</span>    <span class="n">root</span>    <span class="mf">192.168</span><span class="o">.</span><span class="mf">123.58</span>    <span class="o">+</span><span class="n">OK</span>       <span class="n">session</span>
+ <span class="mi">20180330071345_1_29796_0</span>    <span class="mi">20180330071345</span>    <span class="mi">20180330071345</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">29796</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>         <span class="o">+</span><span class="n">OK</span>       <span class="n">INSERT</span>
+<span class="o">==============================================================================================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0847</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<p>상기의 화면은 세션 리스트 명령어를 실행하여 출력된 화면 예로서, 세션 히스토리는 다음과 같은 정보를 제공합니다.</p>
+<table class="docutils align-default" id="id30">
+<caption><span class="caption-text">세션 정보</span><a class="headerlink" href="#id30" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 97%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>SID</p></td>
+<td><p>각 세션에 할당된 고유 ID 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>QUERY_STRING</p></td>
+<td><p>해당 세션에 실행된 쿼리문의 첫 번째 단어를 출력합니다. 일반적으로, 쿼리문의 길이는 길기 때문에 모든 세션 리스트를 출력하는 상기의 화면에 쿼리문 전체를 출력하는 것은 적절하지 않습니다. 따라서, .session list 명령에서는 쿼리문의 첫 번째 단어를 출력하여 해당 쿼리문의 유형을 판단할 수 있도록 합니다. 즉, 해당 세션의 쿼리문이 “SELECT TABLE_NAME, SCOPE,…”인 경우, 본 컬럼에는 ‘SELECT’가 출력됩니다. 만일, 쿼리문 전체에 대한 정보를 보려면, “2.7.2 세션 정보 보기”를 참조하시기 바랍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>START_TIME</p></td>
+<td><p>해당 쿼리를 시작한 시간 정보</p></td>
+</tr>
+<tr class="row-odd"><td><p>END_TIME</p></td>
+<td><p>해당 쿼리를 종료한 시간 정보</p></td>
+</tr>
+<tr class="row-even"><td><p>STYPE</p></td>
+<td><p>세션의 현재 상태를 보여줍니다.</p>
+<ul class="simple">
+<li><p>START: 세션 시작</p></li>
+<li><p>END: 세션 종료</p></li>
+<li><p>ABN: 비정상 종료</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>NODE</p></td>
+<td><p>사용자가 요청한 쿼리가 어느 노드에서 실행되었는지 해당 노드 ID를 제공합니다. 사용자가 IRIS에 쿼리를 요청하면, 마스터 노드에서 임의의 데이터 노드를 선택하고, 선택된 데이터 노드는 분산된 데이터 노드에 쿼리를 요청하여 쿼리 결과를 취합한 후, 사용자에게 결과를 제공합니다. 여기서, NODE 컬럼은 쿼리를 분산 노드에 요청하고 결과를 취합하여 사용자에게 제공하는 노드의 ID를 의미합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>PID</p></td>
+<td><p>해당 쿼리 실행을 담당하는 프로세스의 ID값</p></td>
+</tr>
+<tr class="row-odd"><td><p>USER</p></td>
+<td><p>해당 쿼리를 실행한 사용자의 계정 정보</p></td>
+</tr>
+<tr class="row-even"><td><p>IP</p></td>
+<td><p>해당 쿼리의 실행을 요청한 사용자가 접속한 호스트의 IP 주소</p></td>
+</tr>
+<tr class="row-odd"><td><p>RESULT</p></td>
+<td><p>쿼리의 실행 결과</p>
+<ul class="simple">
+<li><p>+OK: 쿼리가 성공적으로 종료되었음을 의미합니다.</p></li>
+<li><p>-ERR: 쿼리 실행 중 에러가 발생하여 비정상 종료되었음을 의미합니다.</p></li>
+</ul>
+<p>여기서, +는 성공을 –는 실패를 의미하는 기호입니다.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id19">
+<h3>세션 정보 보기<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>상기의 .session list 명령이 세션 전체에 대하여 각 세션별 기초 정보를 제공하는데 반하여, 아래의 .session info 명령은 특정 세션에 대한 세부 정보, 즉 쿼리문과 쿼리 실행 결과의 상세 정보를 제공합니다. 만일, 쿼리 실행 중 에러가 발생하면, 에러 메시지도 함께 출력됩니다. 특정 세션의 상세 정보를 확인하기 위하여 사용하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">session</span> <span class="n">info</span> <span class="p">{</span><span class="n">session</span> <span class="nb">id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 특정 세션의 세션 ID(SID)의 상세 정보를 보기 위한 방법을 제시하고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">session</span> <span class="n">info</span> <span class="mi">20180330071417_1_30107_3</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">SID</span>                         <span class="n">START_TIME</span>        <span class="n">END_TIME</span>          <span class="n">STYEP</span>    <span class="n">NODE</span>    <span class="n">PID</span>      <span class="n">USER</span>    <span class="n">IP</span>           <span class="n">RESULT</span>    <span class="n">QUERY_STRING</span>
+<span class="o">===========================================================================================================================================================================================================</span>
+ <span class="mi">20180330071417_1_30107_3</span>    <span class="mi">20180330071417</span>    <span class="mi">20180330071417</span>    <span class="n">END</span>      <span class="mi">1</span>       <span class="mi">30107</span>    <span class="n">test</span>    <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>    <span class="o">+</span><span class="n">OK</span><span class="s1">&#39;</span><span class="se">\r</span><span class="s1">&#39;</span>\<span class="n">n</span> <span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">LOCAL_TEST_TABLE</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="n">VALUES</span> <span class="p">(</span><span class="s1">&#39;k5&#39;</span><span class="p">,</span> <span class="s1">&#39;20110616000000&#39;</span><span class="p">,</span> <span class="s1">&#39;0.1&#39;</span><span class="p">);</span>
+<span class="o">===========================================================================================================================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0707</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<p>위의 .session info 명령어 실행 결과, RESULT 컬럼에 쿼리 실행 결과에 대한 상세 내용이 출력되며, QUERY_STRING 컬럼에 쿼리문이 출력됩니다.</p>
+</div>
+<div class="section" id="id20">
+<h3>세션 종료하기<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<p>현재 실행중인 특정 세션을 강제로 종료하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">session</span> <span class="n">term</span> <span class="p">{</span><span class="n">session</span> <span class="nb">id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>상기의 명령어는 종료하고자 하는 특정 세션의 ID를 확인한 후, 해당 세션을 종료할 수 있습니다. 아래 화면은 현재 실행중인 세션 중, 종료하고자 하는 세션 ID를 확인한 후, 해당 세션을 종료하는 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">session</span> <span class="nb">list</span> <span class="o">--</span><span class="nb">type</span> <span class="n">START</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+<span class="n">SID</span> <span class="n">QUERY_STRING</span> <span class="n">START_TIME</span> <span class="n">END_TIME</span> <span class="n">STYPE</span> <span class="n">NODE</span> <span class="n">PID</span> <span class="n">USER</span> <span class="n">IP</span>
+<span class="n">RESULT</span>
+<span class="o">=========================================================================================================================</span>
+<span class="o">==========</span>
+<span class="mi">20160201001914_2_18633_0</span> <span class="n">LOAD</span> <span class="mi">20160201001914</span> <span class="n">START</span> <span class="mi">2</span> <span class="mi">18633</span> <span class="n">test</span> <span class="mf">127.0</span><span class="o">.</span><span class="mf">0.1</span>
+<span class="o">=========================================================================================================================</span>
+<span class="o">==========</span>
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+<span class="mf">0.1287</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">session</span> <span class="n">term</span> <span class="mi">20160201001914_2_18633_0</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">kill</span> <span class="mi">20160201001914_2_18633_0</span> <span class="n">session</span><span class="o">.</span>
+<span class="mf">1.6638</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02.privilege.html" class="btn btn-neutral float-right" title="권한" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="DB-manager Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

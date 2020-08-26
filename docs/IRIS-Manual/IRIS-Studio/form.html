@@ -1,0 +1,1122 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>양식 (Form) 객체 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="제어 (Control) 객체" href="control.html" />
+    <link rel="prev" title="꾸미기 객체" href="decorate.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">IRIS Studio</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="start.html">보고서 시작하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">데이터 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_visualize.html">데이터 시각화 (Data Visualize) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorate.html">꾸미기 객체</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">양식 (Form) 객체</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input-box">텍스트 입력 (Input Box)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#text-area">텍스트 상자(Text Area)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combo-box">콤보박스 (Combo Box)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#check-box-radio-button">체크박스/라디오버튼 (Check Box / Radio Button)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#date-time-picker">날짜/시간 선택(Date / Time Picker)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id44">기간 설정</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editor">에디터 (editor)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="control.html">제어 (Control) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="special_etc.html">특수/기타 객체</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="index.html">IRIS Studio</a> &raquo;</li>
+    
+    <li>양식 (Form) 객체</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/form.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Studio/form</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Studio/form</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Studio/form
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Studio/form</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/form.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Studio/form.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="form">
+<h1>양식 (Form) 객체<a class="headerlink" href="#form" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">사용자로부터 값을 입력받기 위한 객체입니다.</div>
+<div class="line">입력받은 값을 시각화 객체 등에서 활용하여 하나의 문서/화면에서 다양한 데이터를 조회하거나 시각화가 가능합니다.</div>
+</div>
+<div class="section" id="input-box">
+<h2>텍스트 입력 (Input Box)<a class="headerlink" href="#input-box" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">텍스트 입력 객체는 Input Box에 사용자가 입력하거나 외부로부터 값을 받아 화면에 보여 줍니다.(타입: text, password, number)</div>
+<div class="line">입력하는 유형은 text, password, number 에서 선택할 수 있습니다.</div>
+</div>
+<img alt="../../_images/button-text.png" src="../../_images/button-text.png" />
+<div class="section" id="id1">
+<h3>데이터<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_input_39_1.png"><img alt="데이터 설정" src="../../_images/studio_input_39_1.png" style="width: 257.4px; height: 276.59999999999997px;" /></a>
+<div class="section" id="id2">
+<h4>설정할 변수/값<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">다른 객체로 부터 받을 데이터의 변수를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_input_39_2.png"><img alt="설정할 변수/값" src="../../_images/studio_input_39_2.png" style="width: 235.79999999999998px; height: 259.2px;" /></a>
+</div>
+<div class="section" id="id3">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">트리거 이벤트가 발생할 때 설정한 변수의 값에 따라 input Box 의 내용이 바뀌게 됩니다.</div>
+<div class="line">트리거 설정과 변수를 활용하면 설정 값에 따라 다른 내용으로 출력할 수 있습니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>속성 설정<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_input_39_4.png"><img alt="속성" src="../../_images/studio_input_39_4.png" style="width: 257.4px; height: 332.4px;" /></a>
+<p><strong>이벤트 값 전달 설정</strong></p>
+<div class="line-block">
+<div class="line">해당 객체의 값을 참조하고자 할 때 사용하는 내용이 표시됩니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>오브젝트 ID</p></td>
+<td><p>해당 객체의 고유 아이디로 자동으로 할당됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 명</p></td>
+<td><p>해당 객체를 사용하기 위한 변수명으로 사용자가 지정할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>유형 설정</strong></p>
+<div class="line-block">
+<div class="line">Input Box의 타입을 설정합니다.</div>
+<div class="line">“ReadOnly” 는 변수설정에 따라 변화되는 값이 Input Box 에 표시만 될 뿐 직접 입력하지는 못합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/input_02.png"><img alt="유형 설정" src="../../_images/input_02.png" style="width: 300px;" /></a>
+<p><strong>디폴트 값 선택</strong></p>
+<div class="line-block">
+<div class="line">디폴트 값은 아직 어떤 값도 표시가 되어 있지 않을 때 Input Box 에 표시할 내용을 정할 수 있습니다.</div>
+<div class="line">변수 설정이나 트리거 설정, 입력 등으로 값이 채워지면 디폴트 값은 표시되지 않습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/input_03.png"><img alt="디폴트 값 선택" src="../../_images/input_03.png" style="width: 300px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>기본 값</p></td>
+<td><p>Input Box에 초기값 텍스트를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>안내문구</p></td>
+<td><p>안내문구, 예시 등을 입력합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3>객체<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="text-area">
+<h2>텍스트 상자(Text Area)<a class="headerlink" href="#text-area" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-textarea.png" src="../../_images/button-textarea.png" />
+<div class="line-block">
+<div class="line">텍스트 상자 객체는 Text Area에 사용자가 입력하거나 외부로부터 값을 받아 화면에 보여 줍니다.</div>
+<div class="line">줄바꿈 문자가 포함된 여러 줄의 텍스트를 입력, 처리가 가능합니다.</div>
+</div>
+<div class="section" id="id6">
+<h3>데이터 설정<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_textarea_40.png"><img alt="데이터 설정" src="../../_images/studio_textarea_40.png" style="width: 239.39999999999998px; height: 262.8px;" /></a>
+<p><strong>설정할 변수/값</strong></p>
+<div class="line-block">
+<div class="line">다른 객체로 부터 받을 데이터의 변수를 설정합니다.</div>
+</div>
+<p><strong>데이터 실행방법 설정</strong></p>
+<div class="line-block">
+<div class="line">트리거 이벤트가 발생할 때 설정한 변수의 값에 따라 input Box 의 내용이 바뀌게 됩니다.</div>
+<div class="line">트리거 설정과 변수를 활용하면 설정 값에 따라 다른 내용으로 출력할 수 있습니다.</div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>속성 설정<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_textarea_40_1.png"><img alt="속성 설정" src="../../_images/studio_textarea_40_1.png" style="width: 260.4px; height: 398.4px;" /></a>
+<p><strong>이벤트 값 전달 설정</strong></p>
+<div class="line-block">
+<div class="line">해당 객체의 값을 참조하고자 할 때 사용하는 내용이 표시됩니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>오브젝트 ID</p></td>
+<td><p>해당 객체의 고유 아이디로 자동으로 할당됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 명</p></td>
+<td><p>해당 객체를 사용하기 위한 변수명으로 사용자가 지정할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/event_01.png"><img alt="이벤트값 전달 설정" src="../../_images/event_01.png" style="width: 273.0px; height: 98.0px;" /></a>
+<p><strong>유형 설정</strong></p>
+<p>Text Area에 읽기만 가능하도록 설정합니다.</p>
+<a class="reference internal image-reference" href="../../_images/textarea_02.png"><img alt="유형 설정" src="../../_images/textarea_02.png" style="width: 300px;" /></a>
+<p><strong>디폴트 값 선택</strong></p>
+<div class="line-block">
+<div class="line">디폴트 값은 아직 어떤 값도 표시가 되어 있지 않을 때 Text Area 에 표시할 내용을 정할 수 있습니다.</div>
+<div class="line">변수 설정이나 트리거 설정, 입력 등으로 값이 채워지면 디폴트 값은 표시되지 않습니다.</div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>기본 값</p></td>
+<td><p>Text Area에 초기값 텍스트를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>안내문구</p></td>
+<td><p>Text Area에 placeholder를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h3>객체 설정<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="combo-box">
+<h2>콤보박스 (Combo Box)<a class="headerlink" href="#combo-box" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-combobox.png" src="../../_images/button-combobox.png" />
+<div class="line-block">
+<div class="line">사용자가 드롭다운 목록에서 한 항목을 선택할 수 있습니다.</div>
+<div class="line">콤보박스 목록의 데이터는 ‘데이터’ 탭과 ‘사용자 정의’로 설정할 수 있습니다.</div>
+<div class="line">콤보박스의 데이터는 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data.html#id1">데이터객체</a> 와 데이터 연결(<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id1">챠트의 데이터 연결</a>) 로 설정하여 가져옵니다.</div>
+</div>
+<div class="section" id="id9">
+<h3>데이터 설정<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_combo_73.png"><img alt="콤보박스 사용자 정의" src="../../_images/studio_combo_73.png" style="width: 1099.8px; height: 638.4px;" /></a>
+<a class="reference internal image-reference" href="../../_images/studio_combo_41.png"><img alt="콤보박스 사용자 정의" src="../../_images/studio_combo_41.png" style="width: 289.6px; height: 243.60000000000002px;" /></a>
+<div class="section" id="id10">
+<h4>데이터<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">데이터 설정은 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id1">데이터설정</a> 과 동일합니다.</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h4>사용자 정의<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">사용자 정의 데이터 목록을 작성 할 수 있고, 1개 이상의 목록을 작성 할 경우, 추가 버튼을 클릭하여 데이터를 추가 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/combo_01.png"><img alt="콤보박스 사용자 정의" src="../../_images/combo_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>항목</p></td>
+<td><p>목록에 보여지는 텍스트 설정 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>값</p></td>
+<td><p>항목(텍스트)에 대응되는 데이터 값 입니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>속성<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">해당 객체의 값을 참조하고자 할 때 사용하는 내용이 표시됩니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>오브젝트 ID</p></td>
+<td><p>해당 객체의 고유 아이디로 자동으로 할당됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 명</p></td>
+<td><p>해당 객체를 사용하기 위한 변수명으로 사용자가 지정할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/studio_combo_42_1.png"><img alt="이벤트값 전달 설정" src="../../_images/studio_combo_42_1.png" style="width: 431.0px; height: 220.0px;" /></a>
+</div>
+<div class="section" id="id14">
+<h4>에디터 기능<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">콤보박스를 선택한 후에 콤보박스의 목록 필드를 직접 입력하여 검색하는 기능 입니다. (사용: 입력 검색, 미사용: 입력 불가)</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/combo_02.png"><img alt="콤보박스 에디터 기능" src="../../_images/combo_02.png" style="width: 270px;" /></a>
+</div>
+<div class="section" id="id15">
+<h4>화면에 보여질 필드 선택<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<a class="reference internal image-reference" href="../../_images/studio_combo_42_2.png"><img alt="콤보박스 데이터" src="../../_images/studio_combo_42_2.png" style="width: 828.0px; height: 588.6px;" /></a>
+<div class="line-block">
+<div class="line">데이터 설정을 “사용자 정의” 가 아닌 “데이터” 를 선택할 경우에 보입니다.</div>
+</div>
+</div>
+<div class="section" id="id16">
+<h4>값으로 사용될 필드 선택<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">데이터 설정을 “사용자 정의” 가 아닌 “데이터” 를 선택할 경우에 보입니다.</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h4>트리거 설정 확인<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id16">트리거 설정 확인</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id18">
+<h3>항목<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">콤보박스의 변수명을 설정해 변수명의 데이터 값으로 콤보박스의 목록의 값을 찾아 자동으로 선택해 주는 기능 입니다.</div>
+</div>
+<div class="section" id="id19">
+<h4>디폴트 값 선택<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">조회된 목록 중에 디폴트 값을 설정 할 수 있습니다.</div>
+<div class="line">콤보박스 항목을 선택하기 전이라도 이벤트값에 디폴트 값이 저장되어 전달됩니다.</div>
+<div class="line">트리거로 콤보박스를 선택 이벤트로 설정한 객체가 있다면, 콤보박스의 항목을 선택하기 전이라도 디폴트값을 수신받아 처리할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/combo_05.png"><img alt="디폴트 값 선택" src="../../_images/combo_05.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>미선택</p></td>
+<td><p>콤보박스 디폴트 값을 설정하지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>직접입력</p></td>
+<td><p>콤보박스 디폴트 값을 직접 입력하여 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id20">
+<h4>항목 설정 변수<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><strong>데이터</strong> 설정에서 <strong>사용자 정의</strong> 를 선택한 경우에 트리거에 의한 이벤트로 전달받은 변수를 콤보박스의 디폴트항목으로 설정하여 사용합니다.</div>
+<div class="line">사용자 정의 에서 따로 항목을 입력하고 디폴트항목을 설정했더라도</div>
+<div class="line">트리거 이벤트가 발생하면 항목 설정 변수의 값이 콤보박스에 추가되고, 동시에 디폴트 항목으로 설정됩니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_combo_43.png"><img alt="항목 설정 변수" src="../../_images/studio_combo_43.png" style="width: 1138.8px; height: 609.0px;" /></a>
+</div>
+<div class="section" id="id21">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id5">데이터 실행방법 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="check-box-radio-button">
+<h2>체크박스/라디오버튼 (Check Box / Radio Button)<a class="headerlink" href="#check-box-radio-button" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-checkbox.png" src="../../_images/button-checkbox.png" />
+<div class="line-block">
+<div class="line">체크박스/라디오버튼 객체로 전환 설정 가능합니다.</div>
+<div class="line">유형을 선택하여, 객체의 속성을 변경할 수 있고, 체크박스가 기본값 입니다.</div>
+</div>
+<div class="section" id="id22">
+<h3>데이터 설정<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">데이터 설정은 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id1">데이터설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+<div class="section" id="id23">
+<h4>사용자 정의<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">사용자 정의 데이터 목록을 작성 할 수 있고, 1개 이상의 목록을 작성 할 경우, 추가 버튼을 클릭하여 데이터를 추가 할 수 있습니다.</div>
+</div>
+</div>
+<div class="section" id="id24">
+<h4>데이터 사용자 정의<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">사용자 정의 데이터를 설정 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/check_radio_01.png"><img alt="데이터 사용자 정의" src="../../_images/check_radio_01.png" style="width: 270px;" /></a>
+</div>
+</div>
+<div class="section" id="id25">
+<h3>속성<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_check_radio_44_1.png"><img alt="속성" src="../../_images/studio_check_radio_44_1.png" style="width: 691.8px; height: 426.0px;" /></a>
+<div class="line-block">
+<div class="line">Check Box는 여러 개의 항목을 선택하거나 전체 선택도 가능하지만, Radio Button 은 1개 항목만 선택 가능합니다.</div>
+</div>
+<div class="section" id="id26">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">이벤트 발생시 정의한 설정값을 전달 합니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수명</p></td>
+<td><p>오브젝트의 변수명 할당합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>구분자 입력</p></td>
+<td><p>선택한 항목이 여러 개일 때 데이터 구분자를 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>텍스트 한정자</p></td>
+<td><p>목록 데이터의 텍스트 한정자를 설정합니다. (예: ‘data1’, “data1”)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id27">
+<h4>유형 선택<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">체크박스/라디오버튼 유형을 선택 합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/check_radio_02.png"><img alt="체크박스/라디오버튼 유형 선택" src="../../_images/check_radio_02.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Check Box</p></td>
+<td><p>화면에 보이는 UI를 체크박스로 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Radio Button</p></td>
+<td><p>화면에 보이는 UI를 라디오버튼으로 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id28">
+<h4>항목 배열 방향<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">체크박스/라디오버튼 배열 방향을 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/check_radio_04.png"><img alt="체크박스/라디오버튼 배열 방향" src="../../_images/check_radio_04.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>가로</p></td>
+<td><p>가로 방향으로 정렬 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>세로</p></td>
+<td><p>세로 방향으로 정렬 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id29">
+<h4>전체 선택 출력 여부<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">Check Box 로 유형을 선택한 경우에만 보입니다.</div>
+<div class="line">전체 선택 출력 여부를 출력으로 선택하면 “전체 선택” 항목이 항목의 제일 앞부분에 출력됩니다.</div>
+</div>
+<img alt="속성" src="../../_images/studio_check_radio_44_2.png" />
+</div>
+</div>
+<div class="section" id="id30">
+<h3>항목<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_check_radio_45.png"><img alt="체크박스/라디오버튼 항목" src="../../_images/studio_check_radio_45.png" style="width: 212.4px; height: 379.2px;" /></a>
+<div class="section" id="id31">
+<h4>항목 분리 설정값<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">항목설정 변수에 저장된 값이 여러 개인 경우, 구분자로 각 값을 분리합니다.</div>
+<div class="line">이 때 사용될 구분자를 입력합니다. 디폴트는 콤마(,) 입니다.</div>
+</div>
+</div>
+<div class="section" id="id32">
+<h4>디폴트 값 선택<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">check Box 와 radio button 의 항목들 중에서 디폴트로 선택 항목을 설정 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/check_radio_03.png"><img alt="체크박스/라디오버튼 디폴트 값 선택" src="../../_images/check_radio_03.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>미선택</p></td>
+<td><p>디폴트 값을 설정하지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>직접선택</p></td>
+<td><p>디폴트 값을 직접 입력하여 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id33">
+<h4>항목 설정 변수<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">트리거에 의한 이벤트로 전달받은 변수를  check Box 와 radio button 의 디폴트항목으로 설정하여 사용합니다.</div>
+<div class="line">사용자 정의 에서 따로 항목을 입력하고 디폴트항목을 설정했더라도</div>
+<div class="line">트리거 이벤트가 발생하면 항목 설정 변수의 값이 선택됩니다.</div>
+</div>
+</div>
+<div class="section" id="id34">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id5">데이터 실행방법 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id35">
+<h3>객체<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 과 동일합니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="date-time-picker">
+<h2>날짜/시간 선택(Date / Time Picker)<a class="headerlink" href="#date-time-picker" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-date.png" src="../../_images/button-date.png" />
+<p>날짜 선택 시 달력으로 시작/종료/현재 날짜를 설정할 수 있고, 시간 선택 시 시작 시간 &amp; 시간 간격을 설정 할 수 있습니다.</p>
+<div class="section" id="id36">
+<h3>속성<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_date_picker_07.png"><img alt="studio_date_picker_07.png" src="../../_images/studio_date_picker_07.png" style="width: 190.2px; height: 468.59999999999997px;" /></a>
+<div class="section" id="id37">
+<h4>데이터 유형 설정<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">입력받는 날짜 및 시간의 데이터 포맷을 설정합나다.</div>
+</div>
+</div>
+<div class="section" id="id38">
+<h4>날짜/시간 유형 선택<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">날짜/시간에 대한 유형선택으로 시각화 옵션이 달라 집니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/date_picker_01.png"><img alt="날짜/시간 유형 선택" src="../../_images/date_picker_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>날짜</p></td>
+<td><p>달력 표시 날짜/초기 날짜 설정을 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>시간</p></td>
+<td><p>시간 선택 간격/초기 시간 설정을 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id39">
+<h4>달력 표시 날짜 설정<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">날짜 유형을 선택한 경우에만 활성화 되며, 달력 표시 날짜를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/date_picker_02.png"><img alt="시각화옵션 달력 표시 날짜 설정" src="../../_images/date_picker_02.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>사용여부</p></td>
+<td><p>선택 시 시작/종료 날짜를 설정 가능하지만, 미선택 시 시작/종료 날짜를 설정할 수 없습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>시작 날짜</p></td>
+<td><p>시작 날짜를 선택 합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>종료 날짜</p></td>
+<td><p>종료 날짜를 선택 합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>현재 날짜</p></td>
+<td><p>기본값은 미선택이며, 선택 시 종료 날짜는 설정할 수 없고, 현재 날짜로 종료 날짜가 설정 됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id40">
+<h4>초기 날짜 설정<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">날짜 유형을 선택한 경우에만 활성화 되며, 초기 날짜를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/date_picker_03.png"><img alt="시각화옵션 초기 날짜 설정" src="../../_images/date_picker_03.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>현재 날짜 선택</p></td>
+<td><p>기본값은 선택이며, 현재 날짜로 초기 날짜를 설정합니다. 미선택 시 초기날짜를 설정 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>날짜</p></td>
+<td><p>현재 날짜 선택이 미선택 시 설정 가능하며, 선택 시에는 날짜가 비 활성화 됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id41">
+<h4>시간 선택 간격<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">시간 유형을 선택한 경우에만 활성화 되며, 시간을 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/date_picker_04.png"><img alt="시각화옵션 시간 선택 간격" src="../../_images/date_picker_04.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>분</p></td>
+<td><p>분을 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>초</p></td>
+<td><p>초를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id42">
+<h4>초기 시간 설정<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">시간 유형을 선택한 경우에만 활성화 되며, 초기 시간을 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/date_picker_05.png"><img alt="시각화옵션 초기 시간 설정" src="../../_images/date_picker_05.png" style="width: 480px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>현재 시간 선택</p></td>
+<td><p>기본값은 선택이며, 현재 시간으로 초기 시간을 설정합니다. 미선택 시 초기 시간을 설정 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>분</p></td>
+<td><p>분을 설정합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>초</p></td>
+<td><p>초를 설정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id43">
+<h3>객체<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id44">
+<h2>기간 설정<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h2>
+<img alt="기간 설정 01" src="../../_images/period_setting_01.png" />
+<div class="line-block">
+<div class="line">조회할 기간을 선택할 수 있는 박스를 만드는 메뉴입니다.</div>
+<div class="line">출력하는 데이터의 조회 시작 시간과 끝 시간을 설정할 수 있습니다.</div>
+<div class="line">또는 조회할 기간의 목록을 미리 만들어서 콤보박스 형태에서 선택할 수 있습니다.</div>
+</div>
+<div class="section" id="id45">
+<h3>속성<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id46">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id46" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">데이터 조회 시작 시간과 끝 시간의 시간 포맷을 설정합니다. 이 값은 설정된 변수에 startDate, endDate 라는 attribute key 로 저장됩니다.</div>
+<div class="line">예) ${period_setting_1.startDate}  ${period_setting_1.endDate}</div>
+</div>
+</div>
+<div class="section" id="id47">
+<h4>시간 설정<a class="headerlink" href="#id47" title="Permalink to this headline">¶</a></h4>
+<p><strong>시간 목록 구성</strong></p>
+<div class="line-block">
+<div class="line">여러 개의 기간을 목록으로 구성한 후 콤보박스에서 기간을 선택하여 조회 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/period_setting_03.png"><img alt="기간 설정 03" src="../../_images/period_setting_03.png" style="width: 1090.2px; height: 465.0px;" /></a>
+<p><strong>시간 선택</strong></p>
+<div class="line-block">
+<div class="line">시간 설정 팝업창에서 “미리 설정”, “날짜 및 시간 범위” 를 선택하여 시작 시간, 끝 시간을 정할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/period_setting_04.png"><img alt="기간 설정 04" src="../../_images/period_setting_04.png" style="width: 1123.8px; height: 562.1999999999999px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="editor">
+<h2>에디터 (editor)<a class="headerlink" href="#editor" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/studio_editor_01.png"><img alt="에디터 01" src="../../_images/studio_editor_01.png" style="width: 403.8px; height: 76.2px;" /></a>
+<div class="line-block">
+<div class="line">게시판같은 화면을 만들 때 사용할 수 있는 텍스트 에디터입니다.</div>
+<div class="line"><br /></div>
+<div class="line">화면 결과</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_editor_03.png"><img alt="에디터 화면" src="../../_images/studio_editor_03.png" style="width: 1032.6px; height: 271.2px;" /></a>
+<div class="section" id="id48">
+<h3>데이터<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">에디터 객체에서 디폴트 또는 기본값으로 미리 출력되는 값을 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_editor_02.png"><img alt="설정할 변수/값" src="../../_images/studio_editor_02.png" style="width: 227.4px; height: 250.2px;" /></a>
+<div class="section" id="id49">
+<h4>설정할 변수/값<a class="headerlink" href="#id49" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">다른 객체로 부터 받을 데이터의 변수를 설정합니다.</div>
+</div>
+</div>
+<div class="section" id="id50">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">트리거 이벤트가 발생할 때 설정한 변수의 값에 따라 에디터의 디폴트값/기본 값의 내용이 바뀌게 됩니다.</div>
+<div class="line">트리거 설정과 변수를 활용하면 설정 값에 따라 다른 내용으로 출력할 수 있습니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id51">
+<h3>속성<a class="headerlink" href="#id51" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../_images/studio_editor_04.png"><img alt="속성" src="../../_images/studio_editor_04.png" style="width: 227.4px; height: 232.2px;" /></a>
+<div class="section" id="id52">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">해당 객체의 값을 참조하고자 할 때 사용하는 내용이 표시됩니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>오브젝트 ID</p></td>
+<td><p>해당 객체의 고유 아이디로 자동으로 할당됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 명</p></td>
+<td><p>해당 객체를 사용하기 위한 변수명으로 사용자가 지정할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id53">
+<h4>디폴트 값 선택<a class="headerlink" href="#id53" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">디폴트 값은 텍스트 에디터에 입력하기 전에 에디터 box 에 표시할 내용을 정할 수 있습니다.</div>
+<div class="line">변수 설정이나 트리거 설정, 입력 등으로 값이 채워지면 디폴트 값은 표시되지 않습니다.</div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>기본 값</p></td>
+<td><p>에디터 Box에 초기값 텍스트를 설정합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>안내문구</p></td>
+<td><p>안내문구, 예시 등을 입력합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id54">
+<h3>객체<a class="headerlink" href="#id54" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="control.html" class="btn btn-neutral float-right" title="제어 (Control) 객체" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="decorate.html" class="btn btn-neutral float-left" title="꾸미기 객체" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

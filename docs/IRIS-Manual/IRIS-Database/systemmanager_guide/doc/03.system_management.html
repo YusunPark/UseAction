@@ -1,0 +1,1575 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>시스템 관리하기 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="모니터링" href="04.monitoring.html" />
+    <link rel="prev" title="IRIS 운영 명령" href="02.operating_command.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">System-manager Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="02.operating_command.html">IRIS 운영 명령</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">시스템 관리하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.monitoring.html">모니터링</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.extension_geospatial.html">공간DB 셋팅</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">System-manager Guide</a> &raquo;</li>
+    
+    <li>시스템 관리하기</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/systemmanager_guide/doc/03.system_management.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/systemmanager_guide/doc/03.system_management</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/systemmanager_guide/doc/03.system_management</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/systemmanager_guide/doc/03.system_management
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/systemmanager_guide/doc/03.system_management</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/systemmanager_guide/doc/03.system_management.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/systemmanager_guide/doc/03.system_management.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>시스템 관리하기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>해당 절에서는 iplus를 이용하여 시스템을 관리하는 방법에 대해서 설명을 합니다. iplus의 사용방법은 Programmer Guide를 참고하시기 바랍니다.</p>
+<div class="section" id="id2">
+<h2>에러정보 조회하기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서 발생하는 에러 정보를 다음과 같은 명령어로 조회를 할 수 있습니다. 에러 정보는 관리자 권한을 가진 계정으로만 조회가 가능합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">error</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HELP</span>
+<span class="o">=========================================================================</span>
+ <span class="n">error</span> <span class="n">command</span> <span class="n">help</span>
+     <span class="o">.</span><span class="n">error</span> <span class="p">[</span><span class="n">LIST</span><span class="o">|</span><span class="n">COUNT</span><span class="p">]</span>
+     <span class="n">LIST</span>  <span class="p">:</span> <span class="n">show</span> <span class="n">error</span> <span class="n">message</span>
+         <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">error</span> <span class="nb">list</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+     <span class="n">COUNT</span> <span class="p">:</span> <span class="n">show</span> <span class="n">error</span> <span class="n">count</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+
+ <span class="o">**</span> <span class="n">option</span>
+     <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">stime</span>   <span class="p">:</span> <span class="nb">set</span> <span class="n">start</span> <span class="n">time</span> <span class="p">(</span><span class="n">yyyymmddHHMMSS</span><span class="p">)</span>
+     <span class="o">-</span><span class="n">e</span><span class="p">,</span> <span class="o">--</span><span class="n">etime</span>   <span class="p">:</span> <span class="nb">set</span> <span class="n">end</span> <span class="n">time</span> <span class="p">(</span><span class="n">yyyymmddHHMMSS</span><span class="p">)</span>
+     <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">node</span>    <span class="p">:</span> <span class="nb">set</span> <span class="n">node</span>
+                     <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">several</span> <span class="n">nodes</span> <span class="n">info</span><span class="p">,</span> <span class="n">use</span> <span class="s2">&quot;,&quot;</span> <span class="n">seperator</span>
+<span class="o">=========================================================================</span>
+
+<span class="mi">11</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0846</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id11">
+<caption><span class="caption-text">.error 명령어의 옵션</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 30%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>LIST</p></td>
+<td><p>.error list</p></td>
+<td><p>에러의 내용을 조회</p></td>
+</tr>
+<tr class="row-odd"><td><p>COUNT</p></td>
+<td><p>.error count</p></td>
+<td><p>에러의 개수를 조회</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id12">
+<caption><span class="caption-text">.error 명령어의 공통 옵션</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 30%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>-s, –stime</p></td>
+<td><p>.error list -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후로 발생한 에러 정보를 조회</p></td>
+</tr>
+<tr class="row-odd"><td><p>-e, –etime</p></td>
+<td><p>.error list -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전에 발생된 에러 정보를 조회</p></td>
+</tr>
+<tr class="row-even"><td><p>-n, –node</p></td>
+<td><p>.error -n {node_id}[,{node_id}]</p></td>
+<td><p>설정한 노드에서 발생된 에러 정보를 조회</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h3>에러 리스트 조회하기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>에러의 상세 메시지를 확인하기 위한 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">error</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<p>아래 화면은 관리자 권한을 가진 계정을 이용하여 <code class="docutils literal notranslate"><span class="pre">.error</span> <span class="pre">list</span></code> 명령어로 에러 메시지를 조회하는 과정을 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">error</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+<span class="n">UPDATE_TIME</span>
+<span class="o">=========================================================================================================</span>
+<span class="mi">1</span>          <span class="n">UFIkWzIwMTgvMDQvMDMgMTQ6MzU6MDBdIEVSUk9SLCAyMjA0NiwgMTQwNjY2MDExOTE2MDMyLCBFeHBpcmVNYW5hZ2VyLnB5LCA4MywgZXhwaXJlLCB5ZWFyPTExNiBpcyBiZWZvcmUgMTkwMDsgdGhlIGRhdGV0aW1lIHN0cmZ0aW1lKCkgbWV0aG9kcyByZXF1aXJlIHllYXIgPj0gMTkwMApUcmFjZWJhY2sgKG1vc3QgcmVjZW50IGNhbGwgbGFzdCk6CiAgRmlsZSAiL2hvbWUvaXJpczIvSVJJUy9saWIvTTYvU2xhdmUvUFIvRXhwaXJlTWFuYWdlci5weSIsIGxpbmUgNjAsIGluIGV4cGlyZQogICAgcmVtb3ZlX2xpc3QgPSByZW1vdmVfbGlzdCArIHNlbGYuX2NyZWF0ZV9yZW1vdmVfbGlzdCh0YWJsZV9uYW1lLCAqcmVtb3ZlX3RhcmdldCkKICBGaWxlICIvaG9tZS9pcmlzMi9JUklTL2xpYi9NNi9TbGF2ZS9QUi9FeHBpcmVNYW5hZ2VyLnB5IiwgbGluZSA5MiwgaW4gX2NyZWF0ZV9yZW1vdmVfbGlzdAogICAgY2hlY2tfdGltZSA9IHNlbGYuX2NhbGNfcGFydChsYXN0X3RpbWUsIHRhYmxlX2V4cCkKICBGaWxlICIvaG9tZS9pcmlzMi9JUklTL2xpYi9NNi9TbGF2ZS9QUi9FeHBpcmVNYW5hZ2VyLnB5IiwgbGluZSAxMjUsIGluIF9jYWxjX3BhcnQKICAgIHJldHVybiBkYXRldGltZS5kYXRlLnN0cmZ0aW1lKHJlc3VsdF90aW1lLCAnJVklbSVkJUglTSVTJykKVmFsdWVFcnJvcjogeWVhcj0xMTYgaXMgYmVmb3JlIDE5MDA7IHRoZSBkYXRldGltZSBzdHJmdGltZSgpIG1ldGhvZHMgcmVxdWlyZSB5ZWFyID49IDE5MDA</span><span class="o">=</span>    <span class="mi">20180403143500</span>
+<span class="o">=========================================================================================================</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0847</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id13">
+<caption><span class="caption-text">.error list 의 컬럼 정보</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>에러가 발생한 노드 ID</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOG</p></td>
+<td><p>에러 정보 (base64로 인코딩)</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATETIME</p></td>
+<td><p>에러가 발생한 시간</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h3>에러 개수 조회하기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>에러 메시지의 개수를 조회하기 위한 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">error</span> <span class="n">count</span>
+</pre></div>
+</div>
+<p>아래 화면은 관리자 권한을 가진 계정을 이용하여 .error count 명령어로 에러 개수를 조회하는 과정을 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">error</span> <span class="n">count</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span>
+<span class="o">============</span>
+ <span class="mi">9402</span>
+<span class="o">============</span>
+
+<span class="mi">1</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1016</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>노드의 상태 관리하기<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>관리자 권한을 가진 사용자는 iplus를 이용하여 각 노드의 리소스 상태를 확인하고, 노드의 상태를 변경할 수 있습니다. iplus를 통하여 노드를 관리하기 위한 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HELP</span>
+<span class="o">=================================================================</span>
+ <span class="n">node</span> <span class="n">command</span> <span class="n">help</span>
+     <span class="o">.</span><span class="n">node</span> <span class="p">[</span><span class="n">LIST</span><span class="o">|</span><span class="n">DISABLE</span><span class="o">|</span><span class="n">ENABLE</span><span class="p">]</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+     <span class="n">LIST</span>    <span class="p">:</span> <span class="n">show</span> <span class="n">node</span> <span class="n">info</span>
+         <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">node</span> <span class="n">noed</span> <span class="nb">list</span> <span class="p">{</span><span class="n">option</span><span class="p">}</span>
+         <span class="o">**</span> <span class="n">option</span>
+             <span class="o">--</span><span class="n">node</span>            <span class="p">:</span> <span class="p">{</span><span class="n">node_id</span><span class="p">}</span>
+             <span class="o">--</span><span class="n">sys_status</span>      <span class="p">:</span> <span class="n">VALID</span><span class="o">|</span><span class="n">INVALID</span><span class="o">|</span><span class="n">BUSY</span><span class="o">|</span><span class="n">WAIT_RETRY</span>
+             <span class="o">--</span><span class="n">adm_status</span>      <span class="p">:</span> <span class="n">ENABLE</span><span class="o">|</span><span class="n">DISABLE</span>
+     <span class="n">DISABLE</span> <span class="p">:</span> <span class="n">node</span> <span class="n">disable</span>
+         <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">node</span> <span class="n">disable</span> <span class="p">{</span><span class="n">node_id</span><span class="p">}</span>
+     <span class="n">ENABLE</span>  <span class="p">:</span> <span class="n">node</span> <span class="n">ENABLE</span>
+         <span class="n">ex</span><span class="p">)</span> <span class="o">.</span><span class="n">node</span> <span class="n">enable</span> <span class="p">{</span><span class="n">node_id</span><span class="p">}</span>
+<span class="o">=================================================================</span>
+
+<span class="mi">12</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0900</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">.node 명령어</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>명령어</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>.node list</p></td>
+<td><p>각 노드의 리소스 상태를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.node disable</p></td>
+<td><p>특정 노드를 disable 상태로 변경합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>.node enable</p></td>
+<td><p>특정 노드를 enable 상태로 변경합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id6">
+<h3>노드 리소스 상태 조회하기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>IRIS 노드의  리소스 상태를 조회하는 명령어는 다음과 같으며, 아래 표에 각 옵션에 대한 설명을 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="nb">list</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id15">
+<caption><span class="caption-text">.node list 명령어의 옵션</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.node list</p></td>
+<td><div class="line-block">
+<div class="line">노드의 리소스 상태를 표시합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>–node</p></td>
+<td><p>.node list –node {node_id}[, {node_id}]</p></td>
+<td><div class="line-block">
+<div class="line">입력한 노드의 리소스 상태를 조회합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>–sys_status</p></td>
+<td><p>.node list –sys_status {status}[, {status}]</p></td>
+<td><div class="line-block">
+<div class="line">입력한 status를 조회합니다.</div>
+<div class="line">Status: VALID, INVALID, BUSY, WAIT_RETRY</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>–adm_status</p></td>
+<td><p>.node list –adm_status {status}[, {status}]</p></td>
+<td><div class="line-block">
+<div class="line">입력한 status를 조회합니다.</div>
+<div class="line">Status: ENABLE, DISABLE</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>아래는 노드의 리소스 상태를 조회하는 명령어를 실행한 결과 화면과 화면에 출력된 각 컬럼의 정보를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">SYS_STATUS</span>    <span class="n">ADM_STATUS</span>    <span class="n">IP</span>                 <span class="n">HOSTNAME</span>    <span class="n">UPDATE_TIME</span>       <span class="n">CPU</span>      <span class="n">LOADAVG</span>    <span class="n">MEM_P</span>    <span class="n">MEM_F</span>    <span class="n">DISK</span>
+<span class="o">=======================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.180</span>    <span class="n">gcs1</span>        <span class="mi">20180403162613</span>    <span class="mf">1.19</span>     <span class="mf">0.21</span>       <span class="mf">46.81</span>    <span class="mf">0.00</span>     <span class="mf">77.91</span>
+ <span class="mi">1</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.135</span>    <span class="n">gcs2</span>        <span class="mi">20180403162616</span>    <span class="mf">2.78</span>     <span class="mf">0.45</span>       <span class="mf">18.93</span>    <span class="mf">0.42</span>     <span class="mf">61.12</span>
+ <span class="mi">2</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.173</span>    <span class="n">gcs3</span>        <span class="mi">20180403162615</span>    <span class="mf">1.82</span>     <span class="mf">0.21</span>       <span class="mf">14.64</span>    <span class="mf">0.25</span>     <span class="mf">62.03</span>
+ <span class="mi">3</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.156</span>    <span class="n">gcs4</span>        <span class="mi">20180403162614</span>    <span class="mf">2.75</span>     <span class="mf">0.44</span>       <span class="mf">14.48</span>    <span class="mf">0.51</span>     <span class="mf">63.30</span>
+ <span class="mi">4</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.171</span>    <span class="n">gcs5</span>        <span class="mi">20180403162613</span>    <span class="mf">5.13</span>     <span class="mf">0.77</span>       <span class="mf">15.79</span>    <span class="mf">0.23</span>     <span class="mf">61.28</span>
+ <span class="mi">5</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.172</span>    <span class="n">gcs6</span>        <span class="mi">20180403162616</span>    <span class="mf">2.02</span>     <span class="mf">0.39</span>       <span class="mf">18.38</span>    <span class="mf">0.14</span>     <span class="mf">63.17</span>
+ <span class="mi">6</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.174</span>    <span class="n">gcs7</span>        <span class="mi">20180403162614</span>    <span class="mf">13.49</span>    <span class="mf">0.21</span>       <span class="mf">16.46</span>    <span class="mf">0.60</span>     <span class="mf">65.51</span>
+ <span class="mi">7</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.170</span>    <span class="n">mhost6</span>      <span class="mi">20180403162614</span>    <span class="mf">0.97</span>     <span class="mf">0.10</span>       <span class="mf">17.45</span>    <span class="mf">0.04</span>     <span class="mf">0.21</span>
+ <span class="mi">8</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.177</span>    <span class="n">mhost7</span>      <span class="mi">20180403162612</span>    <span class="mf">3.00</span>     <span class="mf">0.19</span>       <span class="mf">12.67</span>    <span class="mf">0.02</span>     <span class="mf">0.21</span>
+ <span class="mi">9</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.182</span>    <span class="n">mhost8</span>      <span class="mi">20180403162613</span>    <span class="mf">1.10</span>     <span class="mf">0.10</span>       <span class="mf">6.88</span>     <span class="mf">0.04</span>     <span class="mf">0.21</span>
+<span class="o">=======================================================================================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1592</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id16">
+<caption><span class="caption-text">노드 정보</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>각 노드를 구분하는 아이디.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYS_STATUS</p></td>
+<td><p>현재 노드의 시스템 상태, 즉 SYSTEM STATUS를 나타냅니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADM_STATUS</p></td>
+<td><p>IRIS 관리자가 수동으로 결정한 노드의 상태입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP</p></td>
+<td><p>노드의 IP 주소</p></td>
+</tr>
+<tr class="row-even"><td><p>HOSTNAME</p></td>
+<td><p>노드의 호스트 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>UPDATE_TIME</p></td>
+<td><p>해당 노드의 정보를 업데이트한 가장 최근의 시간을 의미합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>CPU</p></td>
+<td><p>CPU 사용률(%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>LOADAVG</p></td>
+<td><p>Load Average 값</p></td>
+</tr>
+<tr class="row-even"><td><p>MEM_P</p></td>
+<td><p>해당 노드에서 동작하는 프로세스에서 점유한 메모리 사용율(%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEM_F</p></td>
+<td><p>해당 노드의 램 파일 시스템, 즉 데이터를 저장하기 위하여 점유한 메모리 사용율(%)</p></td>
+</tr>
+<tr class="row-even"><td><p>DISK</p></td>
+<td><p>디스크 사용량(%)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="disable">
+<h3>노드의 상태 disable 하기<a class="headerlink" href="#disable" title="Permalink to this headline">¶</a></h3>
+<p>특정 노드의 상태를 disable로 변경하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="n">disable</span> <span class="p">{</span><span class="n">node_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 현재 enable 되어 있는 6번 노드를 disable 상태로 변경하고 그 결과를 확인하는 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">SYS_STATUS</span>    <span class="n">ADM_STATUS</span>    <span class="n">IP</span>                 <span class="n">HOSTNAME</span>    <span class="n">UPDATE_TIME</span>       <span class="n">CPU</span>     <span class="n">LOADAVG</span>    <span class="n">MEM_P</span>    <span class="n">MEM_F</span>    <span class="n">DISK</span>
+<span class="o">======================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.180</span>    <span class="n">gcs1</span>        <span class="mi">20180403163420</span>    <span class="mf">2.48</span>    <span class="mf">0.14</span>       <span class="mf">47.57</span>    <span class="mf">0.00</span>     <span class="mf">77.91</span>
+ <span class="mi">1</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.135</span>    <span class="n">gcs2</span>        <span class="mi">20180403163421</span>    <span class="mf">2.96</span>    <span class="mf">0.22</span>       <span class="mf">18.94</span>    <span class="mf">0.42</span>     <span class="mf">61.12</span>
+ <span class="mi">2</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.173</span>    <span class="n">gcs3</span>        <span class="mi">20180403163421</span>    <span class="mf">1.80</span>    <span class="mf">0.34</span>       <span class="mf">14.64</span>    <span class="mf">0.25</span>     <span class="mf">62.03</span>
+ <span class="mi">3</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.156</span>    <span class="n">gcs4</span>        <span class="mi">20180403163419</span>    <span class="mf">1.51</span>    <span class="mf">0.22</span>       <span class="mf">14.42</span>    <span class="mf">0.51</span>     <span class="mf">63.30</span>
+ <span class="mi">4</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.171</span>    <span class="n">gcs5</span>        <span class="mi">20180403163418</span>    <span class="mf">3.09</span>    <span class="mf">0.19</span>       <span class="mf">15.81</span>    <span class="mf">0.24</span>     <span class="mf">61.28</span>
+ <span class="mi">5</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.172</span>    <span class="n">gcs6</span>        <span class="mi">20180403163421</span>    <span class="mf">1.59</span>    <span class="mf">0.17</span>       <span class="mf">18.26</span>    <span class="mf">0.15</span>     <span class="mf">63.17</span>
+ <span class="mi">6</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.174</span>    <span class="n">gcs7</span>        <span class="mi">20180403163419</span>    <span class="mf">2.72</span>    <span class="mf">0.36</span>       <span class="mf">16.49</span>    <span class="mf">0.60</span>     <span class="mf">65.51</span>
+<span class="o">======================================================================================================================================</span>
+
+<span class="mi">7</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1607</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="n">disable</span> <span class="mi">6</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">DISABLE</span><span class="p">[</span><span class="n">node</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="mf">0.0670</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">SYS_STATUS</span>    <span class="n">ADM_STATUS</span>    <span class="n">IP</span>                 <span class="n">HOSTNAME</span>    <span class="n">UPDATE_TIME</span>       <span class="n">CPU</span>     <span class="n">LOADAVG</span>    <span class="n">MEM_P</span>    <span class="n">MEM_F</span>    <span class="n">DISK</span>
+<span class="o">======================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.180</span>    <span class="n">gcs1</span>        <span class="mi">20180403163425</span>    <span class="mf">2.87</span>    <span class="mf">0.21</span>       <span class="mf">47.57</span>    <span class="mf">0.00</span>     <span class="mf">77.91</span>
+ <span class="mi">1</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.135</span>    <span class="n">gcs2</span>        <span class="mi">20180403163426</span>    <span class="mf">0.31</span>    <span class="mf">0.20</span>       <span class="mf">18.93</span>    <span class="mf">0.42</span>     <span class="mf">61.12</span>
+ <span class="mi">2</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.173</span>    <span class="n">gcs3</span>        <span class="mi">20180403163426</span>    <span class="mf">3.16</span>    <span class="mf">0.31</span>       <span class="mf">14.64</span>    <span class="mf">0.25</span>     <span class="mf">62.03</span>
+ <span class="mi">3</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.156</span>    <span class="n">gcs4</span>        <span class="mi">20180403163424</span>    <span class="mf">2.50</span>    <span class="mf">0.20</span>       <span class="mf">14.42</span>    <span class="mf">0.51</span>     <span class="mf">63.30</span>
+ <span class="mi">4</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.171</span>    <span class="n">gcs5</span>        <span class="mi">20180403163423</span>    <span class="mf">2.12</span>    <span class="mf">0.34</span>       <span class="mf">15.81</span>    <span class="mf">0.24</span>     <span class="mf">61.28</span>
+ <span class="mi">5</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.172</span>    <span class="n">gcs6</span>        <span class="mi">20180403163426</span>    <span class="mf">2.95</span>    <span class="mf">0.15</span>       <span class="mf">18.26</span>    <span class="mf">0.15</span>     <span class="mf">63.17</span>
+ <span class="mi">6</span>          <span class="n">INVALID</span>       <span class="n">DISABLE</span>       <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.174</span>    <span class="n">gcs7</span>        <span class="mi">20180403163419</span>    <span class="mf">2.72</span>    <span class="mf">0.36</span>       <span class="mf">16.49</span>    <span class="mf">0.60</span>     <span class="mf">65.51</span>
+<span class="o">======================================================================================================================================</span>
+
+<span class="mi">7</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1666</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>노드의 상태 disable 하기<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>특정 노드의 상태를 enable로 변경하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="n">enable</span> <span class="p">{</span><span class="n">node_id</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>아래는 현재 disable 되어 있는 6번 노드를 enable 상태로 변경하고 그 결과를 확인하는 예를 보여줍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">SYS_STATUS</span>    <span class="n">ADM_STATUS</span>    <span class="n">IP</span>                 <span class="n">HOSTNAME</span>    <span class="n">UPDATE_TIME</span>       <span class="n">CPU</span>     <span class="n">LOADAVG</span>    <span class="n">MEM_P</span>    <span class="n">MEM_F</span>    <span class="n">DISK</span>
+<span class="o">======================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.180</span>    <span class="n">gcs1</span>        <span class="mi">20180403163540</span>    <span class="mf">1.02</span>    <span class="mf">0.09</span>       <span class="mf">47.69</span>    <span class="mf">0.00</span>     <span class="mf">78.07</span>
+ <span class="mi">1</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.135</span>    <span class="n">gcs2</span>        <span class="mi">20180403163537</span>    <span class="mf">1.68</span>    <span class="mf">0.21</span>       <span class="mf">18.94</span>    <span class="mf">0.42</span>     <span class="mf">61.12</span>
+ <span class="mi">2</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.173</span>    <span class="n">gcs3</span>        <span class="mi">20180403163537</span>    <span class="mf">2.39</span>    <span class="mf">0.31</span>       <span class="mf">14.64</span>    <span class="mf">0.25</span>     <span class="mf">62.03</span>
+ <span class="mi">3</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.156</span>    <span class="n">gcs4</span>        <span class="mi">20180403163540</span>    <span class="mf">2.03</span>    <span class="mf">0.49</span>       <span class="mf">14.46</span>    <span class="mf">0.51</span>     <span class="mf">63.30</span>
+ <span class="mi">4</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.171</span>    <span class="n">gcs5</span>        <span class="mi">20180403163539</span>    <span class="mf">0.63</span>    <span class="mf">0.21</span>       <span class="mf">15.82</span>    <span class="mf">0.24</span>     <span class="mf">61.28</span>
+ <span class="mi">5</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.172</span>    <span class="n">gcs6</span>        <span class="mi">20180403163537</span>    <span class="mf">1.03</span>    <span class="mf">0.14</span>       <span class="mf">18.27</span>    <span class="mf">0.15</span>     <span class="mf">63.17</span>
+ <span class="mi">6</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.174</span>    <span class="n">gcs7</span>        <span class="mi">20180403163540</span>    <span class="mf">1.53</span>    <span class="mf">0.36</span>       <span class="mf">16.48</span>    <span class="mf">0.60</span>     <span class="mf">65.51</span>
+<span class="o">======================================================================================================================================</span>
+
+<span class="mi">7</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1675</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="n">enable</span> <span class="mi">6</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">ENABLE</span><span class="p">[</span><span class="n">node</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="mf">0.0591</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">node</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">SYS_STATUS</span>    <span class="n">ADM_STATUS</span>    <span class="n">IP</span>                 <span class="n">HOSTNAME</span>    <span class="n">UPDATE_TIME</span>       <span class="n">CPU</span>     <span class="n">LOADAVG</span>    <span class="n">MEM_P</span>    <span class="n">MEM_F</span>    <span class="n">DISK</span>
+<span class="o">======================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.180</span>    <span class="n">gcs1</span>        <span class="mi">20180403163555</span>    <span class="mf">1.45</span>    <span class="mf">0.07</span>       <span class="mf">47.69</span>    <span class="mf">0.00</span>     <span class="mf">78.07</span>
+ <span class="mi">1</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.135</span>    <span class="n">gcs2</span>        <span class="mi">20180403163552</span>    <span class="mf">1.67</span>    <span class="mf">0.16</span>       <span class="mf">18.94</span>    <span class="mf">0.42</span>     <span class="mf">61.12</span>
+ <span class="mi">2</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.173</span>    <span class="n">gcs3</span>        <span class="mi">20180403163552</span>    <span class="mf">1.27</span>    <span class="mf">0.24</span>       <span class="mf">14.63</span>    <span class="mf">0.25</span>     <span class="mf">62.03</span>
+ <span class="mi">3</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.156</span>    <span class="n">gcs4</span>        <span class="mi">20180403163555</span>    <span class="mf">2.69</span>    <span class="mf">0.45</span>       <span class="mf">14.46</span>    <span class="mf">0.51</span>     <span class="mf">63.30</span>
+ <span class="mi">4</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.171</span>    <span class="n">gcs5</span>        <span class="mi">20180403163554</span>    <span class="mf">2.40</span>    <span class="mf">0.30</span>       <span class="mf">15.82</span>    <span class="mf">0.24</span>     <span class="mf">61.28</span>
+ <span class="mi">5</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.172</span>    <span class="n">gcs6</span>        <span class="mi">20180403163552</span>    <span class="mf">1.99</span>    <span class="mf">0.19</span>       <span class="mf">18.26</span>    <span class="mf">0.15</span>     <span class="mf">63.17</span>
+ <span class="mi">6</span>          <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.174</span>    <span class="n">gcs7</span>        <span class="mi">20180403163555</span>    <span class="mf">2.79</span>    <span class="mf">0.36</span>       <span class="mf">16.48</span>    <span class="mf">0.60</span>     <span class="mf">65.51</span>
+<span class="o">======================================================================================================================================</span>
+
+<span class="mi">7</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1681</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>시스템 정보 조회하기<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>IRIS는 아래 표와 같이, 사용자가 각 노드의 OS, CPU, RAM, DISK, NETWORK 등 주요 시스템 정보를 조회할 수 있는 명령어를 제공합니다.</p>
+<table class="colwidths-given docutils align-default" id="id17">
+<caption><span class="caption-text">.system 명령어</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>명령어</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>.system os</p></td>
+<td><p>각 노드의 OS 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.system cpu</p></td>
+<td><p>각 노드의 CPU 정보 및 사용량을 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>.system ram</p></td>
+<td><p>각 노드의 RAM 용량 및 사용량을 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.system disk</p></td>
+<td><p>각 노드의 DISK 용량 및 사용량을 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>.system net</p></td>
+<td><p>각 노드의 네트워크 정보 및 사용량을 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>.system all</p></td>
+<td><p>시스템 전체 정보를 한번에 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="os">
+<h3>OS 정보 조회하기<a class="headerlink" href="#os" title="Permalink to this headline">¶</a></h3>
+<p>각 노드의 OS 정보를 조회하는 방법은 다음과 같습니다.</p>
+<p>해당 명령어는 ROOT 권한이 있어야 실행 가능합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">os</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id18">
+<caption><span class="caption-text">.system os 명령어의 옵션</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.system os</p></td>
+<td><p>가장 최근의 OS 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-s, –stime</p></td>
+<td><p>.system os -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후의 OS 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-e, –etime</p></td>
+<td><p>.system os -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전의 OS 정보를 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 각 노드의 OS 정보를 조회하는 화면 예시이며, 각 컬럼에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">os</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">NODE_IP</span>            <span class="n">HOST_NAME</span>    <span class="n">OS_NAME</span>    <span class="n">OS_VERSION</span>    <span class="n">OS_TYPE</span>    <span class="n">NET_NAME</span>    <span class="n">NET_TYPE</span>    <span class="n">NET_MAC</span>              <span class="n">UPDATETIME</span>
+<span class="o">==============================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.180</span>    <span class="n">gcs1</span>         <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">14</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">ec</span><span class="p">:</span><span class="mi">06</span><span class="p">:</span><span class="n">dc</span><span class="p">:</span><span class="n">c4</span>    <span class="mi">20180403170002</span>
+ <span class="mi">1</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.135</span>    <span class="n">gcs2</span>         <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">30</span><span class="p">:</span><span class="n">e1</span><span class="p">:</span><span class="mi">71</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">9</span><span class="n">a</span><span class="p">:</span><span class="mi">6</span><span class="n">c</span>    <span class="mi">20180403170005</span>
+ <span class="mi">2</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.173</span>    <span class="n">gcs3</span>         <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">30</span><span class="p">:</span><span class="n">e1</span><span class="p">:</span><span class="mi">71</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="n">aa</span><span class="p">:</span><span class="mi">54</span>    <span class="mi">20180403170004</span>
+ <span class="mi">3</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.156</span>    <span class="n">gcs4</span>         <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">30</span><span class="p">:</span><span class="n">e1</span><span class="p">:</span><span class="mi">71</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">72</span><span class="p">:</span><span class="n">ac</span>    <span class="mi">20180403170002</span>
+ <span class="mi">4</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.171</span>    <span class="n">gcs5</span>         <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">30</span><span class="p">:</span><span class="n">e1</span><span class="p">:</span><span class="mi">71</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">82</span><span class="p">:</span><span class="mi">30</span>    <span class="mi">20180403170001</span>
+ <span class="mi">5</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.172</span>    <span class="n">gcs6</span>         <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">30</span><span class="p">:</span><span class="n">e1</span><span class="p">:</span><span class="mi">71</span><span class="p">:</span><span class="mi">53</span><span class="p">:</span><span class="n">df</span><span class="p">:</span><span class="n">d8</span>    <span class="mi">20180403170003</span>
+ <span class="mi">6</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.174</span>    <span class="n">gcs7</span>         <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">30</span><span class="p">:</span><span class="n">e1</span><span class="p">:</span><span class="mi">71</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">72</span><span class="p">:</span><span class="n">c8</span>    <span class="mi">20180403170001</span>
+ <span class="mi">7</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.170</span>    <span class="n">mhost6</span>       <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">94</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">82</span><span class="p">:</span><span class="mi">76</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">2</span><span class="n">c</span>    <span class="mi">20180403170000</span>
+ <span class="mi">8</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.177</span>    <span class="n">mhost7</span>       <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">94</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">82</span><span class="p">:</span><span class="mi">76</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">68</span>    <span class="mi">20180403170003</span>
+ <span class="mi">9</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.182</span>    <span class="n">mhost8</span>       <span class="n">CentOS</span>     <span class="n">release</span>       <span class="mi">64</span>         <span class="n">eno1</span><span class="p">:</span>       <span class="mi">1000</span>        <span class="mi">94</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">82</span><span class="p">:</span><span class="mi">76</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span><span class="mi">10</span>    <span class="mi">20180403170002</span>
+<span class="o">==============================================================================================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0988</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id19">
+<caption><span class="caption-text">노드의 OS 정보</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-odd"><td><p>NODE_IP</p></td>
+<td><p>노드의 IP 주소</p></td>
+</tr>
+<tr class="row-even"><td><p>HOST_NAME</p></td>
+<td><p>호스트 이름</p></td>
+</tr>
+<tr class="row-odd"><td><p>OS_NAME</p></td>
+<td><p>운영체제 이름</p></td>
+</tr>
+<tr class="row-even"><td><p>OS_VERSION</p></td>
+<td><p>운영체제 버전</p></td>
+</tr>
+<tr class="row-odd"><td><p>OS_TYPE</p></td>
+<td><p>메모리 주소 방식 (bit)</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_NAME</p></td>
+<td><p>네트워크 인터페이스 이름</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_TYPE</p></td>
+<td><p>네트워크 최대 전송 속도 (bps)</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_MAC</p></td>
+<td><p>네트워크 MAC 주소</p></td>
+</tr>
+<tr class="row-odd"><td><p>UPDATE_TIME</p></td>
+<td><p>OS 정보가 업데이트된 가장 최근의 시간 (yyyymmddHHMMSS)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="cpu">
+<h3>CPU 정보 조회하기<a class="headerlink" href="#cpu" title="Permalink to this headline">¶</a></h3>
+<p>각 노드의 CPU 정보를 조회하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">cpu</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id20">
+<caption><span class="caption-text">.system cpu 명령어의 옵션</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.system cpu</p></td>
+<td><p>가장 최근의 CPU 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-s, –stime</p></td>
+<td><p>.system cpu -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후의 CPU 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-e, –etime</p></td>
+<td><p>.system cpu -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전의 CPU 정보를 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 각 노드의 CPU 정보를 조회하는 화면 예시이며, 각 컬럼에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">cpu</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">CPU_CLOCK</span>                                    <span class="n">CPU_CORE</span>    <span class="n">USED</span>              <span class="n">LOAD_AVG</span>    <span class="n">IOWAIT</span>             <span class="n">UPDATETIME</span>
+<span class="o">=======================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2620</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.10</span><span class="n">GHz</span>    <span class="mi">16</span>          <span class="mf">5.13621594601</span>     <span class="mf">0.0225</span>      <span class="mf">0.224943764059</span>     <span class="mi">20180403170002</span>
+ <span class="mi">1</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2620</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.10</span><span class="n">GHz</span>    <span class="mi">16</span>          <span class="mf">8.81948782011</span>     <span class="mf">0.07625</span>     <span class="mf">0.0374765771393</span>    <span class="mi">20180403170005</span>
+ <span class="mi">2</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2620</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.10</span><span class="n">GHz</span>    <span class="mi">16</span>          <span class="mf">4.29852977822</span>     <span class="mf">0.030625</span>    <span class="mf">0.0124595066035</span>    <span class="mi">20180403170004</span>
+ <span class="mi">3</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2620</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.10</span><span class="n">GHz</span>    <span class="mi">16</span>          <span class="mf">3.73785198106</span>     <span class="mf">0.02</span>        <span class="mi">0</span>                  <span class="mi">20180403170002</span>
+ <span class="mi">4</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2620</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.10</span><span class="n">GHz</span>    <span class="mi">16</span>          <span class="mf">0.932951859684</span>    <span class="mf">0.03625</span>     <span class="mi">0</span>                  <span class="mi">20180403170001</span>
+ <span class="mi">5</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2620</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.10</span><span class="n">GHz</span>    <span class="mi">16</span>          <span class="mf">5.5008107771</span>      <span class="mf">0.019375</span>    <span class="mf">0.162155419733</span>     <span class="mi">20180403170003</span>
+ <span class="mi">6</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2620</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.10</span><span class="n">GHz</span>    <span class="mi">16</span>          <span class="mf">2.90270337611</span>     <span class="mf">0.050625</span>    <span class="mf">0.0124579544039</span>    <span class="mi">20180403170001</span>
+ <span class="mi">7</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2630</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.20</span><span class="n">GHz</span>    <span class="mi">40</span>          <span class="mf">0.656324582339</span>    <span class="mf">0.00625</span>     <span class="mi">0</span>                  <span class="mi">20180403170000</span>
+ <span class="mi">8</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2630</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.20</span><span class="n">GHz</span>    <span class="mi">40</span>          <span class="mf">1.60784508935</span>     <span class="mf">0.00525</span>     <span class="mi">0</span>                  <span class="mi">20180403170003</span>
+ <span class="mi">9</span>          <span class="n">Intel</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">Xeon</span><span class="p">(</span><span class="n">R</span><span class="p">)</span> <span class="n">CPU</span> <span class="n">E5</span><span class="o">-</span><span class="mi">2630</span> <span class="n">v4</span> <span class="o">@</span> <span class="mf">2.20</span><span class="n">GHz</span>    <span class="mi">40</span>          <span class="mf">0.213749565044</span>    <span class="mf">0.002</span>       <span class="mi">0</span>                  <span class="mi">20180403170002</span>
+<span class="o">=======================================================================================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0856</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id21">
+<caption><span class="caption-text">노드의 CPU 정보</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-odd"><td><p>CPU_CLOCK</p></td>
+<td><p>CPU 클럭(Hz)</p></td>
+</tr>
+<tr class="row-even"><td><p>CPU_CORE</p></td>
+<td><p>CPU 코어 개수</p></td>
+</tr>
+<tr class="row-odd"><td><p>USED</p></td>
+<td><p>CPU 사용률(%)</p></td>
+</tr>
+<tr class="row-even"><td><p>LOAD_AVG</p></td>
+<td><p>노드 부하량</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOWAIT</p></td>
+<td><p>IO 대기률 (%)</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE_TIME</p></td>
+<td><p>CPU 정보가 업데이트된 가장 최근의 시간 (yyyymmddHHMMSS)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="ram">
+<h3>RAM 정보 조회하기<a class="headerlink" href="#ram" title="Permalink to this headline">¶</a></h3>
+<p>각 노드의 RAM 정보를 조회하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">ram</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id22">
+<caption><span class="caption-text">.system ram 명령어의 옵션</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.system ram</p></td>
+<td><p>가장 최근의 RAM 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-s, –stime</p></td>
+<td><p>.system ram -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후의 RAM 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-e, –etime</p></td>
+<td><p>.system ram -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전의 RAM 정보를 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 각 노드의 RAM 정보를 조회하는 화면 예시이며, 각 컬럼에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">ram</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">TOTAL</span>           <span class="n">USED_F</span>       <span class="n">USED_P</span>         <span class="n">SWAP_T</span>        <span class="n">SWAP_U</span>      <span class="n">UPDATETIME</span>
+<span class="o">===================================================================================================</span>
+ <span class="mi">0</span>          <span class="mi">67423256576</span>     <span class="mi">0</span>            <span class="mi">37126168576</span>    <span class="mi">1038483456</span>    <span class="mi">15693483</span>    <span class="mi">20180403170002</span>
+ <span class="mi">1</span>          <span class="mi">67423256576</span>     <span class="mi">282800128</span>    <span class="mi">12831797248</span>    <span class="mi">178659328</span>     <span class="mi">464484</span>      <span class="mi">20180403170005</span>
+ <span class="mi">2</span>          <span class="mi">67423256576</span>     <span class="mi">164589568</span>    <span class="mi">10012200960</span>    <span class="mi">124846080</span>     <span class="mi">226814</span>      <span class="mi">20180403170004</span>
+ <span class="mi">3</span>          <span class="mi">67423256576</span>     <span class="mi">339521536</span>    <span class="mi">9769086976</span>     <span class="mi">141201408</span>     <span class="mi">290133</span>      <span class="mi">20180403170002</span>
+ <span class="mi">4</span>          <span class="mi">67423256576</span>     <span class="mi">159592448</span>    <span class="mi">10704920576</span>    <span class="mi">150421504</span>     <span class="mi">329260</span>      <span class="mi">20180403170001</span>
+ <span class="mi">5</span>          <span class="mi">67423256576</span>     <span class="mi">101396480</span>    <span class="mi">12238794752</span>    <span class="mi">136085504</span>     <span class="mi">269490</span>      <span class="mi">20180403170003</span>
+ <span class="mi">6</span>          <span class="mi">67423256576</span>     <span class="mi">400011264</span>    <span class="mi">10442584064</span>    <span class="mi">158703616</span>     <span class="mi">366516</span>      <span class="mi">20180403170001</span>
+ <span class="mi">7</span>          <span class="mi">134889549824</span>    <span class="mi">34123776</span>     <span class="mi">23543099392</span>    <span class="mi">0</span>             <span class="mi">0</span>           <span class="mi">20180403170000</span>
+ <span class="mi">8</span>          <span class="mi">135065710592</span>    <span class="mi">30961664</span>     <span class="mi">17124708352</span>    <span class="mi">0</span>             <span class="mi">0</span>           <span class="mi">20180403170003</span>
+ <span class="mi">9</span>          <span class="mi">135065710592</span>    <span class="mi">34861056</span>     <span class="mi">9280389120</span>     <span class="mi">0</span>             <span class="mi">0</span>           <span class="mi">20180403170002</span>
+<span class="o">===================================================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0834</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id23">
+<caption><span class="caption-text">노드의 RAM 정보</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-odd"><td><p>TOTAL</p></td>
+<td><p>램 용량(byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>USED_F</p></td>
+<td><p>램디스크 사용량(byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>USED_P</p></td>
+<td><p>프로세스의 램 사용량(byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>SWAP_T</p></td>
+<td><p>스왑 총 용량(byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SWAP_U</p></td>
+<td><p>스왑 사용 용량(byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE_TIME</p></td>
+<td><p>RAM 정보가 업데이트된 가장 최근의 시간 (yyyymmddHHMMSS)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="disk">
+<h3>DISK 정보 조회하기<a class="headerlink" href="#disk" title="Permalink to this headline">¶</a></h3>
+<p>각 노드의 DISK 정보를 조회하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">disk</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id24">
+<caption><span class="caption-text">.system disk 명령어의 옵션</span><a class="headerlink" href="#id24" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.system disk</p></td>
+<td><p>가장 최근의 DISK 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-s, –stime</p></td>
+<td><p>.system disk -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후의 DISK 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-e, –etime</p></td>
+<td><p>.system disk -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전의 DISK 정보를 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 각 노드의 DISK 정보를 조회하는 화면 예시이며, 각 컬럼에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">disk</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">P_NAME</span>    <span class="n">P_SIZE_T</span>         <span class="n">P_SIZE_U</span>         <span class="n">UPDATETIME</span>
+<span class="o">=========================================================================</span>
+ <span class="mi">0</span>          <span class="o">/</span>         <span class="mi">214639312896</span>     <span class="mi">160923299840</span>     <span class="mi">20180403170002</span>
+ <span class="mi">1</span>          <span class="o">/</span><span class="n">DATA3</span>    <span class="mi">5998997667840</span>    <span class="mi">3198925791232</span>    <span class="mi">20180403170005</span>
+ <span class="mi">2</span>          <span class="o">/</span><span class="n">DATA3</span>    <span class="mi">5998997667840</span>    <span class="mi">3420175724544</span>    <span class="mi">20180403170004</span>
+ <span class="mi">3</span>          <span class="o">/</span><span class="n">DATA3</span>    <span class="mi">5998997667840</span>    <span class="mi">3416004726784</span>    <span class="mi">20180403170002</span>
+ <span class="mi">4</span>          <span class="o">/</span><span class="n">DATA3</span>    <span class="mi">5998997667840</span>    <span class="mi">3218890080256</span>    <span class="mi">20180403170001</span>
+ <span class="mi">5</span>          <span class="o">/</span><span class="n">DATA3</span>    <span class="mi">5998997667840</span>    <span class="mi">3466523561984</span>    <span class="mi">20180403170003</span>
+ <span class="mi">6</span>          <span class="o">/</span><span class="n">DATA3</span>    <span class="mi">5998997667840</span>    <span class="mi">3411333177344</span>    <span class="mi">20180403170001</span>
+ <span class="mi">7</span>          <span class="o">/</span><span class="n">DATA2</span>    <span class="mi">3998791770112</span>    <span class="mi">8238018560</span>       <span class="mi">20180403170000</span>
+ <span class="mi">8</span>          <span class="o">/</span><span class="n">DATA2</span>    <span class="mi">3998791770112</span>    <span class="mi">8365428736</span>       <span class="mi">20180403170003</span>
+ <span class="mi">9</span>          <span class="o">/</span><span class="n">DATA2</span>    <span class="mi">3998791770112</span>    <span class="mi">8253513728</span>       <span class="mi">20180403170002</span>
+<span class="o">=========================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1105</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id25">
+<caption><span class="caption-text">노드의 DISK 정보</span><a class="headerlink" href="#id25" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-odd"><td><p>P_NAME</p></td>
+<td><p>디스크 마운트 정보</p></td>
+</tr>
+<tr class="row-even"><td><p>P_SIZE</p></td>
+<td><p>디스크 총 용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>P_SIZE_U</p></td>
+<td><p>디스크 사용 용량 (byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE_TIME</p></td>
+<td><p>DISK 정보가 업데이트된 가장 최근의 시간 (yyyymmddHHMMSS)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id9">
+<h3>네트워크 정보 조회하기<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p>각 노드의 네트워크 정보를 조회하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">net</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id26">
+<caption><span class="caption-text">.system net 명령어의 옵션</span><a class="headerlink" href="#id26" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.system net</p></td>
+<td><p>가장 최근의 네트워크 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-s, –stime</p></td>
+<td><p>.system net -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후의 네트워크 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-e, –etime</p></td>
+<td><p>.system net -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전의 네트워크 정보를 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 각 노드의 네트워크 정보를 조회하는 화면 예시이며, 각 컬럼에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="n">net</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+<span class="n">NODE_ID</span>    <span class="n">NET_IN_P</span>    <span class="n">NET_OUT_P</span>    <span class="n">NET_IN_B</span>    <span class="n">NET_OUT_B</span>    <span class="n">UPDATETIME</span>
+<span class="o">===============================================================================</span>
+<span class="mi">0</span>          <span class="mi">372</span>         <span class="mi">425</span>          <span class="mi">107775</span>      <span class="mi">425</span>          <span class="mi">20180403170002</span>
+<span class="mi">1</span>          <span class="mi">465</span>         <span class="mi">502</span>          <span class="mi">96559</span>       <span class="mi">502</span>          <span class="mi">20180403170005</span>
+<span class="mi">2</span>          <span class="mi">213</span>         <span class="mi">226</span>          <span class="mi">32952</span>       <span class="mi">226</span>          <span class="mi">20180403170004</span>
+<span class="mi">3</span>          <span class="mi">37</span>          <span class="mi">36</span>           <span class="mi">5838</span>        <span class="mi">36</span>           <span class="mi">20180403170002</span>
+<span class="mi">4</span>          <span class="mi">42</span>          <span class="mi">40</span>           <span class="mi">6191</span>        <span class="mi">40</span>           <span class="mi">20180403170001</span>
+<span class="mi">5</span>          <span class="mi">139</span>         <span class="mi">138</span>          <span class="mi">31703</span>       <span class="mi">138</span>          <span class="mi">20180403170003</span>
+<span class="mi">6</span>          <span class="mi">27</span>          <span class="mi">27</span>           <span class="mi">3364</span>        <span class="mi">27</span>           <span class="mi">20180403170001</span>
+<span class="mi">7</span>          <span class="mi">30</span>          <span class="mi">27</span>           <span class="mi">5826</span>        <span class="mi">27</span>           <span class="mi">20180403170000</span>
+<span class="mi">8</span>          <span class="mi">302</span>         <span class="mi">251</span>          <span class="mi">146657</span>      <span class="mi">251</span>          <span class="mi">20180403170003</span>
+<span class="mi">9</span>          <span class="mi">30</span>          <span class="mi">27</span>           <span class="mi">5167</span>        <span class="mi">27</span>           <span class="mi">20180403170002</span>
+<span class="o">===============================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0924</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id27">
+<caption><span class="caption-text">노드의 네트워크 정보</span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_IN_P</p></td>
+<td><p>해당 노드로 들어오는 패킷 수</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_OUT_P</p></td>
+<td><p>해당 노드에서 나가는 패킷 수</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_IN_B</p></td>
+<td><p>해당 노드로 들어오는 데이터 량 (byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_OUT_B</p></td>
+<td><p>해당 노드에서 나가는 데이터 량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>UPDATE_TIME</p></td>
+<td><p>DISK 정보가 업데이트된 가장 최근의 시간 (yyyymmddHHMMSS)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h3>전체 시스템 정보 조회하기<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<p>전체 노드의 시스템 정보를 한번에 조회하는 방법은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="nb">all</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id28">
+<caption><span class="caption-text">.system all 명령어의 옵션</span><a class="headerlink" href="#id28" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 40%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>옵션</p></th>
+<th class="head"><p>사용법</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.system all</p></td>
+<td><p>전체 노드의 시스템 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>–summary</p></td>
+<td><p>.system all –summary</p></td>
+<td><p>많은 용량을 사용하는 3개의 테이블을 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 전체 노드의 시스템 정보를 한번에 조회하는 화면 예시이며, 각 컬럼에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">system</span> <span class="nb">all</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">NODE_ID</span>    <span class="n">IP_ADDRESS</span>         <span class="n">CPU</span>     <span class="n">IOWAIT</span>    <span class="n">MEM_F</span>    <span class="n">MEM_P</span>    <span class="n">NET_IN</span>    <span class="n">NET_IN_P</span>    <span class="n">NET_OUT</span>    <span class="n">NET_OUT_P</span>    <span class="n">LOAD_AVG_ONE</span>    <span class="n">DISK</span>    <span class="n">DISK_TOTAL_SIZE</span>    <span class="n">SSD</span>     <span class="n">SSD_TOTAL_SIZE</span>    <span class="n">TABLE_ONE_NAME</span>    <span class="n">TABLE_ONE_SIZE</span>    <span class="n">TABLE_ONE_FILE_COUNT</span>    <span class="n">TABLE_ONE_SIZE_RAM</span>    <span class="n">TABLE_ONE_FILE_COUNT_RAM</span>    <span class="n">TABLE_ONE_SIZE_SSD</span>    <span class="n">TABLE_ONE_FILE_COUNT_SSD</span>    <span class="n">TABLE_TWO_NAME</span>    <span class="n">TABLE_TWO_SIZE</span>    <span class="n">TABLE_TWO_FILE_COUNT</span>    <span class="n">TABLE_TWO_SIZE_RAM</span>    <span class="n">TABLE_TWO_FILE_COUNT_RAM</span>    <span class="n">TABLE_TWO_SIZE_SSD</span>    <span class="n">TABLE_TWO_FILE_COUNT_SSD</span>    <span class="n">TABLE_THREE_NAME</span>    <span class="n">TABLE_THREE_SIZE</span>    <span class="n">TABLE_THREE_FILE_COUNT</span>    <span class="n">TABLE_THREE_SIZE_RAM</span>    <span class="n">TABLE_THREE_FILE_COUNT_RAM</span>    <span class="n">TABLE_THREE_SIZE_SSD</span>    <span class="n">TABLE_THREE_FILE_COUNT_SSD</span>    <span class="n">TABLE_FILE_COUNT</span>
+<span class="o">=======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================</span>
+ <span class="mi">0</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">103.100</span>    <span class="mf">1.41</span>    <span class="mf">0.00</span>      <span class="mf">0.00</span>     <span class="mf">33.73</span>    <span class="mi">1046</span>      <span class="mi">2</span>           <span class="mi">230</span>        <span class="mi">1</span>            <span class="mf">0.01</span>            <span class="mf">6.08</span>    <span class="mi">39700664320</span>        <span class="mf">0.00</span>    <span class="mi">0</span>                 <span class="o">-</span>                 <span class="o">-</span>                 <span class="o">-</span>                       <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                 <span class="o">-</span>                 <span class="o">-</span>                       <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                   <span class="o">-</span>                   <span class="o">-</span>                         <span class="o">-</span>                       <span class="o">-</span>                             <span class="o">-</span>                       <span class="o">-</span>                             <span class="o">-</span>
+ <span class="mi">1</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">103.201</span>    <span class="mf">1.92</span>    <span class="mf">0.00</span>      <span class="mf">0.17</span>     <span class="mf">33.31</span>    <span class="mi">1453</span>      <span class="mi">10</span>          <span class="mi">3388</span>       <span class="mi">8</span>            <span class="mf">0.20</span>            <span class="mf">6.19</span>    <span class="mi">39700664320</span>        <span class="mf">0.00</span>    <span class="mi">0</span>                 <span class="o">-</span>                 <span class="o">-</span>                 <span class="o">-</span>                       <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                 <span class="o">-</span>                 <span class="o">-</span>                       <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                     <span class="o">-</span>                           <span class="o">-</span>                   <span class="o">-</span>                   <span class="o">-</span>                         <span class="o">-</span>                       <span class="o">-</span>                             <span class="o">-</span>                       <span class="o">-</span>                             <span class="o">-</span>
+<span class="o">=======================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.1601</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id29">
+<caption><span class="caption-text">전체 노드의 시스템 정보</span><a class="headerlink" href="#id29" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-odd"><td><p>IP_ADDRESS</p></td>
+<td><p>노드의 IP 주소</p></td>
+</tr>
+<tr class="row-even"><td><p>CPU</p></td>
+<td><p>CPU 사용률(%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>IOWAIT</p></td>
+<td><p>노드 대기율(%)</p></td>
+</tr>
+<tr class="row-even"><td><p>MEM_F</p></td>
+<td><p>램디스크 사용량(byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEM_P</p></td>
+<td><p>프로세스의 램 사용량(byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_IN</p></td>
+<td><p>해당 노드로 들어오는 데이터 량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_IN_P</p></td>
+<td><p>해당 노드로 들어오는 패킷 수</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_OUT</p></td>
+<td><p>해당 노드에서 나가는 데이터 량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_OUT_P</p></td>
+<td><p>해당 노드에서 나가는 패킷 수</p></td>
+</tr>
+<tr class="row-even"><td><p>LOAD_AVG_ONE</p></td>
+<td><p>CPU 코어당 부하량</p></td>
+</tr>
+<tr class="row-odd"><td><p>DISK</p></td>
+<td><p>디스크 총 사용률(%)</p></td>
+</tr>
+<tr class="row-even"><td><p>DISK_TOTAL_SIZE</p></td>
+<td><p>디스크 총 용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>SSD</p></td>
+<td><p>SSD 총 사용률(%)</p></td>
+</tr>
+<tr class="row-even"><td><p>SSD_TOTAL_SIZE</p></td>
+<td><p>SSD 총 용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_ONE_NAME</p></td>
+<td><p>가장 많은 용량을 사용하는 테이블 이름</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_ONE_SIZE</p></td>
+<td><p>해당 테이블의 디스크 사용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_ONE_FILE_COUNT</p></td>
+<td><p>해당 테이블의 디스크상에 존재하는 데이터 파일의 수</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_ONE_SIZE_RAM</p></td>
+<td><p>해당 테이블의 램디스크 사용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_ONE_FILE_COUNT_RAM</p></td>
+<td><p>해당 테이블의 램디스크 상의 데이터 파일 개수</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_ONE_SIZE_SSD</p></td>
+<td><p>해당 테이블의 SSD 사용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_ONE_FILE_COUNT_SSD</p></td>
+<td><p>해당 테이블의 SSD 상의 데이터 파일 개수</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_TWO_NAME</p></td>
+<td><p>두번째로 많은 용량을 사용하는 테이블 이름</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_TWO_SIZE</p></td>
+<td><p>해당 테이블의 디스크 사용량 (byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_TWO_FILE_COUNT</p></td>
+<td><p>해당 테이블의 디스크 상의 테이블 파일 개수</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_TWO_SIZE_RAM</p></td>
+<td><p>해당 테이블의 램디스크 사용량 (byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_TWO_FILE_COUNT_RAM</p></td>
+<td><p>해당 테이블의 램디스크 상의 데이터 파일 개수</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_TWO_SIZE_SSD</p></td>
+<td><p>해당 테이블의 SSD 사용량 (byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_TWO_FILE_COUNT_SSD</p></td>
+<td><p>해당 테이블의 SSD 상의 데이터 파일 개수</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_THREE_NAME</p></td>
+<td><p>세번째로 많은 용량을 사용하는 테이블 이름</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_THREE_SIZE</p></td>
+<td><p>해당 테이블의 디스크 사용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_THREE_FILE_COUNT</p></td>
+<td><p>해당 테이블의 디스크 상의 테이블 파일 개수</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_THREE_SIZE_RAM</p></td>
+<td><p>해당 테이블의 램디스크 사용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_THREE_FILE_COUNT_RAM</p></td>
+<td><p>해당 테이블의 램디스크 상의 데이터 파일 개수</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_THREE_SIZE_SSD</p></td>
+<td><p>해당 테이블의 SSD 사용량 (byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_THREE_FILE_COUNT_SSD</p></td>
+<td><p>해당 테이블의 SSD 상의 데이터 파일 개수</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_FILE_COUNT</p></td>
+<td><p>전체 테이블의 데이터 파일 개수</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="notification">
+<h2>Notification 정보 조회하기<a class="headerlink" href="#notification" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서 발생된 notification 정보를 조회하는 명령어는 다음과 같으며, 아래 표에 각 옵션에 대한 설명을 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">noti</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id30">
+<caption><span class="caption-text">.noti list 명령어의 옵션</span><a class="headerlink" href="#id30" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 38%" />
+<col style="width: 49%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>사용법</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>.noti list</p></td>
+<td><p>접속한 계정 소유의 테이블 목록을 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-s, –stime</p></td>
+<td><p>.noti list -s {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이후로 발생된 알람 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-e, –etime</p></td>
+<td><p>.noti list -e {yyyymmddHHMMSS}</p></td>
+<td><p>설정한 시간 이전에 발생된 알람 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-n, –node</p></td>
+<td><p>.noti list -n {node_id}[, {node_id}]</p></td>
+<td><p>설정한 노드에서 발생된 알람 정보를 조회합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>-t, –type</p></td>
+<td><p>.noti list -t {type}[, {type}]</p></td>
+<td><p>설정한 타입의 알람을 조회합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-r, –row</p></td>
+<td><p>.noti list -r {num}</p></td>
+<td><p>설정한 개수만큼 알람을 조회합니다. (기본값: 10)</p></td>
+</tr>
+<tr class="row-even"><td><p>-d, –detail</p></td>
+<td><p>.noti list –d</p></td>
+<td><p>알람의 상세 정보를 조회합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 notification 정보를 조회하는 화면 예시이며, 각 컬럼에 대한 설명은 아래 표를 참조하시기 바랍니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">noti</span> <span class="nb">list</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">UPDATE_TIME</span>       <span class="n">NODE_ID</span>    <span class="n">TYPE</span>
+<span class="o">=====================================</span>
+ <span class="mi">20180403164411</span>    <span class="mi">4</span>          <span class="n">WARN</span>
+ <span class="mi">20180403164404</span>    <span class="mi">1</span>          <span class="n">WARN</span>
+ <span class="mi">20180403164258</span>    <span class="mi">6</span>          <span class="n">BUSY</span>
+ <span class="mi">20180403164258</span>    <span class="mi">2</span>          <span class="n">BUSY</span>
+ <span class="mi">20180403164258</span>    <span class="mi">5</span>          <span class="n">BUSY</span>
+ <span class="mi">20180403164258</span>    <span class="mi">4</span>          <span class="n">BUSY</span>
+ <span class="mi">20180403164258</span>    <span class="mi">3</span>          <span class="n">BUSY</span>
+ <span class="mi">20180403164253</span>    <span class="mi">6</span>          <span class="n">WARN</span>
+ <span class="mi">20180403164253</span>    <span class="mi">2</span>          <span class="n">WARN</span>
+ <span class="mi">20180403164253</span>    <span class="mi">5</span>          <span class="n">WARN</span>
+<span class="o">=====================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0329</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">noti</span> <span class="nb">list</span> <span class="o">-</span><span class="n">d</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">UPDATE_TIME</span>       <span class="n">NODE_ID</span>    <span class="n">TYPE</span>    <span class="n">REPORTED_BY</span>    <span class="n">SCOPE</span>    <span class="n">EVENT</span>
+<span class="o">=======================================================================================================</span>
+ <span class="mi">20180403164411</span>    <span class="mi">4</span>          <span class="n">WARN</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">11.6972191046</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">10.0</span>
+ <span class="mi">20180403164404</span>    <span class="mi">1</span>          <span class="n">WARN</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">21.2612163509</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">10.0</span>
+ <span class="mi">20180403164258</span>    <span class="mi">6</span>          <span class="n">BUSY</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">74.4715447154</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">50.0</span>
+ <span class="mi">20180403164258</span>    <span class="mi">2</span>          <span class="n">BUSY</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">76.897112139</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">50.0</span>
+ <span class="mi">20180403164258</span>    <span class="mi">5</span>          <span class="n">BUSY</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">79.7199299825</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">50.0</span>
+ <span class="mi">20180403164258</span>    <span class="mi">4</span>          <span class="n">BUSY</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">82.8203203203</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">50.0</span>
+ <span class="mi">20180403164258</span>    <span class="mi">3</span>          <span class="n">BUSY</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">77.1342985522</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">50.0</span>
+ <span class="mi">20180403164253</span>    <span class="mi">6</span>          <span class="n">WARN</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">20.8904963831</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">10.0</span>
+ <span class="mi">20180403164253</span>    <span class="mi">2</span>          <span class="n">WARN</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">46.6325128077</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">10.0</span>
+ <span class="mi">20180403164253</span>    <span class="mi">5</span>          <span class="n">WARN</span>    <span class="n">EHD</span>            <span class="n">NODE</span>      <span class="p">,</span>  <span class="p">,</span> <span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">43.6922308269</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">10.0</span>
+<span class="o">=======================================================================================================</span>
+
+<span class="mi">10</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0297</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id31">
+<caption><span class="caption-text">Notification 정보</span><a class="headerlink" href="#id31" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>-d 옵션 해당 여부</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE_TIME</p></td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>알람이 발생한 시간</p></td>
+</tr>
+<tr class="row-odd"><td><p>NODE_ID</p></td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>알람이 발생한 노드 ID</p></td>
+</tr>
+<tr class="row-even"><td><p>TYPE</p></td>
+<td><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</td>
+<td><p>알람의 종류</p></td>
+</tr>
+<tr class="row-odd"><td><p>REPORTED_BY</p></td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><p>알람이 발생한 위치</p></td>
+</tr>
+<tr class="row-even"><td><p>SCOPE</p></td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><p>해당 알람이 영향을 주는 범위</p></td>
+</tr>
+<tr class="row-odd"><td><p>EVENT</p></td>
+<td><div class="line-block">
+<div class="line">○</div>
+</div>
+</td>
+<td><p>알람의 상세 내용</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="04.monitoring.html" class="btn btn-neutral float-right" title="모니터링" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="02.operating_command.html" class="btn btn-neutral float-left" title="IRIS 운영 명령" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

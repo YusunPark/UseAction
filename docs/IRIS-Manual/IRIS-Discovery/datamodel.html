@@ -1,0 +1,593 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>데이터 모델 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IRIS Analyzer" href="../IRIS-Analyzer/index.html" />
+    <link rel="prev" title="파일 브라우저" href="file_browser.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">IRIS Discovery</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="file_browser.html">파일 브라우저</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">데이터 모델</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">데이터 모델 목록 화면</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">새 모델</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">새 모델 뷰</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="index.html">IRIS Discovery</a> &raquo;</li>
+    
+    <li>데이터 모델</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery/datamodel.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery/datamodel</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery/datamodel</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery/datamodel
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery/datamodel</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery/datamodel.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery/datamodel.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><a class="toc-backref" href="#contents">데이터 모델</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">데이터 모델은 특정한 데이터 셋을 추상화 한 것입니다.</div>
+<div class="line">여기서 데이터 셋은 DB에서 일반적으로 말하는 테이블이나 CSV과 같은 파일을 말합니다.</div>
+<div class="line">사용자는 IRIS나 HDFS에서 저장된 데이터 셋을 가지고 컬럼을 선택, 타입 변경과 같은 작업을 통해 자신에게 필요한 형태의 데이터 모델을 생성할 수 있습니다.</div>
+<div class="line">하나의 데이터 셋에서 여러 개의 데이터 모델을 목적에 맞게 생성할 수 있는 장점이 있습니다.</div>
+<div class="line">IRIS Analyzer, Studio 에서 제공하는 대부분의 기능들은 데이터 모델을 기반으로 동작하기 때문에 데이터 모델을 생성 하는 것이 모든 작업의 시작이라고할 수 있습니다.</div>
+<div class="line">데이터 모델 메뉴는 IRIS Discovery 의 하위 메뉴이며, 데이터모델 목록을 보여줍니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/datamodel_47_1.png"><img alt="데이터모델 - 47_1" src="../../_images/datamodel_47_1.png" style="width: 801.6px; height: 149.6px;" /></a>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id1" id="id11">데이터 모델</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id2" id="id12">데이터 모델 목록 화면</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id13">데이터 모델 조회</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id4" id="id14">새 모델</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id15">새 모델 뷰</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id16">데이터 모델/뷰 편집</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id17">편집</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id18">복사</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id19">새 모델 뷰</a></p></li>
+<li><p><a class="reference internal" href="#id10" id="id20">삭제</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#contents">데이터 모델 목록 화면</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 87%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>새 모델</p></td>
+<td><p>새 데이터 모델을 생성합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>새 모델 뷰</p></td>
+<td><p>목록에 있는 데이터 모델을 참조로 하는 새 데이터 모델 뷰를 생성합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>데이터 모델 목록</p></td>
+<td><ul class="simple">
+<li><p># : 데이터 모델의 순서가 표시 됩니다.</p></li>
+<li><p>모델이름 : 데이터 모델의 이름이 표시 됩니다.</p></li>
+<li><p>설명 : 데이터 모델에 대한 설명이 표시 됩니다. 데이터모델을 생성할 때 작성한 설명 영역에 입력한 내용이 보여집니다.</p></li>
+<li><p>편집 : 모델의 권한 설정 범위에 따라 ‘복사/새모델 뷰’  또는  ‘편집/복사/새모델뷰/삭제’ 로 콤보박스 내용이 달라집니다.</p></li>
+<li><p>데이터 유형 : IRIS DB 테이블(IRIS),HDFS 파일(HDFS), MINIO 파일(OBJECTSTORAGE), 데이터모델 뷰(VIEW)</p></li>
+<li><p>대상 데이터 : 데이터 모델이 생성된 테이블,파일의 이름 또는 경로가 표시 됩니다.</p></li>
+<li><p>소유자 : 데이터 모델을 생성한 소유자의 아이디가 표시 됩니다.</p></li>
+<li><p>수정일 : 데이터 모델이 마지막으로 수정된 날짜가 표시 됩니다.</p></li>
+<li><p>접근 권한 : 데이터 모델에 대하여 개뱔 사용자에 대한 접근 권한을 부여/해제 할 수 있습니다.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#contents">데이터 모델 조회</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">사용자는 현재 생성된 데이터 모델의 목록을 손쉽게 확인할 수 있으며, 데이터 모델 관리에 필요한 편의 기능들을 제공합니다.</div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>목록 개수</dt><dd><ul>
+<li><p>한 페이지에 표시되는 목록의 개수를 지정합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>필터링</dt><dd><ul>
+<li><p>입력된 텍스트가 포함된 계정만 목록에 표시됩니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>상세보기</dt><dd><ul>
+<li><p>목록에서 <strong>모델명 좌측에 ▶ 아이콘</strong> 을 클릭하면 데이터 모델의 상세정보를 표시합니다. 다시 ▼ 를 클릭하면 상세정보를 닫습니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="데이터모델 - 48" src="../../_images/datamodel_48.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>설명</p></td>
+<td><p>데이터 모델을 생성할 때 데이터모델에 대해 적은 설명이 표시 됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>데이터 유형</p></td>
+<td><p>IRIS DB 테이블(IRIS),HDFS 파일(HDFS), MINIO 파일(OBJECTSTORAGE), 데이터모델 뷰(VIEW).</p></td>
+</tr>
+<tr class="row-even"><td><p>대상 데이터</p></td>
+<td><p>데이터 모델이 생성된 테이블,파일의 이름 또는 경로가 표시 됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>분류, 컬럼이름, 컬럼의 유형, 컬럼 별칭 등 데이터모델의 컬럼 정보가 표시됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id4">
+<h2><a class="toc-backref" href="#contents">새 모델</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">사용자는 “새 모델” 버튼을 클릭하면 <strong>새 모델</strong> 팝업창이 뜨고, 설정을 저장하면 데이터 모델을 생성할 수 있습니다.</div>
+</div>
+<p><strong>모델 이름</strong></p>
+<div class="line-block">
+<div class="line">생성하는 데이터 모델의 이름(필수)</div>
+</div>
+<p><strong>설명</strong></p>
+<div class="line-block">
+<div class="line">생성하는 데이터 모델에 대한 설명을 입력합니다.(선택)</div>
+</div>
+<p><strong>연결 정보</strong></p>
+<div class="line-block">
+<div class="line">데이터 source 와의 연결 정보입니다.</div>
+<div class="line">데이터베이스, OBJECTSTORAGE, HDFS 등 데이터가 들어 있는 유형을 콤보박스에서 먼저 선택하면,</div>
+<div class="line">사용자의 접근 권한이 있는 데이터 유형의 연결 정보가 콤보 박스로 표시되고 그 중 맞는 연결 정보를 선택합니다.</div>
+</div>
+<p><strong>대상 데이터</strong></p>
+<div class="line-block">
+<div class="line">설정한 연결 정보에서 <strong>찾아보기</strong> 를 클릭하면 해당 연결 정보 유형에 맞는 파일브라우저가 팝업으로 뜹니다.</div>
+<div class="line">대상 데이터 파일을 선택하면, 샘플데이터 란에 10개의 데이터가 예시로 표시됩니다.</div>
+<div class="line">디폴트 파일 유형은 csv, 분리 기호는 콤마로 설정되어 샘플데이터가 표시됩니다.</div>
+<div class="line">디폴트 설정이 아닌 경우, 실제 대상 데이터의 정확한 유형과 그에 따른 옵션을 설정하도록 합니다.</div>
+<div class="line"><br /></div>
+<div class="line">파일유형에서는 csv, json, parqeut, excel 중에서 해당되는 유형을 선택합니다.</div>
+<div class="line">분리 기호 박스에는 파일에서 각 컬럼을 나누는 구분자를 설정합니다. 만약 탭(tab) 으로 분리되어 있다면 ‘t’ 를 입력합니다.</div>
+</div>
+<p><strong>샘플 데이터</strong></p>
+<div class="line-block">
+<div class="line">연결 정보와 대상 데이터에 대한 설정을 입력하면 데이터를 10개만 샘플로 가져와서 표시할 수 있습니다.</div>
+</div>
+<p><strong>컬럼 설정</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>컬럼설정</p></td>
+<td><p>선택된 대상에 존재하는 컬럼 중에서 실제로 사용될 컬럼를 선택합니다. 컬럼 유형에 따른 설명은 다음과 같습니다.</p>
+<ul class="simple">
+<li><p>시간</p>
+<ul>
+<li><p>데이터 브라우저에서 시간 설정과 같은 시간과 관련된 기능을 사용할 때 기준이 되는 컬럼 입니다.</p></li>
+<li><p>컬럼를 선택하고 “기타” 입력란에 원하는 시간 포맷을 입력하면 해당 포맷을 가지고 데이터를 인식합니다.</p></li>
+<li><p>유효한 시간 포맷은 <a class="reference external" href="http://momentjs.com/docs/#/parsing/string-format/">http://momentjs.com/docs/#/parsing/string-format/</a> 을 참고하시기 바랍니다.</p></li>
+<li><p>선택하지 않을 경우 시간과 관련된 기능을 사용할 수 없습니다. 단, IRIS 테이블 중에서 LOCAL 테이블은 시간 컬럼을 필수로 선택해야 합니다.</p></li>
+</ul>
+</li>
+<li><p>원시</p>
+<ul>
+<li><p>Fulltext 검색에 사용될 컬럼을 선택합니다.</p></li>
+</ul>
+</li>
+<li><p>선택됨</p>
+<ul>
+<li><p>사용자에 의해 선택된 컬럼의 목록입니다.</p></li>
+<li><p>타입 변경이 가능하며 타입이 TIMESTAMP일 경우 시간 컬럼과 동일하게 시간 포맷을 입력해야 합니다.</p></li>
+</ul>
+</li>
+<li><p>미선택 - 선택이 가능한 컬럼의 목록 입니다.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2><a class="toc-backref" href="#contents">새 모델 뷰</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">기존 데이터 모델에 대해 뷰(view) 를 생성할 수 있습니다.</div>
+<div class="line">참조 모델로 선택한 데이터 모델에 DSL 명령어 구문을 사용하여 변환, 집계, 필터링한 결과를 하나의 데이터 모델처럼 사용할 수 있습니다.</div>
+</div>
+<p><strong>참조 모델 명</strong></p>
+<div class="line-block">
+<div class="line">뷰를 생성할 기존 데이터 모델을 선택합니다.</div>
+</div>
+<p><strong>시간설정</strong></p>
+<div class="line-block">
+<div class="line">참조 모델에 시간유형 컬럼이 있어서 뷰로 만들 시간을 지정할 수 있습니다.</div>
+<div class="line">IRIS Analyzer &gt;&gt; Analyzer 공통 동작 &gt;&gt;  시간 범위 설정 내용과 동일합니다.</div>
+</div>
+<p><strong>검색어</strong></p>
+<div class="line-block">
+<div class="line">참조할 데이터 모델을 대상으로 검색어 구문을 입력합니다.</div>
+<div class="line">생성되는 데이터 모델 뷰는 검색어 구문의 실행 결과가 데이터 모델로 설정되어 표시됩니다.</div>
+</div>
+<p><strong>샘플데이터</strong></p>
+<div class="line-block">
+<div class="line">참조 데이터 모델 대상으로 검색어 구문을 실행한 결과가 10건만 표시됩니다.</div>
+</div>
+<p><strong>컬럼 설정</strong></p>
+<div class="line-block">
+<div class="line">검색어 실행 결과로 새로 생성되는 데이터의 컬럼이 표시되며, 컬럼 선택 여부 및 유형 변경도 가능합니다.</div>
+</div>
+<div class="section" id="id6">
+<h3><a class="toc-backref" href="#contents">데이터 모델/뷰 편집</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">데이터 모델 목록에서 “편집” 버튼을 클릭</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/datamodel_47_2.png"><img alt="데이터모델 - 47-2" src="../../_images/datamodel_47_2.png" style="width: 172.8px; height: 95.60000000000001px;" /></a>
+<div class="line-block">
+<div class="line">데이터 모델에 대한 사용자의 권한에 따라 다르게 표시됩니다.</div>
+</div>
+<div class="section" id="id7">
+<h4><a class="toc-backref" href="#contents">편집</a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">데이터 모델의 편집은 새 모델 생성 화면과 동일합니다.</div>
+</div>
+</div>
+<div class="section" id="id8">
+<h4><a class="toc-backref" href="#contents">복사</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">기존에 생성된 데이터 모델을 복사할 수 있습니다. 복사 화면은 생성 화면과 동일 합니다.</div>
+<div class="line">복사되는 데이터 모델 중에서 연결 정보 및 대상 데이터, 샘플 데이터, 컬럼이 보이지 않는 경우는</div>
+<div class="line">원본 데이터 모델의 <strong>연결 정보에 대한 권한은 없고</strong> , Analyzer, Studio 에서 조회할 수 있는 권한만 있기 때문입니다.</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h4><a class="toc-backref" href="#contents">새 모델 뷰</a><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">선택한 데이터 모델에 대해 모델 뷰를 생성할 수 있습니다.</div>
+<div class="line">화면은 “새 모델 뷰” 와 동일합니다.</div>
+</div>
+</div>
+<div class="section" id="id10">
+<h4><a class="toc-backref" href="#contents">삭제</a><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">기존에 생성된 데이터 모델을 삭제할 수 있습니다. 삭제 버튼을 누르면 나타나는 팝업에서 “예”를 누르면 최종적으로 삭제 됩니다.</div>
+<div class="line">해당 데이터 모델을 사용하여 생성한 보고서(Job)은 사용할 수 없게 되니 유의하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../IRIS-Analyzer/index.html" class="btn btn-neutral float-right" title="IRIS Analyzer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="file_browser.html" class="btn btn-neutral float-left" title="파일 브라우저" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

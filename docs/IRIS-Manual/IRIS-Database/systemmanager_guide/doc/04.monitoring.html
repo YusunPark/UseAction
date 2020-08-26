@@ -1,0 +1,1448 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>모니터링 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="공간DB 셋팅" href="05.extension_geospatial.html" />
+    <link rel="prev" title="시스템 관리하기" href="03.system_management.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">System-manager Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="02.operating_command.html">IRIS 운영 명령</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.system_management.html">시스템 관리하기</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">모니터링</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.extension_geospatial.html">공간DB 셋팅</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../user_guide/index.html">User Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">System-manager Guide</a> &raquo;</li>
+    
+    <li>모니터링</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/systemmanager_guide/doc/04.monitoring.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/systemmanager_guide/doc/04.monitoring</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/systemmanager_guide/doc/04.monitoring</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/systemmanager_guide/doc/04.monitoring
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/systemmanager_guide/doc/04.monitoring</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/systemmanager_guide/doc/04.monitoring.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/systemmanager_guide/doc/04.monitoring.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>모니터링<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>본 장에서는 IRIS 전용 모니터링 툴, 로그 정보 등을 이용하여, IRIS 시스템을 모니터하는 다양한 방법을 설명합니다.</p>
+<div class="section" id="iris">
+<h2>IRIS 노드의 상태 모니터하기<a class="headerlink" href="#iris" title="Permalink to this headline">¶</a></h2>
+<p>IRIS 노드에 대한 모니터링을 위하여, 다음과 같이 두 가지 방법을 제공합니다. 본 절에서는 노드의 상태를 모니터하는 방법에 대하여 설명합니다.</p>
+<ul class="simple">
+<li><p>노드 상태 모니터링: 각 노드의 상태를 확인하여, 해당 노드를 현재 사용할 수 있는지 모니터할 수 있습니다.</p></li>
+<li><p>노드 리소스 모니터링: 각 노드에서 CPU, 메모리 등 리소스가 얼마나 사용되고 있는지 시스템 정보를 확인할 수 있습니다.</p></li>
+</ul>
+<p>IRIS를 구성하는 각 노드의 상태는 다음과 같이 두 가지 항목으로 구분하여 모니터합니다.</p>
+<ul class="simple">
+<li><p>SYSTEM STATUS: 현재 각 노드의 리소스 사용 상태에 따라, 해당 노드가 적정하게 사용되고 있는지를 판단할 수 있도록 노드의 실제 상태를 표시합니다.</p></li>
+<li><p>ADMIN STATUS: IRIS 관리자가 수동으로 설정한 노드의 상태, 즉 노드의 사용/격리 여부를 표시합니다.</p></li>
+</ul>
+<p>각 노드의 SM(System Monitor) 프로세스는 해당 노드의 CPU IOWAIT, LOAD AVERAGE, 메모리 사용량, 디스크 사용량 등 리소스 상태를 나타내는 시스템 정보를 수집하여, 마스터 노드의 EHD(Event Handler Daemon)에 주기적으로 전송합니다. Event Handler(EHD)는 수신된 시스템 정보를 기준으로, 아래 표와 같이 각 노드의 시스템 상태, 즉 SYSTEM STATUS를 업데이트합니다.</p>
+<table class="colwidths-given docutils align-default" id="id8">
+<caption><span class="caption-text">노드의 시스템 상태</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>상태</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>VALID</p></td>
+<td><ul class="simple">
+<li><p>현재 노드의 상태가 정상임을 나타냅니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>READY</p></td>
+<td><ul class="simple">
+<li><p>이 상태는 사용자가 수동으로 ADMIN STATUS를 ENABLE로 변경한 후, 시스템의 상태를 결정하기 전에 준비하는 단계입니다.</p></li>
+<li><p>IRIS 관리자가 NodeEnable 명령을 실행하면 노드의 상태가 READY 상태로 전환됩니다. 그러면, 마스터 노드의 EHD는 해당 노드의 SM으로 부터 시스템 정보가 수신되기를 기다립니다. 이후, 수신된 시스템 정보에 따라, BUSY, WAIT_RETRY가 될 수 있고, 이상이 없으면 마스터 노드-데이터 노드간 데이터(시스템 테이블, 글로벌 테이블) 동기화 후에 VALID로 전환됩니다.</p></li>
+<li><p>이 상태는 아직 정상 여부를 판단할 수 없으므로 격리된 상태로 유지됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>WAIT_RETRY</p></td>
+<td><ul class="simple">
+<li><p>SM으로부터 전송되는 시스템 정보를 EHD가 수신하지 못하거나, 혹은 SM에서 시스템 정보를 보내지 못하는 경우가 발생할 수 있습니다. VALID 상태의 데이터 노드에서, m6.config 파일의  [EHD]에 설정된 시간내에 시스템 정보가 수신되지 않을 경우, 노드의 상태가 WAIT_RETRY로 자동 변경됩니다. 해당 상태에서 대기 중, 데이터 노드로 부터 시스템 정보가 다시 수신되면 마스터 노드-데이터 노드간 데이터(시스템 테이블, 글로벌 테이블) 동기화 후에 VALID로 전환됩니다. 이 상태의 데이터 노드는 사용이 불가한 상태입니다.</p></li>
+<li><p>노드의 상태가 WAIT_RETRY 상태로 변경되면, ${M6_HOME}/proc/noti 디렉토리에 {YYYYMMDDHHMMSS}_{NODEIP}.RETRY 형태의 notification 파일이 생성되어 상세한 정보가 저장됩니다. Notification 파일에 대한 설명은 “표 4 7 이벤트 로그”를 참조하시기 바랍니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>BUSY</p></td>
+<td><ul class="simple">
+<li><p>해당 노드의 시스템 정보를 모니터한 결과, 리소스가 과도하게 사용되었을 때의 상태입니다. 이 상태에서는 해당 노드를 사용할 수 없도록 일시적으로 자동 격리됩니다.</p></li>
+<li><dl class="simple">
+<dt>노드의 상태를 BUSY로 변경하기 위하여 참조하는 설정 정보는 다음과 같습니다.</dt><dd><ul>
+<li><p>노드의 리소스 상태가 마스터 노드의 ${M6_HOME}/conf/m6.config 파일에서 [EHD_BUSY_CONDITION_UPPER] 섹션에 설정된 값보다 큰 경우에 BUSY상태로 변경됩니다.</p></li>
+<li><p>노드의 리소스 상태가 마스터 노드의 ${M6_HOME}/conf/m6.config 파일에서 [EHD_BUSY_CONDITION_LOWER] 섹션에 설정된 값보다 작은 경우, 마스터 노드-데이터 노드간 데이터(시스템 테이블, 글로벌 테이블) 동기화 후에 VALID상태로 복귀합니다.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>노드의 상태가 BUSY 상태로 변경되면, ${M6_HOME}/proc/noti 디렉토리에 {YYYYMMDDHHMMSS}_{NODEIP}.BUSY 형태의 notification 파일이 생성되어 상세한 정보가 저장됩니다. Notification 파일에 대한 설명은 “표 4 7 이벤트 로그”를 참조하시기 바랍니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>INVALID</p></td>
+<td><ul class="simple">
+<li><p>디스크 고장 등 심각한 오류 상황으로 인하여 격리되거나 혹은 사용자에 의하여 격리된 상태입니다. 이 상태의 데이터 노드는 사용이 불가한 상태입니다.</p></li>
+<li><p>오류 상황이 복구되면, IRIS 관리자는 NodeEnable 명령을 실행하여 READY 상태로 변경합니다. 만일 수신된 시스템 정보가 정상이면, 마스터 노드-데이터 노드간 데이터(시스템 테이블, 글로벌 테이블) 동기화 후에 VALID로 변경됩니다.</p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>아래 그림은 위의 표에서 설명한 시스템 정보에 따라 시스템의 상태가 전환되는 유형을 도식화한 것입니다.</p>
+<p>그림 4 1. 시스템 상태 전환 유형</p>
+<p>IRIS에서 각 노드의 상태를 확인하려면, 모비젠에서 자체 개발한 IRIS 노드 모니터링 툴인 ntop을 이용합니다. IRIS 관리자는 리눅스에서 iris 계정으로 로그인하여 ntop을 실행하여야 합니다. ntop은 각 노드의 상태 정보를 주기적으로 관리하는 Event Handler (EHD)로 부터 상태정보를 수집하여 IRIS 관리자에게 보여줍니다. 아래 화면은 마스터 노드에서 ntop을 실행한 예를 보여주고 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ ntop
+
+   NODE_ID,  SYS_STATUS,  ADM_STATUS,     UPDATE_TIME,    ...
+======================================================= ...
+NODE:     0,       VALID,      ENABLE,  20150608052715, ...
+NODE:     1,       VALID,      ENABLE,  20150608052716, ...
+</pre></div>
+</div>
+<p>ntop을 실행하면 노드의 상태와 리소스 상태를 모니터할 수 있는 다양한 정보가 출력됩니다. 이 중, 상기의 예시 화면은 노드의 상태를 모니터하기 위하여 사용되는 정보를 보여줍니다. 각 컬럼에 대한 설명은 아래 표와 같습니다.</p>
+<table class="colwidths-given docutils align-default" id="id9">
+<caption><span class="caption-text">노드 상태 정보</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>각 노드를 구분하는 아이디.</p>
+<ul class="simple">
+<li><p>마스터 노드는 0, 데이터 노드는 음이 아닌 정수로 표시되며, IRIS 설치 시 설정 파일에 기재합니다.</p></li>
+<li><p>데이터 노드의 ID는 IRIS 설치 후, 해당 노드의 m6.config에 수동으로 등록합니다. 노드 추가를 위하여 해당 노드에서 NodeAdd 명령을 실행하면, 해당 노드 정보가 마스터 노드에 전달되어, 마스터 노드의 시스템 테이블에 자동으로 저장됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>SYS_STATUS</p></td>
+<td><p>현재 노드의 시스템 상태, 즉 SYSTEM STATUS를 나타내며, 시스템의 상태는 위의 “표 4 1 노드의 시스템 상태”를 참조하시기 바랍니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>ADM_STATUS</p></td>
+<td><p>IRIS 관리자가 수동으로 결정한 노드의 상태입니다. ADM_STATUS를 변경하는 방법은 “오류! 참조 원본을 찾을 수 없습니다. 오류! 참조 원본을 찾을 수 없습니다.”를 참조하시기 바랍니다.</p>
+<ul class="simple">
+<li><p>ENABLE: 마스터 노드와 데이터 노드 간에 통신이 가능하여 사용 가능한 상태임을 의미합니다.</p></li>
+<li><p>DISABLE: 해당 노드를 격리시키겠다는 의미입니다. 해당 노드가 DISABLE되어 있다면 SYS_STATUS는 INVALID로 변경됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>UPDATE_TIME</p></td>
+<td><p>UPDATE_TIME은 해당 노드로부터 시스템 정보를 수신한 가장 최근의 시간을 의미합니다. 사용자가 ntop 명령어를 실행하면 10초마다 정보가 갱신되는데, 이 값이 변경되지 않는다면 해당 노드로 부터 시스템 정보가 수신되지 않는다는 것을 의미합니다. 만일, m6.config 파일의  [EHD]에 설정된 시간내에 시스템 정보가 수신되지 않을 경우 SYS_STATUS 는 WAIT_RETRY 로 변경됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래 그림은 사용자가 노드의 상태를 ENABLE 혹은 DISABLE한 경우, 노드의 실제 상태(SYS_STATUS)가 어떻게 전환될 수 있는지를 보여줍니다.</p>
+<p>그림 4 2. ADMIN STATUS 변경에 따른 SYSTEM STATUS 변화</p>
+</div>
+<div class="section" id="id2">
+<h2>IRIS 노드의 리소스 정보 보기<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>IRIS 노드의 리소스 정보를 보는 방법은 현재 리소스 사용 정보를 모니터하는 방법과 리소스 통계를 이용하여 과거의 리소스 사용 변화를 분석하는 방법이 있습니다.</p>
+<div class="section" id="id3">
+<h3>노드 리소스 모니터하기<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>각 노드의 현재 리소스 정보를 보려면 다음과 같은 명령어를 사용합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ ntop
+</pre></div>
+</div>
+<p>ntop 명령어는 앞 절에서 기술한 노드의 상태와 본 절에서 기술할 리소스 사용 정보를 제공합니다. 아래는 ntop 명령어를 실행하여 출력된 정보 중, 리소스 사용 정보와 관련된 정보를 보여주는 화면 예시입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NODE_ID</span><span class="p">,</span> <span class="o">...</span> <span class="n">UPDATE_TIME</span><span class="p">,</span> <span class="n">IP</span> <span class="p">,</span> <span class="n">CPU</span><span class="p">(</span><span class="o">%</span><span class="p">),</span> <span class="n">LOADAVG</span><span class="p">,</span> <span class="n">MEM</span><span class="p">:</span><span class="n">P</span><span class="p">(</span><span class="o">%</span><span class="p">),</span> <span class="n">MEM</span><span class="p">:</span><span class="n">F</span><span class="p">(</span><span class="o">%</span><span class="p">),</span> <span class="n">DISK</span><span class="p">(</span><span class="o">%</span><span class="p">)</span>
+<span class="o">=======================================================================================================</span>
+<span class="n">NODE</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="o">...</span> <span class="mi">20150615084143</span><span class="p">,</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">111.100</span><span class="p">,</span> <span class="mf">2.83</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">84.07</span><span class="p">,</span> <span class="o">...</span>
+<span class="n">NODE</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="o">...</span> <span class="mi">20150615084144</span><span class="p">,</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">111.201</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">33.84</span><span class="p">,</span> <span class="o">...</span>
+<span class="n">NODE</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="o">...</span> <span class="mi">20150615084141</span><span class="p">,</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">111.202</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">36.31</span><span class="p">,</span> <span class="o">...</span>
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default" id="id10">
+<caption><span class="caption-text">노드의 리소스 정보</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>컬럼</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_ID</p></td>
+<td><p>각 노드를 구분하는 아이디.</p>
+<ul class="simple">
+<li><p>마스터 노드는 0, 데이터 노드는 음이 아닌 정수로 표시되며, IRIS 설치 시 설정 파일에 기재합니다.</p></li>
+<li><p>데이터 노드의 ID는 IRIS 설치 후, 해당 노드의 m6.config에 수동으로 등록합니다. 노드 추가를 위하여 해당 노드에서 NodeAdd 명령을 실행하면, 해당 노드 정보가 마스터 노드에 전달되어, 마스터 노드의 시스템 테이블에 자동으로 저장됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>UPDATE_TIME</p></td>
+<td><p>UPDATE_TIME은 해당 노드로부터 시스템 정보를 수신한 가장 최근의 시간을 의미합니다. 사용자가 ntop 명령어를 실행하면 10초마다 정보가 갱신되는데, 이 값이 변경되지 않는다면 해당 노드로 부터 시스템 정보가 수신되지 않는다는 것을 의미합니다. 만일, m6.config 파일의  [EHD]에 설정된 시간내에 시스템 정보가 수신되지 않을 경우 SYS_STATUS 는 WAIT_RETRY 로 변경됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>IP</p></td>
+<td><p>노드의 IP 주소</p></td>
+</tr>
+<tr class="row-odd"><td><p>CPU</p></td>
+<td><p>CPU 사용률(%)</p></td>
+</tr>
+<tr class="row-even"><td><p>LOADAVG</p></td>
+<td><p>Load Average 값</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEM:P</p></td>
+<td><p>해당 노드에서 동작하는 프로세스에서 점유한 메모리 사용율(%)</p></td>
+</tr>
+<tr class="row-even"><td><p>MEM:F</p></td>
+<td><p>해당 노드의 램 파일 시스템, 즉 데이터를 저장하기 위하여 점유한 메모리 사용율(%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>DISK</p></td>
+<td><p>디스크 사용량(%)</p></td>
+</tr>
+</tbody>
+</table>
+<p>상기의 컬럼 중, LOADAVG, MEM:P, MEM:F, DISK 등의 리소스들은 각각 임계값이 설정되어 있으며, 현재 사용량의 임계값 초과 여부에 따라 노드의 상태가 변경됩니다. 각 임계값에 대한 설정 정보는 ${M6_HOME}/conf/m6.config 파일에서 [EHD_BUSY_CONDITION_UPPER] 섹션과 [EHD_BUSY_CONDITION_LOWER] 섹션을 참조하시기 바랍니다.</p>
+</div>
+<div class="section" id="id4">
+<h3>노드 리소스 통계 보기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>위에서 설명한 것처럼, ntop 명령을 이용하여 현재 리소스 상태를 모니터하는 것도 중요하지만, 리소스 통계 정보를 이용하면 과거 특정 시점에 리소스가 얼마나 사용되었는지, 리소스 사용량이 늘어나고 있는지, 줄어들고 있는지를 분석하여 시스템 확장 계획 등에 반영할 수도 있습니다. 리소스 통계를 확인하기 위하여 사용하는 명령어는 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">statistics</span>  <span class="o">-</span><span class="n">h</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">HELP</span>
+<span class="o">===========================================================================</span>
+ <span class="n">statistics</span> <span class="n">command</span> <span class="n">help</span>
+     <span class="n">ex</span> <span class="p">)</span> <span class="o">.</span><span class="n">statistics</span> <span class="p">[</span><span class="n">system</span> <span class="o">|</span> <span class="n">table</span> <span class="o">|</span> <span class="n">database</span><span class="p">]</span> <span class="p">[</span><span class="n">option</span><span class="p">]</span>
+     <span class="n">system</span> <span class="p">:</span> <span class="n">show</span> <span class="n">system</span> <span class="n">info</span> <span class="n">statistics</span>
+     <span class="n">table</span>  <span class="p">:</span> <span class="n">show</span> <span class="n">table</span> <span class="n">info</span> <span class="n">statistics</span>
+     <span class="n">database</span>  <span class="p">:</span> <span class="n">show</span> <span class="n">database</span> <span class="n">info</span> <span class="n">statistics</span>
+ <span class="o">**</span> <span class="n">option</span>
+     <span class="o">-</span><span class="n">s</span><span class="p">,</span> <span class="o">--</span><span class="n">stime</span>   <span class="p">:</span> <span class="nb">set</span> <span class="n">start</span> <span class="n">time</span>
+                     <span class="n">default</span><span class="p">)</span> <span class="mi">00000000000000</span>
+     <span class="o">-</span><span class="n">e</span><span class="p">,</span> <span class="o">--</span><span class="n">etime</span>   <span class="p">:</span> <span class="nb">set</span> <span class="n">end</span> <span class="n">time</span>
+                     <span class="n">default</span><span class="p">)</span> <span class="mi">99999999999999</span>
+     <span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="o">--</span><span class="n">slider</span>  <span class="p">:</span> <span class="nb">set</span> <span class="n">summary</span> <span class="n">destination</span>
+                     <span class="mi">1</span>  <span class="p">:</span> <span class="mi">1</span> <span class="nb">min</span> <span class="n">statistics</span>
+                     <span class="mi">5</span>  <span class="p">:</span> <span class="mi">5</span> <span class="nb">min</span> <span class="n">statistics</span>
+                     <span class="mi">10</span> <span class="p">:</span> <span class="mi">10</span> <span class="nb">min</span> <span class="n">statistics</span>
+                     <span class="mi">60</span> <span class="p">:</span> <span class="mi">1</span> <span class="n">hour</span> <span class="n">statistics</span>
+                     <span class="mi">24</span> <span class="p">:</span> <span class="mi">1</span> <span class="n">day</span> <span class="n">statistics</span>
+                     <span class="n">default</span><span class="p">)</span> <span class="mi">5</span>
+     <span class="o">-</span><span class="n">m</span><span class="p">,</span> <span class="o">--</span><span class="n">summary</span> <span class="p">:</span> <span class="nb">set</span> <span class="n">summary</span> <span class="n">flag</span>
+                     <span class="n">slave</span> <span class="n">system</span> <span class="ow">or</span> <span class="n">table</span> <span class="n">info</span> <span class="k">return</span> <span class="n">aggregated</span> <span class="n">result</span>
+                     <span class="n">default</span><span class="p">)</span> <span class="kc">False</span>
+     <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="o">--</span><span class="nb">all</span>     <span class="p">:</span> <span class="nb">set</span> <span class="n">result</span> <span class="nb">type</span>
+                     <span class="n">default</span> <span class="n">result</span> <span class="nb">type</span> <span class="ow">is</span> <span class="n">LAST</span>
+                     <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">get</span> <span class="n">statistics</span> <span class="nb">list</span><span class="p">,</span> <span class="n">use</span> <span class="n">this</span> <span class="n">option</span>
+                     <span class="n">default</span><span class="p">)</span> <span class="kc">False</span>
+     <span class="o">-</span><span class="n">n</span><span class="p">,</span> <span class="o">--</span><span class="n">node</span>    <span class="p">:</span> <span class="nb">set</span> <span class="n">node</span>
+                     <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">several</span> <span class="n">nodes</span> <span class="n">info</span><span class="p">,</span> <span class="n">use</span> <span class="s2">&quot;,&quot;</span> <span class="n">seperator</span>
+                     <span class="n">default</span><span class="p">)</span> <span class="n">ALL</span>
+     <span class="o">-</span><span class="n">t</span><span class="p">,</span> <span class="o">--</span><span class="n">table</span>   <span class="p">:</span> <span class="nb">set</span> <span class="n">table</span> <span class="p">(</span><span class="n">only</span> <span class="n">usable</span> <span class="ow">in</span> <span class="n">table</span> <span class="n">info</span><span class="p">)</span>
+                     <span class="k">if</span> <span class="n">you</span> <span class="n">want</span> <span class="n">several</span> <span class="n">tables</span> <span class="n">info</span><span class="p">,</span> <span class="n">use</span> <span class="s2">&quot;,&quot;</span> <span class="n">seperator</span>
+                     <span class="n">default</span><span class="p">)</span> <span class="n">ALL</span>
+<span class="o">===========================================================================</span>
+
+<span class="mi">30</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0859</span> <span class="n">sec</span>
+</pre></div>
+</div>
+<p>위의 화면에서 알 수 있듯이, .statistics 명령어는 여러 가지 옵션을 함께 사용할 수 있습니다. 각 옵션에 대한 설명은 아래 표와 같습니다.</p>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">.statistics 명령의 옵션</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>옵션</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>-s or –stime</p></td>
+<td><p>통계 산출의 시작 시간</p>
+<ul class="simple">
+<li><p>사용법: <code class="docutils literal notranslate"><span class="pre">.statistics</span> <span class="pre">[system</span> <span class="pre">|</span> <span class="pre">table]</span> <span class="pre">--stime</span> <span class="pre">{yyyymmddHHMMSS}</span></code></p></li>
+<li><p>Default는 00000000000000이며, 이 경우 시작 시간이 저장된 데이터의 최초 시간으로 설정됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>-e or –etime</p></td>
+<td><p>통계 산출의 마지막 시간</p>
+<ul class="simple">
+<li><p>사용법: <code class="docutils literal notranslate"><span class="pre">.statistics</span> <span class="pre">[system</span> <span class="pre">|</span> <span class="pre">table]</span> <span class="pre">--etime</span> <span class="pre">{yyyymmddHHMMSS}</span></code></p></li>
+<li><p>Default는 99999999999999이며, 이 경우 마지막 시간이 저장된 데이터의 마지막 시간으로 설정됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>-l or –slider</p></td>
+<td><p>통계 산출 주기를 지정합니다.</p>
+<ul class="simple">
+<li><p>사용법: <code class="docutils literal notranslate"><span class="pre">.statistics</span> <span class="pre">[system</span> <span class="pre">|</span> <span class="pre">table]</span> <span class="pre">-l</span> <span class="pre">{num}</span></code></p></li>
+<li><p>만일, -l을 10으로 설정하면 stime ~ etime까지 10분 간격으로 통계가 출력됩니다.</p></li>
+<li><p>통계 산출 주기는 1분, 5분, 10분, 60분, 24시간으로 설정할 수 있으며, default는 5로 설정됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>-m or –summary</p></td>
+<td><p>통계 산출 시, 노드별 통계가 아닌 전체 클러스터 기준으로 요약된 통계를 생성합니다. 만일, -m 옵션을 사용하지 않으면 각 노드별 통계가 생성됩니다.</p>
+<ul class="simple">
+<li><p>사용법: <code class="docutils literal notranslate"><span class="pre">.statistics</span> <span class="pre">[system</span> <span class="pre">|</span> <span class="pre">table]</span> <span class="pre">–m</span></code></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>-n or –node</p></td>
+<td><p>특정 노드의 통계만 출력할 경우에 사용합니다.</p>
+<ul class="simple">
+<li><p>사용법: <code class="docutils literal notranslate"><span class="pre">.statistics</span> <span class="pre">[system</span> <span class="pre">|</span> <span class="pre">table]</span> <span class="pre">-n</span> <span class="pre">{node_id}[,{node_id}]</span></code></p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>-t or –table</p></td>
+<td><p>특정 테이블의 정보만 조회합니다.</p>
+<ul class="simple">
+<li><p>사용법: <code class="docutils literal notranslate"><span class="pre">.statistics</span> <span class="pre">table</span> <span class="pre">{table_name}[,{table_name}]</span></code></p></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Statistics 명령어는 다음 표와 같이, 하드웨어 정보와 관련된 system 통계와 테이블 정보에 해당하는 table 통계로 구분하여 출력됩니다.</p>
+<table class="colwidths-given docutils align-default" id="id12">
+<caption><span class="caption-text">.statistics 통계 항목 - system</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>항목</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE_TIME</p></td>
+<td><p>통계 정보가 수집된 시간</p></td>
+</tr>
+<tr class="row-odd"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-even"><td><p>NODE_IP</p></td>
+<td><p>노드의 IP 주소</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYS_STATUS</p></td>
+<td><p>노드의 상태 정보</p></td>
+</tr>
+<tr class="row-even"><td><p>ADM_STATUS</p></td>
+<td><p>IRIS 관리자가 설정한 노드의 사용 유무 상태</p></td>
+</tr>
+<tr class="row-odd"><td><p>HOST_NAME</p></td>
+<td><p>호스트 이름</p></td>
+</tr>
+<tr class="row-even"><td><p>OS_NAME</p></td>
+<td><p>운영체제 이름</p></td>
+</tr>
+<tr class="row-odd"><td><p>OS_VERSION</p></td>
+<td><p>운영체제 버전</p></td>
+</tr>
+<tr class="row-even"><td><p>OS_TYPE</p></td>
+<td><p>메모리 주소 방식 (bit)</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_NAME</p></td>
+<td><p>네트워크 인터페이스 이름</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_TYPE</p></td>
+<td><p>네트워크 최대 전송 속도 (bps)</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_MAC</p></td>
+<td><p>네트워크 MAC 주소</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_IN_PACKET</p></td>
+<td><p>노드로 들어오는 패킷 수</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_OUT_PACKET</p></td>
+<td><p>노드에서 나가는 패킷 수</p></td>
+</tr>
+<tr class="row-even"><td><p>NET_IN_BYTE</p></td>
+<td><p>노드로 들어오는 byte 수</p></td>
+</tr>
+<tr class="row-odd"><td><p>NET_OUT_BYTE</p></td>
+<td><p>노드에서 나가는 byte 수</p></td>
+</tr>
+<tr class="row-even"><td><p>CPU_CLOCK</p></td>
+<td><p>CPU 클럭(Hz)</p></td>
+</tr>
+<tr class="row-odd"><td><p>CPU_CORE</p></td>
+<td><p>CPU 코어 개수</p></td>
+</tr>
+<tr class="row-even"><td><p>CPU_USAGE</p></td>
+<td><p>CPU 사용률</p></td>
+</tr>
+<tr class="row-odd"><td><p>CPU_L_AVG</p></td>
+<td><p>노드 부하량</p></td>
+</tr>
+<tr class="row-even"><td><p>CPU_IOWAIT</p></td>
+<td><p>IO 대기률 (%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM_TOTAL</p></td>
+<td><p>램 용량(byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>RAM_USAGE_FILE</p></td>
+<td><p>램디스크 사용량(byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM_USAGE_PROCESS</p></td>
+<td><p>프로세스의 램 사용량(byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>RAM_SWAP_TOTAL</p></td>
+<td><p>스왑 총 용량(byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>RAM_SWAP_USAGE</p></td>
+<td><p>스왑 사용 용량(byte)</p></td>
+</tr>
+<tr class="row-even"><td><p>HDD_TOTAL</p></td>
+<td><p>디스크 총 용량(byte)</p></td>
+</tr>
+<tr class="row-odd"><td><p>HDD_USAGE</p></td>
+<td><p>디스크 사용 용량(byte)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default" id="id13">
+<caption><span class="caption-text">.statistics 통계 항목 - table</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>항목</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>UPDATE_TIME</p></td>
+<td><p>통계 정보가 수집된 시간</p></td>
+</tr>
+<tr class="row-odd"><td><p>NODE_ID</p></td>
+<td><p>노드의 아이디</p></td>
+</tr>
+<tr class="row-even"><td><p>DATABASE_NAME</p></td>
+<td><p>데이터베이스 명</p></td>
+</tr>
+<tr class="row-odd"><td><p>TABLE_NAME</p></td>
+<td><p>테이블 명</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_SIZE</p></td>
+<td><p>디스크에 존재하는 테이블의 크기</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUM_OF_FILE</p></td>
+<td><p>디스크상에 존재하는 데이터 파일의 수</p></td>
+</tr>
+<tr class="row-even"><td><p>TABLE_SIZE_RAM</p></td>
+<td><p>램 디스크에 존재하는 테이블의 크기</p></td>
+</tr>
+<tr class="row-odd"><td><p>NUM_OF_FILE_RAM</p></td>
+<td><p>램 디스크에 존재하는 데이터 파일의 수</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래는 system 통계와 table 통계가 출력된 화면 예시입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">statistics</span> <span class="n">system</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">UPDATE_TIME</span>       <span class="n">NODE_ID</span>    <span class="n">NODE_IP</span>            <span class="n">SYS_STATUS</span>    <span class="n">ADM_STATUS</span>    <span class="n">HOST_NAME</span>    <span class="n">OS_NAME</span>    <span class="n">OS_VERSION</span>    <span class="n">OS_TYPE</span>    <span class="n">NET_NAME</span>    <span class="n">NET_TYPE</span>    <span class="n">NET_MAC</span>              <span class="n">NET_IN_PACKET</span>    <span class="n">NET_OUT_PACKET</span>    <span class="n">NET_IN_BYTE</span>    <span class="n">NET_OUT_BYTE</span>    <span class="n">CPU_CLOCK</span>    <span class="n">CPU_CORE</span>    <span class="n">CPU_USAGE</span>        <span class="n">CPU_L_AVG</span>          <span class="n">CPU_IOWAIT</span>         <span class="n">RAM_TOTAL</span>      <span class="n">RAM_USAGE_FILE</span>     <span class="n">RAM_USAGE_PROCESS</span>    <span class="n">RAM_SWAP_TOTAL</span>    <span class="n">RAM_SWAP_USAGE</span>    <span class="n">HDD_TOTAL</span>       <span class="n">HDD_USAGE</span>
+<span class="o">========================================================================================================================================================================================================================================================================================================================================================================================================================================================</span>
+ <span class="mi">20180403175000</span>    <span class="mi">0</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.151</span>    <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="n">IRIS</span><span class="o">-</span><span class="n">M01</span>     <span class="n">CentOS</span>     <span class="mf">6.9</span>           <span class="mi">64</span>         <span class="n">eth1</span><span class="p">:</span><span class="mi">0</span>                  <span class="mi">52</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">02</span><span class="p">:</span><span class="n">DC</span><span class="p">:</span><span class="n">C1</span>    <span class="mi">49</span>               <span class="mi">41</span>                <span class="mi">13141</span>          <span class="mi">5486</span>            <span class="o">-</span><span class="mi">1</span>           <span class="mi">8</span>           <span class="mf">4.49797932344</span>    <span class="mf">0.0419962121212</span>    <span class="mf">0.0118244592743</span>    <span class="mi">33806913536</span>    <span class="mi">0</span>                  <span class="mf">6.01791415816</span>        <span class="mi">34359734272</span>       <span class="mi">0</span>                 <span class="mi">67885760510</span>     <span class="mf">52.1408335755</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.155</span>    <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="n">IRIS</span><span class="o">-</span><span class="n">S01</span>     <span class="n">CentOS</span>     <span class="mf">6.9</span>           <span class="mi">64</span>         <span class="n">eth1</span>        <span class="mi">100</span>         <span class="mi">52</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">81</span><span class="p">:</span><span class="n">ED</span><span class="p">:</span><span class="mi">7</span><span class="n">F</span>    <span class="mi">81</span>               <span class="mi">62</span>                <span class="mi">65905</span>          <span class="mi">8835</span>            <span class="o">-</span><span class="mi">1</span>           <span class="mi">8</span>           <span class="mf">6.07696425781</span>    <span class="mf">0.0339659090909</span>    <span class="mf">0.0925268411303</span>    <span class="mi">33806913536</span>    <span class="mf">0.0520941808187</span>    <span class="mf">16.6748391113</span>        <span class="mi">34359734272</span>       <span class="mi">0</span>                 <span class="mi">902472327165</span>    <span class="mf">3.43358545667</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.157</span>    <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="n">IRIS</span><span class="o">-</span><span class="n">S02</span>     <span class="n">CentOS</span>     <span class="mf">6.9</span>           <span class="mi">64</span>         <span class="n">eth0</span>        <span class="mi">100</span>         <span class="mi">52</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="n">C9</span><span class="p">:</span><span class="n">B3</span><span class="p">:</span><span class="mi">48</span>    <span class="mi">35</span>               <span class="mi">23</span>                <span class="mi">4879</span>           <span class="mi">8635</span>            <span class="o">-</span><span class="mi">1</span>           <span class="mi">8</span>           <span class="mf">4.29612549326</span>    <span class="mf">0.0472821969697</span>    <span class="mf">0.0855415272128</span>    <span class="mi">33806790656</span>    <span class="mf">0.0658015019123</span>    <span class="mf">12.016796024</span>         <span class="mi">34359734272</span>       <span class="mi">0</span>                 <span class="mi">902472327166</span>    <span class="mf">2.83975621042</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="mf">192.168</span><span class="o">.</span><span class="mf">100.159</span>    <span class="n">VALID</span>         <span class="n">ENABLE</span>        <span class="n">IRIS</span><span class="o">-</span><span class="n">S03</span>     <span class="n">CentOS</span>     <span class="mf">6.9</span>           <span class="mi">64</span>         <span class="n">eth1</span>        <span class="mi">100</span>         <span class="mi">52</span><span class="p">:</span><span class="mi">54</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">9</span><span class="n">F</span><span class="p">:</span><span class="n">A5</span><span class="p">:</span><span class="mi">24</span>    <span class="mi">39</span>               <span class="mi">28</span>                <span class="mi">6470</span>           <span class="mi">8688</span>            <span class="o">-</span><span class="mi">1</span>           <span class="mi">8</span>           <span class="mf">5.2026668275</span>     <span class="mf">0.0409412878788</span>    <span class="mf">0.0754073969154</span>    <span class="mi">33806913536</span>    <span class="mf">0.0515497746187</span>    <span class="mf">16.1511859378</span>        <span class="mi">34359734272</span>       <span class="mi">0</span>                 <span class="mi">902472327165</span>    <span class="mf">3.12763575728</span>
+<span class="o">========================================================================================================================================================================================================================================================================================================================================================================================================================================================</span>
+
+<span class="mi">4</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.0692</span> <span class="n">sec</span>
+
+<span class="n">iplus</span><span class="o">&gt;</span> <span class="o">.</span><span class="n">statistics</span> <span class="n">table</span>
+<span class="n">Ret</span> <span class="p">:</span> <span class="o">+</span><span class="n">OK</span> <span class="n">Success</span>
+
+
+ <span class="n">UPDATE_TIME</span>       <span class="n">NODE_ID</span>    <span class="n">DATABASE_NAME</span>    <span class="n">TABLE_NAME</span>               <span class="n">TABLE_SIZE</span>     <span class="n">NUM_OF_FILE</span>    <span class="n">TABLE_SIZE_RAM</span>    <span class="n">NUM_OF_FILE_RAM</span>
+<span class="o">==========================================================================================================================================</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_CPU_INFO</span>             <span class="mi">43466752</span>       <span class="mi">1061</span>           <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_DISK_INFO</span>            <span class="mi">43466752</span>       <span class="mi">1061</span>           <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_ERROR_LOG_INFO</span>       <span class="mi">113803264</span>      <span class="mi">570</span>            <span class="mi">147456</span>            <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_NETWORK_INFO</span>         <span class="mi">43466752</span>       <span class="mi">1061</span>           <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_OS_INFO</span>              <span class="mi">43466752</span>       <span class="mi">1061</span>           <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_RAM_INFO</span>             <span class="mi">43466752</span>       <span class="mi">1061</span>           <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_SESSION_DATA</span>         <span class="mi">129974272</span>      <span class="mi">1538</span>           <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">SYS</span>              <span class="n">SYS_TABLE_SIZE_INFO</span>      <span class="mi">33652736</span>       <span class="mi">343</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLE</span>         <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">131072</span>            <span class="mi">4</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">WAS</span>              <span class="n">WAS_QUERY_HIST</span>           <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">WAS</span>              <span class="n">WAS_LOG_QUERY_HIST</span>       <span class="mi">557056</span>         <span class="mi">17</span>             <span class="mi">98304</span>             <span class="mi">3</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLEA</span>        <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">1</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLE_JDBC</span>    <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_CPU_INFO</span>             <span class="mi">25165824</span>       <span class="mi">512</span>            <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_DISK_INFO</span>            <span class="mi">25165824</span>       <span class="mi">512</span>            <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_ERROR_LOG_INFO</span>       <span class="mi">2916352</span>        <span class="mi">58</span>             <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_NETWORK_INFO</span>         <span class="mi">25165824</span>       <span class="mi">512</span>            <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_OS_INFO</span>              <span class="mi">25165824</span>       <span class="mi">512</span>            <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_RAM_INFO</span>             <span class="mi">25165824</span>       <span class="mi">512</span>            <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_SESSION_DATA</span>         <span class="mi">287479621</span>      <span class="mi">1494</span>           <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">SYS</span>              <span class="n">SYS_TABLE_SIZE_INFO</span>      <span class="mi">33658197</span>       <span class="mi">343</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLE</span>         <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">65536</span>             <span class="mi">2</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">WAS</span>              <span class="n">WAS_QUERY_HIST</span>           <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">WAS</span>              <span class="n">WAS_LOG_QUERY_HIST</span>       <span class="mi">792985</span>         <span class="mi">24</span>             <span class="mi">65536</span>             <span class="mi">2</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLEA</span>        <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">2</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLE_JDBC</span>    <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_CPU_INFO</span>             <span class="mi">26001408</span>       <span class="mi">529</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_DISK_INFO</span>            <span class="mi">26001408</span>       <span class="mi">529</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_ERROR_LOG_INFO</span>       <span class="mi">2572288</span>        <span class="mi">51</span>             <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_NETWORK_INFO</span>         <span class="mi">26001408</span>       <span class="mi">529</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_OS_INFO</span>              <span class="mi">26001408</span>       <span class="mi">529</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_RAM_INFO</span>             <span class="mi">26001408</span>       <span class="mi">529</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_SESSION_DATA</span>         <span class="mi">121852574</span>      <span class="mi">1492</span>           <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">SYS</span>              <span class="n">SYS_TABLE_SIZE_INFO</span>      <span class="mi">33624883</span>       <span class="mi">343</span>            <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLE</span>         <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">196608</span>            <span class="mi">6</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">WAS</span>              <span class="n">WAS_QUERY_HIST</span>           <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">WAS</span>              <span class="n">WAS_LOG_QUERY_HIST</span>       <span class="mi">887466</span>         <span class="mi">27</span>             <span class="mi">32768</span>             <span class="mi">1</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLEA</span>        <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>                 <span class="mi">0</span>
+ <span class="mi">20180403175000</span>    <span class="mi">3</span>          <span class="n">TEST</span>             <span class="n">LOCAL_TEST_TABLE_JDBC</span>    <span class="mi">0</span>              <span class="mi">0</span>              <span class="mi">0</span>                 <span class="mi">0</span>
+<span class="o">==========================================================================================================================================</span>
+
+<span class="mi">39</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">set</span>
+
+<span class="mf">0.2462</span> <span class="n">sec</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>로그 보기<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>IRIS에서 관리하는 로그는 시스템 운용 중에 일반적으로 발생하는 동작 로그와 시스템의 상태 변경에 따라 발생하는 이벤트 로그로 구분됩니다.</p>
+<div class="section" id="id6">
+<h3>동작 로그 보기<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>동작 로그는 IRIS 시스템을 운용 중에 일반적인 상황에서 지속적으로 발생하는 로그입니다. 동작 로그는 용도에 따라 다음 표와 같이 구분됩니다.</p>
+<table class="colwidths-given docutils align-default" id="id14">
+<caption><span class="caption-text">동작 로그</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>로그명</p></td>
+<td><p>생성 노드</p></td>
+<td><p>파일 포맷</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>m6</p></td>
+<td><p>모든 노드</p></td>
+<td><div class="line-block">
+<div class="line">m6.log</div>
+<div class="line">m6.log.xxx</div>
+</div>
+</td>
+<td><p>아래의 SM, mps, BIM, EHD 등 주요 프로세스를 제외한 나머지 프로세스, 즉 DLD, NSD, Listener 등의 동작 중 발생하는 로그를 기록합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>SM</p></td>
+<td><p>모든 노드</p></td>
+<td><div class="line-block">
+<div class="line">SM.log</div>
+<div class="line">SM.log.xxx</div>
+</div>
+</td>
+<td><p>시스템 모니터링 관련 로그와 heartbeat에 대한 로그가 기록됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>mps</p></td>
+<td><p>모든 노드</p></td>
+<td><div class="line-block">
+<div class="line">mps.log</div>
+<div class="line">mps.log.xxx</div>
+</div>
+</td>
+<td><p>IRIS 프로세스들의 상태를 관리하는 관리 프로세스인 mps의 동작 중 발생하는 로그를 기록합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>BIM</p></td>
+<td><p>마스터 노드</p></td>
+<td><div class="line-block">
+<div class="line">BIM.log</div>
+<div class="line">BIM.log.xxx</div>
+</div>
+</td>
+<td><p>삭제될 파일의 리스트를 만들거나, 이중화된 데이터 중 하나의 파일이 손상되어 해당 파일의 리스트를 만드는 역할을 담당하는 BIM(Backend Integrity Manager)의 관련 동작에 대한 로그가 저장됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>EHD</p></td>
+<td><p>마스터 노드</p></td>
+<td><div class="line-block">
+<div class="line">EHD.log</div>
+<div class="line">EHD.log.xxx</div>
+</div>
+</td>
+<td><p>ntop 명령을 실행하여 출력되는 정보를 저장합니다. Ntop 명령은 사용자에 의하여 실행되기도 하지만, 시스템에서 주기적(10초 주기)으로 실행하여 그 결과를 EHD 로그에 기록합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>아래에 기술한 내용은 위의 표에 나열된 동작 로그를 확인하는 방법에 대하여 m6 로그의 예를 들어 기술하고 있습니다. 동작 로그의 파일 포맷은 로그 파일이 일정한 크기를 초과하면 m6.log.1, m6.log.2, …, m6.log.500 등 순차적으로 기록되며, 가장 최근에 발생한 로그는 m6.log에 기록됩니다.
+동작 로그는 상기 표의 파일 포맷으로 아래 디렉토리에 기록됩니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/IRIS/log/</span></code></p>
+<p>IRIS의 동작 로그 중, m6 로그에는 IRIS의 대부분의 오류 혹은 동작 여부를 판단할 수 있는 정보가 기록됩니다. 로그의 보관 주기는 아래 파일에서 정의합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/IRIS/conf/common/m6.config</span></code></p>
+<p>상기와 같이 mps.conf 파일을 오픈하여, 파일의 내용 중에 아래 항목을 수정하여 보관 주기를 정의합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">LOG</span><span class="p">]</span>
+<span class="n">loglevel</span> <span class="o">=</span> <span class="n">INFO</span>
+<span class="n">m_port</span> <span class="o">=</span> <span class="mi">5999</span>
+<span class="n">s_port</span> <span class="o">=</span> <span class="mi">6999</span>
+<span class="n">pr_file_count</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">pr_max_bytes</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">pl_file_count</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">pl_max_bytes</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">filesystem_file_count</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">filesystem_max_bytes</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">m6_file_count</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">m6_max_bytes</span> <span class="o">=</span> <span class="mi">10000000</span>
+</pre></div>
+</div>
+<p>상기의 예에서는 하나의 로그 파일에 10,000,000 바이트의 로그를 기록하며, 최대 500개의 로그 파일을 생성하도록 정의하고 있습니다.</p>
+</div>
+<div class="section" id="id7">
+<h3>이벤트로그 보기<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>IRIS는 오류, 리소스의 과다 사용, 시스템의 고장 등으로 인하여 노드의 상태가 변화할 경우, 해당 내용이 기록된 별도의 이벤트 로그를 생성합니다. 본 매뉴얼에서는 이러한 이벤트 로그를 Notification으로 정의합니다. 이벤트 로그는 노드의 상태 변화의 정도에 따라 아래 표와 같이 별도의 파일로 구분됩니다. 노드의 상태 변화에 대한 설명은 “표 4 1. 노드의 시스템 상태“를 참조하시기 바랍니다.</p>
+<table class="colwidths-given docutils align-default" id="id15">
+<caption><span class="caption-text">이벤트 로그</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 70%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>이벤트명</p></td>
+<td><p>로그 생성 노드</p></td>
+<td><p>파일 포맷</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>INFO</p></td>
+<td><p>마스터 노드</p></td>
+<td><p>[DATE]_[NODE_IP].INFO</p></td>
+<td><p>IRIS 관리자가 NodeEnable, NodeDisable 명령으로 노드의 상태를 변경하는 경우에 INFO 로그가 생성됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>WARN</p></td>
+<td><p>마스터 노드</p></td>
+<td><p>[DATE]_[NODE_IP].WARN</p></td>
+<td><p>노드의 리소스 상태 변화에 대하여 IRIS 관리자에게 경고하기 위하여, m6.config 파일에 [EHD_WARN_CONDITION]에 각 리소스별 경고를 위한 임계값을 설정할 수 있습니다. 만일, 특정 리소스가 해당 임계값을 초과하면 WARN 로그가 생성됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>BUSY</p></td>
+<td><p>마스터 노드</p></td>
+<td><p>[DATE]_[NODE_IP].BUSY</p></td>
+<td><p>노드의 리소스 상태가 m6.config 파일에 설정한  [EHD_BUSY_CONDITION_UPPER] 혹은  [EHD_BUSY_CONDITION_LOWER] 을 초과하는 경우에 BUSY 로그가 생성됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ERROR</p></td>
+<td><p>마스터 노드</p></td>
+<td><p>[DATE]_[NODE_IP].ERROR</p></td>
+<td><p>데이터 노드에서 쿼리를 분석하고 쿼리 결과를 취합하는 UDM이 동작하지 않을 경우, ERROR 로그가 생성됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>FATA</p></td>
+<td><p>마스터 노드</p></td>
+<td><p>[DATE]_[NODE_IP].FATAL</p></td>
+<td><p>디스크에 고장이 발생할 경우, FATAL 로그가 생성됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>RETRY</p></td>
+<td><p>마스터 노드</p></td>
+<td><p>[DATE]_[NODE_IP].RETRY</p></td>
+<td><div class="line-block">
+<div class="line">HEARTBEAT TIME OUT.</div>
+<div class="line">시스템 정보가 수집이 안될 경우, RETRY 로그가 생성됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>Recover</p></td>
+<td><p>데이터 노드</p></td>
+<td><p>Recover_log_[DATE]</p></td>
+<td><p>IRIS 관리자가 Recover 명령을 사용하여 데이터를 복구할 경우에 Recover 로그가 생성됩니다.</p></td>
+</tr>
+</tbody>
+</table>
+<p>이벤트 로그는 아래 디렉토리에 저장되며, Recover 로그를 제외하고는 <code class="docutils literal notranslate"><span class="pre">[발생시간]_[발생</span> <span class="pre">노드의</span> <span class="pre">IP</span> <span class="pre">주소].[이벤트명]</span></code> 형태의 파일명으로 생성됩니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/IRIS/proc/noti</span></code></p>
+<p>이벤트 로그에 기록되는 내용은 다음과 같습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Reported by ##</span>
+<span class="p">[</span><span class="n">LOCATION</span><span class="p">]</span>              <span class="o">-</span> <span class="n">해당</span> <span class="n">로그를</span> <span class="n">생성한</span> <span class="n">프로세스</span> <span class="n">명</span>
+<span class="c1">## Scope ##</span>
+<span class="p">[</span><span class="n">SCOPE</span><span class="p">]</span>                 <span class="o">-</span> <span class="n">해당</span> <span class="n">이벤트가</span> <span class="n">영향을</span> <span class="n">미치는</span> <span class="n">범위</span>
+<span class="c1">## Event ##</span>
+<span class="p">[</span><span class="n">INFO</span><span class="p">]</span>                  <span class="o">-</span> <span class="n">해당</span> <span class="n">로그를</span> <span class="n">상세</span> <span class="n">정보</span>
+</pre></div>
+</div>
+<p>아래는 <code class="docutils literal notranslate"><span class="pre">20151130213609_10.7.25.59.WARN</span></code> 이라는 WARN 로그 파일의 내용을 출력한 예입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">## Reported by ##</span>
+<span class="n">EHD</span>
+<span class="c1">## Scope ##</span>
+<span class="n">NODE</span>
+<span class="c1">## Event ##</span>
+<span class="n">CPU</span><span class="o">.</span><span class="n">IOWAIT</span><span class="p">(</span><span class="mf">19.1692508569</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">10.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="healthcheck">
+<h2>HealthCheck 실행하기<a class="headerlink" href="#healthcheck" title="Permalink to this headline">¶</a></h2>
+<p>IRIS는 IRIS 관리자가 IRIS 시스템이 정상적으로 동작하고 있는지 각 노드의 전반적인 상태와 테이블의 동작 상태를 주기적으로 점검할 수 있도록 아래의 명령어를 제공합니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ ~/IRIS/bin/Admin/HealthCheck
+</pre></div>
+</div>
+<p>상기의 HealthCheck 명령어는 마스터 노드에서, 리눅스 계정을 보유한 IRIS 관리자만 실행 가능합니다. HealthCheck 명령을 실행하면, 아래 표에 나열된 항목들을 점검하여 그 결과를 출력합니다.</p>
+<ul>
+<li><dl>
+<dt>마스터 노드의 동작 상태 점검</dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>점검 항목</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">환경 변수(env)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">IRIS의 환경변수인 $M6_HOME의 설정 유무를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">마스터 이중화(HA)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">마스터 노드의 이중화 여부를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">최대 파일 오픈 개수</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">IRIS 설치 시 설정된 OpenFileUlimit 값(리눅스 환경 변수이며, Ulimit –a 명령어를 사용하여 설정)이 변경되었는지 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(OpenFileUlimit)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">기 설정된 값과 다른 경우, 에러로 표기됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">최대 프로세스 개수</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">IRIS 설치 시 설정된 MaxProcessUlimit 값(리눅스 환경 변수이며, Ulimit –a 명령어를 사용하여 설정)이 변경되었는지 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(MaxProcessUlimit)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">기 설정된 값과 다른 경우, 에러로 표기됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">전체 노드 상태</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">노드의 상태 VALID 인지 아닌지 여부를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(nodeStatus)</div>
+</div>
+</td>
+<td></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">프로세스 상태 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 프로세스 상태가 OK인지 아닌지 여부를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(mpsCheck)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">mps에서 관리하는 여러가지 프로세스 중, 하나라도 ERR이면 ERR로 표시됩니다.</div>
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">로드 에버리지 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 로드 에버리지 상태를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(printLoad)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">만일, 로드 에러리지의 값이 CPU 코어 개수 * 2보다 높으면 ERR로 표시됩니다.</div>
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">램 파일 시스템 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 램디스크 설정 여부를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(ramfsCheck)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">만일, ramdisk가 생성되어 있지 않거나, 해당 ramdisk가 리눅스의 iris 계정으로 접근이 가능한 권한으로 설정되어 있지 않다면 ERR로 표시됩니다.</div>
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">디스크 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 디스크가 정상적으로 설정되어 있는지 여부를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">(diskCheck)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">만일, disk가 정상적으로 설정되어 있지 않다면 ERR로 표시됩니다.</div>
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>데이터 노드의 동작 상태 점검</dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>점검 항목</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">환경 변수(env)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">IRIS의 환경변수인 $M6_HOME의 설정 유무를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">최대 파일 오픈 개수</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">IRIS 설치 시 설정된 OpenFileUlimit 값(리눅스 환경 변수이며, Ulimit –a 명령어를 사용하여 설정)이 변경되었는지 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(OpenFileUlimit)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">기 설정된 값과 다른 경우, 에러로 표기됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">최대 프로세스 개수</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">IRIS 설치 시 설정된 MaxProcessUlimit 값(리눅스 환경 변수이며, Ulimit –a 명령어를 사용하여 설정)이 변경되었는지 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(MaxProcessUlimit)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">기 설정된 값과 다른 경우, 에러로 표기됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">프로세스 상태 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 프로세스 상태가 OK인지 아닌지 여부를 확인합니다. mps에서 관리하는 여러가지 프로세스 중, 하나라도 ERR이면 ERR로 표시됩니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(mpsCheck)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">로드 에버리지 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 로드 에버리지 상태를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(printLoad)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">만일, 로드 에러리지의 값이 CPU 코어 개수 * 2보다 높으면 ERR로 표시됩니다.</div>
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">램 파일 시스템 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 램디스크 설정 여부를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(ramfsCheck)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">만일, ramdisk가 생성되어 있지 않거나, 해당 ramdisk가 리눅스의 iris 계정으로 접근이 가능한 권한으로 설정되어 있지 않다면 ERR로 표시됩니다.</div>
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">디스크 체크</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">해당 노드의 디스크가 정상적으로 설정되어 있는지 여부를 확인합니다.</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">(diskCheck)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">만일, slave_disk가 정상적으로 설정되어 있지 않다면 ERR로 표시됩니다.</div>
+<div class="line">만일, ERR로 표시되는 경우, “IRIS Trouble Shooting Guide”를 참조하시기 바랍니다.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>테이블의 서비스 상태 점검(글로벌 테이블 및 로컬 테이블)</dt><dd><table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>점검 항목</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>테이블 생성</p></td>
+<td><p>테이블이 정상적으로 생성되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>인덱스 생성</p></td>
+<td><p>인덱스가 정상적으로 생성되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>데이터 삽입</p></td>
+<td><p>데이터가 정상적으로 삽입되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>데이터 갱신</p></td>
+<td><p>데이터가 정상적으로 갱신되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>데이터 삭제</p></td>
+<td><p>데이터가 정상적으로 삭제되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>데이터의 벌크 입력</p></td>
+<td><p>대량의 데이터가 정상적으로 입력되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>데이터 조회</p></td>
+<td><p>테이블에 저장된 데이터가 정상적으로 조회되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>인덱스 삭제</p></td>
+<td><p>인덱스가 정상적으로 삭제되는지 확인합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>테이블 삭제</p></td>
+<td><p>테이블이 정상적으로 삭제되는지 확인합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</li>
+</ul>
+<p>아래는 HealthCheck 명령의 도움말을 출력하는 화면입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ ~/IRIS/bin/Admin/HealthCheck -h
+Welcome IRIS health check program
+Usage :
+  ~/IRIS/bin/Admin/HealthCheck [option]
+  option :
+     -h, --help : show this page
+     --log      : print log file
+     --simple   : change print format to simple print mode
+     --service  : service check option
+                  it makes some overhead to IRIS
+                  do not use this option at service time
+How to configuration?
+  edit /home/iris2/IRIS/conf/status.config
+</pre></div>
+</div>
+<p>상기의 화면에서와 같이, HealthCheck 명령을 실행할 때는 다음과 같은 옵션을 사용할 수 있습니다.</p>
+<p><strong>Log Option (–log)</strong></p>
+<p>–log 옵션과 함께 HealthCheck를 실행하면, IRIS 관리자가 설정한 특정 문자열을 기존 로그 파일에서 검색하여 해당 내용을 출력합니다. –log 옵션의 세부 항목은 아래 파일에서 설정합니다.</p>
+<p><code class="docutils literal notranslate"><span class="pre">~/IRIS/conf/status.config</span></code></p>
+<p>상기 파일에는 다음과 같은 항목들이 설정되어 있습니다. IRIS 관리자는 아래 항목을 수정하여 HealthCheck 실행 결과를 변경할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">LogDefault</span><span class="p">]</span>
+<span class="n">filterlist</span> <span class="o">=</span> <span class="ne">Exception</span><span class="p">,</span><span class="n">ERR</span>
+<span class="n">logbefore</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">logafter</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="p">[</span><span class="n">LogMaster</span><span class="p">]</span>
+<span class="n">loglist</span> <span class="o">=</span> <span class="n">EHD</span><span class="o">.</span><span class="n">log</span><span class="p">,</span><span class="n">m6</span><span class="o">.</span><span class="n">log</span><span class="p">,</span><span class="n">SM</span><span class="o">.</span><span class="n">log</span>
+
+<span class="p">[</span><span class="n">LogSlave</span><span class="p">]</span>
+<span class="n">loglist</span> <span class="o">=</span> <span class="n">SM</span><span class="o">.</span><span class="n">log</span><span class="p">,</span><span class="n">m6</span><span class="o">.</span><span class="n">log</span>
+</pre></div>
+</div>
+<p>위의 status.config 파일의 항목에 대한 설명은 다음과 같습니다.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>filterlist</dt><dd><p>로그 파일에서 필터링할 문자열을 지정합니다. 상기에서는 Exception과 ERR을 지정했으므로, 로그 파일에서 해당 문자열을 검색하여, 해당 문자열이 포함된 행을 출력합니다.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>logbefore/logafter</dt><dd><p>상기의 filterlist에 지정한 문자열이 검색되는 행의 앞과 뒤로 몇 행을 출력할 것인지 지정합니다. 상기의 예에서는 10으로 지정되어 있으므로, Exception 혹은 ERR가 포함된 행의 앞 10행과 뒤 10행을 함께 출력합니다.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>loglist</dt><dd><p>마스터 노드(LogMaster)와 데이터 노드(LogSlave)에서 상기의 filterlist에서 지정한 문자열을 검색할 로그를 지정합니다.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<p><strong>Service Option (–service)</strong></p>
+<p>HealthCheck를 실행할 때 –service option을 추가하면, 상기 표에 기술한 IRIS의 노드의 동작 상태와 테이블의 서비스 상태를 점검한 항목별 결과를 모두 확인할 수 있습니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris@master ~]$ ~/IRIS/bin/Admin/HealthCheck --service
+- Master Node Checking Start
+ - master node check result : ERR
+                           env ---------- OK
+                            HA ---------- not working
+                           EHD ---------- OK
+                OpenFileUlimit ---------- OK
+              MaxProcessUlimit ---------- OK
+                    nodeStatus ---------- OK
+                      mpsCheck ---------- OK
+                     printLoad ---------- OK
+                    ramfsCheck ---------- OK
+                     diskCheck ---------- OK
+
+- Slave Node 1 Checking Start
+ - slave node check result : OK
+                           env ---------- OK
+                OpenFileUlimit ---------- OK
+              MaxProcessUlimit ---------- OK
+                      mpsCheck ---------- OK
+                     printLoad ---------- OK
+                    ramfsCheck ---------- OK
+                     diskCheck ---------- OK
+
+- Slave Node 2 Checking Start
+ - slave node check result : OK
+                           env ---------- OK
+                OpenFileUlimit ---------- OK
+              MaxProcessUlimit ---------- OK
+                      mpsCheck ---------- OK
+                     printLoad ---------- OK
+                    ramfsCheck ---------- OK
+                     diskCheck ---------- OK
+
+- Slave Node 3 Checking Start
+ - slave node check result : OK
+                           env ---------- OK
+                OpenFileUlimit ---------- OK
+              MaxProcessUlimit ---------- OK
+                      mpsCheck ---------- OK
+                     printLoad ---------- OK
+                    ramfsCheck ---------- OK
+                     diskCheck ---------- OK
+</pre></div>
+</div>
+<p>위의 화면은 –service 옵션을 사용하여 HealthCheck 명령을 실행한 결과를 보여줍니다. 위의 화면에서, “master node check result “에 ERR로 표시된 것을 확인할 수 있습니다. 이는 HA, 즉 마스터 노드의 이중화가 적용되지 않았기 때문에, 다른 점검 항목이 정상이라도 해당 노드의 상태는 ERR로 표시된 것입니다.
+위의 예시 화면에서와 같이, –service 옵션으로 HealthCheck 명령을 실행하면, 실제로 데이터 파일을 삭제하여 정상적으로 동작하는지 확인합니다. 이 경우, 실제 데이터가 삭제될 때까지 일정한 시간이 소요되므로 –service 옵션을 연속으로 사용할 경우, 에러가 발생할 수 있습니다. 따라서, 일단 –service 옵션을 실행한 후에 재 실행하려면, 최소 10분 뒤에 재실행할 것으로 권장합니다.</p>
+<p><strong>Simple Option (–simple)</strong></p>
+<p>–simple 옵션과 함께 HealthCheck 명령을 실행하면 각 노드별 최종 결과와 테이블의 서비스 점검 결과만 출력됩니다. 아래는 –simple 옵션을 사용한 HealthCheck 실행 결과입니다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[iris2@IRIS-M01 ~]$ ~/IRIS//bin/Admin/HealthCheck --simple
+- Master Node Checking Start
+ - master node check result : ERR
+
+- Slave Node 1 Checking Start
+ - slave node check result : OK
+
+- Slave Node 2 Checking Start
+ - slave node check result : OK
+
+- Slave Node 3 Checking Start
+ - slave node check result : OK
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="05.extension_geospatial.html" class="btn btn-neutral float-right" title="공간DB 셋팅" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="03.system_management.html" class="btn btn-neutral float-left" title="시스템 관리하기" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

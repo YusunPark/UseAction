@@ -1,0 +1,378 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Studio : 북경 대기질 분석 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="M/L Classification : Wine 품종 분류하기" href="classification_winedata_1.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Usecase</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../usecase4-batting_data/index.html">IRIS Studio - 야구 타격 지표</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../retrieve_data_from_iris_to_r/index.html">R 에서 아이리스에 저장된 데이터 가져오기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecase3-map/index.html">지도 기반의 데이터 표현</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../usecase1-syslog/index.html">SYSLOG 데이터로 실시간 anomalies, outlier, forcasts 결과 분석 예제</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml-serving/index.html">IRIS Discovery Service M/L - 모델 적재 시나리오</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ml/index.html">IRIS Discovery Service M/L - 내부 모델 활용</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">데이터 분석과 보고서 생성하기</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Studio_서울시_인구추이_보고서_1.html">Studio : 서울시 인구 추이 보고서 만들어 보기 (1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Studio_서울시_인구추이_보고서_2.html">Studio : 서울시 인구 추이 보고서 만들어 보기 (2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Studio_서울시_인구추이_보고서_3.html">Studio : 서울시 인구 추이 보고서 만들어 보기 (3)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Studio_석유수출입현황_1.html">Studio : 원유 및 석유 제품 수출입 현황 (1)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classification_winedata_1.html">M/L Classification : Wine 품종 분류하기</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Studio : 북경 대기질 분석</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Usecase</a> &raquo;</li>
+    
+      <li><a href="index.html">데이터 분석과 보고서 생성하기</a> &raquo;</li>
+    
+    <li>Studio : 북경 대기질 분석</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/BLOG/Studio_chinaAir.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Usecase/BLOG/Studio_chinaAir</p>
+
+            
+            <p>list1[0] = IRIS-Usecase</p>
+            <p>list1[1] = BLOG/Studio_chinaAir</p>
+            <p>list1[2] = </p>
+            IRIS-Usecase
+            IRIS-Usecase/BLOG/Studio_chinaAir
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Usecase/BLOG/Studio_chinaAir</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Usecase/BLOG/Studio_chinaAir.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Usecase/blob/master/BLOG/Studio_chinaAir.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="studio">
+<h1>Studio : 북경 대기질 분석<a class="headerlink" href="#studio" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">UCI M/L Repository에는 분석에 사용할 만한 데이터 셋이 많이 있습니다.</div>
+<div class="line">그 중에서 우리 나라와 가까이 있으면서 우리 나라의 공기질에 큰 영향을 미치는 국가인 중국의 북경 대기질 측정 데이터셋(<a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Beijing+Multi-Site+Air-Quality+Data">Beijing Multi-Site Air-Quality Data</a> 을 가져와서 챠트를 그려보았습니다.</div>
+<div class="line">데이터는 중국 베이징시의 Beijing Municipal Environmental Monitoring Center 에서 베이징 시내 12개 사이트에서</div>
+<div class="line">6 개의 주요 대기 오염 물질과 6 개의 관련 기상 변수를 측정한 값으로 이루어져 있습니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">필드</span> <span class="n">정보</span>
+
+<span class="n">No</span><span class="p">:</span> <span class="n">row</span> <span class="n">number</span>
+<span class="n">year</span><span class="p">:</span> <span class="n">year</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">month</span><span class="p">:</span> <span class="n">month</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">day</span><span class="p">:</span> <span class="n">day</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">hour</span><span class="p">:</span> <span class="n">hour</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">PM2</span><span class="o">.</span><span class="mi">5</span><span class="p">:</span> <span class="n">PM2</span><span class="o">.</span><span class="mi">5</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">PM10</span><span class="p">:</span> <span class="n">PM10</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">SO2</span><span class="p">:</span> <span class="n">SO2</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">NO2</span><span class="p">:</span> <span class="n">NO2</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">CO</span><span class="p">:</span> <span class="n">CO</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">O3</span><span class="p">:</span> <span class="n">O3</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">TEMP</span><span class="p">:</span> <span class="n">temperature</span> <span class="p">(</span><span class="n">degree</span> <span class="n">Celsius</span><span class="p">)</span>
+<span class="n">PRES</span><span class="p">:</span> <span class="n">pressure</span> <span class="p">(</span><span class="n">hPa</span><span class="p">)</span>
+<span class="n">DEWP</span><span class="p">:</span> <span class="n">dew</span> <span class="n">point</span> <span class="n">temperature</span> <span class="p">(</span><span class="n">degree</span> <span class="n">Celsius</span><span class="p">)</span>
+<span class="n">RAIN</span><span class="p">:</span> <span class="n">precipitation</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span>
+<span class="n">wd</span><span class="p">:</span> <span class="n">wind</span> <span class="n">direction</span>
+<span class="n">WSPM</span><span class="p">:</span> <span class="n">wind</span> <span class="n">speed</span> <span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">s</span><span class="p">)</span>
+<span class="n">station</span><span class="p">:</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">air</span><span class="o">-</span><span class="n">quality</span> <span class="n">monitoring</span> <span class="n">site</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>보고서</p></li>
+</ul>
+<img alt="air_q_01 upload" src="../../_images/air_q_01.png" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="line-block">
+<div class="line">우리 나라에서는 초미세먼지 농도 PM2.5 75(ug/m^3) 이상인 경우 심각단계로 설정하고 있습니다.</div>
+<div class="line">북경의 12개 사이트에서 측정기간 4년(12 x 4개월)동안 매일 18시에 측정한 초미세먼지 농도가 75(ug/m^3) 이상인 날의 수가 몇일이었는지 월별 막대그래프로 그려봤습니다.</div>
+<div class="line">상대적으로 겨울 기간에 초미세먼지 농도가 심각단계인 날이 많은 것으로 나옵니다. (2월달은 일수가 28일로 작은 영향)</div>
+</div>
+<div class="line-block">
+<div class="line">미세먼지 농도는 PM10 150(ug/m^3) 이상을 심각단계로 설정하고 있는데, 미세먼지 역시 계절적인 요인이 크게 작용하고 있어 보입니다.</div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul class="simple">
+<li><p>트리맵으로 12개 측정 사이트별 미세먼지 농도 보기</p></li>
+</ul>
+<a class="reference internal image-reference" href="../../_images/air_q_02.png"><img alt="air_q_02 upload" src="../../_images/air_q_02.png" style="width: 1002.5999999999999px; height: 462.59999999999997px;" /></a>
+<div class="line-block">
+<div class="line">달력에서 선택된 날짜로 12개 사이트의 미세먼지 및 초미세먼지 측정값으로 그린 트리맵입니다.</div>
+<div class="line">트리맵의 크기와 색깔의 농도는 미세먼지 농도 측정값을 나타냅니다.</div>
+<div class="line">트리맵의 사각형 영역의 면적이 크면 색깔이 진하게 표현되고,</div>
+<div class="line">해당 영역으로 마우스를 대면 툴팁으로 사이트 정보와 미세먼지 농도 측정치를 알 수 있습니다.</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="classification_winedata_1.html" class="btn btn-neutral float-left" title="M/L Classification : Wine 품종 분류하기" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

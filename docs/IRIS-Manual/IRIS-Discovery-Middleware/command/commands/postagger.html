@@ -1,0 +1,846 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>postagger &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="predict" href="predict.html" />
+    <link rel="prev" title="pivot" href="pivot.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">Command References</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="adv.html">adv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="anomalies.html">anomalies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="bimatrix.html">bimatrix</a></li>
+<li class="toctree-l4"><a class="reference internal" href="calculate.html">calculate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="concat.html">concat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="corr.html">corr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="count.html">count</a></li>
+<li class="toctree-l4"><a class="reference internal" href="curl.html">curl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="distinct.html">distinct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="eval.html">eval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fields.html">fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fillna.html">fillna</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit.html">fit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="fit_predict.html">fit_predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="forecasts.html">forecasts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geoip.html">geoip</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geomap.html">geomap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="geostats.html">geostats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="hdfs.html">hdfs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="head.html">head</a></li>
+<li class="toctree-l4"><a class="reference internal" href="img2tsv.html">img2tsv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indexer.html">indexer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="iris.html">iris</a></li>
+<li class="toctree-l4"><a class="reference internal" href="join.html">join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kmeans.html">kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="metatron.html">metatron</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestClassification.html">RandomForest Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/RandomForestRegression.html">RandomForest Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeClassification.html">Spark DecisionTree Classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkDecisionTreeRegression.html">Spark DecisionTree Regression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkFPGrowth.html">Spark FP-Growth</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/SparkKmeans.html">Spark Kmeans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/TFDeep.html">TFDeep</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/generalizedlinearregression.html">generalizedLinearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/linearregression.html">linearRegression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ml_algorithms/logisticregression.html">logisticRegression(LBFGS)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mlmodel.html">mlmodel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html">model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-stats.html">model-stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-statsdetails.html">model-statsdetails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="model-timeline.html">model-timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modeldata.html">modeldata</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="outlier.html">outlier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pivot.html">pivot</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">postagger</a></li>
+<li class="toctree-l4"><a class="reference internal" href="predict.html">predict</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pylambda.html">pylambda</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rename.html">rename</a></li>
+<li class="toctree-l4"><a class="reference internal" href="replace.html">replace</a></li>
+<li class="toctree-l4"><a class="reference internal" href="round.html">round</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sampling.html">sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scaler.html">scaler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="search.html">search</a></li>
+<li class="toctree-l4"><a class="reference internal" href="serving.html">serving</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sort.html">sort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="split.html">split</a></li>
+<li class="toctree-l4"><a class="reference internal" href="splitter.html">splitter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sql.html">sql</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stats.html">stats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="substr.html">substr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="time2sec.html">time2sec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timediff.html">TIMEDIFF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="timeline.html">timeline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tokenizer.html">tokenizer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="top.html">top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="typecast.html">TYPECAST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="union.html">union</a></li>
+<li class="toctree-l4"><a class="reference internal" href="weekend.html">weekend</a></li>
+<li class="toctree-l4"><a class="reference internal" href="where.html">WHERE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ysort.html">ysort</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mymnist.html">mymnist</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../example/index.html">Command 사용 예제</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="../index.html">Command References</a> &raquo;</li>
+    
+    <li>postagger</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/postagger.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/postagger</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/command/commands/postagger</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/command/commands/postagger
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/command/commands/postagger</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/command/commands/postagger.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/command/commands/postagger.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="postagger">
+<h1>postagger<a class="headerlink" href="#postagger" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>입력된 컬럼의 문장들을 단어로 쪼개고, 품사를 표기하는 명령어 입니다.</p>
+</div>
+<div class="section" id="id2">
+<h2>설명<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>명령어에 입력된 컬럼의 데이터를 단어로 쪼개고, 품사를 표기합니다.
+품사를 포기하는 알고리즘은 현재 3가지를 지원하고 있습니다. (mobigen, Mecab, NLTK)</p>
+<ol class="arabic simple">
+<li><p>mobigen algorithm (Default)
+- 문장을 <code class="docutils literal notranslate"><span class="pre">space</span></code> 로 단순히 자르고, 모든 품사는 <code class="docutils literal notranslate"><span class="pre">N</span></code> 이 표기합니다.</p></li>
+<li><p>Mecab
+- 한국어 문장을 구문 분석하는 알고리즘으로, <code class="docutils literal notranslate"><span class="pre">KoNLPy</span></code> 에서 지원하는 <code class="docutils literal notranslate"><span class="pre">Mecab</span></code> 알고리즘을 사용합니다.</p></li>
+<li><p>NLTK
+- 영어 문장을 구문 분석하는 알고리즘으로, <code class="docutils literal notranslate"><span class="pre">NLTK</span></code> 라이브러리를 사용합니다.</p></li>
+</ol>
+</div>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | postagger field (ALGORITHM ...)? (POS ...(, ...)*)?
+</pre></div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 60%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>이름</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>필수/옵션</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>field</p></td>
+<td><p>문장 데이터가 있는 컬럼입니다. 해당 데이터를 분석하여 품사를 표기합니다.</p></td>
+<td><p>필수</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALOGRITHM …</p></td>
+<td><p>ALGORITHM 은 예약어 이며, 사용할 수 있는 알고리즘은 현재 3가지 입니다. [mobigen, Mecab, NLTK].</p></td>
+<td><p>옵션, 기본값 = mobigen</p></td>
+</tr>
+<tr class="row-even"><td><p>POS …(, …)*</p></td>
+<td><p>POS 는 예약어 이며, 체언, 용언, 부사 등 출력에 보여질 태그 값을 선택할 수 있습니다.</p></td>
+<td><p>옵션, 기본값 = null</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id3">
+<h3>품사 태그 종류<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>품사 태그는 각 알고리즘 마다 의미가 조금씩 다르기 때문에 해당 문서를 확인하여 사용하시기 바랍니다.</strong></p>
+<p><strong>mobigen 알고리즘은 모든 값을 ``N`` 으로 표기합니다.</strong></p>
+<p><em>괄호는 생략해도 무방합니다.</em></p>
+<div class="section" id="mecab">
+<h4>Mecab 품사<a class="headerlink" href="#mecab" title="Permalink to this headline">¶</a></h4>
+<p>자세한 내용은 <a class="reference external" href="https://docs.google.com/spreadsheets/d/1-9blXKjtjeKZqsf4NzHeYJCrr49-nXeRF6D80udfcwY/edit#gid=589544265">mecab-ko-dic 품사 태그 설명</a> 참고</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>문자</p></th>
+<th class="head"><p>의미</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>N(NG|NP|NB|R|P)</p></td>
+<td><p>체언</p></td>
+</tr>
+<tr class="row-odd"><td><p>V(V|A|X|CP|CN)</p></td>
+<td><p>용언</p></td>
+</tr>
+<tr class="row-even"><td><p>M(M|AG|AJ)</p></td>
+<td><p>수식언</p></td>
+</tr>
+<tr class="row-odd"><td><p>IC</p></td>
+<td><p>독립언</p></td>
+</tr>
+<tr class="row-even"><td><p>J(KS|KC|KG|KO|KB|KV|KQ|X|C)</p></td>
+<td><p>관계언</p></td>
+</tr>
+<tr class="row-odd"><td><p>E(P|F|C|TN|TM)</p></td>
+<td><p>어미</p></td>
+</tr>
+<tr class="row-even"><td><p>XPN</p></td>
+<td><p>접두사</p></td>
+</tr>
+<tr class="row-odd"><td><p>X(SN|SV|SA)</p></td>
+<td><p>접미사</p></td>
+</tr>
+<tr class="row-even"><td><p>XR</p></td>
+<td><p>어근</p></td>
+</tr>
+<tr class="row-odd"><td><p>S(F|E|SSO|SSC|SC|SY)</p></td>
+<td><p>부호</p></td>
+</tr>
+<tr class="row-even"><td><p>S(L|H|N)</p></td>
+<td><p>한글 이외</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="nltk">
+<h4>NLTK 품사<a class="headerlink" href="#nltk" title="Permalink to this headline">¶</a></h4>
+<p>자세한 내용은 <a class="reference external" href="https://www.guru99.com/pos-tagging-chunking-nltk.html">URL</a> 참고</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>문자</p></th>
+<th class="head"><p>의미</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CC</p></td>
+<td><p>coordinating conjunction</p></td>
+</tr>
+<tr class="row-odd"><td><p>CD</p></td>
+<td><p>cardinal digit</p></td>
+</tr>
+<tr class="row-even"><td><p>DT</p></td>
+<td><p>determiner</p></td>
+</tr>
+<tr class="row-odd"><td><p>EX</p></td>
+<td><p>existential there</p></td>
+</tr>
+<tr class="row-even"><td><p>FW</p></td>
+<td><p>foreign word</p></td>
+</tr>
+<tr class="row-odd"><td><p>IN</p></td>
+<td><p>preposition/subordinating conjunction</p></td>
+</tr>
+<tr class="row-even"><td><p>J(J|JR|JS)</p></td>
+<td><p>adjective</p></td>
+</tr>
+<tr class="row-odd"><td><p>LS</p></td>
+<td><p>list market</p></td>
+</tr>
+<tr class="row-even"><td><p>MD</p></td>
+<td><p>modal (could, will)</p></td>
+</tr>
+<tr class="row-odd"><td><p>N(N|NS|NP|NPS)</p></td>
+<td><p>noun</p></td>
+</tr>
+<tr class="row-even"><td><p>PDT</p></td>
+<td><p>predeterminer (all, both, half)</p></td>
+</tr>
+<tr class="row-odd"><td><p>POS</p></td>
+<td><p>possessive ending (parent‘s)</p></td>
+</tr>
+<tr class="row-even"><td><p>PRP</p></td>
+<td><p>personal pronoun (hers, herself, him,himself)</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRP$</p></td>
+<td><p>possessive pronoun (her, his, mine, my, our )</p></td>
+</tr>
+<tr class="row-even"><td><p>RB(R|S)</p></td>
+<td><p>adverb</p></td>
+</tr>
+<tr class="row-odd"><td><p>RP</p></td>
+<td><p>particle (about)</p></td>
+</tr>
+<tr class="row-even"><td><p>TO</p></td>
+<td><p>infinite marker (to)</p></td>
+</tr>
+<tr class="row-odd"><td><p>UH</p></td>
+<td><p>interjection (goodbye)</p></td>
+</tr>
+<tr class="row-even"><td><p>V(B|BG|BD|BN|BP|BZ)</p></td>
+<td><p>verb</p></td>
+</tr>
+<tr class="row-odd"><td><p>W(DT|P|RB)</p></td>
+<td><p>wh-determiner(that, what), wh-pronoun(who), wh-adverb(how)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>기본 데이터 (한글)</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TITLE</p></th>
+<th class="head"><p>ARTICLE</p></th>
+<th class="head"><p>CATEGORY</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>아이리스</p></td>
+<td><p>모비젠의 ‘아이리스(IRIS)’는 기업의 빅데이터 사용 환경에서 빅데이터의 수집부터 분석, 시각화까지의 프로세스를 일원화하는 빅데이터 분석 솔루션이다.</p></td>
+<td><p>모비젠</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS SaaS</p></td>
+<td><p>클라우드 기반의 빅데이터 플랫폼 ‘IRIS SaaS(Software as a Service)’를 출시</p></td>
+<td><p>모비젠</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>기본 데이터 (영어)</p></li>
+</ul>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TITLE</p></th>
+<th class="head"><p>ARTICLE</p></th>
+<th class="head"><p>CATEGORY</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IRIS</p></td>
+<td><p>Mobigen’s ‘IRIS’ is a big data analysis solution that unifies the process from collection, analysis, and visualization of big data in a company’s big data usage environment.</p></td>
+<td><p>mobigen</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS SaaS</p></td>
+<td><p>Mobigen launches cloud-based big data platform ‘IRIS SaaS (Software as a Service)’</p></td>
+<td><p>mobigen</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mobigen</span></code> 알고리즘을 이용한 형태소 태그</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | postagger article ALGORITHM mobigen
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TITLE</p></th>
+<th class="head"><p>CATEGORY</p></th>
+<th class="head"><p>WORD_BY_MOBIGEN</p></th>
+<th class="head"><p>TAG_BY_MOBIGEN</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>아이리스</p></td>
+<td><p>모비젠</p></td>
+<td><p>모비젠의</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>아이리스</p></td>
+<td><p>모비젠</p></td>
+<td><p>‘아이리스(IRIS)’는</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>아이리스</p></td>
+<td><p>모비젠</p></td>
+<td><p>기업의</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS SaaS</p></td>
+<td><p>모비젠</p></td>
+<td><p>클라우드</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS SaaS</p></td>
+<td><p>모비젠</p></td>
+<td><p>기반의</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS SaaS</p></td>
+<td><p>모비젠</p></td>
+<td><p>빅데이터</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="2">
+<li><p><code class="docutils literal notranslate"><span class="pre">mecab</span></code> 알고리즘을 이용한 형태소 태그</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | postagger article ALGORITHM mecab
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TITLE</p></th>
+<th class="head"><p>CATEGORY</p></th>
+<th class="head"><p>WORD_BY_MECAB</p></th>
+<th class="head"><p>TAG_BY_MECAB</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>아이리스</p></td>
+<td><p>모비젠</p></td>
+<td><p>모비</p></td>
+<td><p>NNG</p></td>
+</tr>
+<tr class="row-odd"><td><p>아이리스</p></td>
+<td><p>모비젠</p></td>
+<td><p>젠</p></td>
+<td><p>NNG</p></td>
+</tr>
+<tr class="row-even"><td><p>아이리스</p></td>
+<td><p>모비젠</p></td>
+<td><p>의</p></td>
+<td><p>JKG</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS SaaS</p></td>
+<td><p>모비젠</p></td>
+<td><p>클라우드</p></td>
+<td><p>NNP</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS SaaS</p></td>
+<td><p>모비젠</p></td>
+<td><p>기반</p></td>
+<td><p>NNG</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS SaaS</p></td>
+<td><p>모비젠</p></td>
+<td><p>의</p></td>
+<td><p>JKG</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="arabic simple" start="3">
+<li><p><code class="docutils literal notranslate"><span class="pre">nltk</span></code> 알고리즘을 이용한 형태소 태그</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... | postagger article ALGORITHM nltk
+</pre></div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>TITLE</p></th>
+<th class="head"><p>CATEGORY</p></th>
+<th class="head"><p>WORD_BY_NLTK</p></th>
+<th class="head"><p>TAG_BY_NLTK</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IRIS</p></td>
+<td><p>mobigen</p></td>
+<td><p>Mobigen</p></td>
+<td><p>NNP</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS</p></td>
+<td><p>mobigen</p></td>
+<td><p>‘s</p></td>
+<td><p>POS</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS</p></td>
+<td><p>mobigen</p></td>
+<td><p>‘IRIS</p></td>
+<td><p>NNP</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS</p></td>
+<td><p>mobigen</p></td>
+<td><p>‘</p></td>
+<td><p>‘’</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS</p></td>
+<td><p>mobigen</p></td>
+<td><p>is</p></td>
+<td><p>VBZ</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS SaaS</p></td>
+<td><p>mobigen</p></td>
+<td><p>Mobigen</p></td>
+<td><p>NN</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS SaaS</p></td>
+<td><p>mobigen</p></td>
+<td><p>launches</p></td>
+<td><p>VBZ</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS SaaS</p></td>
+<td><p>mobigen</p></td>
+<td><p>cloud-based</p></td>
+<td><p>JJ</p></td>
+</tr>
+<tr class="row-odd"><td><p>IRIS SaaS</p></td>
+<td><p>mobigen</p></td>
+<td><p>big</p></td>
+<td><p>JJ</p></td>
+</tr>
+<tr class="row-even"><td><p>IRIS SaaS</p></td>
+<td><p>mobigen</p></td>
+<td><p>data</p></td>
+<td><p>NNS</p></td>
+</tr>
+<tr class="row-odd"><td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+<td><p>…</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="predict.html" class="btn btn-neutral float-right" title="predict" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pivot.html" class="btn btn-neutral float-left" title="pivot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

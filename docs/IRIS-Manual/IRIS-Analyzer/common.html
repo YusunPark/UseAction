@@ -1,0 +1,492 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Analyzer 공통 동작 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="01_search/index.html" />
+    <link rel="prev" title="IRIS Analyzer" href="index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">IRIS Analyzer</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Analyzer 공통 동작</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">데이터 모델 선택</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">시간 범위 설정</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="01_search/search.html">검색</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_pivot/pivot.html">피벗분석</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_visualization/visualization.html">시각화</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_ad/ad.html">이상탐지</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05_template/template.html">분석 템플릿</a></li>
+<li class="toctree-l3"><a class="reference internal" href="06_data_model/00_data_model.html">데이터 모델</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="index.html">IRIS Analyzer</a> &raquo;</li>
+    
+    <li>Analyzer 공통 동작</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Analyzer/common.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Analyzer/common</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Analyzer/common</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Analyzer/common
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Analyzer/common</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Analyzer/common.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Analyzer/common.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="analyzer">
+<h1>Analyzer 공통 동작<a class="headerlink" href="#analyzer" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">본 문서는 <strong>Analyzer</strong> 의 기능메뉴인 검색, 피벗분석, 시각화, 이상탐지, 분석탬플릿의 화면에서 공통적으로 수행해야할 동작 및 설정에 대해 설명합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/manual_19_1.png"><img alt="../../_images/manual_19_1.png" src="../../_images/manual_19_1.png" style="width: 993.0px; height: 302.4px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>기능</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>검색</p></td>
+<td><p>데이터모델의 데이터를 Discovery-Service 명령어로 필터링, 통계, 변환, pivot, 기계학습 등을 실행할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>피벗분석</p></td>
+<td><p>데이터모델의 데이터를 행과 열 기준으로 통계 및 변환하고, 챠트 기능을 제공합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>시각화</p></td>
+<td><p>분석 유형에 따라 분류된 차트를 통해 시각화를 통한 데이터탐색 기능을 제공합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>이상탐지</p></td>
+<td><p>과거 동일한 시간대의 참조 데이터 대비 조회 기간 데이터의 이상탐지 결과를 히트맵과 상/하한 임계치 챠트로 제공합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>분석탬플릿</p></td>
+<td><p>Analyzer 메뉴에서 검색한 데이터모델, 시간설정, 검색어를 재검색 및 Studio 의 데이터설정에 사용할 수 있도록 탬플릿으로 저장할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h2>데이터 모델 선택<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="../../_images/manual_20.png"><img alt="데이터모델 공통 20" src="../../_images/manual_20.png" style="width: 1122.6px; height: 427.2px;" /></a>
+<div class="line-block">
+<div class="line">Analyzer 에서 조회할 데이터모델을 선택하는 탭으로서 Analyzer 의 모든 기능 메뉴에서 공통적으로 사용됩니다.</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>시간 범위 설정<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">선택한 데이터모델의 검색 시간 범위를 정하는 탭입니다.</div>
+<div class="line">데이터모델 생성 시에 <strong>시간</strong> 으로 분류되어 TIMESTAMP 유형이 설정된 컬럼이 있는 경우에는 시간 탭에서 검색 시간 범위를 설정해야 합니다.</div>
+<div class="line">참고 : <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Analyzer/06_data_model/00_data_model.html#id3">데이터모델 생성</a></div>
+<div class="line"><br /></div>
+<div class="line">사용자는 아래와 같은 2가지 방법 중 하나로 검색 기간을 설정할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/datetime_picker.png"><img alt="데이터모델 시간설정" src="../../_images/datetime_picker.png" style="width: 553.1999999999999px; height: 432.0px;" /></a>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 23%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>데이터 모델/시간 탭</p></td>
+<td><p>데이터 모델 선택과 시간 범위 설정을 선택하는 탭 컨트롤</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>설정 방식 아코디언</p></td>
+<td><p>시간 설정 방식 중 하나를 선택하는 아코디언 컨트롤</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>미리 설정(프리셋)</p></td>
+<td><p>미리 정의된 시간 설정 중 하나를 선택</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>날짜 및 시간 입력란</p></td>
+<td><p>정해진 포맷으로 날짜 및 시간 텍스트를 직접 입력</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>날짜 선택 캘린더</p></td>
+<td><p>캘린더 UI를 통해 현재 날짜를 확인하고 날짜를 손쉽게 선택</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>시/분/초 드롭다운</p></td>
+<td><p>시간을 시/분/초로 나누어 드롭다운 목록을 통해 선택</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="option-1">
+<h3>Option 1: 미리 설정<a class="headerlink" href="#option-1" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">‘미리 설정’에서는 미리 정의된 검색 기간 중 하나를 선택할 수 있습니다.</div>
+<div class="line">나열되어 있는 항목들은 모두 상대 시간으로, 설정했을 경우 작업 수행 시마다 현재 시간을 기준으로 한 시간 범위가 검색 기간으로 적용됩니다.</div>
+</div>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>기간 옵션</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>전체시간</p></td>
+<td><p>저장된 모든 데이터 대상으로</p></td>
+</tr>
+<tr class="row-odd"><td><p>최근 N분</p></td>
+<td><p>검색 시점으로부터 N분 전 0초 부터 검색 시점까지</p></td>
+</tr>
+<tr class="row-even"><td><p>최근 N시간</p></td>
+<td><p>검색 시점으로부터 N시간 전 0분 0초 부터 검색 시점까지</p></td>
+</tr>
+<tr class="row-odd"><td><p>최근 N일</p></td>
+<td><p>검색 시점으로부터 N일 전 0시 0분 0초 부터 검색 시점까지</p></td>
+</tr>
+<tr class="row-even"><td><p>지난 N분</p></td>
+<td><p>검색 시점으로부터 N분 전 0초 부터 검색 시점의 0초 까지</p></td>
+</tr>
+<tr class="row-odd"><td><p>오늘</p></td>
+<td><p>금일 00:00:00 부터 검색 시점까지</p></td>
+</tr>
+<tr class="row-even"><td><p>어제</p></td>
+<td><p>어제 00:00:00 부터 오늘 00:00:00 이전까지 (오늘 00:00:00은 미포함)</p></td>
+</tr>
+<tr class="row-odd"><td><p>이번 주</p></td>
+<td><p>금주 일요일 00:00:00 부터 검색 시점까지</p></td>
+</tr>
+<tr class="row-even"><td><p>이전 주</p></td>
+<td><p>이전 주 일요일 00:00:00 부터 금주 일요일 00:00:00 까지 (금주 일요일은 미포함)</p></td>
+</tr>
+<tr class="row-odd"><td><p>이번 달</p></td>
+<td><p>금월 1일 00:00:00 부터 검색 시점까지</p></td>
+</tr>
+<tr class="row-even"><td><p>이전 달</p></td>
+<td><p>이전달 1일 00:00:00 부터 금월 1일 00:00:00 까지 (금월 1일은 미포함)</p></td>
+</tr>
+<tr class="row-odd"><td><p>이번 분기</p></td>
+<td><p>이번 분기 1일 00:00:00 부터 검색 시점까지 (분기 시작은 1월, 4월, 7월, 10월)</p></td>
+</tr>
+<tr class="row-even"><td><p>이전 분기</p></td>
+<td><p>이전 분기 1일 00:00:00 부터 이번 분기 1일 00:00:00 까지 (이번 분기 1일은 미포함)</p></td>
+</tr>
+<tr class="row-odd"><td><p>이번 년도</p></td>
+<td><p>금년 1월 1일 00:00:00 부터 검색 시점까지</p></td>
+</tr>
+<tr class="row-even"><td><p>이전 년도</p></td>
+<td><p>작년 1월 1일 00:00:00 부터 금년 1월 1일 00:00:00까지 (금년 1일은 미포함)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="option-2">
+<h3>Option 2: 날짜 및 시간 범위 설정<a class="headerlink" href="#option-2" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">‘날짜 및 시간 범위’에서는 년월일에서부터 시분초까지 상세한 일자와 시간을 사용자가 직접 설정할 수 있습니다.</div>
+<div class="line">시작 시간과 종료 시간을 나누어 설정하며, 직접 정해진 포맷(예) 2017/07/13 14:08:00)대로 입력하여 설정하거나 캘린더와 드롭다운 목록을 통해 설정할 수도 있습니다.</div>
+<div class="line">추가로, 종료시간의 ‘현재 시간’ 체크박스에 체크를 하면 작업 수행시마다 종료시간은 현재 시간으로 적용됩니다.</div>
+<div class="line">시간 범위 설정을 하면 검색 바 좌측 상단에 설정한 시간 범위가 표기됩니다.</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="01_search/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="IRIS Analyzer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

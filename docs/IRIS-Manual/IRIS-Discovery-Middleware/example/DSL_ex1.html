@@ -1,0 +1,509 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>검색어예제: where/substr/fillna/pivot/join &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="검색어예제: distinct/round/calculate/concat/fields/pivot" href="example_flower.html" />
+    <link rel="prev" title="Command 사용 예제" href="index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">IRIS Discovery-Middleware Service</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command/index.html">Command References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../command_develop/index.html">명령어 개발 가이드</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../restapi/index.html">RESTful API</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Command 사용 예제</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">검색어예제: where/substr/fillna/pivot/join</a></li>
+<li class="toctree-l4"><a class="reference internal" href="example_flower.html">검색어예제: distinct/round/calculate/concat/fields/pivot</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../index.html">IRIS Discovery-Middleware Service</a> &raquo;</li>
+    
+      <li><a href="index.html">Command 사용 예제</a> &raquo;</li>
+    
+    <li>검색어예제: where/substr/fillna/pivot/join</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/example/DSL_ex1.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Discovery-Middleware/example/DSL_ex1</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Discovery-Middleware/example/DSL_ex1</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Discovery-Middleware/example/DSL_ex1
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Discovery-Middleware/example/DSL_ex1</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Discovery-Middleware/example/DSL_ex1.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Discovery-Middleware/example/DSL_ex1.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="where-substr-fillna-pivot-join">
+<h1><a class="toc-backref" href="#contents">검색어예제: where/substr/fillna/pivot/join</a><a class="headerlink" href="#where-substr-fillna-pivot-join" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">2013/03/01 ~ 2017/02/28 동안 중국 북경시의 11개 지점에서 측정한 대기오염 농도 및 기상 데이터로부터</div>
+<div class="line">월별로 대기오염 농도의 차이가 있는지,</div>
+<div class="line">11개 지점별로 대기오염 농도에 차이가 있는지 분석해봅니다.</div>
+</div>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#where-substr-fillna-pivot-join" id="id5">검색어예제: where/substr/fillna/pivot/join</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id6">데이터 설명</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id7">데이터 탐색</a></p>
+<ul>
+<li><p><a class="reference internal" href="#null" id="id8">null 인 셀이 있는가</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id9">미세먼지 농도 높은 날의 비율</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id10">측정지점별 미세먼지농도가 차이가 있는가</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#contents">데이터 설명</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">데이터 모델 : EDU_Beijing_air_2013_2017_18</div>
+<div class="line">2013년 3월 1일 ~ 2017년 2월 28일까지 18시에 측정한 대기 오염 및 기상 측정 데이터</div>
+<div class="line">측정 지점 : 총 11개 지점. 컬럼명은 station</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/baijingair_12.png"><img alt="북경대기질 데이터" src="../../../_images/baijingair_12.png" style="width: 1108.8px; height: 647.4px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">필드</span> <span class="n">정보</span>
+
+<span class="n">CTIME</span><span class="p">:</span> <span class="n">timestamp</span>
+<span class="n">year</span><span class="p">:</span> <span class="n">year</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">month</span><span class="p">:</span> <span class="n">month</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">day</span><span class="p">:</span> <span class="n">day</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">hour</span><span class="p">:</span> <span class="n">hour</span> <span class="n">of</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">this</span> <span class="n">row</span>
+<span class="n">PM2</span><span class="o">.</span><span class="mi">5</span><span class="p">:</span> <span class="n">PM2</span><span class="o">.</span><span class="mi">5</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">PM10</span><span class="p">:</span> <span class="n">PM10</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">SO2</span><span class="p">:</span> <span class="n">SO2</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">NO2</span><span class="p">:</span> <span class="n">NO2</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">CO</span><span class="p">:</span> <span class="n">CO</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">O3</span><span class="p">:</span> <span class="n">O3</span> <span class="n">concentration</span> <span class="p">(</span><span class="n">ug</span><span class="o">/</span><span class="n">m</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">TEMP</span><span class="p">:</span> <span class="n">temperature</span> <span class="p">(</span><span class="n">degree</span> <span class="n">Celsius</span><span class="p">)</span>
+<span class="n">PRES</span><span class="p">:</span> <span class="n">pressure</span> <span class="p">(</span><span class="n">hPa</span><span class="p">)</span>
+<span class="n">DEWP</span><span class="p">:</span> <span class="n">dew</span> <span class="n">point</span> <span class="n">temperature</span> <span class="p">(</span><span class="n">degree</span> <span class="n">Celsius</span><span class="p">)</span>
+<span class="n">RAIN</span><span class="p">:</span> <span class="n">precipitation</span> <span class="p">(</span><span class="n">mm</span><span class="p">)</span>
+<span class="n">wd</span><span class="p">:</span> <span class="n">wind</span> <span class="n">direction</span>
+<span class="n">WSPM</span><span class="p">:</span> <span class="n">wind</span> <span class="n">speed</span> <span class="p">(</span><span class="n">m</span><span class="o">/</span><span class="n">s</span><span class="p">)</span>
+<span class="n">station</span><span class="p">:</span> <span class="n">name</span> <span class="n">of</span> <span class="n">the</span> <span class="n">air</span><span class="o">-</span><span class="n">quality</span> <span class="n">monitoring</span> <span class="n">site</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2><a class="toc-backref" href="#contents">데이터 탐색</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="null">
+<h3><a class="toc-backref" href="#contents">null 인 셀이 있는가</a><a class="headerlink" href="#null" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">데이터 중에서 PM2_5 측정값이 null 인 레코드가 얼마나 있는지 파악해 봅니다.</div>
+</div>
+<p><strong>where</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">where</span> <span class="n">PM2_5</span> <span class="ow">is</span> <span class="n">null</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">대기오염을 측정하는 기본 필드인 PM2_5 인 null 인 행이 339개( 총 16071 개 행 ) 행입니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/beijingair_13.png"><img alt="북경대기질 데이터 PM2_5 null" src="../../../_images/beijingair_13.png" style="width: 979.8px; height: 619.8px;" /></a>
+<div class="line-block">
+<div class="line">대체적으로 기상데이터는 빠지는 것이 없지만, 대기오염 측정 데이터는 null 데이터가 있습니다.</div>
+<div class="line">전체 16,071 개 레코드에서 339개의 null 이 있는 row 를 삭제</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h3><a class="toc-backref" href="#contents">미세먼지 농도 높은 날의 비율</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">11개 지점 별로 초미세먼지 PM2_5 농도 &gt;= 75μg/m^3 인 날의 수를 월별 / 측정지점별로 비교해 보려고 합니다.</div>
+<div class="line"><br /></div>
+<div class="line">2013년 03월부터 2017년 02월까지 PM2_5 농도가 75μg/m^3 이상 인 날의 수를 월단위 시계열로 그려봅니다.</div>
+</div>
+<p><strong>pivot</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="o">|</span> <span class="n">where</span> <span class="n">PM2_5</span> <span class="o">&gt;=</span> <span class="mi">75</span>
+  <span class="o">|</span> <span class="n">substr</span> <span class="n">CTIME</span> <span class="mi">1</span> <span class="mi">6</span> <span class="k">as</span> <span class="n">yyyymm</span>
+  <span class="o">|</span> <span class="n">pivot</span>  <span class="n">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">CNT_PM2_5</span>  <span class="n">splitrow</span> <span class="n">yyyymm</span> <span class="n">splitcol</span>  <span class="n">station</span>
+  <span class="o">|</span> <span class="n">sort</span> <span class="n">yyyymm</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">studio 에서 꺾은 선 챠트를 그려봅니다.( -&gt; 주기성이 보입니다.)</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/beijingair_14.png"><img alt="북경대기질 데이터 PM2_5" src="../../../_images/beijingair_14.png" style="width: 1202.3999999999999px; height: 355.8px;" /></a>
+<div class="line-block">
+<div class="line">PM2_5 &gt;= 75 인 날의 수를 월별 비율로 구해서 초미세먼지 농도가 높은 날이 많은 달을 찾아봅니다.</div>
+<div class="line">먼저 월별 비율을 구하기 위해 2013년 3월 ~  2017년 2월까지 각 달의 총 레코드수를 구합니다.</div>
+<div class="line">만약 빠진 row가 없다면 1월 총 레코드건수는 31 * 4 = 124 입니다.</div>
+</div>
+<p><strong>fillna</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">### PM2_5 가 null 인 레코드(row) 를 제외하고, 월(month) 별 레코드 건수를 11개 측정지점별로 구합니다.</span>
+<span class="o">*</span> <span class="o">|</span> <span class="n">fillna</span> <span class="n">PM2_5</span>  <span class="o">|</span> <span class="n">pivot</span> <span class="n">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">CNT_PM2_5</span> <span class="n">splitrow</span> <span class="n">month</span> <span class="n">splitcol</span> <span class="n">station</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">이 데이터를 데이터모델 EDU_Beijing_station_allcount 로 생성합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/beijingair_15.png"><img alt="북경대기질 데이터 PM2_5 all" src="../../../_images/beijingair_15.png" style="width: 1202.3999999999999px; height: 400.8px;" /></a>
+<div class="line-block">
+<div class="line">PM2_5 농도 &gt;= 75μg/m^3 인 날의 수를 월별, 측정 지점별로 구합니다.</div>
+</div>
+<blockquote>
+<div><ul>
+<li><div class="line-block">
+<div class="line">fillna PM2_5  |  where PM2_5 &gt;= 75 | pivot count(*) as CNT_PM2_5 splitrow month splitcol station  |  sort month</div>
+</div>
+</li>
+</ul>
+</div></blockquote>
+<div class="line-block">
+<div class="line">월별로 PM2_5 농도 &gt;= 75μg/m^3 인 날의 비율을 측정 지점별로 구합니다.</div>
+<div class="line">이 때 데이터모델 EDU_Beijing_station_allcount 과 join 합니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>  <span class="o">|</span> <span class="n">fillna</span> <span class="n">PM2_5</span> <span class="o">|</span>  <span class="n">where</span> <span class="n">PM2_5</span> <span class="o">&gt;=</span> <span class="mi">75</span> <span class="o">|</span> <span class="n">pivot</span> <span class="n">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">CNT_ALL</span>  <span class="n">splitrow</span> <span class="n">month</span> <span class="n">splitcol</span> <span class="n">station</span> <span class="o">|</span>
+     <span class="n">join</span>  <span class="n">inner</span> <span class="n">EDU_Beijing_station_allcount</span> <span class="n">month</span> <span class="o">=</span> <span class="n">EDU_Beijing_station_allcount</span><span class="o">.</span><span class="n">month</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Changping</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Changping</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Changping_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Aotizhongxin</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Aotizhongxin</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Aotizhongxin_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Wanshouxigong</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Wanshouxigong</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Wanshouxigong_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Wanliu</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Wanliu</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Wanliu_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Shunyi</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Shunyi</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Shunyi_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Nongzhanguan</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Nongzhanguan</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Nongzhanguan_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Tiantan</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Tiantan</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Tiantan_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Dingling</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Dingling</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Dingling_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Huairou</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Huairou</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Huairou_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Gucheng</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Gucheng</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Gucheng_Rate</span> <span class="o">|</span>
+     <span class="n">calculate</span> <span class="p">(</span><span class="n">Guanyuan</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Guanyuan</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Guanyuan_Rate</span> <span class="o">|</span>
+     <span class="n">sort</span> <span class="n">month</span> <span class="o">|</span>
+     <span class="n">fields</span> <span class="n">month</span><span class="p">,</span><span class="n">Changping_Rate</span><span class="p">,</span><span class="n">Aotizhongxin_Rate</span><span class="p">,</span><span class="n">Wanshouxigong_Rate</span><span class="p">,</span><span class="n">Wanliu_Rate</span><span class="p">,</span><span class="n">Shunyi_Rate</span><span class="p">,</span><span class="n">Nongzhanguan_Rate</span><span class="p">,</span>
+     <span class="n">Tiantan_Rate</span><span class="p">,</span><span class="n">Dingling_Rate</span><span class="p">,</span><span class="n">Huairou_Rate</span><span class="p">,</span><span class="n">Gucheng_Rate</span><span class="p">,</span><span class="n">Guanyuan_Rate</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">검색어 설명 : <strong>fillna</strong> , <strong>join</strong> , <strong>calculate</strong> , <strong>fields</strong></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span>  <span class="o">|</span> <span class="n">fillna</span> <span class="n">PM2_5</span> <span class="o">|</span>  <span class="n">where</span> <span class="n">PM2_5</span> <span class="o">&gt;=</span> <span class="mi">75</span> <span class="o">|</span>
+<span class="c1"># PM2_5 가 null 인 행은 삭제한 데이터중에서 PM2_5 &gt;= 75 인 데이터만 추출</span>
+
+<span class="n">pivot</span> <span class="n">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">CNT_ALL</span>  <span class="n">splitrow</span> <span class="n">month</span> <span class="n">splitcol</span> <span class="n">station</span> <span class="o">|</span>
+<span class="c1"># month 의 값 1 ~ 12 로 총 12개 행이 생성되고, 측정지점 11 개가 컬럼명으로 됨. 값은 해당 레코드수 ( count 함수 )</span>
+
+<span class="n">join</span>  <span class="n">inner</span> <span class="n">EDU_Beijing_station_allcount</span> <span class="n">month</span> <span class="o">=</span> <span class="n">EDU_Beijing_station_allcount</span><span class="o">.</span><span class="n">month</span> <span class="o">|</span>
+<span class="c1"># 조회대상인 EDU_Beijing_air_2013_2017_18 와  EDU_Beijing_station_allcount 데이터모델과 inner join</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/beijingair_17.png"><img alt="북경대기질 데이터 검색어 17" src="../../../_images/beijingair_17.png" style="width: 1371.0px; height: 417.59999999999997px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">calculate</span> <span class="p">(</span><span class="n">Changping</span> <span class="o">/</span> <span class="n">EDU_Beijing_station_allcount_Changping</span> <span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="k">as</span> <span class="n">Changping_Rate</span> <span class="o">|</span>
+<span class="c1"># Changping : Changping 의 PM2_5 &gt;= 75 인 레코드수</span>
+<span class="c1"># EDU_Beijing_station_allcount_Changping :  측정지점 Changping 의 총 레코드수</span>
+<span class="c1"># Changping 의 PM2_5 &gt;= 75 인 날의 비율을 구한 값 -&gt; Changping_Rate</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">검색어 결과</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/beijingair_16.png"><img alt="북경대기질 데이터 PM2_5 비율 16" src="../../../_images/beijingair_16.png" style="width: 1182.0px; height: 376.2px;" /></a>
+<p><strong>Studio chart</strong></p>
+<div class="line-block">
+<div class="line">Studio 에서 측정지점별로 PM2_5 &gt;= 75 인 날의 월별 비율을 챠트로 그려봅니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/beijingair_18_1.png"><img alt="북경대기질 데이터 PM2_5 비율 18-1" src="../../../_images/beijingair_18_1.png" style="width: 846.0px; height: 465.59999999999997px;" /></a>
+<div class="line-block">
+<div class="line">챠트 결과</div>
+</div>
+<a class="reference internal image-reference" href="../../../_images/beijingair_18.png"><img alt="북경대기질 데이터 PM2_5 비율 18" src="../../../_images/beijingair_18.png" style="width: 1100.3999999999999px; height: 370.2px;" /></a>
+</div>
+<div class="section" id="id4">
+<h3><a class="toc-backref" href="#contents">측정지점별 미세먼지농도가 차이가 있는가</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">측정지점별로 PM2_5 농도가 유의미하게 차이가 있는 지 알아봅니다.</div>
+<div class="line">kmeans  clustering</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="example_flower.html" class="btn btn-neutral float-right" title="검색어예제: distinct/round/calculate/concat/fields/pivot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Command 사용 예제" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

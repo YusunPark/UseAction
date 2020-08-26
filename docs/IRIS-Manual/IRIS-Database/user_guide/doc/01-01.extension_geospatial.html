@@ -1,0 +1,596 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 공간 쿼리 사용하기 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="4. 로드" href="02.load.html" />
+    <link rel="prev" title="2. 쿼리" href="01.query.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../systemmanager_guide/index.html">System-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="00.sql_reference.html">1. SQL Reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01.query.html">2. 쿼리</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">3. 공간 쿼리 사용하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02.load.html">4. 로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.option.html">5. 옵션</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.api_jdbc.html">6. API-JDBC 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.api_python.html">7. PYTHON-API 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html">8. 개요</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#id2">9. 목차</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-overview">10. DBeaver Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#id4">11. DBeaver 설치</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-thrift-server-hive">12. DBeaver Thrift Server (Hive) 사용방법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="06.DBeaver.html#dbeaver-iris-jdbc">13. DBeaver IRIS JDBC 사용방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">User Guide</a> &raquo;</li>
+    
+    <li><span class="section-number">3. </span>공간 쿼리 사용하기</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/01-01.extension_geospatial.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/user_guide/doc/01-01.extension_geospatial</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/user_guide/doc/01-01.extension_geospatial</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/user_guide/doc/01-01.extension_geospatial
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/user_guide/doc/01-01.extension_geospatial</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/01-01.extension_geospatial.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/user_guide/doc/01-01.extension_geospatial.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">3. </span>공간 쿼리 사용하기<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2><span class="section-number">3.1. </span>공간 데이터 타입<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>공간데이터 표기법은 OGC(Open Geospatial Consortium) 표준을 따르며,
+다음과 같은 규칙을 가집니다.</p>
+<div class="section" id="point">
+<h3><span class="section-number">3.1.1. </span>POINT<a class="headerlink" href="#point" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POINT</span><span class="p">(</span><span class="mi">10</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">POINT</span><span class="p">(</span><span class="mi">20</span> <span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linestring">
+<h3><span class="section-number">3.1.2. </span>LINESTRING<a class="headerlink" href="#linestring" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LINESTRING</span> <span class="p">(</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">LINESTRING</span> <span class="p">(</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="polygon">
+<h3><span class="section-number">3.1.3. </span>POLYGON<a class="headerlink" href="#polygon" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">POLYGON</span><span class="p">((</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">POLYGON</span><span class="p">((</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1024</span> <span class="mi">2048</span><span class="p">,</span> <span class="mi">1000</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">25</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">10</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multipoint">
+<h3><span class="section-number">3.1.4. </span>MULTIPOINT<a class="headerlink" href="#multipoint" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MULTIPOINT</span><span class="p">(</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">100</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multilinestring">
+<h3><span class="section-number">3.1.5. </span>MULTILINESTRING<a class="headerlink" href="#multilinestring" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MULTILINESTRING</span><span class="p">((</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">30</span><span class="p">),(</span><span class="mi">10</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="mi">60</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multipolygon">
+<h3><span class="section-number">3.1.6. </span>MULTIPOLYGON<a class="headerlink" href="#multipolygon" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MULTIPOLYGON</span><span class="p">(((</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">10</span> <span class="mi">10</span><span class="p">)),</span> <span class="p">((</span><span class="mi">10</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">10</span> <span class="mi">20</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="geomcollection">
+<h3><span class="section-number">3.1.7. </span>GEOMCOLLECTION<a class="headerlink" href="#geomcollection" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">GeomCollection</span><span class="p">(</span>
+
+<span class="n">POINT</span><span class="p">(</span><span class="mi">10</span> <span class="mi">10</span><span class="p">),</span>
+
+<span class="n">MULTIPOLYGON</span><span class="p">(</span>
+<span class="p">((</span><span class="mi">10</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">10</span> <span class="mi">10</span><span class="p">)),</span> <span class="p">((</span><span class="mi">10</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">40</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">100</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">10</span> <span class="mi">10</span><span class="p">))</span>
+<span class="p">),</span>
+
+<span class="n">GeomCollection</span><span class="p">(</span><span class="n">LINESTRING</span><span class="p">(</span><span class="mi">10</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span> <span class="mi">10</span><span class="p">),</span> <span class="n">POINT</span><span class="p">(</span><span class="mi">30</span> <span class="mi">40</span><span class="p">)))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>공간 쿼리는 기본적인 CREATE, INSERT, SELECT 사용 방법과 큰 차이가
+없으며, 지원하는 옵션이나 함수에서 약간의 차이가 있습니다.</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">3.2. </span>공간 함수<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>IRIS 공간DB에서 지원하는 함수 목록입니다.</p>
+<p>공간데이터 타입과 마찬가지로 OGC(Open Geospatial Consortium) 표준을
+따릅니다.</p>
+<p>공간 함수는 크게 기본 함수, 관계 함수, 분석 함수 세 가지 타입으로
+나뉩니다.</p>
+<div class="section" id="id4">
+<h3><span class="section-number">3.2.1. </span>공간 기본 함수<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>공간 기본함수는 단일 공간 데이터에 대한 정보를 출력합니다.</p>
+<p>인자로 공간 데이터 한개를 받아서 타입, srid, 경계 등을 반환합니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 44%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>함수명</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>사용예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ST_GeometryType</p></td>
+<td><p>인스턴스의 타입을 반환</p></td>
+<td><p>SELECT ST_GeometryType(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_SRID</p></td>
+<td><p>인스턴스의 srid를 반환</p></td>
+<td><p>SELECT ST_SRID(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_Envelop</p></td>
+<td><p>인스턴스의 최소 경계 사각형을 POLYGON으로 반환</p></td>
+<td><p>SELECT ST_Envelop(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_AsText</p></td>
+<td><p>인스턴스를 Well-known Text 형식으로 반환</p></td>
+<td><p>SELECT ST_AsText(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_AsBinary</p></td>
+<td><p>인스턴스를 Well-known Binary 형식으로 반환</p></td>
+<td><p>SELECT ST_AsBinary(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_IsEmpty</p></td>
+<td><p>인스턴스가 좌표값을 가지지 않으면 1, 아닐 경우 0 반환</p></td>
+<td><p>SELECT ST_IsEmpty(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_IsSimple</p></td>
+<td><p>Simple한 인스턴스일 경우 1, 아닐 경우 0 반환</p></td>
+<td><p>SELECT ST_IsSimple(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_Boundary</p></td>
+<td><p>인스턴스의 경계를 반환</p></td>
+<td><p>SELECT ST_Boundary(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3><span class="section-number">3.2.2. </span>공간 관계 함수<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>공간 관계 함수는 이름 그대로 공간 데이터간의 관계를 판단하는 역할을
+합니다.</p>
+<p>예를들어 두 공간 데이터가 겹치는지, 혹은 한 점에서 만나는지 등의 여부를
+계산하고,</p>
+<p>그 결과를 1 또는 0으로 반환합니다.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 35%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>함수명</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>사용예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ST_Equals</p></td>
+<td><p>두 인스턴스가 동일하면 1, 아니면 0 반환</p></td>
+<td><p>SELECT ST_Equals(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_Disjoint</p></td>
+<td><p>두 인스턴스가 겹치는 부분이 없으면 1, 아니면 0 반환</p></td>
+<td><p>SELECT ST_Disjoint(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_Intersects</p></td>
+<td><p>두 인스턴스간의 관계가 존재하면 1, 아니면 0 반환</p></td>
+<td><p>SELECT ST_Intersects(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_Touches</p></td>
+<td><p>두 인스턴스가 한 점에서 만나면 1, 아니면 0 반환</p></td>
+<td><p>SELECT ST_Touches(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_Within</p></td>
+<td><p>한 인스턴스가 다른 인스턴스에 완전히 포함되면 1, 아니면 0 반환</p></td>
+<td><p>SELECT ST_Within(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_Contains</p></td>
+<td><p>한 인스턴스가 다른 인스턴스를 완전히 포함하면 1, 아니면 0 반환</p></td>
+<td><p>SELECT ST_Contains(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_Overlaps</p></td>
+<td><p>두 인스턴스가 부분적으로 겹치면 1, 아니면 0 반환</p></td>
+<td><p>SELECT ST_Overlaps(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id6">
+<h3><span class="section-number">3.2.3. </span>공간 분석 함수<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 35%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>함수명</p></th>
+<th class="head"><p>설명</p></th>
+<th class="head"><p>사용예시</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ST_Distance</p></td>
+<td><p>두 인스턴스간 최단거리 반환</p></td>
+<td><p>SELECT ST_Distance(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’), geometry) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_Buffer</p></td>
+<td><p>인스턴스를 일정한 크기만큼 확장한 결과 반환</p></td>
+<td><p>SELECT ST_Buffer(geom, 5) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_ConvexHull</p></td>
+<td><p>인스턴스의 ConvexHull 반환</p></td>
+<td><p>SELECT ST_ConvexHull(geom) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_Intersection</p></td>
+<td><p>두 인스턴스의 겹치는 부분 반환</p></td>
+<td><p>SELECT ST_Intersection(geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_Union</p></td>
+<td><p>두 인스턴스를 합한 결과 반환</p></td>
+<td><p>SELECT ST_Union(geom, geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-odd"><td><p>ST_Difference</p></td>
+<td><p>한 인스턴스에서 다른 인스턴스를 뺀 결과 반환</p></td>
+<td><p>SELECT ST_Difference(geom, geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’) FROM SPATIAL_TABLE</p></td>
+</tr>
+<tr class="row-even"><td><p>ST_SymDifference</p></td>
+<td><p>두 인스턴스의 Union에서 Intersection을 뺀 결과 반환 (대칭 차집합)</p></td>
+<td><p>SELECT ST_SymDifference(geom, geomfromtext(‘POLYGON((0 0, 10 0, 10 10, 0 10, 0 0))’) FROM SPATIAL_TABLE</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="create-table">
+<h2><span class="section-number">3.3. </span>CREATE TABLE<a class="headerlink" href="#create-table" title="Permalink to this headline">¶</a></h2>
+<p>공간 데이터를 저장할 공간 테이블은 다음과 같이 생성합니다.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">SPATIAL_TABLE</span> <span class="p">(</span>
+   <span class="n">k</span>         <span class="nb">TEXT</span><span class="p">,</span>
+   <span class="n">p</span>         <span class="nb">TEXT</span><span class="p">,</span>
+   <span class="n">geom</span>      <span class="n">GEOMETRY</span><span class="p">(</span><span class="n">SRID</span><span class="o">=</span><span class="mi">4326</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">datascope</span>       <span class="k">LOCAL</span>
+<span class="n">ramexpire</span>       <span class="mi">30</span>
+<span class="n">diskexpire</span>      <span class="mi">34200</span>
+<span class="n">partitionkey</span>    <span class="n">k</span>
+<span class="n">partitiondate</span>   <span class="n">p</span>
+<span class="n">partitionrange</span>  <span class="mi">10</span>
+<span class="n">extension</span>       <span class="n">geospatial</span>
+<span class="p">;</span>
+</pre></div>
+</div>
+<p>공간 데이터 타입으로는 POINT, LINESTRING, POLYGON, MULTIPOINT,
+MULTILINESTRING, MULTIPOLYGON, GEOMCOLLECTION을 사용할 수 있습니다.</p>
+<p>특정 타입을 구분하지 않고 모든 공간 데이터를 저장하고싶다면
+GEOMETRY타입을 사용하시면 됩니다.</p>
+<p>srid는 컬럼 옵션을 통해 설정할 수 있으며, 설정하지 않는다면 Default는
+4326입니다.</p>
+<p>테이블 생선 옵션에 extension geospatial 옵션을 추가하면 됩니다.</p>
+</div>
+<div class="section" id="insert">
+<h2><span class="section-number">3.4. </span>INSERT<a class="headerlink" href="#insert" title="Permalink to this headline">¶</a></h2>
+<p>공간 데이터는 다음과 같이 삽입합니다.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SPATIAL_TABLE</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;k7&#39;</span><span class="p">,</span> <span class="s1">&#39;20181122000000&#39;</span><span class="p">,</span> <span class="s1">&#39;POINT(60 60)&#39;</span><span class="p">);</span>
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">SPATIAL_TABLE</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">geom</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="s1">&#39;k7&#39;</span><span class="p">,</span> <span class="s1">&#39;20181122000000&#39;</span><span class="p">,</span> <span class="s1">&#39;POINT(60 60)&#39;</span><span class="p">,</span> <span class="s1">&#39;POLYGON((10 10, 30 10, 30 30, 10 30, 10 10))&#39;</span> <span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="select">
+<h2><span class="section-number">3.5. </span>SELECT<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
+<p>공간 데이터를 조회하기 위해서는 일반 SELECT문법에 공간 함수를 추가해 쿼리하면 됩니다.</p>
+<p>각 공간 함수에 대한 사용 예제는 “2.2 공간 함수” 의 표에 기술되어있습니다.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="02.load.html" class="btn btn-neutral float-right" title="4. 로드" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="01.query.html" class="btn btn-neutral float-left" title="2. 쿼리" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

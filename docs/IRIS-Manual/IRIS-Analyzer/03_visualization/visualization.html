@@ -1,0 +1,1121 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>시각화 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../04_ad/index.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">IRIS Analyzer</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../common.html">Analyzer 공통 동작</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../01_search/search.html">검색</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_pivot/pivot.html">피벗분석</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">시각화</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">시각화 화면 개요</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">분석 설정</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id16">시각화 옵션</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../04_ad/ad.html">이상탐지</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05_template/template.html">분석 템플릿</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_data_model/00_data_model.html">데이터 모델</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../index.html">IRIS Analyzer</a> &raquo;</li>
+    
+      <li><a href="index.html">&lt;no title&gt;</a> &raquo;</li>
+    
+    <li>시각화</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Analyzer/03_visualization/visualization.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Analyzer/03_visualization/visualization</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Analyzer/03_visualization/visualization</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Analyzer/03_visualization/visualization
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Analyzer/03_visualization/visualization</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Analyzer/03_visualization/visualization.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Analyzer/03_visualization/visualization.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>시각화<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>시각화 화면 개요<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">시각화 기능은 사용자가 검색 결과의 각 필드, 행, 열 등을 GUI 화면상에서 적절히 조합함으로써 원하는 분석 결과를 쉽고 빠르게 도출하기 위하여 사용되는 강력한 분석 툴입니다. 피벗과는 달리 시각화에 중점을 두어 차트에 최적화된 직관적인 사용자 인터페이스를 제공하며, 다양한 차트 설정 및 시각화 옵션을 제공합니다.</div>
+<div class="line">시각화 화면의 구성은 다음과 같습니다.</div>
+</div>
+<img alt="../../../_images/adv_main.png" src="../../../_images/adv_main.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>번호</p></td>
+<td><p>구분</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>모델/시간 설정</p></td>
+<td><p>검색하고자 하는 데이터 모델과 검색 기간을 설정</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>필드 목록</p></td>
+<td><p>선택한 데이터 모델의 필드들을 표기</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>검색 정보 표기</p></td>
+<td><p>데이터 모델/시간/검색어 등의 설정된 정보들을 표기하는 영역</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>분석 유형 설정</p></td>
+<td><p>분석 유형을 선택하는 버튼입니다. 클릭하면 분석 유형을 선택할 수 있는 레이어가 팝업됩니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>X/Y축 등의 설정 및 차트 결과</p></td>
+<td><p>차트의 X, Y축 혹은 그룹에 컬럼을 지정하고 차트의 결과를 볼 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h2>분석 설정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>시각화 화면에서 X축, Y축 등에 필드를 설정하는 방법은 데이터 모델을 선택한 뒤, 아래와 같이 필드 목록에서 마우스 드래그&amp;드랍으로 원하는 위치의 박스에 끌어다 놓는 것입니다.</p>
+<img alt="../../../_images/adv_set_field_01.png" src="../../../_images/adv_set_field_01.png" />
+<p>끌어다 놓은 이후에는 박스가 드래그한 필드로 설정되며, 아래와 같이 변경됩니다.</p>
+<img alt="../../../_images/adv_set_field_02.png" src="../../../_images/adv_set_field_02.png" />
+<p>이후 상세한 옵션을 변경하고 싶다면 박스를 클릭한 후, 아래와 같이 popup 되는 창에서 설정을 변경하면 됩니다. Popup 창에서 설정할 수 있는 옵션의 종류는 필드의 타입과 X축/Y축 등에 따라 달라집니다.</p>
+<img alt="../../../_images/adv_set_field_03.png" src="../../../_images/adv_set_field_03.png" />
+<p>이후 데이터 모델, 시간 범위와 함께 해당 시각화 유형에서 필요로 하는 모든 설정을 끝냈다면 “실행” 버튼으로 시각화 작업을 진행할 수 있습니다.</p>
+<div class="section" id="line-plot">
+<h3>분석 설정하기: Line plot<a class="headerlink" href="#line-plot" title="Permalink to this headline">¶</a></h3>
+<p>Line plot은 시간의 경과에 따른 데이터의 변화를 꺾은선으로 시각화하는 분석 방법입니다. 피벗의 ‘꺾은선형’과 대부분 유사합니다.</p>
+<img alt="../../../_images/adv_chart_line.png" src="../../../_images/adv_chart_line.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>차트의 X축에 관한 설정 UI 입니다. 피벗의 “행 선택”과 대응됩니다. Line, Scatter 차트의 경우 시간 필드만 X축에 설정할 수 있으며, 선택한 데이터 모델의 시간 필드가 자동으로 설정이 됩니다. 또한, 시간 범위 설정을 변경할 때마다 “Summary 시간 단위”가 어느정도 자동 조정이 됩니다.</p>
+<ul>
+<li><p>Summary 시간 단위: 시각화 작업을 수행할 때 어떠한 시간 단위(1년, 1개월, 1일, …)로 summary를 수행할지 선택하는 옵션입니다.</p></li>
+<li><p>최대 행 수: 시각화 작업 결과의 데이터 개수를 제한하는 옵션입니다. [예시6]</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>차트의 Y축에 관한 설정 UI 입니다. 피벗의 “값 선택”과 대응됩니다. 설정한 필드를 지정한 “Summary 방식”에 따라 계산하여 수치화한 값으로 Y축을 구성합니다. 설정하지 않으면 default로 “이벤트 개수”가 설정됩니다. (-count(*))</p>
+<ul>
+<li><p>Summary 방식: 시각화 작업을 수행할 때 지정한 필드를 어떠한 함수로 summary를 수행할지 선택하는 옵션입니다. 문자형 필드의 경우 “데이터 개수”, 숫자형 필드의 경우 “합계”가 기본으로 설정됩니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>그룹</p></td>
+<td><ul class="simple">
+<li><p>차트의 색상/범례 분할에 관한 설정 UI 입니다. 피벗의 “열 선택”과 대응됩니다.</p>
+<ul>
+<li><p>최대 열 수: 시각화 작업 결과 개수를 제한하는 옵션입니다. 최대 행 수와는 다르게 테이블 기준 열 수, 차트 기준으로는 범례 개수를 제한합니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>차트 옵션 버튼</p></td>
+<td><p>Null값 표시 방식, 레이블 회전, 범례 위치 등 차트의 스타일/표현 방식에 대한 옵션 설정창을 띄우는 버튼입니다. 이 옵션들은 시각화 작업 결과 데이터에는 영향을 주지 않습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>파일 저장 버튼</p></td>
+<td><p>차트 시각화 결과를 파일로 저장하는 버튼입니다. 클릭 즉시 차트를 png 등의 이미지 파일로 저장합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="scatter-plot">
+<h3>분석 설정하기: Scatter plot<a class="headerlink" href="#scatter-plot" title="Permalink to this headline">¶</a></h3>
+<p>Scatter plot은 X축과 Y축에 연속형인 두 변수의 값을 점으로 뿌려준 그래프로 변수 간의 관계를 파악하는데 유용한 분석 방법입니다.</p>
+<img alt="../../../_images/adv_chart_scatter.png" src="../../../_images/adv_chart_scatter.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>차트의 X축에 관한 설정 UI 입니다. Line, Scatter 차트의 경우 시간 필드만 X축에 설정할 수 있으며, 선택한 데이터 모델의 시간 필드가 자동으로 설정이 됩니다. Line plot과는 달리 Scatter plot은 Summary를 하지 않습니다.</p>
+<ul>
+<li><p>최대 행 수: 시각화 작업 결과의 데이터 개수를 제한하는 옵션입니다. <a class="reference internal" href="#id5" id="id4"><span>[예시13]</span></a></p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>차트의 Y축에 관한 설정 UI 입니다. Scatter plot의 경우, 반드시 설정해야 합니다. (별도의 옵션은 없습니다.)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>그룹</p></td>
+<td><ul class="simple">
+<li><p>차트의 색상/범례 분할에 관한 설정 UI 입니다. (별도의 옵션은 없습니다.)</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>차트 옵션 버튼</p></td>
+<td><p>Null값 표시 방식, 레이블 회전, 범례 위치 등 차트의 스타일/표현 방식에 대한 옵션 설정창을 띄우는 버튼입니다. 이 옵션들은 시각화 작업 결과 데이터에는 영향을 주지 않습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>파일 저장 버튼</p></td>
+<td><p>차트 시각화 결과를 파일로 저장하는 버튼입니다. 클릭 즉시 차트를 png 등의 이미지 파일로 저장합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="citation">
+<dt class="label" id="id5"><span class="brackets">예시13</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id7">2</a>,<a href="#id10">3</a>,<a href="#id12">4</a>,<a href="#id14">5</a>)</span></dt>
+<dd><p>예를 들어, 작업의 결과 건 수가 100 개 이상이더라도, 최대 행 수가 100으로 설정되어 있다면 차트에는 100개만 됩니다.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="histogram">
+<h3>분석 설정하기: Histogram<a class="headerlink" href="#histogram" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/adv_chart_histogram.png" src="../../../_images/adv_chart_histogram.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>차트의 X축에 관한 설정 UI 입니다. 피벗의 “행 선택”과 대응됩니다.</p>
+<ul>
+<li><p>정렬: y축 값에 따른 정렬 방식을 선택하는 옵션입니다. Default는 “기본값”이며, “기본값”으로 선택하면 정렬을 수행하지 않습니다.</p></li>
+<li><p>Summary 시간 단위: 시간 타입 필드의 경우, 시각화 작업을 수행할 때 어떠한 시간 단위(1년, 1개월, 1일, …)로 summary를 수행할지 선택하는 옵션입니다.</p></li>
+<li><p>범위 만들기: 숫자형 타입 필드의 경우, 실행 결과로 출력되는 각 막대를 필드 값의 개별 숫자로 표현할 것인지, 일정 범위를 지정하여 구간으로 표현할 것인지 여부를 묻는 항목입니다. <a class="reference internal" href="#id8" id="id6"><span>[예시14]</span></a></p>
+<ul>
+<li><p>범위 크기: 그룹핑할 범위의 크기입니다.</p></li>
+<li><p>범위 시작: 범위가 시작되는 값입니다.</p></li>
+<li><p>범위 끝: 범위의 마지막 값입니다.</p></li>
+</ul>
+</li>
+<li><p>최대 행 수: 시각화 작업 결과의 데이터 개수를 제한하는 옵션입니다. <a class="reference internal" href="#id5" id="id7"><span>[예시13]</span></a></p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>그룹</p></td>
+<td><ul class="simple">
+<li><p>차트의 색상/범례 분할에 관한 설정 UI 입니다. 피벗의 “열 선택”과 대응됩니다.</p>
+<ul>
+<li><p>최대 열 수: 시각화 작업 결과 개수를 제한하는 옵션입니다. 최대 행 수와는 다르게 테이블 기준 열 수, 차트 기준으로는 범례 개수를 제한합니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>차트 옵션 버튼</p></td>
+<td><p>Null값 표시 방식, 레이블 회전, 범례 위치 등 차트의 스타일/표현 방식에 대한 옵션 설정창을 띄우는 버튼입니다. 이 옵션들은 시각화 작업 결과 데이터에는 영향을 주지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>파일 저장 버튼</p></td>
+<td><p>차트 시각화 결과를 파일로 저장하는 버튼입니다. 클릭 즉시 차트를 png 등의 이미지 파일로 저장합니다.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="citation">
+<dt class="label" id="id8"><span class="brackets">예시14</span><span class="fn-backref">(<a href="#id6">1</a>,<a href="#id9">2</a>,<a href="#id11">3</a>,<a href="#id13">4</a>)</span></dt>
+<dd><p>예를 들어, 특정 필드의 값이 1에서 100만까지 분포되어 있을 경우, 범위를 지정하지 않으면 최대 100만개의 막대가 표현될 수 있지만 범위의 크기를 10만 단위로 지정하면 10개의 열로 그룹핑되어 출력됩니다.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="bar-chart">
+<h3>분석 설정하기: Bar chart<a class="headerlink" href="#bar-chart" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/adv_chart_bar.png" src="../../../_images/adv_chart_bar.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>차트의 X축에 관한 설정 UI 입니다. 피벗의 “행 선택”과 대응됩니다.</p>
+<ul>
+<li><p>정렬: y축 값에 따른 정렬 방식을 선택하는 옵션입니다. Default는 “기본값”이며, “기본값”으로 선택하면 정렬을 수행하지 않습니다.</p></li>
+<li><p>Summary 시간 단위: 시간 타입 필드의 경우, 시각화 작업을 수행할 때 어떠한 시간 단위(1년, 1개월, 1일, …)로 summary를 수행할지 선택하는 옵션입니다.</p></li>
+<li><p>범위 만들기: 숫자형 타입 필드의 경우, 실행 결과로 출력되는 각 막대를 필드 값의 개별 숫자로 표현할 것인지, 일정 범위를 지정하여 구간으로 표현할 것인지 여부를 묻는 항목입니다. <a class="reference internal" href="#id8" id="id9"><span>[예시14]</span></a></p>
+<ul>
+<li><p>범위 크기: 그룹핑할 범위의 크기입니다.</p></li>
+<li><p>범위 시작: 범위가 시작되는 값입니다.</p></li>
+<li><p>범위 끝: 범위의 마지막 값입니다.</p></li>
+</ul>
+</li>
+<li><p>최대 행 수: 시각화 작업 결과의 데이터 개수를 제한하는 옵션입니다. <a class="reference internal" href="#id5" id="id10"><span>[예시13]</span></a></p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>차트의 Y축에 관한 설정 UI 입니다.  피벗의 “값 선택”과 대응됩니다. 설정한 필드를 지정한 “Summary 방식”에 따라 계산하여 수치화한 값으로 Y축을 구성합니다. 설정하지 않으면 default로 “이벤트 개수”가 설정됩니다. (-count(*))</p>
+<ul>
+<li><p>Summary 방식: 시각화 작업을 수행할 때 지정한 필드를 어떠한 함수로 summary를 수행할지 선택하는 옵션입니다. 문자형 필드의 경우 “데이터 개수”, 숫자형 필드의 경우 “합계”가 기본으로 설정됩니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>그룹</p></td>
+<td><ul class="simple">
+<li><p>차트의 색상/범례 분할에 관한 설정 UI 입니다. 피벗의 “열 선택”과 대응됩니다.</p>
+<ul>
+<li><p>최대 열 수: 시각화 작업 결과 개수를 제한하는 옵션입니다. 최대 행 수와는 다르게 테이블 기준 열 수, 차트 기준으로는 범례 개수를 제한합니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>차트 옵션 버튼</p></td>
+<td><p>Null값 표시 방식, 레이블 회전, 범례 위치 등 차트의 스타일/표현 방식에 대한 옵션 설정창을 띄우는 버튼입니다. 이 옵션들은 시각화 작업 결과 데이터에는 영향을 주지 않습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>파일 저장 버튼</p></td>
+<td><p>차트 시각화 결과를 파일로 저장하는 버튼입니다. 클릭 즉시 차트를 png 등의 이미지 파일로 저장합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pie-chart">
+<h3>분석 설정하기: Pie chart<a class="headerlink" href="#pie-chart" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/adv_chart_pie.png" src="../../../_images/adv_chart_pie.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>그룹</p></td>
+<td><ul class="simple">
+<li><p>파이 차트의 그룹에 관한 설정 UI 입니다. 다른 차트의 X축 설정과 동일하며, 피벗의 “행 선택”과 대응됩니다.</p>
+<ul>
+<li><p>정렬: 값에 따른 정렬 방식을 선택하는 옵션입니다. Default는 “기본값”이며, “기본값”으로 선택하면 정렬을 수행하지 않습니다.</p></li>
+<li><p>Summary 시간 단위: 시간 타입 필드의 경우, 시각화 작업을 수행할 때 어떠한 시간 단위(1년, 1개월, 1일, …)로 summary를 수행할지 선택하는 옵션입니다.</p></li>
+<li><p>범위 만들기: 숫자형 타입 필드의 경우, 실행 결과로 출력되는 각 막대를 필드 값의 개별 숫자로 표현할 것인지, 일정 범위를 지정하여 구간으로 표현할 것인지 여부를 묻는 항목입니다. <a class="reference internal" href="#id8" id="id11"><span>[예시14]</span></a></p>
+<ul>
+<li><p>범위 크기: 그룹핑할 범위의 크기입니다.</p></li>
+<li><p>범위 시작: 범위가 시작되는 값입니다.</p></li>
+<li><p>범위 끝: 범위의 마지막 값입니다.</p></li>
+</ul>
+</li>
+<li><p>최대 행 수: 시각화 작업 결과의 데이터 개수를 제한하는 옵션입니다. <a class="reference internal" href="#id5" id="id12"><span>[예시13]</span></a></p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>크기</p></td>
+<td><ul class="simple">
+<li><p>파이차트의 크기에 관한 설정 UI 입니다.  피벗의 “값 선택”과 대응됩니다. 설정한 필드를 지정한 “Summary 방식”에 따라 계산하여 수치화한 값으로 크기를 결정합니다. 설정하지 않으면 default로 “이벤트 개수”가 설정됩니다. (-count(*))</p>
+<ul>
+<li><p>Summary 방식: 시각화 작업을 수행할 때 지정한 필드를 어떠한 함수로 summary를 수행할지 선택하는 옵션입니다. 문자형 필드의 경우 “데이터 개수”, 숫자형 필드의 경우 “합계”가 기본으로 설정됩니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>차트 옵션 버튼</p></td>
+<td><p>Null값 표시 방식, 레이블 회전, 범례 위치 등 차트의 스타일/표현 방식에 대한 옵션 설정창을 띄우는 버튼입니다. 이 옵션들은 시각화 작업 결과 데이터에는 영향을 주지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>파일 저장 버튼</p></td>
+<td><p>차트 시각화 결과를 파일로 저장하는 버튼입니다. 클릭 즉시 차트를 png 등의 이미지 파일로 저장합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="sankey">
+<h3>분석 설정하기: Sankey<a class="headerlink" href="#sankey" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/adv_chart_sankey.png" src="../../../_images/adv_chart_sankey.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>컬럼설정/추가버튼</p></td>
+<td><p>차트의 컬럼에 관한 설정 UI입니다. 데이터 간의 흐름을 보고자 하는 필드를 설정합니다. 버튼으로 컬럼을 최대 5개까지 추가 가능하며, 필드를 설정해야만 반영됩니다.  (별도의 옵션은 없습니다.)</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>가중치</p></td>
+<td><ul class="simple">
+<li><p>데이터 간의 흐름의 크기, Sankey 차트에서는 선의 굵기에 대한 설정 UI입니다. 피벗의 “값 선택”과 유사하게 “Summary 방식”을 지정할 수 있으며, 추가로 상위/하위 N개만 출력하도록 필터를 지정할 수도 있습니다.</p>
+<ul>
+<li><p>Summary 방식: 시각화 작업을 수행할 때 지정한 필드를 어떠한 함수로 summary를 수행할지 선택하는 옵션입니다. 문자형 필드의 경우 “데이터 개수”, 숫자형 필드의 경우 “합계”가 기본으로 설정됩니다.                                                                                                                |</p></li>
+<li><p>제한: 지정한 숫자값 만큼 상위 or 하위 N개의 선(Links) 데이터만 요청하도록 설정합니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>파일 저장 버튼</p></td>
+<td><p>차트 시각화 결과를 파일로 저장하는 버튼입니다. 클릭 즉시 차트를 png 등의 이미지 파일로 저장합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="heatmap">
+<h3>분석 설정하기: Heatmap<a class="headerlink" href="#heatmap" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/adv_chart_heatmap.png" src="../../../_images/adv_chart_heatmap.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>차트의 X축에 관한 설정 UI 입니다. 피벗의 “행 선택”과 대응됩니다.</p>
+<ul>
+<li><p>정렬: y축 값에 따른 정렬 방식을 선택하는 옵션입니다. Default는 “기본값”이며, “기본값”으로 선택하면 정렬을 수행하지 않습니다.</p></li>
+<li><p>Summary 시간 단위: 시간 타입 필드의 경우, 시각화 작업을 수행할 때 어떠한 시간 단위(1년, 1개월, 1일, …)로 summary를 수행할지 선택하는 옵션입니다.</p></li>
+<li><p>범위 만들기: 숫자형 타입 필드의 경우, 실행 결과로 출력되는 각 막대를 필드 값의 개별 숫자로 표현할 것인지, 일정 범위를 지정하여 구간으로 표현할 것인지 여부를 묻는 항목입니다. <a class="reference internal" href="#id8" id="id13"><span>[예시14]</span></a></p>
+<ul>
+<li><p>범위 크기: 그룹핑할 범위의 크기입니다.</p></li>
+<li><p>범위 시작: 범위가 시작되는 값입니다.</p></li>
+<li><p>범위 끝: 범위의 마지막 값입니다.</p></li>
+</ul>
+</li>
+<li><p>최대 행 수: 시각화 작업 결과의 데이터 개수를 제한하는 옵션입니다. <a class="reference internal" href="#id5" id="id14"><span>[예시13]</span></a></p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>차트의 Y축에 관한 설정 UI 입니다.  피벗의 “열 선택”과 대응됩니다.</p>
+<ul>
+<li><p>최대 열 수: 시각화 작업 결과 개수를 제한하는 옵션입니다. 최대 행 수와는 다르게 테이블 기준 열 수, 차트 기준으로는 범례 개수를 제한합니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>값</p></td>
+<td><ul class="simple">
+<li><p>차트의 색상/범례 분할에 관한 설정 UI 입니다. 피벗의 “값 선택”과 대응됩니다. 설정한 필드를 지정한 “Summary 방식”에 따라 계산하여 수치화한 값으로 Y축을 구성합니다. 설정하지 않으면 default로 “이벤트 개수”가 설정됩니다. (-count(*))</p>
+<ul>
+<li><p>Summary 방식: 시각화 작업을 수행할 때 지정한 필드를 어떠한 함수로 summary를 수행할지 선택하는 옵션입니다. 문자형 필드의 경우 “데이터 개수”, 숫자형 필드의 경우 “합계”가 기본으로 설정됩니다.</p></li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>차트 옵션 버튼</p></td>
+<td><p>Null값 표시 방식, 레이블 회전, 범례 위치 등 차트의 스타일/표현 방식에 대한 옵션 설정창을 띄우는 버튼입니다. 이 옵션들은 시각화 작업 결과 데이터에는 영향을 주지 않습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>파일 저장 버튼</p></td>
+<td><p>차트 시각화 결과를 파일로 저장하는 버튼입니다. 클릭 즉시 차트를 png 등의 이미지 파일로 저장합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id15">
+<h3>분석 설정하기: 이상치<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<img alt="../../../_images/adv_chart_outlier.png" src="../../../_images/adv_chart_outlier.png" />
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 19%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>번호</p></th>
+<th class="head"><p>구분</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>대상 필드 설정</p></td>
+<td><p>통계량 및 이상치를 계산할 대상 필드를 설정합니다. 다른 차트와 마찬가지로 Drag &amp; Drop으로 설정하며, 숫자형 타입의 필드만 설정할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>히스토그램 차트</p></td>
+<td><p>대상 필드의 값 분포를 Histogram으로 나타냅니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>기술통계량 그리드</p></td>
+<td><p>해당 필드의 최소/최대, 중간값, 평균 등의 각종 기술통계량 값을 표 형태로 출력합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>시계열 분포 차트</p></td>
+<td><p>대상 필드의 시계열 분포를 Scatter plot으로 나타냅니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>이상치 그리드</p></td>
+<td><p>해당 필드의 정상 범주를 벗어나는 값들에 대해 최소/최대, 중간값, 평균 등의 각종 기술통계량 값을 표 형태로 출력합니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>저장 버튼</p></td>
+<td><p>해당 차트 혹은 그리드를 파일로 저장합니다. 차트의 경우에는 png, 그리드의 경우에는 csv로 저장합니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>새로고침 버튼</p></td>
+<td><p>해당 차트 혹은 그리드의 데이터를 서버에 다시 요청하여 불러옵니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>시각화 옵션<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<img alt="../../../_images/adv_chart_options.png" src="../../../_images/adv_chart_options.png" />
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 81%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>번호</p></td>
+<td><p>구분</p></td>
+<td><p>설명</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>카테고리 탭 컨트롤</p></td>
+<td><p>옵션을 차트의 축/범례 등 카테고리로 구분하는 탭 컨트롤 입니다. 선택에 따라 선택한 카테고리에 해당하는 옵션들이 표시됩니다.
+탭 구성은 시각화 유형에 따라 달라집니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>시각화 옵션</p></td>
+<td><p>시각화 옵션을 설정하는 UI입니다. 시각화 유형과 탭 선택에 따라 천차만별로 달라집니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>닫기 버튼</p></td>
+<td><p>시각화 옵션 다이얼로그를 닫습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id17">
+<h3>시각화 유형별 시각화 옵션<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>시각화 유형</p></th>
+<th class="head"><p>카테고리</p></th>
+<th class="head"><p>옵션 명</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Line plot</p></td>
+<td><p>일반</p></td>
+<td><ul class="simple">
+<li><p>Null 값</p></li>
+<li><p>데이터 값 표시</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>데이터가 Null이거나 없는 등 차트에 표현할 수 없을 때 표현방식을 결정합니다.</p></li>
+<li><p>데이터의 수치 값을 차트상에 표시할지 여부를 결정합니다. “켜기”로 설정하면 차트의 각 포인트마다 데이터 수치가 숫자값 텍스트로 표시됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>레이블 회전</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>X축 하단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>X축의 텍스트 회전 각도를 결정합니다. X축의 각각의 텍스트가 길 경우 유용합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>간격</p></li>
+<li><p>최소값</p></li>
+<li><p>최대값</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Y축 좌단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>Y축의 수치 간격을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+<li><p>Y축의 최소값을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+<li><p>Y축의 최대값을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>범례</p></td>
+<td><ul class="simple">
+<li><p>범례</p></li>
+<li><p>표시위치</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>범례의 표시 여부를 결정합니다.</p></li>
+<li><p>범례의 표시 위치를 결정합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Scatter plot</p></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>레이블 회전</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>X축 하단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>X축의 텍스트 회전 각도를 결정합니다. X축의 각각의 텍스트가 길 경우 유용합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>간격</p></li>
+<li><p>최소값</p></li>
+<li><p>최대값</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Y축 좌단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>Y축의 수치 간격을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+<li><p>Y축의 최소값을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+<li><p>Y축의 최대값을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>범례</p></td>
+<td><ul class="simple">
+<li><p>범례</p></li>
+<li><p>표시위치</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>범례의 표시 여부를 결정합니다.</p></li>
+<li><p>범례의 표시 위치를 결정합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Motion</p></td>
+<td><p>(현재 차트 옵션 미지원)</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>Histogram / Bar</p></td>
+<td><p>일반</p></td>
+<td><ul class="simple">
+<li><p>스택모드</p></li>
+<li><p>데이터 값 표시</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>하나의 X축 데이터가 그룹/범례를 통해 분할되었을 때, 차트의 드로잉 객체를 별개로 표현할 지 하나의 객체에 나누어 표현할지를 결정합니다.</p></li>
+<li><p>데이터의 수치 값을 차트상에 표시할지 여부를 결정합니다. “켜기”로 설정하면 차트의 각 포인트마다 데이터 수치가 숫자값 텍스트로 표시됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>레이블 회전</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>X축 하단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>X축의 텍스트 회전 각도를 결정합니다. X축의 각각의 텍스트가 길 경우 유용합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>간격</p></li>
+<li><p>최소값</p></li>
+<li><p>최대값</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Y축 좌단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>Y축의 수치 간격을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+<li><p>Y축의 최소값을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+<li><p>Y축의 최대값을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>범례</p></td>
+<td><ul class="simple">
+<li><p>범례</p></li>
+<li><p>표시위치</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>범례의 표시 여부를 결정합니다.</p></li>
+<li><p>범례의 표시 위치를 결정합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td><p>Pie chart</p></td>
+<td><p>일반</p></td>
+<td><p>데이터 값 표시</p></td>
+<td><p>데이터의 수치 값을 차트상에 표시할지 여부를 결정합니다. “켜기”로 설정하면 차트의 각 포인트마다 데이터 수치가 숫자값 텍스트로 표시됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>크기</p></td>
+<td><p>최소 크기</p></td>
+<td><p>“other”로 통합할 조각들의 최소 크기(비율)를 지정합니다. Default는 0이며, 0으로 입력하면 “other”로 통합하지 않습니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>Sankey</p></td>
+<td><p>(현재 차트 옵션 미지원)</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Heatmap</p></td>
+<td><p>일반</p></td>
+<td><ul class="simple">
+<li><p>데이터 값 표시</p></li>
+<li><p>기본 색상</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>데이터의 수치 값을 차트상에 표시할지 여부를 결정합니다. “켜기”로 설정하면 차트의 각 포인트마다 데이터 수치가 숫자값 텍스트로 표시됩니다.</p></li>
+<li><p>값을 표현할 때 색상을 결정합니다. RGB 코드 형태로 입력하며, 가장 높은 수치의 값을 표현하는 색상을 입력 받습니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>X축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>레이블 회전</p></li>
+<li><p>정렬</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>X축 하단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>X축의 텍스트 회전 각도를 결정합니다. X축의 각각의 텍스트가 길 경우 유용합니다.</p></li>
+<li><p>X축을 텍스트 기준으로 정렬합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>Y축</p></td>
+<td><ul class="simple">
+<li><p>레이블</p></li>
+<li><p>간격</p></li>
+<li><p>정렬</p></li>
+</ul>
+</td>
+<td><ul class="simple">
+<li><p>Y축 좌단에 표시할 텍스트와 텍스트 표시 여부를 결정합니다.</p></li>
+<li><p>Y축의 수치 간격을 결정합니다. 입력하지 않으면 자동으로 결정됩니다.</p></li>
+<li><p>Y축을 텍스트 기준으로 정렬합니다.</p></li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>범례</p></td>
+<td><p>범례</p></td>
+<td><p>범례의 표시 여부를 결정합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../04_ad/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="&lt;no title&gt;" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,437 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. 개요 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Tutorial" href="../../../../IRIS-Tutorial/index.html" />
+    <link rel="prev" title="7. PYTHON-API 사용법" href="05.api_python.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Studio/index.html">IRIS Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Database</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../systemmanager_guide/index.html">System-manager Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../dbmanager_guide/index.html">DB-manager Guide</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">User Guide</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="00.sql_reference.html">1. SQL Reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01.query.html">2. 쿼리</a></li>
+<li class="toctree-l4"><a class="reference internal" href="01-01.extension_geospatial.html">3. 공간 쿼리 사용하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02.load.html">4. 로드</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03.option.html">5. 옵션</a></li>
+<li class="toctree-l4"><a class="reference internal" href="04.api_jdbc.html">6. API-JDBC 사용법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="05.api_python.html">7. PYTHON-API 사용법</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">8. 개요</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">9. 목차</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dbeaver-overview">10. DBeaver Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">11. DBeaver 설치</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dbeaver-thrift-server-hive">12. DBeaver Thrift Server (Hive) 사용방법</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dbeaver-iris-jdbc">13. DBeaver IRIS JDBC 사용방법</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Database</a> &raquo;</li>
+    
+      <li><a href="../index.html">User Guide</a> &raquo;</li>
+    
+    <li><span class="section-number">8. </span>개요</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/06.DBeaver.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Database/user_guide/doc/06.DBeaver</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Database/user_guide/doc/06.DBeaver</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Database/user_guide/doc/06.DBeaver
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Database/user_guide/doc/06.DBeaver</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Database/user_guide/doc/06.DBeaver.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Database/user_guide/doc/06.DBeaver.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1><span class="section-number">8. </span>개요<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>DBeaver 사용법</p>
+</div>
+<div class="section" id="id2">
+<h1><span class="section-number">9. </span>목차<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>DBeaver 개요</p></li>
+<li><p>DBeaver 설치</p></li>
+<li><p>DBeaver Thrift Server (Hive) 사용방법</p></li>
+<li><p>DBeaver IRIS JDBC 사용방법</p></li>
+</ol>
+</div>
+<div class="section" id="dbeaver-overview">
+<h1><span class="section-number">10. </span>DBeaver Overview<a class="headerlink" href="#dbeaver-overview" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dbeaver">
+<h2><span class="section-number">10.1. </span>DBeaver 특징<a class="headerlink" href="#dbeaver" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>DBeaver는 개발자 및 데이터베이스 관리자를 위한 무료 및 오픈소스인
+범용 데이터 베이스 도구</p></li>
+<li><p>오픈 소스 프레임 워크를 기반으로 하여 다양한 플러그인 지원</p></li>
+<li><p>JDBC 드라이버가 있는 모든 데이터베이스 지원</p></li>
+<li><p>JDBC 드라이버가 없는 외부 데이터 소스 처리 가능</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2><span class="section-number">10.2. </span>DBeaver가 지원하는 관계형 데이터베이스<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>MySQL</p></li>
+<li><p>Oracle</p></li>
+<li><p>PostgreSQL</p></li>
+<li><p>IBM DB2</p></li>
+<li><p>Microsoft SQL Server</p></li>
+<li><p>Sybase</p></li>
+<li><p>JAVA DB</p></li>
+<li><p>Firebird</p></li>
+<li><p>SQLite</p></li>
+<li><p>Mimer</p></li>
+<li><p>HSQLDB</p></li>
+<li><p>H2</p></li>
+<li><p>Teradata</p></li>
+<li><p>Cache</p></li>
+<li><p>Ingres</p></li>
+<li><p>Linter</p></li>
+</ul>
+</div>
+<div class="section" id="dbeaver-nosql">
+<h2><span class="section-number">10.3. </span>DBeaver가 지원하는 NoSQL 데이터베이스<a class="headerlink" href="#dbeaver-nosql" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>MongoDB</p></li>
+<li><p>Cassandra</p></li>
+</ul>
+</div>
+<div class="section" id="os">
+<h2><span class="section-number">10.4. </span>지원 가능 OS<a class="headerlink" href="#os" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Windows (2000/XP/2003/Vista/7/8/10)</p></li>
+<li><p>Linux</p></li>
+<li><p>Max OS</p></li>
+<li><p>Solaris</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h1><span class="section-number">11. </span>DBeaver 설치<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>DBeaver 다운로드 링크</p></li>
+<li><p><a class="reference external" href="https://dbeaver.io/downlaod">https://dbeaver.io/downlaod</a></p></li>
+</ul>
+</div>
+<div class="section" id="dbeaver-thrift-server-hive">
+<h1><span class="section-number">12. </span>DBeaver Thrift Server (Hive) 사용방법<a class="headerlink" href="#dbeaver-thrift-server-hive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="connection">
+<h2><span class="section-number">12.1. </span>Connection 생성<a class="headerlink" href="#connection" title="Permalink to this headline">¶</a></h2>
+<p><img alt="c1" src="../../../../_images/c1.png" /> <img alt="c2" src="../../../../_images/c2.png" /> <img alt="c3" src="../../../../_images/c3.png" /></p>
+</div>
+<div class="section" id="id5">
+<h2><span class="section-number">12.2. </span>Connection 생성 결과<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id7">
+<img alt="c4" src="../../../../_images/c4.png" />
+<p class="caption"><span class="caption-text">c4</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2><span class="section-number">12.3. </span>쿼리 실행<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p><img alt="q1" src="../../../../_images/q1.png" /> <img alt="q2" src="../../../../_images/q2.png" /></p>
+</div>
+</div>
+<div class="section" id="dbeaver-iris-jdbc">
+<h1><span class="section-number">13. </span>DBeaver IRIS JDBC 사용방법<a class="headerlink" href="#dbeaver-iris-jdbc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="iris-jdbc-driver-manager">
+<h2><span class="section-number">13.1. </span>IRIS JDBC 사용을 위한 Driver Manager 추가<a class="headerlink" href="#iris-jdbc-driver-manager" title="Permalink to this headline">¶</a></h2>
+<p><img alt="i1" src="../../../../_images/i1.png" /> <img alt="i2" src="../../../../_images/i2.png" /> <img alt="i3" src="../../../../_images/i3.png" /> <img alt="i4" src="../../../../_images/i4.png" /> <img alt="i5" src="../../../../_images/i5.png" /> <img alt="i6" src="../../../../_images/i6.png" /> <img alt="i7" src="../../../../_images/i7.png" /></p>
+</div>
+<div class="section" id="iris">
+<h2><span class="section-number">13.2. </span>IRIS 쿼리 실행<a class="headerlink" href="#iris" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="id8">
+<img alt="iq1" src="../../../../_images/iq1.png" />
+<p class="caption"><span class="caption-text">iq1</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../../IRIS-Tutorial/index.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="05.api_python.html" class="btn btn-neutral float-left" title="7. PYTHON-API 사용법" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

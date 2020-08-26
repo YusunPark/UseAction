@@ -1,0 +1,947 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>특수/기타 객체 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+        <script src="../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="IRIS Discovery" href="../IRIS-Discovery/index.html" />
+    <link rel="prev" title="제어 (Control) 객체" href="control.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Common/index.html">IRIS 공통기능</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">IRIS Studio</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="start.html">보고서 시작하기</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data.html">데이터 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_visualize.html">데이터 시각화 (Data Visualize) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="decorate.html">꾸미기 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="form.html">양식 (Form) 객체</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control.html">제어 (Control) 객체</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">특수/기타 객체</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#url-external-url">외부 URL (External URL)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#html-html-viewer">Html뷰어 (Html Viewer)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-report-popup">보고서 가져오기(팝업) (Import Report (Popup))</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#import-report-portlet">보고서 가져오기(포틀릿) (Import Report (Portlet))</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hidden">텍스트 변환 (Hidden)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restful-api">RESTful API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-upload">파일 업로드 (File Upload)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery/index.html">IRIS Discovery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Discovery-Middleware/index.html">IRIS Discovery-Middleware Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../IRIS-Database/index.html">IRIS Database</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../index.html">Manual</a> &raquo;</li>
+    
+      <li><a href="index.html">IRIS Studio</a> &raquo;</li>
+    
+    <li>특수/기타 객체</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/special_etc.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Manual/IRIS-Studio/special_etc</p>
+
+            
+            <p>list1[0] = IRIS-Manual</p>
+            <p>list1[1] = IRIS-Studio/special_etc</p>
+            <p>list1[2] = </p>
+            IRIS-Manual
+            IRIS-Manual/IRIS-Studio/special_etc
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Manual/IRIS-Studio/special_etc</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Manual/IRIS-Studio/special_etc.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Manual/blob/master/IRIS-Studio/special_etc.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>특수/기타 객체<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">특별한 목적 하나만을 위해 만들어진 객체 집합입니다.</div>
+</div>
+<div class="section" id="url-external-url">
+<h2>외부 URL (External URL)<a class="headerlink" href="#url-external-url" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-ext-url.png" src="../../_images/button-ext-url.png" />
+<div class="line-block">
+<div class="line">외부 URL을 입력하여 해당 URL 페이지를 로딩 할 수 있습니다.</div>
+</div>
+<div class="section" id="id2">
+<h3>데이터<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">URL 설정과 데이터 실행 방법을 설정 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_iframe_51.png"><img alt="외부 URL 데이터" src="../../_images/studio_iframe_51.png" style="width: 247.2px; height: 289.8px;" /></a>
+<div class="section" id="url">
+<h4>URL 불러오기<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">http 포함된 URL을 입력하거나, 다른 객체의 변수명을 입력하여 변수값을 사용해 외부URL 페이지를 로딩 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/iframe_01.png"><img alt="외부 URL 불러오기" src="../../_images/iframe_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>적용</p></td>
+<td><p>입력한 외부 URL의 유효성 검사를 합니다. http로 시작해야 하고 URL에 공백이 있으면 설정되지 않습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>미리보기</p></td>
+<td><p>외부 URL에 변수명을 입력한 경우, 해당 변수 값의 데이터를 미리 보기 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id5">데이터 실행방법 설정</a>  을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>객체<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="html-html-viewer">
+<h2>Html뷰어 (Html Viewer)<a class="headerlink" href="#html-html-viewer" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-htmlviewer.png" src="../../_images/button-htmlviewer.png" />
+<div class="line-block">
+<div class="line">Html 뷰어 객체는 서버로부터 받아온 데이터의 HTML 코드를 바인딩하여 화면에 보여 줍니다.</div>
+</div>
+<div class="section" id="id5">
+<h3>데이터 설정<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">데이터 설정은  <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data.html#id1">데이터객체</a> 를 참고하시기 바랍니다.</div>
+<div class="line">HTML Viewer 는 컬럼의 값으로 html code 가 들어 있습니다.</div>
+</div>
+<p><strong>HTML document 예시</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>가 들어있는 MySQL 테이블에서 데이터를 가져오는 데이터객체 생성 예시</p>
+<a class="reference internal image-reference" href="../../_images/studio_html_72.png"><img alt="html 72" src="../../_images/studio_html_72.png" style="width: 489.59999999999997px; height: 406.2px;" /></a>
+<div class="line-block">
+<div class="line">Html Viewer 객체를 클릭한 후 <strong>데이터연결</strong> 에서 데이터객체를 선택합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_html_72_1.png"><img alt="html 72_1" src="../../_images/studio_html_72_1.png" style="width: 469.5px; height: 183.0px;" /></a>
+<div class="line-block">
+<div class="line">데이터객체를 클릭한 후 실행을 선택하면 Html Viewer 에 결과가 표시됩니다.</div>
+</div>
+<div class="line-block">
+<div class="line">Html viewer 박스의 우측 상단의 <strong>Html 코드보기</strong> , <strong>Html 그리기</strong> 를 통해 데이터설정을 통해 가져온 Html Code 와 결과를 번갈아 가며 볼수 있습니다.</div>
+</div>
+<p><strong>결과</strong></p>
+<a class="reference internal image-reference" href="../../_images/studio_html_60.png"><img alt="html 59" src="../../_images/studio_html_60.png" style="width: 390.8px; height: 136.0px;" /></a>
+</div>
+<div class="section" id="id6">
+<h3>시각화 설정<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><strong>필드 선택</strong></p>
+<p>불러온 데이터로부터 HTML 코드가 있는 컬럼을 선택하면 자동으로 데이터를 읽어 화면에 보여줍니다.</p>
+<a class="reference internal image-reference" href="../../_images/studio_html_60_1.png"><img alt="필드 선택" src="../../_images/studio_html_60_1.png" style="width: 151.2px; height: 64.2px;" /></a>
+</div>
+<div class="section" id="id7">
+<h3>객체 설정<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="import-report-popup">
+<h2>보고서 가져오기(팝업) (Import Report (Popup))<a class="headerlink" href="#import-report-popup" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-loadreport.png" src="../../_images/button-loadreport.png" />
+<div class="line-block">
+<div class="line">저장된 보고서를 가져와 팝업 화면에 표시하는 객체입니다.</div>
+<div class="line">(저장된 보고서를 가져올 경우, 가져온 보고서의 객체 목록 중에 팝업/포틀릿 객체가 포함되어 있는 경우, 미리 보기에서 실행되지 않습니다.)</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_07.png"><img alt="Import Report 오류 메시지(Import 보고서에 팝업/포틀릿 객체가 포함되어 있습니다)" src="../../_images/popup_07.png" style="width: 270px;" /></a>
+<div class="section" id="id8">
+<h3>불러오기<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">저장된 보고서 중에서 선택하여 불러올 수 있습니다.</div>
+</div>
+<div class="section" id="id9">
+<h4>보고서 설정 유형<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">저장된 보고서 목록이 기본이며, 변수/값 입력을 설정 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_01.png"><img alt="저장된 보고서 목록 설정" src="../../_images/popup_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>목록 선택</p></td>
+<td><p>저장된 보고서 목록을 선택할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수/값 입력</p></td>
+<td><p>변수값을 사용하여 저장된 보고서를 불러 올 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h4>저장된 보고서<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">보고서 설정 유형에서 목록을 선택한 경우만 활성화 됩니다.</div>
+<div class="line">검색을 통해 보고서를 검색가능하며, 보고서 선택 시 목록에 표시되고, 팝업 객체에 보고서 이름과 바로가기 아이콘이 나타납니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_01.png"><img alt="저장된 보고서 목록 설정" src="../../_images/popup_01.png" style="width: 270px;" /></a>
+<div class="line-block">
+<div class="line">팝업 객체의 선택 적용 UI 입니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_02.png"><img alt="저장된 보고서 선택 적용 UI" src="../../_images/popup_02.png" style="width: 270px;" /></a>
+</div>
+<div class="section" id="import">
+<h4>import 보고서 변수/값<a class="headerlink" href="#import" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">작성중인 보고서의 변수값에 보고서이름이 저장되어 있어 변수값으로 보고서를 가져오거나</div>
+<div class="line">직접 보고서이름을 입력하여 가져올 때 사용합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_03.png"><img alt="보고서 설정 변수 값/입력" src="../../_images/popup_03.png" style="width: 270px;" /></a>
+<div class="line-block">
+<div class="line">설정에 따라 불러오는 보고서를 바꾸려면 변수를 사용합니다.</div>
+<div class="line">변수를 사용하는 경우에는 변수에 저장되는 값에 따라 불러오는 보고서의 이름이 변경됩니다.</div>
+</div>
+<img alt="보고서 설정 변수 값/입력 2" src="../../_images/studio_popup_20.png" />
+<div class="line-block">
+<div class="line"><strong>직접 입력하기</strong> 는 입력한 보고서 이름을 입력해서 불러옵니다.</div>
+<div class="line"><strong>변수 입력하기</strong> 는 날짜/시간 선택 객체와 트리거 이벤트를 설정하여 선택한 날짜변수 값에 따라 불러오는 보고서 이름이 달라집니다.</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h4>팝업 열기 설정<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">팝업 열기 시, 실행될 이벤트를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_04.png"><img alt="팝업 열기 설정" src="../../_images/popup_04.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>트리거 설정</p></td>
+<td><p>챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id7">트리거 설정(공통)</a> 을 참고하시기 바랍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>자동실행</p></td>
+<td><p>선택 시 팝업 버튼을 클릭하지 않고, 팝업을 자동으로 실행 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id12">
+<h3>속성<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</div>
+</div>
+<div class="section" id="id13">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id14">이벤트 값 전달 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h4>변수 설정<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">저장된 보고서의 Canvas 변수가 설정된 경우에 설정된 Canvas 변수값에 값을 설정 할 수 있습니다.</div>
+<div class="line">Canvas 변수가 3개인 경우에 변수값을 3개 설정 할 수 있으며, 변수값을 직접 입력 하거나, 변수명을 입력하여 설정 할 수 있습니다.</div>
+<div class="line">Canvas 변수는 팝업 보고서 내부에서 같이 사용이 되도록 설정이 가능합니다.</div>
+<div class="line">IRIS Studio Manual <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/start.html#canvas">캔버스 (Canvas)</a>  를 참고하시기 바랍니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_05.png"><img alt="저장된 보고서 변수 설정" src="../../_images/popup_05.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수명</p></td>
+<td><p>저장된 보고서의 Canvas 변수명 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 값</p></td>
+<td><p>저장된 보고서의 Canvas 변수값을 직접 설정가능하며, 변수명을 입력한 설정도 가능합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id15">
+<h4>팝업 제목<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">팝업이 열릴 때, 팝업 제목을 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_06.png"><img alt="팝업 제목 설정" src="../../_images/popup_06.png" style="width: 270px;" /></a>
+</div>
+</div>
+<div class="section" id="id16">
+<h3>객체<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+<div class="section" id="id17">
+<h4>팝업 창 크기<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">팝업이 열릴 때, 팝업의 창 크기를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_08.png"><img alt="팝업 창 크기 설정" src="../../_images/popup_08.png" style="width: 270px;" /></a>
+</div>
+</div>
+</div>
+<div class="section" id="import-report-portlet">
+<h2>보고서 가져오기(포틀릿) (Import Report (Portlet))<a class="headerlink" href="#import-report-portlet" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-loadportlet.png" src="../../_images/button-loadportlet.png" />
+<div class="line-block">
+<div class="line">저장된 보고서를 가져와 보고서 화면에 표시하는 객체입니다.</div>
+<div class="line">(저장된 보고서를 가져올 경우, 가져온 보고서의 객체 목록 중에 팝업/포틀릿 객체가 포함되어 있는 경우, 미리 보기에서 실행되지 않습니다.)</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_071.png"><img alt="Import Report 오류 메시지(Import 보고서에 팝업/포틀릿 객체가 포함되어 있습니다)" src="../../_images/popup_071.png" style="width: 270px;" /></a>
+<div class="section" id="id18">
+<h3>불러오기<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">저장된 보고서 목록을 선택하여 불러올 수 있습니다.</div>
+</div>
+<div class="section" id="id19">
+<h4>보고서 설정 유형<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">저장된 보고서 목록이 기본이며, 변수/값 입력을 설정 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_01.png"><img alt="저장된 보고서 목록 설정" src="../../_images/popup_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>목록 선택</p></td>
+<td><p>저장된 보고서 목록을 선택할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수/값 입력</p></td>
+<td><p>변수값을 사용하여 저장된 보고서를 불러 올 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id20">
+<h4>저장된 보고서<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">보고서 설정 유형에서 목록을 선택한 경우만 활성화 됩니다.</div>
+<div class="line">검색을 통해 보고서를 검색가능하며, 보고서 선택 시 목록에 표시되고, 팝업 객체에 보고서 이름과 바로가기 나타납니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_01.png"><img alt="저장된 보고서 목록 설정" src="../../_images/popup_01.png" style="width: 270px;" /></a>
+<p>포틀릿 객체의 선택 적용 UI 입니다.</p>
+<a class="reference internal image-reference" href="../../_images/popup_02.png"><img alt="저장된 보고서 선택 적용 UI" src="../../_images/popup_02.png" style="width: 270px;" /></a>
+</div>
+<div class="section" id="id21">
+<h4>import 보고서 변수/값<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">변수값을 사용하여 저장된 보고서를 불러 올 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_03.png"><img alt="보고서 설정 변수 값/입력" src="../../_images/popup_03.png" style="width: 270px;" /></a>
+</div>
+<div class="section" id="id22">
+<h4>Import 보고서 실행 방법 설정<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">포틀릿 실행 시, 실행될 이벤트를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/portlet_01.png"><img alt="Import 보고서 실행 방법 설정" src="../../_images/portlet_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>트리거 설정</p></td>
+<td><p>챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id7">트리거 설정(공통)</a> 을 참고하시기 바랍니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>자동실행</p></td>
+<td><p>선택 시 팝업 버튼을 클릭하지 않고, 팝업을 자동으로 실행 합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id23">
+<h3>속성<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</div>
+</div>
+<div class="section" id="id24">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id14">이벤트 값 전달 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+<div class="section" id="id25">
+<h4>변수 설정<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">저장된 보고서의 Canvas 변수가 설정된 경우에 설정된 Canvas 변수값에 값을 설정 할 수 있습니다.</div>
+<div class="line">Canvas 변수가 3개인 경우에 변수값을 3개 설정 할 수 있으며, 변수값을 직접 입력 하거나, 변수명을 입력하여 설정 할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/popup_05.png"><img alt="저장된 보고서 변수 설정" src="../../_images/popup_05.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>변수명</p></td>
+<td><p>저장된 보고서의 Canvas 변수명 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>변수 값</p></td>
+<td><p>저장된 보고서의 Canvas 변수값을 직접 설정가능하며, 변수명을 입력한 설정도 가능합니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="id26">
+<h3>객체<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a>  을 참조하시가 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="hidden">
+<h2>텍스트 변환 (Hidden)<a class="headerlink" href="#hidden" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-textconv.png" src="../../_images/button-textconv.png" />
+<div class="line-block">
+<div class="line">텍스트변환 객체에서 설정한 객체의 이벤트 발생시 해당변수의 값을</div>
+<div class="line">트리거에 입력된 변수값으로 변환하여 적용할 수있습니다.</div>
+<div class="line">보고서 실행 화면에서는 텍스트 변환 객체는 보이지 않습니다.</div>
+</div>
+<div class="section" id="id27">
+<h3>데이터<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">트리거를 설정하여, 해당 객체의 이벤트가 발생 시 변환할 텍스트 정보를 설정 할 수 있습니다.</div>
+</div>
+<div class="section" id="id28">
+<h4>트리거 설정<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">트리거를 설정한 객체의 이벤트 발생시 해당변수의 값을 트리거에 입력된 텍스트로 변환하여 적용할 수 있습니다.</div>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>대상 오브젝트 id</p></td>
+<td><p>오브젝트 ID 입니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>이벤트</p></td>
+<td><p>대상 객체의 이벤트 입니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>입력</p></td>
+<td><p>입력한 텍스트로 텍스트변환 객체 변수 값이 변경 됩니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>삭제</p></td>
+<td><p>삭제시, 해당 트리거가 삭제 되며, 해당 객체의 이벤트 발생시 텍스트 변환이 발생하지 않습니다.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">텍스트 변환 객체의 트리거 설정과 적용 UI 입니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/studio_hidden_18.png"><img alt="텍스트 변환 객체 트리거 설정" src="../../_images/studio_hidden_18.png" style="width: 478.79999999999995px; height: 221.4px;" /></a>
+<div class="line-block">
+<div class="line">사용 예) 입력한 텍스트는 클릭버튼을 실행하면 변환된 값으로 출력됩니다.</div>
+</div>
+<img alt="텍스트 변환 객체 트리거 설정 2" src="../../_images/studio_hidden_19.png" />
+</div>
+</div>
+<div class="section" id="id29">
+<h3>속성<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id14">이벤트 값 전달 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+<div class="section" id="id31">
+<h4>트리거 설정 확인<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id8">트리거 설정 확인</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="restful-api">
+<h2>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-rest.png" src="../../_images/button-rest.png" />
+<div class="line-block">
+<div class="line">RESTful API를 사용하여 데이터를 설정 할 수 있는 객체입니다.</div>
+</div>
+<div class="section" id="id32">
+<h3>데이터<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">데이터 설정을 통해 조회할 RESTful API 설정합니다.</div>
+</div>
+<div class="section" id="id33">
+<h4>데이터 설정<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">RESTful API의  Method, URI, Header Body를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/rest_api_01.png"><img alt="RESTful API 데이터 설정" src="../../_images/rest_api_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Method</p></td>
+<td><p>POST 로 고정되어 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>URI</p></td>
+<td><p>업로드할 REST API URI 입력 입니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>Header</p></td>
+<td><p>전달할 Header(JSON 포맷) 값을 정의하여 전송 할 수 있으며, 변수명을 입력하여 설정 할 수 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Body</p></td>
+<td><p>전달할 Body(JSON 포맷) 값을 정의하여 전송 할 수 있으며, 변수명을 입력하여 설정 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id34">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id5">데이터 실행방법 설정</a>  을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id35">
+<h3>속성<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">스타일이나 시각화 방법 등에 대한 설정을 할 수 있습니다.</div>
+</div>
+<div class="section" id="id36">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id14">이벤트 값 전달 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+<div class="section" id="id37">
+<h4>트리거 설정 확인<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id8">트리거 설정 확인</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id38">
+<h3>객체<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="file-upload">
+<h2>파일 업로드 (File Upload)<a class="headerlink" href="#file-upload" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/button-upload.png" src="../../_images/button-upload.png" />
+<div class="line-block">
+<div class="line">파일 업로드 객체는 보고서에 데이터 추가 시, 정해진 형태의 파일을 REST API로 데이터를 업로드 할 수 있습니다.</div>
+<div class="line">비주얼 객체의 이벤트에 의해 업로드 실행 트리거를 설정 할 수 있으며, 한 번에 하나의 파일만 등록 가능합니다.</div>
+</div>
+<div class="section" id="id39">
+<h3>데이터<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">파일 업로드 데이터를 설정합니다.</div>
+</div>
+<div class="section" id="id40">
+<h4>데이터 설정<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">파일 업로드 데이터의 Method, URI, Body를 설정합니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/file_upload_01.png"><img alt="파일 업로드 데이터 설정" src="../../_images/file_upload_01.png" style="width: 270px;" /></a>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>항목</p></th>
+<th class="head"><p>설명</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Method</p></td>
+<td><p>POST 로 고정되어 있습니다.</p></td>
+</tr>
+<tr class="row-odd"><td><p>URI</p></td>
+<td><p>업로드할 REST API URI 입력 입니다.</p></td>
+</tr>
+<tr class="row-even"><td><p>Body</p></td>
+<td><p>업로드 시 추가 파라미터(JSON 포멧)을 정의 할 수 있습니다.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id41">
+<h4>데이터 실행방법 설정<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id5">데이터 실행방법 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id42">
+<h3>속성<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">속성탭에서 파일 업로드 업로드 가능 파일 확장자를 설정합니다.</div>
+</div>
+<div class="section" id="id43">
+<h4>업로드 가능 파일 확장자<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">미 설정시, 확장자 구분없이 업로드 가능하며, 확장자는 ‘.csv’ or ‘csv’ 형식으로 등록가능합니다.</div>
+<div class="line">하단 추가 버튼을 클릭하여 업로드 가능 파일 확장자를 1개 이상 등록할 수 있습니다.</div>
+</div>
+<a class="reference internal image-reference" href="../../_images/file_upload_02.png"><img alt="파일 업로드 가능 파일 확장자" src="../../_images/file_upload_02.png" style="width: 270px;" /></a>
+</div>
+<div class="section" id="id44">
+<h4>이벤트 값 전달 설정<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line"><a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id14">이벤트 값 전달 설정</a> 을 참고하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+<div class="section" id="id45">
+<h3>객체<a class="headerlink" href="#id45" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">크기와 위치는 챠트의 <a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/data_visualize.html#id18">객체 설정</a> 을 참조하시기 바랍니다.</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../IRIS-Discovery/index.html" class="btn btn-neutral float-right" title="IRIS Discovery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="control.html" class="btn btn-neutral float-left" title="제어 (Control) 객체" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

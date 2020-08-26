@@ -1,0 +1,399 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>텍스트 상자 &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="챠트의 시각화 유형 예제" href="../../01_chart_exam/index.html" />
+    <link rel="prev" title="이미지 넣기" href="../12_insert_image_report/insert_image_report.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-FAQ/index.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Getting-Started/index.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../IRIS_Analyzer/index.html">IRIS Analyzer</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">IRIS Studio</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">기능 컴포넌트</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../01_table/table.html">테이블</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../02_bar/bar.html">세로 막대형 차트 그리기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03_barh/barh.html">가로 막대형 차트 그리기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04_piechart/piechart.html">원형</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../05_single_value/single_value.html">단일값 추가하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06_treemap/treemap.html">트리맵</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../07_wordcloud/wordcloud.html">워드클라우드 그리기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08_sankey/index.html">Sankey 차트</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../09_motion/index.html">모션 차트</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../10_checkbox_report/checkbox_report.html">체크박스/라디오버튼을 활용하여 데이터 필터링하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../11_combobox_report/combobox_report.html">콤보박스를 활용하여 데이터 필터링하기</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../12_insert_image_report/insert_image_report.html">이미지 넣기</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">텍스트 상자</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../01_chart_exam/index.html">챠트의 시각화 유형 예제</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_map_exam/index.html">지도의 시각화유형 활용 예제</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+    
+      <li><a href="../../../index.html">Tutorial</a> &raquo;</li>
+    
+      <li><a href="../../index.html">IRIS Studio</a> &raquo;</li>
+    
+      <li><a href="../index.html">기능 컴포넌트</a> &raquo;</li>
+    
+    <li>텍스트 상자</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Studio/00_common/13_textbox/textbox.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-Tutorial/IRIS_Studio/00_common/13_textbox/textbox</p>
+
+            
+            <p>list1[0] = IRIS-Tutorial</p>
+            <p>list1[1] = IRIS_Studio/00_common/13_textbox/textbox</p>
+            <p>list1[2] = </p>
+            IRIS-Tutorial
+            IRIS-Tutorial/IRIS_Studio/00_common/13_textbox/textbox
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-Tutorial/IRIS_Studio/00_common/13_textbox/textbox</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-Tutorial/IRIS_Studio/00_common/13_textbox/textbox.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-Tutorial/blob/master/IRIS_Studio/00_common/13_textbox/textbox.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>텍스트 상자<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>[텍스트 상자] 텍스트 상자 객체는 Text Area에 사용자가 입력하거나 외부로부터 값을 받아 화면에 보여 줍니다.
+줄바꿈 문자가 포함된 여러 줄의 텍스트를 입력, 처리가 가능합니다.</p>
+<ul class="simple">
+<li><p>예제 보고서 <a class="reference external" href="http://b-iris.mobigen.com:80/studio/exported/f5f69aefc2c540a3b64598a5375b50fbe5e00482a15e4b2a84cb6036c5e3628a">EDU_IRISDB_textarea_nunjucks example</a></p></li>
+</ul>
+<img alt="text area 01" src="../../../../_images/textarea_01_1.png" />
+<div class="section" id="id2">
+<h2>사용 데이터<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">공공데이터 포털에서 <a class="reference external" href="https://www.data.go.kr/data/15048265/fileData.do">인천광역시 버스노선별 정류장 현황</a>  데이터를 사용하였습니다.</div>
+<div class="line">데이터 모델 : EDU_INCHEON_BUS_COOR</div>
+</div>
+<img alt="text area 02" src="../../../../_images/textarea_022.png" />
+</div>
+<div class="section" id="id3">
+<h2>텍스트 상자 설정<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">텍스트 상자는 콤보박스 선택 이벤트를 통해서 내용이 채워집니다.</div>
+<div class="line">트리거로 설정된 콤보박스에서 노선번호가 선택되면  첫번째 텍스트 상자에 노선번호의 노선ID 를 표시합니다.</div>
+<div class="line">콤보박스에서의 선택 이벤트가 발생하기 전에는 텍스트 상자의 속성 탭에서 “안내 문구” 를 연한 색상으로 표시됩니다.</div>
+<div class="line">두번째 텍스트 상자는 노선ID 가 표시된 텍스트 상자의 변수에서 가장 마지막 문자만을 표시하도록 설정합니다.</div>
+</div>
+<img alt="text area 04_2" src="../../../../_images/textarea_04_2.png" />
+<div class="section" id="id4">
+<h3>트리거 이벤트 발생 전 텍스트 상자 설정하기<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">트리거 설정된 콤보박스에서 선택하기 전(이벤트 발생 전)</div>
+</div>
+<img alt="text area 01_2" src="../../../../_images/textarea_01_2.png" />
+<div class="line-block">
+<div class="line">1번 텍스트 상자의 “속성” 탭에서 “안내 문구” 에 내용을 입력하여 이벤트 발생하면 표시되는 내용을 안내할 수 있습니다.</div>
+</div>
+<img alt="text area 01_3" src="../../../../_images/textarea_01_3.png" />
+<div class="line-block">
+<div class="line">2번 텍스트 상자의 “속성” 탭에서 “안내 문구” 에 내용을 입력합니다.</div>
+<div class="line">“기본값” 에 입력하면 표시되는 내용이 이벤트설정 전의 디폴트값으로 인식되어 연하게 표시되지 않고, 원래의 표시 값 설정으로 출력합니다.</div>
+<div class="line">유형 설정을 ReadOnly 로 체크하면 텍스트 상자안에 문자를 직접 입력하지 않고, 설정한 변수와 값만 표시할 수 있습니다.</div>
+</div>
+<img alt="text area 03-01" src="../../../../_images/textarea_03_1.png" />
+<div class="section" id="id5">
+<h4>트리거 이벤트 발생 시 텍스트 상자 설정하기<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">데이터 탭에서 <strong>데이터 실행방법 설정</strong> 에서 노선번호를 선택할 수 있는 콤보박스를 트리거로 설정합니다.</div>
+<div class="line"><strong>설정할 변수/값</strong> 애 트리거 설정한 콤보박스의 변수명을 입력합니다.</div>
+</div>
+<img alt="text area 03-02" src="../../../../_images/textarea_03_2.png" />
+<div class="line-block">
+<div class="line">콤보박스는 <strong>화면에 보여질 필드</strong> 와 <strong>값으로 사용될 필드</strong> 를 다르게 설정하여, 변수 combo_1 에는 노선ID 가 저장되게 설정하였습니다.</div>
+</div>
+<img alt="text area 03-03" src="../../../../_images/textarea_03_3.png" />
+</div>
+<div class="section" id="nunjucks">
+<h4>고급 활용 팁 : 설정할 변수/값에 Nunjucks 사용하기<a class="headerlink" href="#nunjucks" title="Permalink to this headline">¶</a></h4>
+<div class="line-block">
+<div class="line">IRIS 테이블의 파티선 Key 값을 표시하는 텍스트 상자는 노선ID 가 출력되는 텍스트 상자의 변수(textarea_2)를 사용합니다.</div>
+<div class="line">예를 들어 파티션 Key로 노선ID 의 마지막 번호로 정했다고 했을 때,</div>
+<div class="line">설정할 변수/값 영역에는 다음처럼 입력하면 텍스트 상자의 변수(textarea_2) 값인 노선ID 의 마지막 위치의 문자를 가져올 수 있습니다.</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>${textarea_2 | last}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../01_chart_exam/index.html" class="btn btn-neutral float-right" title="챠트의 시각화 유형 예제" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../12_insert_image_report/insert_image_report.html" class="btn btn-neutral float-left" title="이미지 넣기" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>

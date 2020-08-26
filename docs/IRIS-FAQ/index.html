@@ -1,0 +1,600 @@
+
+<!--  -->
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>FAQ &mdash; IRIS 2.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+        <script src="../_static/myscript.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Manual" href="../IRIS-Manual/index.html" />
+    <link rel="prev" title="IRIS Documentation" href="../index.html" />
+<meta
+  name="description"
+  content="IRIS SaaS, Connect, Discover and Visualize Big Data, 언제 어디서나 클릭 몇 번으로 빅데이터에 접근하여 인사이트를 얻는 길, IRIS SaaS가 열어드립니다."
+/>
+<meta
+  name="keywords"
+  content="IRIS SaaS, IRIS Analyzer, IRIS Studio, data visualization, data visualization tools, interactive data, Anomaly Detection,ML , DL, AI, Machine Learning, Deep Learning, Artificial Intelligence, 빅데이터, 데이터 탐색, 분석 및 시각화,데이터 시각화 도구,이상탐지, 예측, 고급 분석"
+/>
+<!-- Bizible Script -->
+<!--script src="//cdn.bizible.com/scripts/bizible.js" async=""></script-->
+
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=UA-161444564-3"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "UA-161444564-3");
+</script>
+<!-- End Google Analytics -->
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> IRIS
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#q">Q. 내가 소유한 데이터를 서비스 무료 체험에서 사용할 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Q. 우리 회사에서 여러 명이 무료 체험 서비스를 이용하려고 합니다. 각자 별도의 도메인을 입력해야 하나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Q. 서비스 무료 체험 시한이 곧 만료됩니다. 사내에서 유료 전환을 위한 결제절차가 지연되고 있습니다. 무료 체험 시한이 만료된 후, 유료 전환하지 않으면 무료 체험기간동안 작성한 보고서는 어떻게 되나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Q. 서비스 처음 사용자입니다. 서비스를 이용하려면 어떻게 해야 하나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#q-db-iris-saas">Q. 내 DB에 저장된 데이터를 IRIS SaaS에서 사용할 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#q-iris-saas">Q. 내가 IRIS SaaS에서 사용하는 데이터를 다른 사용자가 접근할 수 있도록 할 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Q. 내가 IRIS SaaS에서 작성한 보고서를 다른 사용자와 공유하려면 어떻게 해야 하나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Q. 대용량 파일을 IRIS SaaS에 업로드하여 사용할 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#q-id">Q. 동일한 사용자 ID로 여러 사용자가 동시에 서비스를 이용할 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Q. 기존 관리자가 변경되어 관리자 정보를 변경해야 합니다. 어떻게 해야 하나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">Q. 관리자 계정의 비밀번호가 기억나지 않습니다. 어떻게 해야 하나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">Q. IRIS SaaS에서 사용중인 나의 데이터가 타인에 의해 외부로 유출되지는 않을까요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">Q. 내 소유의 데이터와 보고서는 어디에 얼마동안 저장되나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">Q. IRIS SaaS 이용 중 에러가 발생했습니다. 어떻게 해야 하나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">Q. 서비스 이용중, 실수로 데이터/보고서를 삭제했습니다. 삭제한 데이터/보고서를 복원할 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">Q. 원하는 보고서/대시보드를 구축하는데 도움을 받을 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">Q. 서비스 이용 방법에 대한 질문이 있는데, 도움을 받을 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">Q. IRIS SaaS를 이용하여 빅데이터 시스템을 구축하려고 합니다. 이에 대한 도움을 받을 수 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">Q. 서비스 무료 체험을 이용하고 있습니다. 서비스 이용에 대한 교육 과정이 있나요?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">Q. 업무시간 외(야간이나 휴일)에도 기술지원을 받을 수 있나요?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../IRIS-Manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IRIS-Tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../IRIS-Usecase/index.html">Usecase</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IRIS</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+  
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+    <li>FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-FAQ/index.rst" class="fa fa-github"> Edit</a> -->
+            
+            <!--
+            <p>github_user = mobigen</p>
+            <p>github_repo = IRIS-Documentation</p>            
+            <p>github_version = master/</p>
+            <p>conf_py_path = </p>
+            <p>pagename = IRIS-FAQ/index</p>
+
+            
+            <p>list1[0] = IRIS-FAQ</p>
+            <p>list1[1] = index</p>
+            <p>list1[2] = </p>
+            IRIS-FAQ
+            IRIS-FAQ/index
+
+            <p>github_repo2 = IRIS-Documentation</p>
+            <p>pagename2 = IRIS-FAQ/index</p>
+            -->
+            <!-- <a href="https://github.com/mobigen/IRIS-Documentation/blob/master/IRIS-FAQ/index.rst" class="fa fa-github"> Edit</a> -->
+            <a href="https://github.com/mobigen/IRIS-FAQ/blob/master/index.rst" class="fa fa-github"> Edit</a>
+            
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p>IRIS BigData solution을 활용하며 발생하는 다양한 종류의 Question과 그에 대한 답변 / 사용상의 팁을 모아놓은 저장소입니다.</p>
+<div class="toctree-wrapper compound">
+</div>
+<div class="section" id="q">
+<h2>Q. 내가 소유한 데이터를 서비스 무료 체험에서 사용할 수 있나요?<a class="headerlink" href="#q" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">예, 가능합니다.</div>
+<div class="line">그러나, 무료 체험을 위해서는 제한된 크기의 자원이 할당됩니다. 무료 체험 사용자에게 제공되는 자원의 사양은 다음과 같습니다.</div>
+</div>
+<ul class="simple">
+<li><p>최대 100GB의 데이터 저장공간 제공</p></li>
+</ul>
+<div class="line-block">
+<div class="line">무료 체험 사용자가 소유한 데이터를 분석하기 위해서는 기본적으로 데이터 연결 및 데이터 모델을 생성해야 합니다. 데이터 연결 및 데이터 모델의 생성 방법은 아래 메뉴얼을 참조하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>데이터 업로드 및 데이터 모델 생성하기: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/01-intro/index.html">http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/01-intro/index.html</a>&gt;</p></li>
+<li><p>데이터 연결하기: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index.html">http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index.html</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Q. 우리 회사에서 여러 명이 무료 체험 서비스를 이용하려고 합니다. 각자 별도의 도메인을 입력해야 하나요?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">그렇지 않습니다.</div>
+<div class="line">일반적으로, 영문 회사명의 도메인으로 무료체험을 신청하면, 신청한 사용자가 관리자(root) 권한을 갖게 됩니다. 일단 해당 도메인의 무료 체험 계정이 만들어지면, 회사 내의 다른 사용자는 해당 도메인에서 가입을 통해 일반 사용자로 무료 체험을 사용할 수 있습니다.</div>
+<div class="line">도메인 생성 후, 일반 사용자 계정 생성 방법은 아래 메뉴얼을 참조하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>일반 사용자 계정 생성 방법: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/user_management/index.html">http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/user_management/index.html</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Q. 서비스 무료 체험 시한이 곧 만료됩니다. 사내에서 유료 전환을 위한 결제절차가 지연되고 있습니다. 무료 체험 시한이 만료된 후, 유료 전환하지 않으면 무료 체험기간동안 작성한 보고서는 어떻게 되나요?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">무료 체험 시한이 만료되고 유료 서비스로 전환하지 않은 경우, 무료 체험 기간중에 사용자가 작성한 모든 데이터는 서비스 이용 약관에 따라 1개월동안 보관 후에 소멸됩니다. 따라서, 무료 체험 시한이 만료되더라도 1개월 내에 유료 서비스로 전환하시면 기존 데이터 및 보고서를 계속 사용할 수 있습니다.</div>
+<div class="line">무료 체험 시한과 관련한 기타 문의사항은 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Q. 서비스 처음 사용자입니다. 서비스를 이용하려면 어떻게 해야 하나요?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">서비스를 처음 사용하려면 IRIS 따라하기 &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/index.html">http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/index.html</a>&gt;의 안내를 참조하시기 바랍니다.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="q-db-iris-saas">
+<h2>Q. 내 DB에 저장된 데이터를 IRIS SaaS에서 사용할 수 있나요?<a class="headerlink" href="#q-db-iris-saas" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">IRIS는 Hadoop HDFS, AWS S3, Oracle, MySQL 등 다양한 스토리지에 저장된 데이터와 연결하여 데이터를 분석할 수 있는 환경을 제공합니다.</div>
+<div class="line">데이터 연결 방법은 다음 메뉴얼을 참조하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>데이터 연결하기: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index.html">http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/connect_info/index.html</a>&gt;</p></li>
+<li><p>데이터 모델 생성하기: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/01-intro/index.html#id3">http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/01-intro/index.html#id3</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="q-iris-saas">
+<h2>Q. 내가 IRIS SaaS에서 사용하는 데이터를 다른 사용자가 접근할 수 있도록 할 수 있나요?<a class="headerlink" href="#q-iris-saas" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">기본적으로 개별 사용자가 업로드하거나 연결한 데이터는 해당 사용자외에는 사용할 수 없습니다.</div>
+<div class="line">그러나, 동일한 도메인의 사용자간에는 타 사용자가 내 데이터에 접근할 수 있도록 접근권한을 설정할 수 있습니다.</div>
+<div class="line">데이터 접근 권한을 설정하는 방법은 다음 메뉴얼을 참조하시기 바랍니다.</div>
+<div class="line">단, 타 도메인 혹은 외부 사용자에게 데이터 접근을 허용하는 기능은 제공하지 않습니다.</div>
+</div>
+<ul class="simple">
+<li><p>데이터 접근 설정 방법:</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Q. 내가 IRIS SaaS에서 작성한 보고서를 다른 사용자와 공유하려면 어떻게 해야 하나요?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">내가 작성한 보고서는 다음의 두 가지 방법으로 타 사용자와 공유할 수 있습니다.</div>
+</div>
+<div class="line-block">
+<div class="line">1. 보고서 접근권한 설정</div>
+<div class="line">동일한 도메인의 타 사용자 혹은 사용자 그룹에게 내가 작성한 보고서의 접근 권한을 허용할 수 있습니다.</div>
+<div class="line">접근이 허용된 사용자 혹은 사용자 그룹의 사용자들은 해당 보고서를 복사하여 수정할 수 있습니다. 사용자간 보고서 접근 권한 설정 방법은 다음 메뉴얼을 참조하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>보고서 접근 권한 설정 방법: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/start.html#id2">http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/start.html#id2</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line">2. 보고서 공유</div>
+<div class="line">동일한 도몌인 혹은 타 도메인(외부 사용자)에게 내가 작성한 보고서의 URL을 이용하여 공유할 수 있습니다. 이 경우, 공유 받은 보고서는 편집이 불가능하며, 실행만 가능합니다.</div>
+<div class="line">보고서의 공유 방법은 다음 메뉴얼을 참조하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>타 사용자 혹은 외부 사용자와 보고서 공유 방법: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/start.html#id2">http://docs.iris.tools/manual/IRIS-Manual/IRIS-Studio/start.html#id2</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Q. 대용량 파일을 IRIS SaaS에 업로드하여 사용할 수 있나요?<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">대용량 데이터(100GB 이상)를 IRIS SaaS에 업로드하고자 할 경우에는 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="q-id">
+<h2>Q. 동일한 사용자 ID로 여러 사용자가 동시에 서비스를 이용할 수 있나요?<a class="headerlink" href="#q-id" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">동일한 사용자 ID로 여러 사용자가 동시에 서비스를 이용할 수 있습니다.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>Q. 기존 관리자가 변경되어 관리자 정보를 변경해야 합니다. 어떻게 해야 하나요?<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">관리자 계정(super user)의 ID는 root로 고정되어 있으며 변경이 불가능합니다. 단, 비밀번호를 변경하고자 하는 경우, 관리자 계정으로 로그인 후에 비밀번호 변경이 가능합니다.</div>
+<div class="line">비밀 번호의 변경 방법은 다음을 참조하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>관리자 계정의 비밀번호 변경 방법: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/user_management/common.html#id1">http://docs.iris.tools/manual/IRIS-Manual/IRIS-Common/inquiry_management/user_management/common.html#id1</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Q. 관리자 계정의 비밀번호가 기억나지 않습니다. 어떻게 해야 하나요?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">관리자가 도메인을 생성하면서 설정한 관리자 계정의 비밀번호를 제 3자가 확인할 수 있는 기능은 제공하지 않습니다. 따라서, 기존 비밀번호를 초기화한 후에 재설정하여야 합니다.</div>
+<div class="line">관리자 계정의 비밀번호를 재설정하려면 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id8">
+<h2>Q. IRIS SaaS에서 사용중인 나의 데이터가 타인에 의해 외부로 유출되지는 않을까요?<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">IRIS SaaS는 각 도메인별로 전용의 가상 네트워크인 VPC(Virtual Private Cloud) 환경을 제공합니다. 따라서, 타인에 의한 데이터의 외부 유출로부터 데이터 보안을 강화하였습니다.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id9">
+<h2>Q. 내 소유의 데이터와 보고서는 어디에 얼마동안 저장되나요?<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">사용자가 작성한 모든 데이터는 서비스 이용 약관에 따라 무료 체험기간 만료 후, 또는 유료 서비스 해지 후 1개월동안 보관 후에 소멸됩니다.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id10">
+<h2>Q. IRIS SaaS 이용 중 에러가 발생했습니다. 어떻게 해야 하나요?<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">서비스 이용중 에러가 발생한 경우, 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>Q. 서비스 이용중, 실수로 데이터/보고서를 삭제했습니다. 삭제한 데이터/보고서를 복원할 수 있나요?<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">삭제된 데이터에 대한 복원 기능은 제공하지 않습니다. 따라서, 데이터 혹은 보고서를 삭제할 경우, 재확인 후에 삭제하시기 바랍니다.</div>
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id12">
+<h2>Q. 원하는 보고서/대시보드를 구축하는데 도움을 받을 수 있나요?<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">(주)모비젠은 고객이 빅데이터 시스템 구축, 데이터 분석, 보고서 생성 및 대시보드 구축까지 다양한 업무를 원활히 수행할 수 있도록 컨설팅 서비스를 제공하고 있습니다.</div>
+<div class="line">컨설팅 서비스와 관련된 자세한 내용은 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>Q. 서비스 이용 방법에 대한 질문이 있는데, 도움을 받을 수 있나요?<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">㈜모비젠은 서비스 이용자들이 외부의 지원없이 서비스를 이용하는데 불편함이 없도록 다양한 자료를 지속적으로 업데이트하여 제공하고 있습니다.</div>
+<div class="line">서비스 이용 방법과 관련하여 아래 자료를 먼저 참조해 보시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>IRIS 따라하기: &lt;<a class="reference external" href="http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/index.html">http://docs.iris.tools/manual/IRIS-Tutorial/Getting-Started/index.html</a>&gt;</p></li>
+<li><p>IRIS 튜토리얼: &lt;<a class="reference external" href="http://www.iris.tools/views/support/tutorial">http://www.iris.tools/views/support/tutorial</a>&gt;</p></li>
+<li><p>IRIS 매뉴얼: &lt;<a class="reference external" href="http://www.iris.tools/views/support/manual">http://www.iris.tools/views/support/manual</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line">기타 문의사항은 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>Q. IRIS SaaS를 이용하여 빅데이터 시스템을 구축하려고 합니다. 이에 대한 도움을 받을 수 있나요?<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">(주)모비젠은 고객이 빅데이터 시스템 구축, 데이터 분석, 보고서 생성 및 대시보드 구축까지 다양한 업무를 원활히 수행할 수 있도록 컨설팅 서비스를 제공하고 있습니다.</div>
+<div class="line">컨설팅 서비스와 관련된 자세한 내용은 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>Q. 서비스 무료 체험을 이용하고 있습니다. 서비스 이용에 대한 교육 과정이 있나요?<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">(주)모비젠은 사용자가 별도의 지원을 받지 않고도 IRIS SaaS를 사용할 수 있도록 튜토리얼을 지속적으로 업데이트하고 있습니다.</div>
+<div class="line">일단, 아래 IRIS 튜토리얼을 경험하신 후에 필요하다면 아래 교육 과정을 참고하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>IRIS 튜토리얼: &lt;<a class="reference external" href="http://www.iris.tools/views/support/tutorial">http://www.iris.tools/views/support/tutorial</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line">(주)모비젠은 다음과 같은 다양한 정기/비정기 교육 프로그램을 운영하고 있습니다.</div>
+</div>
+<ul class="simple">
+<li><p>사용자 교육(기본과정)</p></li>
+<li><p>심화 프로그램</p></li>
+</ul>
+<div class="line-block">
+<div class="line">교육 프로그램과 관련된 자세한 사항은 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="id16">
+<h2>Q. 업무시간 외(야간이나 휴일)에도 기술지원을 받을 수 있나요?<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">업무시간 외에 기술지원이 필요한 경우, 아래에서 문의하시기 바랍니다.</div>
+</div>
+<ul class="simple">
+<li><p>문의하기: &lt;<a class="reference external" href="http://www.iris.tools/views/product/product-inquiry">http://www.iris.tools/views/product/product-inquiry</a>&gt;</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../IRIS-Manual/index.html" class="btn btn-neutral float-right" title="Manual" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="IRIS Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, team IRIS
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+ 
+
+
+
+
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+<!--  -->
+<header>
+	<div class="header__container">
+		<div class="search__icon">
+			<i class="fa fa-search"></i>
+		</div>
+		<a href="/" class="header__logo">
+			<img width="52" src="/assets/img/logo/iris-logo.svg">
+			<span class="header__logo-text">Documentation</span>
+		</a>
+		<div class="links__icon">
+			<i class="fa fa-bars"></i>
+		</div>
+		<ul class="header__links">
+			<li><a href="http://iris.tools">IRIS</a></li>
+			<li><a href="http://iris.tools/product/detail/analyzer">제품</a></li>
+			<li><a href="http://iris.tools/support/manual">지원</a></li>
+			<li><a href="http://iris.tools/gallery">갤러리</a></li>
+			<li><a href="http://iris.tools/blog">블로그</a></li>
+			<li><a href="http://www.mobigen.com">회사</a></li>
+		</ul>
+		<div class="header__searchbar">
+			<form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+                <input type="text" name="q" placeholder="Search by keyword" autofocus />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+            </form>
+		</div>
+	</div>
+</header>
+<script type="text/javascript">
+  /* Temporary fix for the search capability. Fix has been committed to the theme's master;
+		   however, waiting a new release to the theme.  This fix should remain in place until that
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
+		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
+		 */
+  if (DOCUMENTATION_OPTIONS) {
+    DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = ".txt";
+  }
+ 
+</script>
+
+
+</body>
+</html>
